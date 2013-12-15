@@ -1,0 +1,49 @@
+//*------------------------------------*\
+//     $MEDIA
+//*------------------------------------*/
+// Responsive media settings.
+//---------------------------------
+
+$image-spacing: $base-sizing-unit / $browserDefault + em;
+
+// Images
+//---
+
+// Fluid images
+
+img {
+    max-width: 100%;
+}
+
+// Non fluid-images when height & width is present
+img[width],
+img[height]{
+    max-width:none;
+}
+
+// Rounded images 
+
+//.img--round { border-radius:$brand-round; }
+
+// Image placement
+
+.img--right{
+    float:right;
+    margin-bottom: $image-spacing;
+    margin-left: $image-spacing;
+}
+.img--left{
+    float:left;
+    margin-right: $image-spacing;
+    margin-bottom: $image-spacing;
+}
+.img--center{
+    display:block;
+    margin-right:auto;
+    margin-bottom: $image-spacing;
+    margin-left:auto;
+}
+
+figure > img{
+    display:block;
+}

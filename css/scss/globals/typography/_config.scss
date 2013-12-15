@@ -1,0 +1,36 @@
+//*------------------------------------*\
+//     $TYPE CONFIG
+//*------------------------------------*/
+//  Contents:
+//  [1]. Base
+//  [2]. Typographic Scale
+//  [3]. Font-Stacks
+//---------------------------------
+
+
+// Base
+
+$scaleBase:         $base-sizing-unit; // Default: 16
+$line-height-ratio: 1.5 !default;
+
+// Typographc Scale
+// Use <html> font-size to scale the whole typography proportionally (e.g. breakpoints)
+// Use the scale-base to alter the base-size for type and margins.
+// The values on the scale will be divided through the $browserDefault to get the real pixel rem-value
+
+$scaleK:  96 !default; // kilo
+$scaleM:  84 !default; // mega
+$scaleG:  72 !default; // giga
+$scale1:  60 !default; // h1, alpha
+$scale2:  48 !default; // h2, beta
+$scale3:  36 !default; // h3, gamma
+$scale4:  24 !default; // h4, delta
+$scale5:  21 !default; // h5, epsilon
+$scale6:  18 !default; // h6, zeta
+$scale7:  $scaleBase !default; // Paragraphs, base size
+
+
+// Font-stacks
+
+$typeface--primary: sans-serif;
+$typeface--secondary: serif;

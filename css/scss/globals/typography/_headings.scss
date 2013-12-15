@@ -1,0 +1,92 @@
+//*------------------------------------*\
+//     $HEADINGS
+//*------------------------------------*/
+// Contents:
+// [1]. Variables & size-declarations
+// [2]. General heading styles
+// [3]. Font-size declarations
+// [4]. Heading reset class for layout headings
+//---------------------------------
+
+
+//  Variables & size declarations
+//  @ size from "config" > scale
+
+$heading1: $scale1;
+$heading2: $scale2;
+$heading3: $scale3;
+$heading4: $scale4;
+$heading5: $scale5;
+$heading6: $scale6;
+$giga:     $scaleG;
+$mega:     $scaleM;
+$kilo:     $scaleK;
+
+$heading-line-height: 1.25 !default;
+
+//  Genereal heading styles
+//      [1]. Inherited from var/colors
+//      [2]. Inherited from config
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: $heading-color; //[1]
+    font-family: $typeface--primary; //[2]
+    line-height: $heading-line-height;
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility; 
+ }
+
+// Font Size Declarations
+// Class names can be used if hierarchy is different from size
+
+h1, .alpha {
+    @include rem("font-size",$heading1 + px);
+ }
+
+h2, .beta {
+    @include rem("font-size",$heading2 + px);
+ }
+
+h3, .gamma {
+    @include rem("font-size",$heading3 + px);
+ }
+
+h4, .delta {
+    @include rem("font-size",$heading4 + px);
+ }
+
+h5, .epsilon {
+    @include rem("font-size",$heading5 + px);
+ }
+
+h6, .zeta {
+    @include rem("font-size",$heading6 + px);
+ }
+
+.giga {
+    @include rem("font-size",$giga + px);
+ }
+
+.mega {
+    @include rem("font-size",$mega + px);
+ }
+
+.kilo {
+    @include rem("font-size",$kilo + px);
+ }
+
+//  Heading Reset for groups  & layout purpose with a class
+//      [1]. Reset line-height for layouts
+.hN { 
+    line-height: 1; // [1] 
+ }
+
+hgroup .hN{ 
+    margin-bottom:0;
+ }

@@ -1,0 +1,52 @@
+//*------------------------------------*\
+//     $BUILD-FILE
+//*------------------------------------*/
+// Handle with care!
+//---------------------------------
+
+// Base units
+
+@import "scss/globals/var/base";
+
+// Get the mixins first - they do no harm and may be needed by the config -> folder: scss/globals/mixins
+
+@import "scss/globals/mixins/mqs";
+@import "scss/globals/mixins/bulletproof-ff";
+@import "scss/globals/mixins/keyframes";
+@import "scss/globals/mixins/easing";
+@import "scss/globals/mixins/rem";
+@import "scss/globals/mixins/colorfunctions";
+
+
+// Get the global variables.  -> folder: scss/globals/config
+
+@import "scss/globals/var/colors";
+@import "scss/globals/var/mediaqueries";
+
+
+// Get the reset - Should be highest up -> folder: scss/globals;
+// the reset used is normalize.css (v.2.1.3)
+
+@import "scss/globals/reset";
+
+// Get the typography -> folder: scss/globals/typography
+
+@import "scss/globals/typography/config";
+@import "scss/globals/typography/headings";
+@import "scss/globals/typography/main";
+@import "scss/globals/typography/lists";
+@import "scss/globals/typography/code";
+@import "scss/globals/typography/media";
+
+
+// Get basic UI elements -> folder: scss/globals/elements
+
+@import "scss/globals/elements/brand";
+@import "scss/globals/elements/buttons";
+@import "scss/globals/elements/forms";
+
+// Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
+
+@import "scss/globals/styles";
+
+// Get local-stuff - page-styles, custom elements etc.

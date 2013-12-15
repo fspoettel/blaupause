@@ -1,0 +1,59 @@
+//*------------------------------------*\
+//     $BUTTONS
+//*------------------------------------*/
+// Buttons for the project.
+//---------------------------------
+
+
+$btn--primary-color:   $color--primary;
+$btn--secondary-color: $color--secondary;
+$btn--muted-color:     $color--disabled;
+
+
+
+%btn {
+    //Structure
+    display: inline-block;
+    background: $btn--primary-color;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+    user-select: none;
+}
+
+%btn {
+    &,
+    &:hover {
+        text-decoration: none;
+    }
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+// Firefox: Get rid of the inner focus border
+.btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.btn--small {}
+.btn--medium {}
+.btn--large {}
+.btn--full {}
+
+.btn--secondary {}
+.btn--tertiary {}
+
+.btn--positive {}
+.btn--negative {}
+.btn[disabled],
+.btn--disabled {}
