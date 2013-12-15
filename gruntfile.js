@@ -66,21 +66,30 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      options: {
-        livereload: true,
-      },
       scripts: {
         files: ['js/*.js'],
-        tasks: ['concat', 'uglify']
+        tasks: ['concat', 'uglify'],
+        options: {
+          livereload: true,
+        },
       },
       css: {
         files: ['**/*.scss'],
-        tasks: ['sass', 'autoprefixer', 'cssmin']
+        tasks: ['sass', 'autoprefixer', 'cssmin'],
+        options: {
+          livereload: true,
+        },
       },
       images: {
         files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
-        tasks: ['imagemin']
-      }
+        tasks: ['imagemin'],
+        options: {
+          livereload: true,
+        },
+      },
+      livereload: {
+        files: ['*.html', '*.php', 'images/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+        },
     },
 
     connect: {
@@ -99,6 +108,6 @@ module.exports = function(grunt) {
   // Default Task is basically a rebuild
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer', 'cssmin', 'imagemin']);
 
-  grunt.registerTask('dev', ['connect']);
+  grunt.registerTask('serve', ['connect', 'watch']);
 
 };
