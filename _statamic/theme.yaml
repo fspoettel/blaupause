@@ -1,0 +1,20 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+_site_author: Felix Spoettel
+_site_language: de
+_description:
+
+# Commentsnoyes
+show_comments:yes
+
+
+disqus_account:test
+typekit_id:
+
+# Global text snippets
+no_results_text: "Keine Ergebnisse."
