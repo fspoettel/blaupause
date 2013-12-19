@@ -8,11 +8,16 @@
 $background:        #fefefe !default;
 
 // Typography
-$body-text-color:   #333 !default;
-$heading-color:     #222 !default;
+$body-text-color:      #333 !default;
+$heading-color:        #222 !default;
 $link-color:        #c10900 !default;
 
 // Branding
 $color--primary:    #c10900 !default;
-$color--secondary:  yellow  !default;
-$color--disabled:   grey !default;
+$color--secondary:   yellow !default;
+$color--disabled:      grey !default;
+
+// States
+
+$color--success:       green !default;
+$color--error:           red !default;

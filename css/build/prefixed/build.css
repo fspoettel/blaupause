@@ -585,6 +585,19 @@ figure > img {
   border: 0;
 }
 
+.btn--positive {
+  background: green;
+}
+
+.btn--negative {
+  background: red;
+}
+
+.btn[disabled],
+.btn--disabled {
+  background: grey;
+}
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;

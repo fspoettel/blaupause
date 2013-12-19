@@ -8,7 +8,8 @@
 $btn--primary-color:   $color--primary;
 $btn--secondary-color: $color--secondary;
 $btn--muted-color:     $color--disabled;
-
+$btn--positive-color:   $color--success;
+$btn--negative-color:     $color--error;
 
 
 %btn {
@@ -53,7 +54,13 @@ $btn--muted-color:     $color--disabled;
 .btn--secondary {}
 .btn--tertiary {}
 
-.btn--positive {}
-.btn--negative {}
+.btn--positive {
+    background: $btn--positive-color;
+}
+.btn--negative {
+    background: $btn--negative-color;
+}
 .btn[disabled],
-.btn--disabled {}
+.btn--disabled {
+    background: $btn--muted-color;
+}

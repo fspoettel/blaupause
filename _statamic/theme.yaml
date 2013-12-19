@@ -4,17 +4,22 @@
 #
 ###########################################################################################
 
-# Theme name
+# Theme data
+
 _site_author: Felix Spoettel
 _site_language: de
-_description:
+_description: Placeholder
+_theme_name: Boilerplate
+ 
+# Comments-toggle
 
-# Commentsnoyes
 show_comments:yes
 
+# Accounts
 
 disqus_account:test
 typekit_id:
 
 # Global text snippets
+
 no_results_text: "Keine Ergebnisse."
