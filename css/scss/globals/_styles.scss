@@ -5,3 +5,16 @@
 body {
     background: $background;
 }
+
+.demo-block {
+    background: red;
+    @include bp(palm) {
+        background: blue;
+    }
+    @include bp(lap) {
+        background: brown
+    }
+    @include bp(desk) {
+        background: green;
+    }
+}

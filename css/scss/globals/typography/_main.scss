@@ -17,7 +17,7 @@ input
 }
 
 body {
-    @include rem("font-size", $baseSize + px);
+    @include rem("font-size", $baseSize);
     color: $body-text-color;
 }
 

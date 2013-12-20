@@ -1,10 +1,9 @@
 //*------------------------------------*\
 //     $MQ'S
 //*------------------------------------*/
-// Cache the media-queries (used in MQ-mixin)
+// Cache the media-queries (used in MQ-mixin & grid)
 //---------------------------------
 
-  $bp-palm:     "(min-width: 240px and max-width: 499px)";
-  $bp-lap:      "(min-width: 500px)";
-  $bp-desk:     "(min-width: 1000px)";
-  $bp-highres:  "(min-width: 1200px)";
+  $bp--palm:     '(max-width: 480px)';
+  $bp--lap:      '(min-width:481px) and (max-width: 1023px)';
+  $bp--desk:     '(min-width: 1024px)';
