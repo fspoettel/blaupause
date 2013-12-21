@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+<head>
+    <title>Boilerplate</title>
+    <meta name="description" content="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/build/prefixed/build.css">
+    <script src="js/lib/modernizr-2.6.3.js"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <header class="main--header">
+            <div class="main--inner">
+                <div class="main--heading-cntr">
+                    <div class="main--hgroup">
+                        <h1 class="hN  delta">Heading</h1>
+                        <h2 class="hN  epsilon">Heading#2</h2>
+                    </div>
+                </div>
+                <nav class="main--nav">
+                    <ul>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+    <section class="content">
+        <header>
+            <h1>Visual Scale</h1>
+            <h2>Visual Scale</h2>
+            <h3>Visual Scale</h3>
+            <h4>Visual Scale</h4>
+            <h5>Visual Scale</h5>
+            <h6>Visual Scale</h6>
+        </header>
+        <p> Bacon ipsum dolor sit amet kevin turkey shank, brisket tri-tip tongue jerky. Pork ham meatball ground round ham hock tail t-bone swine pig prosciutto spare ribs sausage bacon tongue andouille. Doner short loin ribeye ham bacon pork belly bresaola. Meatloaf strip steak bresaola pastrami, frankfurter pig cow t-bone tail salami. Spare ribs corned beef beef venison pastrami. Fatback shankle t-bone venison ground round bacon pork belly.
+        </p>
+        <h3>Banana for scale</h3>
+        <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
+        </p>            
+
+
+    </section>
+    <script>window.jQuery || document.write('<script src="js/lib/jquery/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/build/production.min.js"></script>
+    <script>
+        $('document').ready(function() {
+            setCalc('.demo-block');
+            function setCalc(elem) {
+                $(elem).each(function() {
+                    var parent = $(this).parent();
+                    var parentWidth = Math.round((parent.outerWidth()) / (parent.parent().outerWidth()) * 100).toFixed(3) + '%';
+                    var parentClassName = parent.attr('class');
+                    $(this).html(parentWidth);
+                });
+            };
+            $(window).resize(function(){
+                setCalc('.demo-block');
+            })
+        });
+    </script>
+</body>
+</html>

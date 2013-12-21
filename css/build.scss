@@ -22,6 +22,7 @@
 
 @import "scss/globals/var/colors";
 @import "scss/globals/var/mediaqueries";
+@import "scss/globals/var/brand";
 
 
 // Get the reset - Should be highest up -> folder: scss/globals;
@@ -32,13 +33,13 @@
 // Get the layout files -> folder: scss/layout
 // The grid is based on my fork of csswizardry-grids
 
-@import "scss/globals/layout/grid";
+@import "scss/globals/layouts/grids";
 
 // Get the typography -> folder: scss/globals/typography
 
 @import "scss/globals/typography/config";
-@import "scss/globals/typography/headings";
 @import "scss/globals/typography/main";
+@import "scss/globals/typography/headings";
 @import "scss/globals/typography/lists";
 @import "scss/globals/typography/code";
 @import "scss/globals/typography/media";
@@ -53,5 +54,8 @@
 // Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
 
 @import "scss/globals/styles";
+@import "scss/globals/shame";
 
 // Get local-stuff - page-styles, custom elements etc.
+
+@import "scss/locals/test";
