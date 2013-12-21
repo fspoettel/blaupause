@@ -376,7 +376,7 @@ table {
   border-spacing: 0;
 }
 
-.grid, .wrapper, .main--inner, .main--hgroup, .main--nav > ul {
+.grid {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -388,16 +388,11 @@ table {
 }
 
 .opera:-o-prefocus,
-.grid,
-.wrapper,
-.main--inner,
-.main--hgroup,
-.main--nav > ul {
+.grid {
   word-spacing: -0.43em;
 }
 
-.grid__item, .wrapper > header, .main--heading-cntr, .main--nav, .main--hgroup h1,
-.main--hgroup h2, .main--nav li {
+.grid__item {
   display: inline-block;
   padding-left: 24px;
   padding-left: 1.5rem;
@@ -408,50 +403,6 @@ table {
   word-spacing: normal;
 }
 
-.main--nav > ul {
-  direction: rtl;
-  text-align: left;
-  justify-content: flex-end;
-}
-.main--nav > ul > .grid__item, .main--nav > ul.wrapper > header, .main--nav > ul > .main--heading-cntr, .main--nav > ul > .main--nav, .main--hgroup .main--nav > ul > h1,
-.main--hgroup .main--nav > ul > h2, .main--nav > ul > li {
-  direction: ltr;
-  text-align: left;
-}
-
-.main--hgroup > .grid__item, .main--nav > ul > .grid__item, .wrapper.main--hgroup > header, .main--nav > ul.wrapper > header, .main--hgroup > .main--heading-cntr, .main--nav > ul > .main--heading-cntr, .main--hgroup > .main--nav, .main--nav > ul > .main--nav, .main--hgroup > h1, .main--hgroup .main--nav > ul > h1,
-.main--hgroup > h2,
-.main--hgroup .main--nav > ul > h2, .main--nav .main--hgroup > li, .main--nav > ul > li {
-  vertical-align: bottom;
-}
-
-.main--heading-cntr, .main--nav {
-  width: 50%;
-}
-
-.main--nav li {
-  width: 25%;
-}
-
-@media only screen and (max-width: 480px) {
-  .main--heading-cntr, .main--nav {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .main--hgroup h1,
-  .main--hgroup h2 {
-    width: 50%;
-  }
-
-  .main--heading-cntr {
-    width: 33.333%;
-  }
-
-  .main--nav {
-    width: 66.666%;
-  }
-}
 [class*="push--"] {
   position: relative;
 }
@@ -463,23 +414,21 @@ table {
 html,
 textarea,
 input {
-  font-size: 100%;
   line-height: 1.5;
-  min-height: 100%;
-  overflow-y: scroll;
-}
-@media (max-width: 480px) {
-  html,
-  textarea,
-  input {
-    font-size: 75%;
-  }
+  font-size: 75%;
 }
 @media (min-width: 481px) and (max-width: 1023px) {
   html,
   textarea,
   input {
     font-size: 87.5%;
+  }
+}
+@media (min-width: 1024px) {
+  html,
+  textarea,
+  input {
+    font-size: 100%;
   }
 }
 
@@ -507,6 +456,40 @@ td {
   padding: 0;
 }
 
+.vR, .content div,
+.content dl,
+.content dt,
+.content dd,
+.content pre,
+.content form,
+.content figure,
+.content img,
+.content ol,
+.content ul,
+.content p,
+.content blockquote,
+.content table {
+  margin: 0;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.content div,
+.content dl,
+.content dt,
+.content dd,
+.content pre,
+.content form,
+.content figure,
+.content img,
+.content ol,
+.content ul,
+.content p,
+.content blockquote,
+.content table {
+  font-family: serif;
+}
+
 em,
 i {
   font-style: italic;
@@ -519,28 +502,6 @@ b {
   line-height: inherit;
 }
 
-.vR, .wrapper > header, .content > header {
-  margin: 0;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
-}
-
-.content div,
-.content dl,
-.content dt,
-.content dd,
-.content ul,
-.content ol,
-.content pre,
-.content form,
-.content img,
-.content p,
-.content blockquote,
-.content th,
-.content td {
-  font-family: serif;
-}
-
 h1,
 h2,
 h3,
@@ -550,7 +511,7 @@ h6 {
   margin: 0;
   color: #222222;
   font-family: sans-serif;
-  line-height: 1.25;
+  line-height: 1;
   font-feature-settings: "kern", "liga";
   text-rendering: optimizeLegibility;
 }
@@ -600,14 +561,25 @@ h6, .zeta {
   font-size: 6rem;
 }
 
-.hN {
-  line-height: 1;
-  margin: 0;
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  line-height: 1.25;
 }
 
 li > ul,
-li > ol {
+li > ol,
+.content li > ul,
+.content li > ol {
   margin-bottom: 0;
+}
+
+.content li > ul,
+.content li > ol {
+  margin-left: 1em;
 }
 
 .numbered-list {
@@ -633,7 +605,7 @@ img[height] {
 }
 
 .img--round {
-  border-radius: 0;
+  border-radius: 0.25em;
 }
 
 .img--right {
@@ -657,6 +629,10 @@ img[height] {
 
 figure > img {
   display: block;
+}
+
+.content figure > img {
+  margin-bottom: 0;
 }
 
 .btn {
@@ -700,7 +676,7 @@ figure > img {
 }
 
 .btn--round {
-  border-radius: 0;
+  border-radius: 0.25em;
 }
 
 .btn--positive {
@@ -716,6 +692,193 @@ figure > img {
   background: grey;
 }
 
+table {
+  width: 100%;
+  background: white;
+}
+
+th,
+td {
+  padding: 0.25em;
+  text-align: left;
+}
+@media (min-width: 481px) {
+  th,
+  td {
+    padding: 0.5em;
+  }
+}
+
+thead {
+  background: white;
+  color: #333333;
+}
+
+/**
+ * Cell alignments
+ */
+[colspan] {
+  text-align: center;
+}
+
+[colspan="1"] {
+  text-align: left;
+}
+
+[rowspan] {
+  vertical-align: middle;
+}
+
+[rowspan="1"] {
+  vertical-align: top;
+}
+
+.numerical {
+  text-align: right;
+}
+
+.t5 {
+  width: 5%;
+}
+
+.t10 {
+  width: 10%;
+}
+
+.t12 {
+  width: 12.5%;
+}
+
+/* 1/8 */
+.t15 {
+  width: 15%;
+}
+
+.t20 {
+  width: 20%;
+}
+
+.t25 {
+  width: 25%;
+}
+
+/* 1/4 */
+.t30 {
+  width: 30%;
+}
+
+.t33 {
+  width: 33.333%;
+}
+
+/* 1/3 */
+.t35 {
+  width: 35%;
+}
+
+.t37 {
+  width: 37.5%;
+}
+
+/* 3/8 */
+.t40 {
+  width: 40%;
+}
+
+.t45 {
+  width: 45%;
+}
+
+.t50 {
+  width: 50%;
+}
+
+/* 1/2 */
+.t55 {
+  width: 55%;
+}
+
+.t60 {
+  width: 60%;
+}
+
+.t62 {
+  width: 62.5%;
+}
+
+/* 5/8 */
+.t65 {
+  width: 65%;
+}
+
+.t66 {
+  width: 66.666%;
+}
+
+/* 2/3 */
+.t70 {
+  width: 70%;
+}
+
+.t75 {
+  width: 75%;
+}
+
+/* 3/4*/
+.t80 {
+  width: 80%;
+}
+
+.t85 {
+  width: 85%;
+}
+
+.t87 {
+  width: 87.5%;
+}
+
+/* 7/8 */
+.t90 {
+  width: 90%;
+}
+
+.t95 {
+  width: 95%;
+}
+
+/**
+ * Bordered tables
+ */
+.table--bordered th,
+.table--bordered td {
+  border: 1px solid #cccccc;
+}
+.table--bordered th:empty,
+.table--bordered td:empty {
+  border: none;
+}
+.table--bordered thead tr:last-child th {
+  border-bottom-width: 1px;
+}
+.table--bordered tbody tr th:last-of-type {
+  border-right-width: 1px;
+}
+
+/**
+ * Striped tables
+ */
+.table--striped tbody tr:nth-of-type(odd) {
+  background-color: #eeeeee;
+  /* Override this color in your theme stylesheet */
+}
+
+/**
+ * Data table
+ */
+.table--data {
+  font: 12px/1.5 sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -724,21 +887,7 @@ body {
   background: #fefefe;
 }
 
-.grid__item, .wrapper > header, .main--heading-cntr, .main--nav, .main--hgroup h1,
-.main--hgroup h2, .main--nav li {
-  background: #ddd;
-}
-
-.main--nav > ul {
-  height: 100%;
-}
-
-.main--hgroup h1,
-.main--hgroup h2 {
-  margin-bottom: .25em;
-}
-
 .content {
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
 }
