@@ -5,7 +5,7 @@
 // @usage: @include rem('margin-bottom',24);
 //---------------------------------
 
-$baseline-px: $browserDefault;
+$baseline-px: $browser-default;
 
 @mixin rem($property, $px-values) {
   // Convert the baseline into rems

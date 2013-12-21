@@ -5,5 +5,9 @@
 //---------------------------------
 
 %brand {
+}
 
+%brand--round {
+    @extend %brand;
+    border-radius: $brand--rounding;
 }

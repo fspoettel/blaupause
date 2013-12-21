@@ -4,29 +4,30 @@
 // Basic type-settings.
 //---------------------------------
 
-$typeface--content: $typeface--secondary;
 $typeface--body:     $typeface--primary;
+$typeface--content:  $typeface--secondary;
 
 $palm-font-size: 75%;
 $lap-font-size:  87.5%;
+$desk-font-size: 100%;
+
+// Core declaration
 
 html,
 textarea,
 input {
-    font-size: 100%;
     line-height: $line-height-ratio;
-    min-height: 100%;
-    overflow-y: scroll;
-    @include bp(palm) {
-        font-size: $palm-font-size;
-    }
+    font-size: $palm-font-size;
     @include bp(lap) {
         font-size: $lap-font-size;
+    }
+    @include bp(desk) {
+        font-size: 100%;
     }
 }
 
 body {
-    @include rem("font-size", $scaleBase);
+    @include rem("font-size", $scale-base);
     color: $color--body-text;
     font-family: $typeface--body;
 }
@@ -50,6 +51,34 @@ td {
  padding: 0;
 }
 
+// Vertical rhythm class
+
+.vR{
+    margin: 0;
+    @include rem("margin-bottom",$base-size * $line-height-ratio);
+}
+
+// Content typography
+
+#{$content-namespace} div,
+#{$content-namespace} dl,
+#{$content-namespace} dt,
+#{$content-namespace} dd,
+#{$content-namespace} pre,
+#{$content-namespace} form,
+#{$content-namespace} figure,
+#{$content-namespace} img,
+#{$content-namespace} ol,
+#{$content-namespace} ul,
+#{$content-namespace} p,
+#{$content-namespace} blockquote,
+#{$content-namespace} table {
+    @extend .vR;
+    font-family: $typeface--content;
+}
+
+// Modifiers
+
 em,
 i {
     font-style: italic;
@@ -61,26 +90,3 @@ b {
     font-weight: bold;
     line-height: inherit;
  }
-
-// Vertical rhythm class
-.vR{
-    margin: 0;
-    @include rem("margin-bottom",$base-sizing-unit * $line-height-ratio);
-}
-
-#{$content-namespace} div,
-#{$content-namespace} dl,
-#{$content-namespace} dt,
-#{$content-namespace} dd,
-#{$content-namespace} ul,
-#{$content-namespace} ol,
-#{$content-namespace} pre,
-#{$content-namespace} form,
-#{$content-namespace} img,
-#{$content-namespace} p,
-#{$content-namespace} blockquote,
-#{$content-namespace} th,
-#{$content-namespace} td {
-    @extend .vertical_rhythm;
-    font-family: $typeface--content;
-}

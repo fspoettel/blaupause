@@ -2,8 +2,12 @@
 //     $BASE VAR
 //*------------------------------------*/
 // Core-variables.
+// $base-sizing-unit: Used for calculating base font-size, margins and paddings.
 //---------------------------------
 
-$base-sizing-unit: 16 !default;
-$browserDefault: 16 !default;
+$base-size: 16 !default;
+$browser-default: 16 !default;
+
+$base-sizing-unit: $base-size / $browser-default;
+
 $ratio: 1.5 !default;
