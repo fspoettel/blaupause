@@ -6,11 +6,19 @@
 
 // Remove vertical spacing from nested lists
 
-li{
+li,
+#{$content-namespace} li{
     > ul,
-    > ol{
+    > ol {
          margin-bottom:0;
      }
+}
+
+#{$content-namespace} li {
+    >ul,
+    >ol {
+        margin-left: $base-sizing-unit + em;
+    }
 }
 
 // Have a numbered `ul` without the semantics implied by using an `ol`.

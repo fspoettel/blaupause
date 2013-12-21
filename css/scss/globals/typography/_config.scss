@@ -5,11 +5,12 @@
 //  [1]. Base
 //  [2]. Typographic Scale
 //  [3]. Font-Stacks
+//  [4]. Links
 //---------------------------------
 
 // Base
 
-$scaleBase:         $base-sizing-unit; // Default: 16
+$scale-base:        $base-size; // Default: 16
 $line-height-ratio: $ratio !default;
 
 // Namespace for content-typography ( introduces vertical rhtythm for type, gives content heading hook )
@@ -30,13 +31,14 @@ $scale3:  36 !default; // h3, gamma
 $scale4:  24 !default; // h4, delta
 $scale5:  21 !default; // h5, epsilon
 $scale6:  18 !default; // h6, zeta
-$scale7:  $scaleBase !default; // 16 | Paragraphs, base size
+$scale7:  $scale-base !default; // 16 | Paragraphs, base size
 
 
 // Font-stacks
 
 $typeface--primary: sans-serif;
 $typeface--secondary: serif;
+
 
 // Links
 

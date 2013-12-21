@@ -44,12 +44,12 @@
 @import "scss/globals/typography/code";
 @import "scss/globals/typography/media";
 
-
 // Get basic UI elements -> folder: scss/globals/elements
 
 @import "scss/globals/elements/brand";
 @import "scss/globals/elements/buttons";
 @import "scss/globals/elements/forms";
+@import "scss/globals/elements/tables";
 
 // Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
 

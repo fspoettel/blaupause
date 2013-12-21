@@ -5,7 +5,6 @@
 // [1]. Variables & size-declarations
 // [2]. General heading styles
 // [3]. Font-size declarations
-// [4]. Heading reset class for layout headings
 //---------------------------------
 
 //  Variables & size declarations
@@ -21,7 +20,7 @@ $giga:     $scaleG;
 $mega:     $scaleM;
 $kilo:     $scaleK;
 
-$heading-line-height: 1.25 !default;
+$heading--line-height: 1.25 !default;
 
 $typeface--heading: $typeface--primary;
 
@@ -38,7 +37,7 @@ h6 {
     margin: 0;
     color: $color--heading; //[1]
     font-family: $typeface--heading; //[2]
-    line-height: $heading-line-height;
+    line-height: 1;
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility; 
  }
@@ -88,12 +87,6 @@ h6, .zeta {
  #{$content-namespace} h4,
  #{$content-namespace} h5,
  #{$content-namespace} h6 {
- }
-
-//  Heading Reset for groups  & layout purpose with a class
-//      [1]. Reset line-height & margin for layouts
-.hN { 
-    line-height: 1; // [1] 
-    margin: 0; // [1]
+    line-height: $heading--line-height;
  }
  

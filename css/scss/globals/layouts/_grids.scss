@@ -92,7 +92,7 @@ $mobile-first:          true!default;
 //**
 // * Set the spacing between your grid items.
 // */
-$gutter:                $base-sizing-unit * $ratio!default; // [2]
+$gutter:                $base-size * $ratio!default; // [2]
 
 
 //**
@@ -131,6 +131,7 @@ $use-markup-fix:        false!default; // [1]
 $breakpoints: (
     'palm' $bp--palm,
     'lap'  $bp--lap,
+    'lap-up'  $bp--lap-up,
     'desk' $bp--desk
     )!default; // [3]
 
@@ -145,9 +146,9 @@ $breakpoints: (
 // * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
 // * have been set to ‘true’.
 // */
-$breakpoint-has-widths: ('palm', 'lap', 'desk')!default;
-$breakpoint-has-push:   ('palm', 'lap', 'desk')!default;
-$breakpoint-has-pull:   ('palm', 'lap', 'desk')!default;
+$breakpoint-has-widths: ('palm', 'lap','lap-up', 'desk')!default;
+$breakpoint-has-push:   ('palm', 'lap','lap-up', 'desk')!default;
+$breakpoint-has-pull:   ('palm', 'lap','lap-up', 'desk')!default;
 
 
 //**

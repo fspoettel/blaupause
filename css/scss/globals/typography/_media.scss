@@ -4,7 +4,7 @@
 // Responsive media settings.
 //---------------------------------
 
-$image-spacing: $base-sizing-unit / $browserDefault;
+$image-spacing: $base-sizing-unit;
 
 // Images
 //---
@@ -23,7 +23,7 @@ img[height]{
 
 // Rounded images 
 
-.img--round { border-radius:$brand-rounding; }
+.img--round { border-radius:$brand--rounding; }
 
 // Image placement
 
@@ -44,6 +44,14 @@ img[height]{
     margin-left:auto;
 }
 
+// Figures 
+
 figure > img{
     display:block;
+}
+
+#{$content-namespace} figure {
+    > img {
+        margin-bottom: 0;
+    }
 }

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           noCache: true
         },
         files: {
-          'css/build/build.css': 'css/build.scss'
+          'css/build/global.css': 'css/build.scss'
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'css/build/minified/build.css': ['css/build/prefixed/build.css']
+          'css/build/minified/global.css': ['css/build/prefixed/global.css']
         }
       }
     },
