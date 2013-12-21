@@ -92,13 +92,13 @@ $mobile-first:          true!default;
 //**
 // * Set the spacing between your grid items.
 // */
-$gutter:                1.5em!default; // [2]
+$gutter:                $base-sizing-unit * $ratio!default; // [2]
 
 
 //**
 // * Would you like Sass’ silent classes, or regular CSS classes?
 // */
-$use-silent-classes:    false!default;
+$use-silent-classes:    true!default;
 
 
 //**
@@ -190,7 +190,7 @@ $class-type:            unquote(".");
     }
 
     @if $breakpoint-found == false{
-        @warn "Breakpoint ‘#{$media-query}’ does not exist"
+        @warn "Breakpoint ‘#{$media-query}’ does not exist";
     }
 }
 
@@ -217,18 +217,14 @@ $class-type:            unquote(".");
 // * 1. Allow the grid system to be used on lists.
 // * 2. Remove any margins and paddings that might affect the grid system.
 // * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+// * 4. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
 // */
 #{$class-type}grid{
-    list-style:none;                //* [1] */
-    margin:0;                       //* [2] */
-    padding:0;                      //* [2] */
-    margin-left:-$gutter;           //* [3] */
-    //**
-    // * Use flexbox when possible to avoid `letter-spacing` side-effects.
-    // * NOTE: Firefox (as of 25) does not currently support flex-wrap, so the
-    // * `-moz-` prefix version is omitted.
-    // */
-    display: flexbox;
+    list-style:none;                      //* [1] */
+    margin:0;                             //* [2] */
+    padding:0;                            //* [2] */
+    @include rem('margin-left',-$gutter); //* [3] */
+    display: flexbox;                     //* [4] */
     flex-flow: row wrap;
     @if $use-markup-fix != true{
         letter-spacing:-0.31em;
@@ -252,15 +248,13 @@ $class-type:            unquote(".");
     // * 5. Required to combine fluid widths and fixed gutters.
     // */
     #{$class-type}grid__item{
-        display:inline-block;           //* [1] */
-        padding-left:$gutter;           //* [2] */
-        vertical-align:top;             //* [3] */
+        display:inline-block;                 //* [1] */
+        @include rem('padding-left',$gutter); //* [3] */
+        vertical-align:top;                   //* [3] */
         @if $mobile-first == true{
-            width:100%;                 //* [4] */
+            width:100%;                       //* [4] */
         }
-        -webkit-box-sizing:border-box;  //* [5] */
-           -moz-box-sizing:border-box;  //* [5] */
-                box-sizing:border-box;  //* [5] */
+        box-sizing:border-box;                //* [5] */
         @if $use-markup-fix != true{
             letter-spacing:normal;
             word-spacing:normal;
@@ -276,7 +270,6 @@ $class-type:            unquote(".");
     direction:rtl;
     text-align:left;
     justify-content: flex-end;
-
     > #{$class-type}grid__item{
         direction:ltr;
         text-align:left;
@@ -329,14 +322,12 @@ $class-type:            unquote(".");
 // * `.grid`.
 // */
 #{$class-type}grid--middle{
-
     > #{$class-type}grid__item{
         vertical-align:middle;
     }
 }
 
 #{$class-type}grid--bottom{
-
     > #{$class-type}grid__item{
         vertical-align:bottom;
     }

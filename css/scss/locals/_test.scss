@@ -1,0 +1,63 @@
+%grid__item {
+    background: #ddd;
+}
+
+.wrapper {
+    @extend %grid;
+}
+
+.wrapper > header {
+    @extend %grid__item;
+    @extend .vR;
+}
+
+.main--inner {
+    @extend %grid;
+}
+
+.main--heading-cntr {
+    @extend %grid__item;
+    @extend %one-half;
+    @extend %desk--one-third;
+    @extend %palm--one-whole;
+
+}
+
+.main--hgroup {
+    @extend %grid;
+    @extend %grid--bottom;
+}
+
+.main--nav {
+    @extend %grid__item;
+    @extend %one-half;
+    @extend %desk--two-thirds;
+    @extend %palm--one-whole;
+    > ul {
+        @extend %grid;
+        @extend %grid--rev;
+        @extend %grid--bottom;
+        height: 100%;
+    }
+}
+
+.main--hgroup h1,
+.main--hgroup h2 {
+    @extend %grid__item;
+    @extend %desk--one-half;
+    margin-bottom: .25em;
+}
+
+.main--nav li {
+    @extend %grid__item;
+    @extend %one-quarter;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content > header{
+    @extend .vR;
+}
