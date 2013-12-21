@@ -5,12 +5,13 @@
 //---------------------------------
 
 // Basic
-$background:        #fefefe !default;
+$color--background:        #fefefe !default;
 
 // Typography
-$body-text-color:      #333 !default;
-$heading-color:        #222 !default;
-$link-color:        #c10900 !default;
+$color--body-text:    #333 !default;
+$color--heading:      #222 !default;
+$color--link:        #c10900 !default;
+$color--link-hover:  shade($color--link,10%)!default;
 
 // Branding
 $color--primary:    #c10900 !default;

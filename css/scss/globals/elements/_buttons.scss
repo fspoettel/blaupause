@@ -7,15 +7,17 @@
 
 $btn--primary-color:   $color--primary;
 $btn--secondary-color: $color--secondary;
+$btn--tertiary-color:  tint($color--secondary,20%);
 $btn--muted-color:     $color--disabled;
-$btn--positive-color:   $color--success;
-$btn--negative-color:     $color--error;
+$btn--positive-color:  $color--success;
+$btn--negative-color:  $color--error;
 
+// Structure
 
-%btn {
-    //Structure
+.btn {
     display: inline-block;
     background: $btn--primary-color;
+    padding: .25em 1em;
     zoom: 1;
     line-height: normal;
     white-space: nowrap;
@@ -27,10 +29,16 @@ $btn--negative-color:     $color--error;
     -moz-user-select: none;
      -ms-user-select: none;
     user-select: none;
+    // Firefox: Get rid of the inner focus border
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
 }
 
-%btn {
-    &,
+// Interactivity
+
+.btn {
     &:hover {
         text-decoration: none;
     }
@@ -40,19 +48,28 @@ $btn--negative-color:     $color--error;
     }
 }
 
-// Firefox: Get rid of the inner focus border
-.btn::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
+// Size modifiers
 
 .btn--small {}
 .btn--medium {}
 .btn--large {}
-.btn--full {}
 
-.btn--secondary {}
-.btn--tertiary {}
+.btn--full { 
+    display: block;
+ }
+
+ // Visual modifiers
+
+.btn--secondary { 
+    background: $btn--secondary-color;
+ }
+.btn--tertiary { 
+    background: $btn--tertiary-color;
+ }
+.btn--round {
+    border-radius: $brand-rounding;
+}
+// Button-states / Callbacks
 
 .btn--positive {
     background: $btn--positive-color;

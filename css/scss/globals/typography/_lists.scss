@@ -15,6 +15,6 @@ li{
 
 // Have a numbered `ul` without the semantics implied by using an `ol`.
 
-/*ul*/.numbered-list{
+.numbered-list{
     list-style-type:decimal;
 }

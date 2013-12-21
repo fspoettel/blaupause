@@ -1,20 +1,21 @@
+//*------------------------------------*\
+//     $STYLES
+//*------------------------------------*/
+// Styles for the project
+//---------------------------------
+
 * { 
     box-sizing: border-box; 
 }
 
 body {
-    background: $background;
+    background: $color--background;
 }
 
-.demo-block {
-    background: red;
-    @include bp(palm) {
-        background: blue;
-    }
-    @include bp(lap) {
-        background: brown
-    }
-    @include bp(desk) {
-        background: green;
-    }
+.grid {
+    @extend %grid;
+}
+
+.grid__item {
+    @extend %grid__item;
 }

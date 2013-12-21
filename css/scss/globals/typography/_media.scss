@@ -4,7 +4,7 @@
 // Responsive media settings.
 //---------------------------------
 
-$image-spacing: $base-sizing-unit / $browserDefault + em;
+$image-spacing: $base-sizing-unit / $browserDefault;
 
 // Images
 //---
@@ -23,24 +23,24 @@ img[height]{
 
 // Rounded images 
 
-//.img--round { border-radius:$brand-round; }
+.img--round { border-radius:$brand-rounding; }
 
 // Image placement
 
 .img--right{
     float:right;
-    margin-bottom: $image-spacing;
-    margin-left: $image-spacing;
+    margin-bottom: $image-spacing + em;
+    margin-left: $image-spacing + em;
 }
 .img--left{
     float:left;
-    margin-right: $image-spacing;
-    margin-bottom: $image-spacing;
+    margin-right: $image-spacing + em;
+    margin-bottom: $image-spacing + em;
 }
 .img--center{
     display:block;
     margin-right:auto;
-    margin-bottom: $image-spacing;
+    margin-bottom: $image-spacing + em;
     margin-left:auto;
 }
 

@@ -1,0 +1,18 @@
+//*------------------------------------*\
+//     $LINKS
+//*------------------------------------*/
+// Links
+//---------------------------------
+
+a {
+    color: $color--link;
+    line-height: inherit;
+    text-decoration: $link--decoration;
+    img { border:none; }
+ }
+
+ a {
+    &:hover {
+        color: $color--link-hover;
+    }
+ }

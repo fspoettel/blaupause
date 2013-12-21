@@ -4,29 +4,83 @@
 // Basic type-settings.
 //---------------------------------
 
-$baseSize: $scaleBase;
+$typeface--content: $typeface--secondary;
+$typeface--body:     $typeface--primary;
+
+$palm-font-size: 75%;
+$lap-font-size:  87.5%;
 
 html,
 textarea,
-input
- {
+input {
     font-size: 100%;
     line-height: $line-height-ratio;
     min-height: 100%;
     overflow-y: scroll;
+    @include bp(palm) {
+        font-size: $palm-font-size;
+    }
+    @include bp(lap) {
+        font-size: $lap-font-size;
+    }
 }
 
 body {
-    @include rem("font-size", $baseSize);
-    color: $body-text-color;
+    @include rem("font-size", $scaleBase);
+    color: $color--body-text;
+    font-family: $typeface--body;
 }
 
-hgroup,
-ul,ol,dl,
-blockquote,p,address,
-table,
-fieldset,figure,
-pre {
+// Typographic reset
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+ margin: 0;
+ padding: 0;
+}
+
+em,
+i {
+    font-style: italic;
+    line-height: inherit;
+ }
+
+strong,
+b {
+    font-weight: bold;
+    line-height: inherit;
+ }
+
+// Vertical rhythm class
+.vR{
     margin: 0;
-    @include rem("margin-bottom",$baseSize * $line-height-ratio + px);
+    @include rem("margin-bottom",$base-sizing-unit * $line-height-ratio);
+}
+
+#{$content-namespace} div,
+#{$content-namespace} dl,
+#{$content-namespace} dt,
+#{$content-namespace} dd,
+#{$content-namespace} ul,
+#{$content-namespace} ol,
+#{$content-namespace} pre,
+#{$content-namespace} form,
+#{$content-namespace} img,
+#{$content-namespace} p,
+#{$content-namespace} blockquote,
+#{$content-namespace} th,
+#{$content-namespace} td {
+    @extend .vertical_rhythm;
+    font-family: $typeface--content;
 }

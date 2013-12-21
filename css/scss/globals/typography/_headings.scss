@@ -1,4 +1,4 @@
-    //*------------------------------------*\
+//*------------------------------------*\
 //     $HEADINGS
 //*------------------------------------*/
 // Contents:
@@ -23,6 +23,8 @@ $kilo:     $scaleK;
 
 $heading-line-height: 1.25 !default;
 
+$typeface--heading: $typeface--primary;
+
 //  Genereal heading styles
 //      [1]. Inherited from var/colors
 //      [2]. Inherited from config
@@ -34,8 +36,8 @@ h4,
 h5,
 h6 {
     margin: 0;
-    color: $heading-color; //[1]
-    font-family: $typeface--primary; //[2]
+    color: $color--heading; //[1]
+    font-family: $typeface--heading; //[2]
     line-height: $heading-line-height;
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility; 
@@ -45,47 +47,53 @@ h6 {
 // Class names can be used if hierarchy is different from size
 
 h1, .alpha {
-    @include rem("font-size",$heading1 + px);
+    @include rem("font-size",$heading1);
  }
 
 h2, .beta {
-    @include rem("font-size",$heading2 + px);
+    @include rem("font-size",$heading2);
  }
 
 h3, .gamma {
-    @include rem("font-size",$heading3 + px);
+    @include rem("font-size",$heading3);
  }
 
 h4, .delta {
-    @include rem("font-size",$heading4 + px);
+    @include rem("font-size",$heading4);
  }
 
 h5, .epsilon {
-    @include rem("font-size",$heading5 + px);
+    @include rem("font-size",$heading5);
  }
 
 h6, .zeta {
-    @include rem("font-size",$heading6 + px);
+    @include rem("font-size",$heading6);
  }
 
 .giga {
-    @include rem("font-size",$giga + px);
+    @include rem("font-size",$giga);
  }
 
 .mega {
-    @include rem("font-size",$mega + px);
+    @include rem("font-size",$mega);
  }
 
 .kilo {
-    @include rem("font-size",$kilo + px);
+    @include rem("font-size",$kilo);
+ }
+
+ #{$content-namespace} h1,
+ #{$content-namespace} h2,
+ #{$content-namespace} h3,
+ #{$content-namespace} h4,
+ #{$content-namespace} h5,
+ #{$content-namespace} h6 {
  }
 
 //  Heading Reset for groups  & layout purpose with a class
-//      [1]. Reset line-height for layouts
+//      [1]. Reset line-height & margin for layouts
 .hN { 
     line-height: 1; // [1] 
+    margin: 0; // [1]
  }
-
-hgroup .hN{ 
-    margin-bottom:0;
- }
+ 
