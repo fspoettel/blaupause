@@ -516,34 +516,9 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-h1, .alpha {
-  font-size: 60px;
-  font-size: 3.75rem;
-}
-
-h2, .beta {
-  font-size: 48px;
-  font-size: 3rem;
-}
-
-h3, .gamma {
-  font-size: 36px;
-  font-size: 2.25rem;
-}
-
-h4, .delta {
-  font-size: 24px;
-  font-size: 1.5rem;
-}
-
-h5, .epsilon {
-  font-size: 21px;
-  font-size: 1.3125rem;
-}
-
-h6, .zeta {
-  font-size: 18px;
-  font-size: 1.125rem;
+.ultra {
+  font-size: 96px;
+  font-size: 6rem;
 }
 
 .giga {
@@ -556,9 +531,40 @@ h6, .zeta {
   font-size: 5.25rem;
 }
 
-.kilo {
-  font-size: 96px;
-  font-size: 6rem;
+h1,
+.alpha {
+  font-size: 60px;
+  font-size: 3.75rem;
+}
+
+h2,
+.beta {
+  font-size: 48px;
+  font-size: 3rem;
+}
+
+h3,
+.gamma {
+  font-size: 36px;
+  font-size: 2.25rem;
+}
+
+h4,
+.delta {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+h5,
+.epsilon {
+  font-size: 21px;
+  font-size: 1.3125rem;
+}
+
+h6,
+.zeta {
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .content h1,
