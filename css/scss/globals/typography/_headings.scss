@@ -18,9 +18,9 @@ $heading5: $scale5;
 $heading6: $scale6;
 $giga:     $scaleG;
 $mega:     $scaleM;
-$kilo:     $scaleK;
+$ultra:     $scaleU;
 
-$heading--line-height: 1.25 !default;
+$line-height--heading: 1.25 !default;
 
 $typeface--heading: $typeface--primary;
 
@@ -39,34 +39,14 @@ h6 {
     font-family: $typeface--heading; //[2]
     line-height: 1;
     font-feature-settings: "kern", "liga";
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility; // [3]
  }
 
 // Font Size Declarations
 // Class names can be used if hierarchy is different from size
 
-h1, .alpha {
-    @include rem("font-size",$heading1);
- }
-
-h2, .beta {
-    @include rem("font-size",$heading2);
- }
-
-h3, .gamma {
-    @include rem("font-size",$heading3);
- }
-
-h4, .delta {
-    @include rem("font-size",$heading4);
- }
-
-h5, .epsilon {
-    @include rem("font-size",$heading5);
- }
-
-h6, .zeta {
-    @include rem("font-size",$heading6);
+.ultra {
+    @include rem("font-size",$ultra);
  }
 
 .giga {
@@ -77,8 +57,34 @@ h6, .zeta {
     @include rem("font-size",$mega);
  }
 
-.kilo {
-    @include rem("font-size",$kilo);
+h1,
+.alpha {
+    @include rem("font-size",$heading1);
+ }
+
+h2,
+.beta {
+    @include rem("font-size",$heading2);
+ }
+
+h3,
+.gamma {
+    @include rem("font-size",$heading3);
+ }
+
+h4,
+.delta {
+    @include rem("font-size",$heading4);
+ }
+
+h5,
+.epsilon {
+    @include rem("font-size",$heading5);
+ }
+
+h6,
+.zeta {
+    @include rem("font-size",$heading6);
  }
 
  #{$content-namespace} h1,
@@ -87,6 +93,6 @@ h6, .zeta {
  #{$content-namespace} h4,
  #{$content-namespace} h5,
  #{$content-namespace} h6 {
-    line-height: $heading--line-height;
+    line-height: $line-height--heading;
  }
  

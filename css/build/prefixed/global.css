@@ -572,6 +572,21 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
+.ultra {
+  font-size: 96px;
+  font-size: 6rem;
+}
+
+.giga {
+  font-size: 72px;
+  font-size: 4.5rem;
+}
+
+.mega {
+  font-size: 84px;
+  font-size: 5.25rem;
+}
+
 h1,
 .alpha {
   font-size: 60px;
@@ -606,21 +621,6 @@ h6,
 .zeta {
   font-size: 18px;
   font-size: 1.125rem;
-}
-
-.giga {
-  font-size: 72px;
-  font-size: 4.5rem;
-}
-
-.mega {
-  font-size: 84px;
-  font-size: 5.25rem;
-}
-
-.kilo {
-  font-size: 96px;
-  font-size: 6rem;
 }
 
 .content h1,

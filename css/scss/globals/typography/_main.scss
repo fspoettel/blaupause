@@ -7,16 +7,16 @@
 $typeface--body:     $typeface--primary;
 $typeface--content:  $typeface--secondary;
 
-$palm-font-size: 75%;
-$lap-font-size:  87.5%;
-$desk-font-size: 100%;
+$palm-font-size: 75%;   // 12px baseline 
+$lap-font-size:  87.5%; // 14px baseline
+$desk-font-size: 100%;  // 16px baseline
 
 // Core declaration
 
 html,
 textarea,
 input {
-    line-height: $line-height-ratio;
+    line-height: $line-height--ratio;
     font-size: $palm-font-size;
     @include bp(lap) {
         font-size: $lap-font-size;
@@ -55,7 +55,7 @@ td {
 
 .vR{
     margin: 0;
-    @include rem("margin-bottom",$base-size * $line-height-ratio);
+    @include rem("margin-bottom",$scale-base * $line-height--ratio);
 }
 
 // Content typography
