@@ -4,13 +4,51 @@
 // Styles for the project
 //---------------------------------
 
+// Base
+
 * { 
     box-sizing: border-box; 
 }
 
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
+    margin:0;
     background: $color__background;
 }
+
+[hidden],
+template {
+    display: none; // (from normalize.css)
+}
+
+// Display definitions (from normalize.css)
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+// Grid classes
 
 .grid {
     @extend %grid;

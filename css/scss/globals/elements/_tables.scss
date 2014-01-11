@@ -18,7 +18,10 @@ $table__head-color:       $color--body-text;
 table {
     width:100%;
     background: $table__background-color;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
 th,
 td {
     padding:$base-sizing-unit / 4 + em;

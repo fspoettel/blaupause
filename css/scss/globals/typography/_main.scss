@@ -15,8 +15,10 @@ $desk-font-size: 100%;  // 16px baseline
 
 html,
 textarea,
-input {
+input,
+select {
     line-height: $line-height-ratio;
+    font-family: $typeface__body;
     font-size: $palm-font-size;
     @include bp(lap) {
         font-size: $lap-font-size;
@@ -29,7 +31,6 @@ input {
 body {
     @include rem("font-size", $scale-base);
     color: $color__body-text;
-    font-family: $typeface__body;
 }
 
 // Typographic reset
@@ -90,3 +91,20 @@ b {
     font-weight: bold;
     line-height: inherit;
  }
+
+// Lines
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+// Adresses & definitions (from normalize.css)
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+dfn {
+    font-style: italic;
+}

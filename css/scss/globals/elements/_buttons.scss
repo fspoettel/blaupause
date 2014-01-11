@@ -17,13 +17,15 @@ $btn__tertiary-color:  tint($color__secondary,20%);
 $btn__muted-color:     $color__disabled;
 $btn__positive-color:  $color__success;
 $btn__negative-color:  $color__error;
+$btn__text-color:      #fff !default;
 
 // Structure
 
 .btn {
     display: inline-block;
     background: $btn__primary-color;
-    padding: .25em 1em;
+    color: $btn__text-color;
+    padding: $base-sizing-unit+em $base-sizing-unit*$ratio+em;
     zoom: 1;
     line-height: normal;
     white-space: nowrap;

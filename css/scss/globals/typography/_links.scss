@@ -5,6 +5,7 @@
 //---------------------------------
 
 a {
+    background: transparent; // from normalize.css
     color: $color__link;
     line-height: inherit;
     text-decoration: $link__decoration;
@@ -14,5 +15,9 @@ a {
  a {
     &:hover {
         color: $color__link-hover;
+        outline: none;
+    }
+    &:focus {
+        outline: thin dotted; // from normalize.css
     }
  }

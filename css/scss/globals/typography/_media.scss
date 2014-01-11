@@ -46,12 +46,30 @@ img[height]{
 
 // Figures 
 
-figure > img {
-    display:block;
+figure {
+    margin:0;
+    > img {
+        display:block;
+    }
 }
 
 #{$content-namespace} figure {
     > img {
         margin-bottom: 0;
     }
+}
+
+// SVG
+// Correct overflow displayed oddly in IE 9. (from normalize.css)
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+// Audio & Video
+// Remove excess height in iOS 5 devices. (from normalize.css)
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
 }
