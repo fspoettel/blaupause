@@ -122,7 +122,6 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -285,8 +284,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -348,8 +345,6 @@ table {
   margin-left: -24px;
   margin-left: -1.5rem;
   display: flexbox;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   letter-spacing: -0.31em; }
 
@@ -363,8 +358,6 @@ table {
   padding-left: 1.5rem;
   vertical-align: top;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: normal;
   word-spacing: normal; }
@@ -465,8 +458,6 @@ h6 {
   color: #222222;
   font-family: sans-serif;
   line-height: 1;
-  -webkit-font-feature-settings: "kern", "liga";
-  -moz-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
   text-rendering: optimizeLegibility; }
 
@@ -765,8 +756,6 @@ thead {
   font: 12px/1.5 sans-serif; }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
