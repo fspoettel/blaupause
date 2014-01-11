@@ -7,7 +7,7 @@
 pre {
     overflow:auto;
     white-space: pre-wrap;
-    mark {
+    mark { // (from normalize.css)
         background:none;
         border-bottom:1px solid;
         color:inherit;

@@ -34,7 +34,7 @@ $btn__text-color:      #fff !default;
     cursor: pointer;
     -webkit-user-drag: none;
     user-select: none;
-    // Firefox: Get rid of the inner focus border
+    // Firefox: Get rid of the inner focus border (from normalize.css)
     &::-moz-focus-inner {
         padding: 0;
         border: 0;

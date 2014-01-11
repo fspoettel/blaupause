@@ -22,7 +22,7 @@ textarea {
 
 fieldset {
     border: $brand__border-width solid $brand__border-color;
-    margin: 0 2px; // from normalize.css
+    margin: 0 2px; // (from normalize.css)
     padding: $base-sizing-unit/4+em $base-sizing-unit/2+em;
 }
 
@@ -40,7 +40,7 @@ textarea {
     width: 100%;
 }
 
-textarea {
+textarea { // (from normalize.css)
     overflow: auto;
     vertical-align: top;
 }
@@ -59,11 +59,11 @@ input[type="submit"] {
 
 button[disabled],
 html input[disabled] {
-    cursor: default;
+    cursor: default; // (from normalize.css)
 }
 
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+input::-moz-focus-inner { // (from normalize.css)
     border: 0;
     padding: 0;
 }
