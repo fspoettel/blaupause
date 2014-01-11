@@ -8,21 +8,19 @@
 $baseline-px: $browser-default;
 
 @mixin rem($property, $px-values) {
-  // Convert the baseline into rems
-  $baseline-rem: $baseline-px / 1rem * 1;
-  // Print the first line in pixel values
-  #{$property}: $px-values + px;
-  // If there is only one (numeric) value, return the property/value line for it.
-  @if type-of($px-values) == "number" {
-    #{$property}: $px-values / $baseline-rem; }
-  @else {
-    // Create an empty list that we can dump values into
-    $rem-values: ();
-    @each $value in $px-values {
-      // If the value is zero or not a number, return it
-      @if $value == 0 or type-of( $value ) != "number" {
-        $rem-values: append($rem-values, $value); }
-      @else {
-        $rem-values: append($rem-values, $value / $baseline-rem); } }
-    // Return the property and its list of converted values
-    #{$property}: $rem-values; } }
+    $baseline-rem: $baseline-px / 1rem * 1;
+    #{$property}: $px-values + px;
+    @if type-of($px-values) == "number" {
+        #{$property}: $px-values / $baseline-rem;
+    } @else {
+        $rem-values: ();
+        @each $value in $px-values {
+            @if $value == 0 or type-of( $value ) != "number" {
+                $rem-values: append($rem-values, $value);
+            } @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); 
+            } 
+        }
+    #{$property}: $rem-values;
+    }
+}

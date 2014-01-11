@@ -220,7 +220,7 @@ $class-type:            unquote(".");
 // * 3. Apply a negative `margin-left` to negate the columns’ gutters.
 // * 4. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
 // */
-#{$class-type}grid{
+#{$class-type}grid {
     list-style:none;                      //* [1] */
     margin:0;                             //* [2] */
     padding:0;                            //* [2] */

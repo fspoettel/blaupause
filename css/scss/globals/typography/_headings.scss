@@ -92,7 +92,8 @@ h6,
  #{$content-namespace} h3,
  #{$content-namespace} h4,
  #{$content-namespace} h5,
- #{$content-namespace} h6 {
+ #{$content-namespace} h6,
+ .vR--heading {
     line-height: $line-height__heading;
  }
  
