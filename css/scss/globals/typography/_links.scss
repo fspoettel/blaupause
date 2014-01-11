@@ -5,14 +5,14 @@
 //---------------------------------
 
 a {
-    color: $color--link;
+    color: $color__link;
     line-height: inherit;
-    text-decoration: $link--decoration;
+    text-decoration: $link__decoration;
     img { border:none; }
  }
 
  a {
     &:hover {
-        color: $color--link-hover;
+        color: $color__link-hover;
     }
  }

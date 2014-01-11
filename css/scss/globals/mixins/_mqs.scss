@@ -13,15 +13,15 @@
 
 @mixin bp($point) {
     @if $point == palm {
-        @media #{$bp--palm} { @content; }
+        @media #{$bp__palm} { @content; }
     }
     @else if $point == lap {
-        @media #{$bp--lap} { @content; }
+        @media #{$bp__lap} { @content; }
     }
     @else if $point == lap-up {
-        @media #{$bp--lap-up} { @content; }
+        @media #{$bp__lap-up} { @content; }
     }
     @else if $point == desk {
-        @media #{$bp--desk} { @content; }
+        @media #{$bp__desk} { @content; }
     }
 }

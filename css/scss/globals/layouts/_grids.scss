@@ -129,10 +129,10 @@ $use-markup-fix:        false!default; // [1]
 // * that the breakpoint fires at.
 // */
 $breakpoints: (
-    'palm' $bp--palm,
-    'lap'  $bp--lap,
-    'lap-up'  $bp--lap-up,
-    'desk' $bp--desk
+    'palm' $bp__palm,
+    'lap'  $bp__lap,
+    'lap-up'  $bp__lap-up,
+    'desk' $bp__desk
     )!default; // [3]
 
 

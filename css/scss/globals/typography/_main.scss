@@ -4,8 +4,8 @@
 // Basic type-settings.
 //---------------------------------
 
-$typeface--body:     $typeface--primary;
-$typeface--content:  $typeface--secondary;
+$typeface--body:     $typeface__primary;
+$typeface--content:  $typeface__secondary;
 
 $palm-font-size: 75%;   // 12px baseline 
 $lap-font-size:  87.5%; // 14px baseline
@@ -16,7 +16,7 @@ $desk-font-size: 100%;  // 16px baseline
 html,
 textarea,
 input {
-    line-height: $line-height--ratio;
+    line-height: $line-height-ratio;
     font-size: $palm-font-size;
     @include bp(lap) {
         font-size: $lap-font-size;
@@ -28,8 +28,8 @@ input {
 
 body {
     @include rem("font-size", $scale-base);
-    color: $color--body-text;
-    font-family: $typeface--body;
+    color: $color__body-text;
+    font-family: $typeface__body;
 }
 
 // Typographic reset
@@ -55,7 +55,7 @@ td {
 
 .vR{
     margin: 0;
-    @include rem("margin-bottom",$scale-base * $line-height--ratio);
+    @include rem("margin-bottom",$scale-base * $line-height-ratio);
 }
 
 // Content typography
@@ -74,7 +74,7 @@ td {
 #{$content-namespace} blockquote,
 #{$content-namespace} table {
     @extend .vR;
-    font-family: $typeface--content;
+    font-family: $typeface__content;
 }
 
 // Modifiers

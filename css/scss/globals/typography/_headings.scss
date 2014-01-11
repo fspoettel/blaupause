@@ -20,9 +20,9 @@ $giga:     $scaleG;
 $mega:     $scaleM;
 $ultra:     $scaleU;
 
-$line-height--heading: 1.25 !default;
+$line-height__heading: 1.25 !default;
 
-$typeface--heading: $typeface--primary;
+$typeface--heading: $typeface__primary;
 
 //  Genereal heading styles
 //      [1]. Inherited from var/colors
@@ -35,8 +35,8 @@ h4,
 h5,
 h6 {
     margin: 0;
-    color: $color--heading; //[1]
-    font-family: $typeface--heading; //[2]
+    color: $color__heading; //[1]
+    font-family: $typeface__heading; //[2]
     line-height: 1;
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility; // [3]
@@ -93,6 +93,6 @@ h6,
  #{$content-namespace} h4,
  #{$content-namespace} h5,
  #{$content-namespace} h6 {
-    line-height: $line-height--heading;
+    line-height: $line-height__heading;
  }
  

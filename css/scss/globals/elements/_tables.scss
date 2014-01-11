@@ -1,17 +1,18 @@
 //*------------------------------------*\
 //     $TABLES
 //*------------------------------------*/
-// Tables
+// This file contains styles for HTML <table>-elements.
+// 
 //---------------------------------
 
-$table--background-color: #fff;
-$table--odd-color:        #eee;
-$table--head-background:  #fff;
-$table--head-color:       $color--body-text;
+$table__background-color: #fff;
+$table__odd-color:        #eee;
+$table__head-background:  #fff;
+$table__head-color:       $color--body-text;
 
 table{
     width:100%;
-    background: $table--background-color;
+    background: $table__background-color;
 }
 th,
 td{
@@ -23,26 +24,26 @@ td{
 }
 
 thead {
-    background: $table--head-background;
-    color: $table--head-color;
+    background: $table__head-background;
+    color: $table__head-color;
 }
 
 /**
  * Cell alignments
  */
-[colspan]{
+[colspan] {
     text-align:center;
 }
-[colspan="1"]{
+[colspan="1"] {
     text-align:left;
 }
-[rowspan]{
+[rowspan] {
     vertical-align:middle;
 }
-[rowspan="1"]{
+[rowspan="1"] {
     vertical-align:top;
 }
-.numerical{
+.numerical {
     text-align:right;
 }
 
@@ -78,23 +79,24 @@ thead {
 /**
  * Bordered tables
  */
-.table--bordered{
+
+.table--bordered {
 
     th,
     td{
-        border:$brand--border-width solid $brand--border-color;
+        border:$brand__border-width solid $brand--border-color;
 
-        &:empty{
+        &:empty {
             border:none;
         }
     }
 
-    thead tr:last-child th{
-        border-bottom-width:$brand--border-width;
+    thead tr:last-child th {
+        border-bottom-width:$brand__border-width;
     }
 
-    tbody tr th:last-of-type{
-        border-right-width:$brand--border-width;
+    tbody tr th:last-of-type {
+        border-right-width:$brand__border-width;
     }
 }
 
@@ -102,10 +104,11 @@ thead {
 /**
  * Striped tables
  */
-.table--striped{
+
+.table--striped {
 
     tbody tr:nth-of-type(odd){
-        background-color: $table--odd-color; /* Override this color in your theme stylesheet */
+        background-color: $table__odd-color; /* Override this color in your theme stylesheet */
     }
 }
 
@@ -113,6 +116,7 @@ thead {
 /**
  * Data table
  */
-.table--data{
+
+.table--data {
     font:12px/1.5 sans-serif;
 }

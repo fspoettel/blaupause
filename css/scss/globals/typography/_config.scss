@@ -11,7 +11,7 @@
 // Base
 
 $scale-base:        $base-size; // Default: 16
-$line-height--ratio: $ratio !default;
+$line-height-ratio: $ratio !default;
 
 // Namespace for content-typography ( introduces vertical rhtythm for type, gives content heading hook )
 
@@ -37,9 +37,9 @@ $scale7:  $scale-base !default; // 16 | Paragraphs, base size
 
 // Font-stacks
 
-$typeface--primary: sans-serif;
-$typeface--secondary: serif;
+$typeface__primary: sans-serif;
+$typeface__secondary: serif;
 
 // Links
 
-$link--decoration: none;
+$link__decoration: none;
