@@ -104,7 +104,6 @@ td {
 .content dl,
 .content dt,
 .content dd,
-.content pre,
 .content form,
 .content figure,
 .content img,
@@ -121,7 +120,6 @@ td {
 .content dl,
 .content dt,
 .content dd,
-.content pre,
 .content form,
 .content figure,
 .content img,
@@ -364,8 +362,8 @@ input[disabled][type="submit"],
   background: grey; }
 
 form {
-  margin-bottom: 1.5px;
-  margin-bottom: 0.09375rem; }
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
 
 button,
 input,

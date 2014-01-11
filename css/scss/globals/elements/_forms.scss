@@ -7,7 +7,7 @@
 // Base
 
 form {
-    @include rem( 'margin-bottom', $base-sizing-unit*$ratio );
+    @include rem( 'margin-bottom', $base-size * $ratio );
 }
 
 button,
