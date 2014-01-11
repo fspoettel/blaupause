@@ -2,26 +2,10 @@
 # Rewrite-engine on
 # ----------------------------------------------------------------------
 
-
-# This will prevent all .html files from being accessed.
-# You may want to remove this line if you want to serve
-# static files outside of Statamic
-RewriteRule ^(.*)?\.html$ - [F,L]
-
-# Remove trailing slashes from your URL
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=301,L]
-
-# Remove the index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
-
 <IfModule mod_rewrite.c>
 
     #Options +FollowSymlinks
     RewriteEngine On
-
 
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs
@@ -48,7 +32,6 @@ RewriteRule ^(.*)?\.yml$ - [F,L]
 RewriteRule ^(.*)?\.yaml$ - [F,L]
 RewriteRule ^(.*/)?\.git+ - [F,L]
 
-
 # This will prevent all .html files from being accessed.
 # You may want to remove this line if you want to serve
 # static files outside of Statamic
@@ -71,7 +54,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 <IfModule mod_headers.c>
    
-    <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css)$">
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 
@@ -114,21 +97,25 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 <IfModule mod_mime.c>
 
-    # Audio
+  # Audio
     AddType audio/mp4                                   m4a f4a f4b
-    AddType audio/ogg                                   oga ogg
+    AddType audio/ogg                                   oga ogg opus
 
-    # JavaScript
-    AddType application/javascript                      js jsonp
-    AddType application/json                            json
+  # Data interchange
+    AddType application/json                            json map
 
-    # Video
-    AddType video/mp4                                   mp4 m4v f4v f4p
+  # JavaScript
+    # Normalize to standard type (it's sniffed in IE anyways):
+    # http://tools.ietf.org/html/rfc4329#section-7.2
+    AddType application/javascript                      js
+
+  # Video
+    AddType video/mp4                                   f4v f4p m4v mp4
     AddType video/ogg                                   ogv
     AddType video/webm                                  webm
     AddType video/x-flv                                 flv
 
-    # Web fonts
+  # Web fonts
     AddType application/font-woff                       woff
     AddType application/vnd.ms-fontobject               eot
 
@@ -139,22 +126,23 @@ RewriteRule ^(.*)$ index.php [QSA,L]
     AddType font/opentype                               otf
 
     # Make SVGZ fonts work on iPad:
-    AddType     image/svg+xml                           svg svgz
+    # https://twitter.com/FontSquirrel/status/14855840545
+    AddType     image/svg+xml                           svgz
     AddEncoding gzip                                    svgz
 
   # Other
     AddType application/octet-stream                    safariextz
     AddType application/x-chrome-extension              crx
     AddType application/x-opera-extension               oex
-    AddType application/x-shockwave-flash               swf
     AddType application/x-web-app-manifest+json         webapp
     AddType application/x-xpinstall                     xpi
     AddType application/xml                             atom rdf rss xml
     AddType image/webp                                  webp
-    AddType image/x-icon                                ico
+    AddType image/x-icon                                cur
     AddType text/cache-manifest                         appcache manifest
     AddType text/vtt                                    vtt
     AddType text/x-component                            htc
+    AddType text/x-vcard                                vcf
 
 </IfModule>
 
@@ -174,80 +162,86 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 # Gzip compression
 # ----------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# | Compression                                                                |
+# ------------------------------------------------------------------------------
+
 <IfModule mod_deflate.c>
 
-    AddOutputFilterByType DEFLATE application/atom+xml
-    AddOutputFilterByType DEFLATE application/json
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/x-component
-    AddOutputFilterByType DEFLATE text/xml
+    # Force compression for mangled headers.
+    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
 
-    # The following MIME types are in the process of registration
-    AddOutputFilterByType DEFLATE application/xslt+xml
-    AddOutputFilterByType DEFLATE image/svg+xml
-
-    # The following MIME types are NOT registered
-    AddOutputFilterByType DEFLATE application/mathml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-
-    # JavaScript has various MIME types
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE text/ecmascript
-    AddOutputFilterByType DEFLATE text/javascript
-
-    # .ico files and other compressible images
-    AddOutputFilterByType DEFLATE image/vnd.microsoft.icon
-    AddOutputFilterByType DEFLATE image/x-icon
-    AddOutputFilterByType DEFLATE image/bmp
-    AddOutputFilterByType DEFLATE image/tiff
-    AddOutputFilterByType DEFLATE application/pdf
-
-    # compressible fonts (.woff is already compressed)
-    AddOutputFilterByType DEFLATE font/opentype
-    AddOutputFilterByType DEFLATE application/x-font-ttf
-    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    # Compress all output labeled with one of the following MIME-types
+    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+    #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+    #  as `AddOutputFilterByType` is still in the core directives).
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE application/atom+xml \
+                                      application/javascript \
+                                      application/json \
+                                      application/rss+xml \
+                                      application/vnd.ms-fontobject \
+                                      application/x-font-ttf \
+                                      application/x-web-app-manifest+json \
+                                      application/xhtml+xml \
+                                      application/xml \
+                                      font/opentype \
+                                      image/svg+xml \
+                                      image/x-icon \
+                                      text/css \
+                                      text/html \
+                                      text/plain \
+                                      text/x-component \
+                                      text/xml
+    </IfModule>
 
 </IfModule>
 
-# -------------------------------------------------------------------------------------------------
-# Browser Caching: http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching
-#
-# Use with Statamic Theme Cache Bust = "true", so that new versions of files get delivered.
-# --------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# | Expires headers (for better cache control)                                 |
+# ------------------------------------------------------------------------------
+
+# The following expires headers are set pretty far in the future. If you don't
+# control versioning with filename-based cache busting, consider lowering the
+# cache time for resources like CSS and JS to something like 1 week.
+# USE WITH STATAMIC theme_cache_bust = true
 
 <IfModule mod_expires.c>
 
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
 
-    # CSS
+  # CSS
     ExpiresByType text/css                              "access plus 1 year"
 
-    # Data interchange
+  # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
 
-    # Favicon (cannot be renamed!)
+  # Favicon (cannot be renamed!) and cursor images
     ExpiresByType image/x-icon                          "access plus 1 week"
 
-    # HTML components (HTCs)
+  # HTML components (HTCs)
     ExpiresByType text/x-component                      "access plus 1 month"
+
+  # HTML
     ExpiresByType text/html                             "access plus 0 seconds"
 
   # JavaScript
     ExpiresByType application/javascript                "access plus 1 year"
 
-    # Manifest files
+  # Manifest files
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
-    # Media
+  # Media
     ExpiresByType audio/ogg                             "access plus 1 month"
     ExpiresByType image/gif                             "access plus 1 month"
     ExpiresByType image/jpeg                            "access plus 1 month"
@@ -256,11 +250,11 @@ RewriteRule ^(.*)$ index.php [QSA,L]
     ExpiresByType video/ogg                             "access plus 1 month"
     ExpiresByType video/webm                            "access plus 1 month"
 
-    # Web feeds
+  # Web feeds
     ExpiresByType application/atom+xml                  "access plus 1 hour"
     ExpiresByType application/rss+xml                   "access plus 1 hour"
 
-    # Web fonts
+  # Web fonts
     ExpiresByType application/font-woff                 "access plus 1 month"
     ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
     ExpiresByType application/x-font-ttf                "access plus 1 month"
@@ -285,7 +279,6 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 # -------------------------------------------------------------------------
 # Increase Upload Limit on supported hosters
 # -------------------------------------------------------------------------
-
 
 <IfModule mod_php5.c>
 
