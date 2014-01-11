@@ -1,0 +1,17 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "~3.3.0",
+    "gulp-sass": "~0.3.0",
+    "gulp-autoprefixer": "0.0.3",
+    "gulp-minify-css": "~0.1.0",
+    "gulp-concat": "~2.1.7",
+    "gulp-uglify": "~0.1.0",
+    "gulp-imagemin": "~0.1.4",
+    "tiny-lr": "0.0.5",
+    "gulp-livereload": "~0.1.1",
+    "gulp-rename": "~0.2.1",
+    "gulp-ruby-sass": "~0.1.1"
+  }
+}
