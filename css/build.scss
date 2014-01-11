@@ -22,8 +22,9 @@
 @import "scss/globals/var/mediaqueries";
 @import "scss/globals/var/brand";
 
+// Where are most of the reset-styles? Normalize.css is ingrained across the project as this makes the scope of the normalizations more visual.
 
-// No reset? Normalize.css is ingrained across the project as this makes the scope of the normalizations more visual.
+@import "scss/globals/reset";
 
 // Get the layout files -> folder: scss/layout
 // The grid is based on my fork of csswizardry-grids

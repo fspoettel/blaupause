@@ -65,11 +65,3 @@ figure {
 svg:not(:root) {
     overflow: hidden;
 }
-
-// Audio & Video
-// Remove excess height in iOS 5 devices. (from normalize.css)
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}

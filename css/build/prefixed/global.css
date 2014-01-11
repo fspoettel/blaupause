@@ -1,3 +1,30 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+[hidden],
+template {
+  display: none; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
 .grid {
   list-style: none;
   margin: 0;
@@ -271,10 +298,6 @@ figure {
 svg:not(:root) {
   overflow: hidden; }
 
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
 .btn, button,
 html input[type="button"],
 input[type="reset"],
@@ -454,29 +477,6 @@ html {
 body {
   margin: 0;
   background: #fefefe; }
-
-[hidden],
-template {
-  display: none; }
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block; }
-
-audio,
-canvas,
-video {
-  display: inline-block; }
 
 .content {
   max-width: 640px;
