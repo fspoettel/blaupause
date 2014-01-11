@@ -11,12 +11,12 @@
 $table__background-color: #fff;
 $table__odd-color:        #eee;
 $table__head-background:  #fff;
-$table__head-color:       $color--body-text;
+$table__head-color:       $color__body-text;
 
 // Core table styles
 
 table {
-    width:100%;
+    width: 100%;
     background: $table__background-color;
     border-collapse: collapse;
     border-spacing: 0;
@@ -24,11 +24,11 @@ table {
 
 th,
 td {
-    padding:$base-sizing-unit / 4 + em;
+    padding: ($base-sizing-unit/4+em);
     @include bp(lap-up) {
-        padding:$base-sizing-unit / 2 +em;
+        padding: ($base-sizing-unit/2+em);
     }
-    text-align:left;
+    text-align: left;
 }
 
 thead {
@@ -43,23 +43,22 @@ thead {
     td{
         border:$brand__border-width solid $brand--border-color;
         &:empty {
-            border:none;
+            border: none;
         }
     }
     thead tr:last-child th {
-        border-bottom-width:$brand__border-width;
+        border-bottom-width: $brand__border-width;
     }
     tbody tr th:last-of-type {
-        border-right-width:$brand__border-width;
+        border-right-width: $brand__border-width;
     }
 }
 
 // Striped Tables
 
 .table--striped {
-
     tbody tr:nth-of-type(odd){
-        background-color: $table__odd-color; /* Override this color in your theme stylesheet */
+        background-color: $table__odd-color;
     }
 }
 

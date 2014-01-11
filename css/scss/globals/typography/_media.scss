@@ -17,13 +17,15 @@ img {
 
 // Non fluid-images when height & width is present
 img[width],
-img[height]{
+img[height] {
     max-width:none;
 }
 
 // Rounded images 
 
-.img--round { border-radius:$brand__rounding; }
+.img--round { 
+    border-radius: $brand__rounding;
+}
 
 // Image placement
 

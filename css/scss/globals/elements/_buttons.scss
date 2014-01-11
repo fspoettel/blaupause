@@ -8,12 +8,13 @@
 // - btn--full (buttons that fill parent)
 // - btn--positive, btn--negative, btn--disabled (callback-buttons)
 // - btn--secondary, btn--tertiary, btn--round (Visual modifiers)
+//
 // @usage <a class="btn  btn--full"></a>
 //---------------------------------
 
 $btn__primary-color:   $color__primary;
 $btn__secondary-color: $color__secondary;
-$btn__tertiary-color:  tint($color__secondary,20%);
+$btn__tertiary-color:  tint( $color__secondary, 20% );
 $btn__muted-color:     $color__disabled;
 $btn__positive-color:  $color__success;
 $btn__negative-color:  $color__error;
@@ -23,14 +24,14 @@ $btn__text-color:      #fff !default;
 
 .btn {
     display: inline-block;
+    padding: ($base-sizing-unit+em) ($base-sizing-unit*$ratio+em);
+    line-height: normal;
     background: $btn__primary-color;
     color: $btn__text-color;
-    padding: $base-sizing-unit+em $base-sizing-unit*$ratio+em;
-    zoom: 1;
-    line-height: normal;
+    text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    text-align: center;
+    zoom: 1;
     cursor: pointer;
     -webkit-user-drag: none;
     user-select: none;
@@ -61,18 +62,20 @@ $btn__text-color:      #fff !default;
 
 .btn--full { 
     display: block;
- }
+}
 
  // Visual modifiers
 
-.btn--secondary { 
-    background: $btn__secondary-color;
- }
-.btn--tertiary { 
-    background: $btn__tertiary-color;
- }
 .btn--round {
     border-radius: $brand__rounding;
+}
+
+.btn--secondary { 
+    background: $btn__secondary-color;
+}
+
+.btn--tertiary { 
+    background: $btn__tertiary-color;
 }
 
 // Button-states / Callbacks
@@ -80,9 +83,11 @@ $btn__text-color:      #fff !default;
 .btn--positive {
     background: $btn__positive-color;
 }
+
 .btn--negative {
     background: $btn__negative-color;
 }
+
 .btn[disabled],
 .btn--disabled {
     background: $btn__muted-color;

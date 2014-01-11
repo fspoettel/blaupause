@@ -5,22 +5,22 @@
 //---------------------------------
 
 // Basic
-$color__background:        #fefefe !default;
+$color__background:   #fefefe !default;
 
 // Typography
 $color__body-text:    #333 !default;
 $color__heading:      #222 !default;
 
 //Links
-$color__link:        #c10900 !default;
-$color__link-hover:  shade($color--link,10%)!default;
+$color__link:         #c10900 !default;
+$color__link-hover:   shade($color--link,10%)!default;
 
 // Branding
-$color__primary:    #c10900 !default;
-$color__secondary:   yellow !default;
-$color__disabled:      grey !default;
+$color__primary:      #c10900 !default;
+$color__secondary:    yellow !default;
+$color__disabled:     grey !default;
 
 // States
 
-$color__success:       green !default;
-$color__error:           red !default;
+$color__success:      green !default;
+$color__error:        red !default;

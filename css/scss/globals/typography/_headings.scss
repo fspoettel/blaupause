@@ -18,7 +18,7 @@ $heading5: $scale5;
 $heading6: $scale6;
 $giga:     $scaleG;
 $mega:     $scaleM;
-$ultra:     $scaleU;
+$ultra:    $scaleU;
 
 $line-height__heading: 1.25 !default;
 
@@ -36,64 +36,63 @@ h5,
 h6 {
     margin: 0;
     color: $color__heading; //[1]
-    font-family: $typeface__heading; //[2]
     line-height: 1;
+    font-family: $typeface__heading; //[2]
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility; // [3]
- }
+}
 
 // Font Size Declarations
 // Class names can be used if hierarchy is different from size
 
 .ultra {
-    @include rem("font-size",$ultra);
- }
+    @include rem( "font-size", $ultra );
+}
 
 .giga {
-    @include rem("font-size",$giga);
- }
+    @include rem( "font-size", $giga );
+}
 
 .mega {
-    @include rem("font-size",$mega);
- }
+    @include rem( "font-size", $mega );
+}
 
 h1,
 .alpha {
-    @include rem("font-size",$heading1);
- }
+    @include rem( "font-size", $heading1 );
+}
 
 h2,
 .beta {
-    @include rem("font-size",$heading2);
- }
+    @include rem( "font-size", $heading2 );
+}
 
 h3,
 .gamma {
-    @include rem("font-size",$heading3);
- }
+    @include rem( "font-size", $heading3 );
+}
 
 h4,
 .delta {
-    @include rem("font-size",$heading4);
- }
+    @include rem("font-size", $heading4);
+}
 
 h5,
 .epsilon {
-    @include rem("font-size",$heading5);
- }
+    @include rem( "font-size", $heading5 );
+}
 
 h6,
 .zeta {
-    @include rem("font-size",$heading6);
- }
+    @include rem( "font-size", $heading6 );
+}
 
- #{$content-namespace} h1,
- #{$content-namespace} h2,
- #{$content-namespace} h3,
- #{$content-namespace} h4,
- #{$content-namespace} h5,
- #{$content-namespace} h6,
- .vR--heading {
+#{$content-namespace} h1,
+#{$content-namespace} h2,
+#{$content-namespace} h3,
+#{$content-namespace} h4,
+#{$content-namespace} h5,
+#{$content-namespace} h6,
+.vR--heading {
     line-height: $line-height__heading;
- }
- 
+}

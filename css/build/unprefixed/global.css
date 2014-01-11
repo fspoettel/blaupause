@@ -130,13 +130,13 @@ td {
 
 em,
 i {
-  font-style: italic;
-  line-height: inherit; }
+  line-height: inherit;
+  font-style: italic; }
 
 strong,
 b {
-  font-weight: bold;
-  line-height: inherit; }
+  line-height: inherit;
+  font-weight: bold; }
 
 hr {
   box-sizing: content-box;
@@ -156,8 +156,8 @@ h5,
 h6 {
   margin: 0;
   color: #222222;
-  font-family: sans-serif;
   line-height: 1;
+  font-family: sans-serif;
   font-feature-settings: "kern", "liga";
   text-rendering: optimizeLegibility; }
 
@@ -230,8 +230,8 @@ pre {
   white-space: pre-wrap; }
   pre mark {
     background: none;
-    border-bottom: 1px solid;
-    color: inherit; }
+    color: inherit;
+    border-bottom: 1px solid; }
 
 code,
 kbd,
@@ -242,9 +242,9 @@ samp {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
+  line-height: 0;
+  font-size: 75%;
   vertical-align: baseline; }
 
 sup {
@@ -295,14 +295,14 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   display: inline-block;
+  padding: 1em 1.5em;
+  line-height: normal;
   background: #c10900;
   color: white;
-  padding: 1em 1.5em;
-  zoom: 1;
-  line-height: normal;
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  text-align: center;
+  zoom: 1;
   cursor: pointer;
   -webkit-user-drag: none;
   user-select: none; }
@@ -330,14 +330,14 @@ input[type="submit"]:active {
 .btn--full {
   display: block; }
 
+.btn--round {
+  border-radius: 0.25em; }
+
 .btn--secondary {
   background: yellow; }
 
 .btn--tertiary {
   background: #ffff33; }
-
-.btn--round {
-  border-radius: 0.25em; }
 
 .btn--positive {
   background: green; }
@@ -364,13 +364,13 @@ textarea {
   text-transform: none; }
 
 fieldset {
-  border: 1px solid #cccccc;
   margin: 0 2px;
-  padding: 0.25em 0.5em; }
+  padding: 0.25em 0.5em;
+  border: 1px solid #cccccc; }
 
 legend {
-  border: 0;
-  padding: 0; }
+  padding: 0;
+  border: 0; }
 
 input[type="text"],
 input[type="email"],
@@ -396,8 +396,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
+  padding: 0;
+  border: 0; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -443,8 +443,7 @@ thead {
   border-right-width: 1px; }
 
 .table--striped tbody tr:nth-of-type(odd) {
-  background-color: #eeeeee;
-  /* Override this color in your theme stylesheet */ }
+  background-color: #eeeeee; }
 
 .table--data {
   font: 12px/1.5 sans-serif; }

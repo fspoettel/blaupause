@@ -5,12 +5,14 @@
 //---------------------------------
 
 a {
-    background: transparent; // from normalize.css
-    color: $color__link;
     line-height: inherit;
+    background: transparent; //(from normalize.css)
+    color: $color__link;
     text-decoration: $link__decoration;
-    img { border:none; }
- }
+    img {
+        border:none;
+    }
+}
 
  a {
     &:hover {
@@ -20,4 +22,4 @@ a {
     &:focus {
         outline: thin dotted; // from normalize.css
     }
- }
+}

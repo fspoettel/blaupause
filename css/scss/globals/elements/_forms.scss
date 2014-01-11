@@ -7,7 +7,7 @@
 // Base
 
 form {
-    @include rem('margin-bottom',$base-sizing-unit*$ratio);
+    @include rem( 'margin-bottom', $base-sizing-unit*$ratio );
 }
 
 button,
@@ -21,14 +21,14 @@ textarea {
 // Fieldsets
 
 fieldset {
-    border: $brand__border-width solid $brand__border-color;
     margin: 0 2px; // (from normalize.css)
-    padding: $base-sizing-unit/4+em $base-sizing-unit/2+em;
+    padding: ($base-sizing-unit/4+em) ($base-sizing-unit/2+em);
+    border: $brand__border-width solid $brand__border-color;
 }
 
 legend {
-    border: 0;
     padding: 0;
+    border: 0;
 }
 
 // Text inputs
@@ -64,8 +64,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner { // (from normalize.css)
-    border: 0;
     padding: 0;
+    border: 0;
 }
 
 // Checkboxes & Radios (from normalize.css)

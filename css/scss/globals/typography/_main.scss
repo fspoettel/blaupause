@@ -29,7 +29,7 @@ select {
 }
 
 body {
-    @include rem("font-size", $scale-base);
+    @include rem( "font-size", $scale-base );
     color: $color__body-text;
 }
 
@@ -48,15 +48,15 @@ p,
 blockquote,
 th,
 td {
- margin: 0;
- padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 // Vertical rhythm class
 
 .vR{
     margin: 0;
-    @include rem("margin-bottom",$scale-base * $line-height-ratio);
+    @include rem( "margin-bottom", ($scale-base * $line-height-ratio) );
 }
 
 // Content typography
@@ -82,14 +82,14 @@ td {
 
 em,
 i {
-    font-style: italic;
     line-height: inherit;
+    font-style: italic;
  }
 
 strong,
 b {
-    font-weight: bold;
     line-height: inherit;
+    font-weight: bold;
  }
 
 // Lines (from normalize.css)
