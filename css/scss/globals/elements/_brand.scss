@@ -7,9 +7,9 @@
 //         }
 //---------------------------------
 
-%brand {}
+%brand {
+}
 
 %brand--round {
-    @extend %brand;
     border-radius: $brand__rounding;
 }

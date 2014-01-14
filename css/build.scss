@@ -34,6 +34,7 @@
 // Get the typography -> folder: scss/globals/typography
 
 @import "scss/globals/typography/config";
+@import "scss/globals/typography/fontface";
 @import "scss/globals/typography/main";
 @import "scss/globals/typography/headings";
 @import "scss/globals/typography/lists";
@@ -46,6 +47,9 @@
 @import "scss/globals/elements/buttons";
 @import "scss/globals/elements/forms";
 @import "scss/globals/elements/tables";
+@import "scss/globals/elements/icons";
+@import "scss/globals/elements/animations";
+
 
 // Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
 

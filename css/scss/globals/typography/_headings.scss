@@ -21,7 +21,7 @@ $mega:     $scaleM;
 $ultra:    $scaleU;
 
 $line-height__heading: 1.25 !default;
-
+$heading-font-weight: normal !default;
 $typeface--heading: $typeface__primary;
 
 //  Genereal heading styles
@@ -38,6 +38,7 @@ h6 {
     color: $color__heading; //[1]
     line-height: 1;
     font-family: $typeface__heading; //[2]
+    font-weight: $heading-font-weight;
     font-feature-settings: "kern", "liga";
     text-rendering: optimizeLegibility; // [3]
 }
