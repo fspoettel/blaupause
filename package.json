@@ -1,17 +1,18 @@
 {
-  "name": "Statamic boilerplate",
+  "name": "statamicboilerplate",
   "version": "0.0.1",
-  "devDependencies": {
-    "gulp": "~3.3.0",
-    "gulp-sass": "~0.3.0",
-    "gulp-autoprefixer": "0.0.3",
-    "gulp-minify-css": "~0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/felics/boilerplate.git"
+  },
+  "dependencies": {
+    "gulp": "~3.3.2",
+    "gulp-autoprefixer": "0.0.4",
+    "gulp-minify-css": "~0.2.0",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.1.0",
     "gulp-imagemin": "~0.1.4",
-    "tiny-lr": "0.0.5",
-    "gulp-livereload": "~0.1.1",
     "gulp-rename": "~0.2.1",
-    "gulp-ruby-sass": "~0.1.1"
+    "gulp-ruby-sass": "~0.1.2"
   }
 }
