@@ -10,7 +10,7 @@ var gulp         = require('gulp'),
 
 // Concat & Minify JS
 gulp.task('scripts', function(){
-    gulp.src(['js/lib/plugins/**','js/global.js'])
+    gulp.src(['js/lib/plugins/*.js','js/user/*.js', 'js/global.js'])
         .pipe(concat('global.js'))
         .pipe(gulp.dest('js/build'))
         .pipe(uglify())
@@ -49,7 +49,7 @@ gulp.task('default', function(){
     });
 
     // Watch & build js
-    gulp.watch(['js/global.js','js/user/*.js', 'js/lib/plugins/*.js'], function(ev){
+    gulp.watch(['js/global.js', 'js/lib/plugins/*.js', 'js/user/*.js'], function(ev){
         gulp.run('scripts')
     });
 
