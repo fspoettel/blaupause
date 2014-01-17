@@ -226,6 +226,7 @@ $class-type:            unquote(".");
     padding:0;                            //* [2] */
     @include rem('margin-left',-$gutter); //* [3] */
     display: flexbox;                     //* [4] */
+    display: flex;                        //* [4] */
     flex-flow: row wrap;
     @if $use-markup-fix != true{
         letter-spacing:-0.31em;

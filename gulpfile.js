@@ -21,7 +21,7 @@ gulp.task('scripts', function(){
 // Build, autoprefix & minify CSS
 gulp.task('sass', function () {
     gulp.src('css/build.scss')
-        .pipe(sass({noCache:true,debugInfo:true}))
+        .pipe(sass({noCache:true}))
         .pipe(rename('global.css'))
         .pipe(gulp.dest('css/build/unprefixed'))
         .pipe(prefix("last 2 versions", "> 1%", "ie 8"))
@@ -37,6 +37,8 @@ gulp.task('images', function () {
         .pipe(imagemin())
         .pipe(gulp.dest('img'))
 });
+
+//
 
 // Default
 gulp.task('default', function(){

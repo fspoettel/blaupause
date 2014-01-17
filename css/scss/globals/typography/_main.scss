@@ -55,7 +55,7 @@ td {
 // Vertical rhythm class
 
 .vR{
-    margin: 0;
+    margin-top: 0;
     @include rem( "margin-bottom", ($scale-base * $line-height-ratio) );
 }
 

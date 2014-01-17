@@ -1,4 +1,3 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_reset\.scss}line{font-family:\0000321}}
 article,
 aside,
 details,
@@ -13,23 +12,19 @@ section,
 summary {
   display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_reset\.scss}line{font-family:\0000327}}
 audio,
 canvas,
 video {
   display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_reset\.scss}line{font-family:\0000332}}
 [hidden],
 template {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_reset\.scss}line{font-family:\0000336}}
 audio:not([controls]) {
   display: none;
   height: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/layouts\/_grids\.scss}line{font-family:\00003223}}
 .grid {
   list-style: none;
   margin: 0;
@@ -37,15 +32,14 @@ audio:not([controls]) {
   margin-left: -24px;
   margin-left: -1.5rem;
   display: flexbox;
+  display: flex;
   flex-flow: row wrap;
   letter-spacing: -0.31em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/layouts\/_grids\.scss}line{font-family:\00003238}}
 .opera:-o-prefocus,
 .grid {
   word-spacing: -0.43em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/layouts\/_grids\.scss}line{font-family:\00003251}}
 .grid__item {
   display: inline-block;
   padding-left: 24px;
@@ -56,15 +50,12 @@ audio:not([controls]) {
   letter-spacing: normal;
   word-spacing: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/layouts\/_grids\.scss}line{font-family:\00003590}}
 [class*="push--"] {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/layouts\/_grids\.scss}line{font-family:\00003712}}
 [class*="pull--"] {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000319}}
 html,
 textarea,
 input,
@@ -73,27 +64,23 @@ select {
   font-family: sans-serif;
   font-size: 75%; }
   @media (min-width: 481px) and (max-width: 1023px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000319}}
     html,
     textarea,
     input,
     select {
       font-size: 87.5%; } }
   @media (min-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000319}}
     html,
     textarea,
     input,
     select {
       font-size: 100%; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000331}}
 body {
   font-size: 16px;
   font-size: 1rem;
   color: #333333; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000350}}
 div,
 dl,
 dt,
@@ -110,7 +97,6 @@ td {
   margin: 0;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000357}}
 .vR, .content div,
 .content dl,
 .content dt,
@@ -123,11 +109,10 @@ td {
 .content p,
 .content blockquote,
 .content table {
-  margin: 0;
+  margin-top: 0;
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000375}}
 .content div,
 .content dl,
 .content dt,
@@ -142,32 +127,26 @@ td {
 .content table {
   font-family: serif; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000383}}
 em,
 i {
   line-height: inherit;
   font-style: italic; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000389}}
 strong,
 b {
   line-height: inherit;
   font-weight: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\0000396}}
 hr {
   box-sizing: content-box;
   height: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\00003103}}
 abbr[title] {
   border-bottom: 1px dotted; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_main\.scss}line{font-family:\00003107}}
 dfn {
   font-style: italic; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000336}}
 h1,
 h2,
 h3,
@@ -182,58 +161,48 @@ h6 {
   font-feature-settings: "kern", "liga";
   text-rendering: optimizeLegibility; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000349}}
 .ultra {
   font-size: 96px;
   font-size: 6rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000353}}
 .giga {
   font-size: 72px;
   font-size: 4.5rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000357}}
 .mega {
   font-size: 84px;
   font-size: 5.25rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000362}}
 h1,
 .alpha {
   font-size: 60px;
   font-size: 3.75rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000367}}
 h2,
 .beta {
   font-size: 48px;
   font-size: 3rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000372}}
 h3,
 .gamma {
   font-size: 36px;
   font-size: 2.25rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000377}}
 h4,
 .delta {
   font-size: 24px;
   font-size: 1.5rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000382}}
 h5,
 .epsilon {
   font-size: 21px;
   font-size: 1.3125rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000387}}
 h6,
 .zeta {
   font-size: 18px;
   font-size: 1.125rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_headings\.scss}line{font-family:\0000397}}
 .content h1,
 .content h2,
 .content h3,
@@ -243,33 +212,27 @@ h6,
 .vR--heading {
   line-height: 1.25; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_lists\.scss}line{font-family:\0000312}}
 li > ul,
 li > ol,
 .content li > ul,
 .content li > ol {
   margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_lists\.scss}line{font-family:\0000319}}
 .content li > ul,
 .content li > ol {
   margin-left: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_lists\.scss}line{font-family:\0000326}}
 .numbered-list {
   list-style-type: decimal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\000037}}
 pre {
   overflow: auto;
   white-space: pre-wrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\0000310}}
   pre mark {
     background: none;
     color: inherit;
     border-bottom: 1px solid; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\0000320}}
 code,
 kbd,
 pre,
@@ -277,7 +240,6 @@ samp {
   font-family: monospace, serif;
   font-size: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\0000328}}
 sub,
 sup {
   position: relative;
@@ -285,62 +247,49 @@ sup {
   font-size: 75%;
   vertical-align: baseline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\0000335}}
 sup {
   top: -0.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_code\.scss}line{font-family:\0000339}}
 sub {
   bottom: -0.25em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000314}}
 img {
   max-width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000320}}
 img[width],
 img[height] {
   max-width: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000326}}
 .img--round {
   border-radius: 0.25em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000332}}
 .img--right {
   float: right;
   margin-bottom: 1em;
   margin-left: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000337}}
 .img--left {
   float: left;
   margin-right: 1em;
   margin-bottom: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000342}}
 .img--center {
   display: block;
   margin-right: auto;
   margin-bottom: 1em;
   margin-left: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000351}}
 figure {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000353}}
   figure > img {
     display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000359}}
 .content figure > img {
   margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/typography\/_media\.scss}line{font-family:\0000367}}
 svg:not(:root) {
   overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000325}}
 .btn, button,
 html input[type="button"],
 input[type="reset"],
@@ -357,7 +306,6 @@ input[type="submit"] {
   cursor: pointer;
   -webkit-user-drag: none;
   user-select: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000339}}
   .btn::-moz-focus-inner, button::-moz-focus-inner,
   html input[type="button"]::-moz-focus-inner,
   input[type="reset"]::-moz-focus-inner,
@@ -365,13 +313,11 @@ input[type="submit"] {
     padding: 0;
     border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000348}}
 .btn:hover, button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000352}}
 .btn:focus, button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -381,31 +327,24 @@ input[type="reset"]:active,
 input[type="submit"]:active {
   outline: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000363}}
 .btn--full {
   display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000369}}
 .btn--round {
   border-radius: 0.25em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000373}}
 .btn--secondary {
   background: yellow; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000377}}
 .btn--tertiary {
   background: #ffff33; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000383}}
 .btn--positive {
   background: green; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000387}}
 .btn--negative {
   background: red; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_buttons\.scss}line{font-family:\0000392}}
 .btn[disabled], button[disabled],
 html input[disabled][type="button"],
 input[disabled][type="reset"],
@@ -413,12 +352,10 @@ input[disabled][type="submit"],
 .btn--disabled {
   background: grey; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\000039}}
 form {
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000316}}
 button,
 input,
 select,
@@ -426,30 +363,25 @@ textarea {
   margin: 0;
   text-transform: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000323}}
 fieldset {
   margin: 0 2px;
   padding: 0.25em 0.5em;
   border: 1px solid #cccccc; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000329}}
 legend {
   padding: 0;
   border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000339}}
 input[type="text"],
 input[type="email"],
 input[type="search"],
 textarea {
   width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000343}}
 textarea {
   overflow: auto;
   vertical-align: top; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000353}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -458,94 +390,71 @@ input[type="submit"] {
   box-shadow: 0;
   border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000361}}
 button[disabled],
 html input[disabled] {
   cursor: default; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000366}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000374}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000381}}
 input[type="search"] {
   -webkit-appearance: textfield;
   box-sizing: content-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_forms\.scss}line{font-family:\0000387}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000318}}
 table {
   width: 100%;
   background: white;
   border-collapse: collapse;
   border-spacing: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000326}}
 th,
 td {
   padding: 0.25em;
   text-align: left; }
   @media (min-width: 481px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000326}}
     th,
     td {
       padding: 0.5em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000334}}
 thead {
   background: white;
   color: #333333; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000343}}
 .table--bordered th,
 .table--bordered td {
   border: 1px solid #cccccc; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000345}}
   .table--bordered th:empty,
   .table--bordered td:empty {
     border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000349}}
 .table--bordered thead tr:last-child th {
   border-bottom-width: 1px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000352}}
 .table--bordered tbody tr th:last-of-type {
   border-right-width: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000360}}
 .table--striped tbody tr:nth-of-type(odd) {
   background-color: #eeeeee; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/elements\/_tables\.scss}line{font-family:\0000367}}
 .table--data {
   font: 12px/1.5 sans-serif; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_styles\.scss}line{font-family:\000039}}
 * {
   box-sizing: border-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_styles\.scss}line{font-family:\0000313}}
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/globals\/_styles\.scss}line{font-family:\0000318}}
 body {
   margin: 0;
   background: #fefefe; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/eineente\/Repos\/Boilerplate\/css\/scss\/locals\/_test\.scss}line{font-family:\000031}}
-.content {
-  max-width: 640px;
-  margin: 0 auto; }
