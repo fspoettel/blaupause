@@ -19,13 +19,3 @@ body {
     margin:0;
     background: $color__background;
 }
-
-// Grid classes
-
-.grid {
-    @extend %grid;
-}
-
-.grid__item {
-    @extend %grid__item;
-}

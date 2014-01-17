@@ -61,7 +61,7 @@
 // 
 // * Things different from src:
 // *     - Different defaults [1]
-// *     - Uses em for spacing [2]
+// *     - Uses rem for spacing [2]
 // *     - Shares media-queries with mq-mixin [3]
 // *     - Uses flexbox for browsers that support it to get rid of letter-spacing dependency. [4]
 // *     - Uses .scss-comments
@@ -129,10 +129,10 @@ $use-markup-fix:        false!default; // [1]
 // * that the breakpoint fires at.
 // */
 $breakpoints: (
-    'palm' $bp__palm,
-    'lap'  $bp__lap,
-    'lap-up'  $bp__lap-up,
-    'desk' $bp__desk
+    "palm" $bp__palm,
+    "lap"  $bp__lap,
+    "lap-up"  $bp__lap-up,
+    "desk" $bp__desk
     )!default; // [3]
 
 
@@ -146,9 +146,9 @@ $breakpoints: (
 // * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
 // * have been set to ‘true’.
 // */
-$breakpoint-has-widths: ('palm', 'lap','lap-up', 'desk')!default;
-$breakpoint-has-push:   ('palm', 'lap','lap-up', 'desk')!default;
-$breakpoint-has-pull:   ('palm', 'lap','lap-up', 'desk')!default;
+$breakpoint-has-widths: ("palm", "lap","lap-up", "desk")!default;
+$breakpoint-has-push:   ("palm", "lap","lap-up", "desk")!default;
+$breakpoint-has-pull:   ("palm", "lap","lap-up", "desk")!default;
 
 
 //**
@@ -224,8 +224,8 @@ $class-type:            unquote(".");
     list-style:none;                      //* [1] */
     margin:0;                             //* [2] */
     padding:0;                            //* [2] */
-    @include rem('margin-left',-$gutter); //* [3] */
-    display: flexbox;                     //* [4] */
+    @include rem("margin-left",-$gutter); //* [3] */
+    display: block;                       //* [4] */
     display: flex;                        //* [4] */
     flex-flow: row wrap;
     @if $use-markup-fix != true{
@@ -251,7 +251,7 @@ $class-type:            unquote(".");
     // */
     #{$class-type}grid__item{
         display:inline-block;                 //* [1] */
-        @include rem('padding-left',$gutter); //* [3] */
+        @include rem("padding-left",$gutter); //* [3] */
         vertical-align:top;                   //* [3] */
         @if $mobile-first == true{
             width:100%;                       //* [4] */
@@ -476,7 +476,7 @@ $class-type:            unquote(".");
 
     @each $name in $breakpoint-has-widths {
         @include grid-media-query($name) {
-           @include device-type('#{$name}--');
+           @include device-type("#{$name}--");
         }
     }
 
@@ -597,7 +597,7 @@ $class-type:            unquote(".");
     @if $responsive == true{
         @each $name in $breakpoint-has-push {
             @include grid-media-query($name) {
-               @include  push-setup('#{$name}--');
+               @include  push-setup("#{$name}--");
             }
         }
     }
@@ -719,7 +719,7 @@ $class-type:            unquote(".");
     @if $responsive == true{
         @each $name in $breakpoint-has-pull {
             @include grid-media-query($name) {
-               @include  pull-setup('#{$name}--');
+               @include  pull-setup("#{$name}--");
             }
         }
     }

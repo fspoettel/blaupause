@@ -25,30 +25,8 @@ audio:not([controls]) {
   display: none;
   height: 0; }
 
-.grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: -24px;
-  margin-left: -1.5rem;
-  display: flexbox;
-  display: flex;
-  flex-flow: row wrap;
-  letter-spacing: -0.31em; }
-
-.opera:-o-prefocus,
-.grid {
+.opera:-o-prefocus {
   word-spacing: -0.43em; }
-
-.grid__item {
-  display: inline-block;
-  padding-left: 24px;
-  padding-left: 1.5rem;
-  vertical-align: top;
-  width: 100%;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal; }
 
 [class*="push--"] {
   position: relative; }
