@@ -13,6 +13,7 @@
     "gulp-uglify": "~0.1.0",
     "gulp-imagemin": "~0.1.4",
     "gulp-rename": "~0.2.1",
-    "gulp-ruby-sass": "~0.1.2"
+    "gulp-ruby-sass": "~0.1.2",
+    "gulp-plumber": "~0.5.6"
   }
 }

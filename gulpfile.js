@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     sass         = require('gulp-ruby-sass'),
     prefix       = require('gulp-autoprefixer'),
     cssmin       = require('gulp-minify-css'),
+    plumber      = require('gulp-plumber'),
     imagemin     = require ('gulp-imagemin');
 
 // Concat & Minify JS
@@ -21,6 +22,7 @@ gulp.task('scripts', function(){
 // Build, autoprefix & minify CSS
 gulp.task('sass', function () {
     gulp.src('css/build.scss')
+        .pipe(plumber())
         .pipe(sass({noCache:true}))
         .pipe(rename('global.css'))
         .pipe(gulp.dest('css/build/unprefixed'))
