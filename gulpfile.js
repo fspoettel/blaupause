@@ -35,9 +35,9 @@ gulp.task('sass', function () {
 
 // Minify images
 gulp.task('images', function () {
-    gulp.src('img/*')
+    gulp.src('img/src/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('img'))
+        .pipe(gulp.dest('img/opti'))
 });
 
 //
@@ -58,7 +58,7 @@ gulp.task('default', function(){
     });
 
     // Watch & minify images
-    gulp.watch(['img/**'], function(ev){
+    gulp.watch(['img/src/*'], function(ev){
         gulp.run('images')
     });
 });

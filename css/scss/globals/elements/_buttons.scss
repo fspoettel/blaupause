@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //     $BUTTONS
 //*------------------------------------*/
-// A set of buttons. They consist of a base button  constructor and modifiers. The button classes are:
+// A set of buttons that can be assigned in HTML or used silently in SASS. They consist of a base button  constructor and modifiers. The button classes are:
 //
 // - btn (a button)
 // - btn--small, btn--medium, btn--large (size modifiers)
@@ -24,7 +24,7 @@ $btn__text-color:      #fff !default;
 
 .btn {
     display: inline-block;
-    padding: ($base-sizing-unit+em) ($base-sizing-unit*$ratio+em);
+    padding: ($base-sizing-unit+em) ($base-rhythm-ratio+em);
     line-height: normal;
     background: $btn__primary-color;
     color: $btn__text-color;

@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/build/prefixed/global.min.css">
     <script src="js/lib/modernizr-2.6.3.js"></script>
+    <style>
+        .content {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <section class="content">
@@ -29,10 +35,10 @@
                     <li>3. sub</li>
                 </ul>
             </li>
-          </ul></p>
+        </ul></p>
         <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
         </p>
-       <figure>
+        <figure>
             <img src="http://placekitten.com/1100/600" class="img--round" alt="">
             <figcaption>kittens</figcaption>
         </figure>
@@ -49,176 +55,160 @@
         <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
         </p>
         <table class="table--bordered  table--striped  table--data">
-              <colgroup>
-                  <col class=t10>
-                  <col class=t10>
-                  <col class=t10>
-                  <col>
-              </colgroup>
-              <thead>
-                  <tr>
-                      <th colspan=3>Foo</th>
-                      <th>Bar</th>
-                  </tr>
-                  <tr>
-                      <th>Lorem</th>
-                      <th>Ipsum</th>
-                      <th class=numerical>Dolor</th>
-                      <th>Sit</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <th rowspan=3>Sit</th>
-                      <td>Dolor</td>
-                      <td class=numerical>03.788</td>
-                      <td>Lorem</td>
-                  </tr>
-                  <tr>
-                      <td>Dolor</td>
-                      <td class=numerical>32.210</td>
-                      <td>Lorem</td>
-                  </tr>
-                  <tr>
-                      <td>Dolor</td>
-                      <td class=numerical>47.797</td>
-                      <td>Lorem</td>
-                  </tr>
-                  <tr>
-                      <th rowspan=2>Sit</th>
-                      <td>Dolor</td>
-                      <td class=numerical>09.640</td>
-                      <td>Lorem</td>
-                  </tr>
-                  <tr>
-                      <td>Dolor</td>
-                      <td class=numerical>12.117</td>
-                      <td>Lorem</td>
-                  </tr>
-              </tbody>
-          </table>
-          <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
-          </p>
-          <form action="#">
+            <colgroup>
+            <col class=t10>
+            <col class=t10>
+            <col class=t10>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan=3>Foo</th>
+                <th>Bar</th>
+            </tr>
+            <tr>
+                <th>Lorem</th>
+                <th>Ipsum</th>
+                <th class=numerical>Dolor</th>
+                <th>Sit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan=3>Sit</th>
+                <td>Dolor</td>
+                <td class=numerical>03.788</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>Dolor</td>
+                <td class=numerical>32.210</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>Dolor</td>
+                <td class=numerical>47.797</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <th rowspan=2>Sit</th>
+                <td>Dolor</td>
+                <td class=numerical>09.640</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>Dolor</td>
+                <td class=numerical>12.117</td>
+                <td>Lorem</td>
+            </tr>
+        </tbody>
+    </table>
+    <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
+    </p>
+    <form action="#">
 
-            <header>
-              <h2>Example Responsive Form</h2>
-              <div>This form breaks at 600px and goes from a left-label form to a top-label form. At above 1200px, the labels align right.</div>
-            </header>
-            
+        <header>
+            <h2>Example Responsive Form</h2>
+            <div>This form breaks at 600px and goes from a left-label form to a top-label form. At above 1200px, the labels align right.</div>
+        </header>
+
+        <div>
+            <label class="desc" id="title1" for="Field1">Full Name</label>
             <div>
-              <label class="desc" id="title1" for="Field1">Full Name</label>
-              <div>
                 <input id="Field1" name="Field1" type="text" class="field text fn" value="" size="8" tabindex="1">
-              </div>
             </div>
-              
-            <div>
-              <label class="desc" id="title3" for="Field3">
+        </div>
+
+        <div>
+            <label class="desc" id="title3" for="Field3">
                 Email
-              </label>
-              <div>
+            </label>
+            <div>
                 <input id="Field3" name="Field3" type="email" spellcheck="false" value="" maxlength="255" tabindex="3"> 
-             </div>
             </div>
-              
-            <div>
-              <label class="desc" id="title4" for="Field4">
+        </div>
+
+        <div>
+            <label class="desc" id="title4" for="Field4">
                 Message
-              </label>
-            
-              <div>
+            </label>
+
+            <div>
                 <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4"></textarea>
-              </div>
             </div>
-              
-            <div>
-              <fieldset>
-              
+        </div>
+
+        <div>
+            <fieldset>
+
                 <legend id="title5" class="desc">
-                  Select a Choice
+                    Select a Choice
                 </legend>
-                
+
                 <div>
-                  <input id="radioDefault_5" name="Field5" type="hidden" value="">
-                  <div>
-                    <input id="Field5_0" name="Field5" type="radio" value="First Choice" tabindex="5" checked="checked">
-                    <label class="choice" for="Field5_0">First Choice</label>
-                  </div>
-                  <div>
-                    <input id="Field5_1" name="Field5" type="radio" value="Second Choice" tabindex="6">
-                    <label class="choice" for="Field5_1">Second Choice</label>
-                  </div>
-                  <div>
-                    <input id="Field5_2" name="Field5" type="radio" value="Third Choice" tabindex="7">
-                    <label class="choice" for="Field5_2">Third Choice</label>
-                  </div>
+                    <input id="radioDefault_5" name="Field5" type="hidden" value="">
+                    <div>
+                        <input id="Field5_0" name="Field5" type="radio" value="First Choice" tabindex="5" checked="checked">
+                        <label class="choice" for="Field5_0">First Choice</label>
+                    </div>
+                    <div>
+                        <input id="Field5_1" name="Field5" type="radio" value="Second Choice" tabindex="6">
+                        <label class="choice" for="Field5_1">Second Choice</label>
+                    </div>
+                    <div>
+                        <input id="Field5_2" name="Field5" type="radio" value="Third Choice" tabindex="7">
+                        <label class="choice" for="Field5_2">Third Choice</label>
+                    </div>
                 </div>
-              </fieldset>
-            </div>
-            
-            <div>
-              <fieldset>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
                 <legend id="title6" class="desc">
-                  Check All That Apply
+                    Check All That Apply
                 </legend>
                 <div>
-                <div>
-                  <input id="Field6" name="Field6" type="checkbox" value="First Choice" tabindex="8">
-                  <label class="choice" for="Field6">First Choice</label>
+                    <div>
+                        <input id="Field6" name="Field6" type="checkbox" value="First Choice" tabindex="8">
+                        <label class="choice" for="Field6">First Choice</label>
+                    </div>
+                    <div>
+                        <input id="Field7" name="Field7" type="checkbox" value="Second Choice" tabindex="9">
+                        <label class="choice" for="Field7">Second Choice</label>
+                    </div>
+                    <div>
+                        <input id="Field8" name="Field8" type="checkbox" value="Third Choice" tabindex="10">
+                        <label class="choice" for="Field8">Third Choice</label>
+                    </span>
                 </div>
-                <div>
-                  <input id="Field7" name="Field7" type="checkbox" value="Second Choice" tabindex="9">
-                  <label class="choice" for="Field7">Second Choice</label>
-                </div>
-                <div>
-                  <input id="Field8" name="Field8" type="checkbox" value="Third Choice" tabindex="10">
-                  <label class="choice" for="Field8">Third Choice</label>
-                </span>
-                </div>
-              </fieldset>
-            </div>
-            
-            <div>
-              <label class="desc" id="title106" for="Field106">
+            </fieldset>
+        </div>
+
+        <div>
+            <label class="desc" id="title106" for="Field106">
                 Select a Choice
-              </label>
-              <div>
-              <select id="Field106" name="Field106" class="field select medium" tabindex="11"> 
-                <option value="First Choice">First Choice</option>
-                <option value="Second Choice">Second Choice</option>
-                <option value="Third Choice">Third Choice</option>
-              </select>
-              </div>
-            </div>
-            
+            </label>
             <div>
-              <div>
-                <input id="saveForm" name="saveForm" type="submit" value="Submit">
-              </div>
+                <select id="Field106" name="Field106" class="field select medium" tabindex="11"> 
+                    <option value="First Choice">First Choice</option>
+                    <option value="Second Choice">Second Choice</option>
+                    <option value="Third Choice">Third Choice</option>
+                </select>
             </div>
-            
-          </form>
-          <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
-          </p>
-    </section>
-    <script>window.jQuery || document.write('<script src="js/lib/jquery/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/build/global.min.js"></script>
-    <script>
-        $('document').ready(function() {
-            setCalc('.demo-block');
-            function setCalc(elem) {
-                $(elem).each(function() {
-                    var parent = $(this).parent();
-                    var parentWidth = Math.round((parent.outerWidth()) / (parent.parent().outerWidth()) * 100).toFixed(3) + '%';
-                    var parentClassName = parent.attr('class');
-                    $(this).html(parentWidth);
-                });
-            };
-            $(window).resize(function(){
-                setCalc('.demo-block');
-            })
-        });
-    </script>
+        </div>
+
+        <div>
+            <div>
+                <input id="saveForm" name="saveForm" type="submit" value="Submit">
+            </div>
+        </div>
+
+    </form>
+    <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
+    </p>
+</section>
+<script>window.jQuery || document.write('<script src="js/lib/jquery/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="js/build/global.min.js"></script>
 </body>
 </html>

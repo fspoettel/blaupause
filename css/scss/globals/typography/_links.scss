@@ -19,7 +19,4 @@ a {
         color: $color__link-hover;
         outline: none;
     }
-    &:focus {
-        outline: thin dotted; // from normalize.css
-    }
 }

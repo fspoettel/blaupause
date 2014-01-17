@@ -3,6 +3,8 @@
 //*------------------------------------*/
 // Core-variables.
 // $base-sizing-unit: Used for calculating base font-size, margins and paddings.
+// $ratio: By default, used as typographic ratio. Used to calculate the base-rhythm.
+// $base-rhythm-*: Used for rhythm for elements outside typography, by default.
 //---------------------------------
 
 $base-size: 16 !default;
@@ -11,3 +13,6 @@ $browser-default: 16 !default;
 $base-sizing-unit: $base-size / $browser-default;
 
 $ratio: 1.5 !default;
+
+$base-rhythm-ratio: $ratio;
+$base-rhythm-numerical: ($base-size * $ratio);

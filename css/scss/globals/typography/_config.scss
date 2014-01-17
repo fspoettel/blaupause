@@ -18,7 +18,7 @@ $line-height-ratio: $ratio !default;
 $content-namespace: unquote(".content");
 
 // Typographc Scale
-// - $scale-base will be calculating vertical rhythm (body font-size) & margins between content-elements (w/ line-height)
+// - $scale-base will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
 // - $scale-base is equal to $base-size by default. $base-size is used to calcualte the $base-sizing-unit & grid-gutters.
 //   So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
 // - The scale works manually. Scale values get divided by $browserDefault to get real pixel `rem`values. Changing $scale-base doesn't affect the scale
@@ -33,7 +33,6 @@ $scale3:  36 !default; // h3, gamma
 $scale4:  24 !default; // h4, delta
 $scale5:  21 !default; // h5, epsilon
 $scale6:  18 !default; // h6, zeta
-$scale7:  $scale-base !default; // 16 | Paragraphs, base size
 
 // Font-stacks
 

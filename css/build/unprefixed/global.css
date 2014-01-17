@@ -203,13 +203,12 @@ h6,
   font-size: 18px;
   font-size: 1.125rem; }
 
-.content h1,
+.vR--heading, .content h1,
 .content h2,
 .content h3,
 .content h4,
 .content h5,
-.content h6,
-.vR--heading {
+.content h6 {
   line-height: 1.25; }
 
 li > ul,

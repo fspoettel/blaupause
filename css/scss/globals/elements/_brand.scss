@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //     $BRAND
 //*------------------------------------*/
-// This file specifies a branding class that can be extended in other stylesheets and used throughout the project
+// This file specifies a branding class that can be extended in other stylesheets and used throughout the project to maintain consistent styling across elements.
 // @usage: .selector {
 //             @extend %brand;
 //         }
@@ -13,3 +13,4 @@
 %brand--round {
     border-radius: $brand__rounding;
 }
+
