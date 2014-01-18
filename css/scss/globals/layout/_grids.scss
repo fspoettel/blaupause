@@ -65,7 +65,7 @@
 // *     - Shares media-queries with mq-mixin [3]
 // *     - Uses flexbox for browsers that support it to get rid of letter-spacing dependency. [4]
 // *     - Uses .scss-comments
-
+// *      - Namespaced variables
 // */
 
 
@@ -79,33 +79,33 @@
 // * If you are building a non-responsive site but would still like to use
 // * csswizardry-grids, set this to ‘false’:
 // */
-$responsive:            true!default;
+$grid__responsive:            true!default;
 
 
 //**
 // * Is this build mobile first? Setting to ‘true’ means that all grids will be
 // * 100% width if you do not apply a more specific class to them.
 // */
-$mobile-first:          true!default;
+$grid__mobile-first:          true!default;
 
 
 //**
 // * Set the spacing between your grid items.
 // */
-$gutter:                $base-size * $ratio!default; // [2]
+$grid__gutter:                $base-size * $ratio!default; // [2]
 
 
 //**
 // * Would you like Sass’ silent classes, or regular CSS classes?
 // */
-$use-silent-classes:    true!default;
+$grid__use-silent-classes:    true!default;
 
 
 //**
 // * Would you like push and pull classes enabled?
 // */
-$push:                  true!default; // [1]
-$pull:                  true!default; // [1]
+$grid__push:                  true!default; // [1]
+$grid__pull:                  true!default; // [1]
 
 
 //**
@@ -120,7 +120,7 @@ $pull:                  true!default; // [1]
 // * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
 // * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
 // */
-$use-markup-fix:        false!default; // [1]
+$grid__use-markup-fix:        false!default; // [1]
 
 
 //**
@@ -128,11 +128,11 @@ $use-markup-fix:        false!default; // [1]
 // * your classes (e.g. `.palm--one-half`), the second value is the media query
 // * that the breakpoint fires at.
 // */
-$breakpoints: (
-    "palm" $bp__palm,
+$grid__breakpoints: (
+    "palm"  $bp__palm,
     "lap"  $bp__lap,
     "lap-up"  $bp__lap-up,
-    "desk" $bp__desk
+    "desk"  $bp__desk
     )!default; // [3]
 
 
@@ -143,22 +143,22 @@ $breakpoints: (
 // * compile as much CSS as you need. All are turned on by default, but you can
 // * add and remove breakpoints at will.
 // *
-// * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+// * Push and pull shall only be used if `$push` and/or `$pull` and `$grid__responsive`
 // * have been set to ‘true’.
 // */
-$breakpoint-has-widths: ("palm", "lap","lap-up", "desk")!default;
-$breakpoint-has-push:   ("palm", "lap","lap-up", "desk")!default;
-$breakpoint-has-pull:   ("palm", "lap","lap-up", "desk")!default;
+$grid__breakpoint-has-widths: ("palm", "lap","lap-up", "desk")!default;
+$grid__breakpoint-has-push:   ("palm", "lap","lap-up", "desk")!default;
+$grid__breakpoint-has-pull:   ("palm", "lap","lap-up", "desk")!default;
 
 
 //**
 // * You do not need to edit anything from this line onward; csswizardry-grids is
 // * good to go. Happy griddin’!
 // */
-$class-type:            unquote(".");
+$grid__class-type:            unquote(".");
 
-@if $use-silent-classes == true{
-    $class-type:        unquote("%");
+@if $grid__use-silent-classes == true {
+    $grid__class-type:        unquote("%");
 }
 
 
@@ -174,23 +174,23 @@ $class-type:            unquote(".");
 // *
 // * Enclose a block of code with a media query as named in `$breakpoints`.
 // */
-@mixin grid-media-query($media-query){
+@mixin grid-media-query($media-query) {
     $breakpoint-found: false;
 
-    @each $breakpoint in $breakpoints{
+    @each $breakpoint in $grid__breakpoints {
         $name: nth($breakpoint, 1);
         $declaration: nth($breakpoint, 2);
 
-        @if $media-query == $name and $declaration{
+        @if $media-query == $name and $declaration {
             $breakpoint-found: true;
 
-            @media only screen and #{$declaration}{
+            @media only screen and #{$declaration} {
                 @content;
             }
         }
     }
 
-    @if $breakpoint-found == false{
+    @if $breakpoint-found == false {
         @warn "Breakpoint ‘#{$media-query}’ does not exist";
     }
 }
@@ -201,8 +201,8 @@ $class-type:            unquote(".");
 // * the `[class*="push--"]` and `[class*="pull--"]` selectors.
 // */
 
-@mixin silent-relative(){
-    @if $use-silent-classes == true{
+@mixin silent-relative() {
+    @if $grid__use-silent-classes == true{
         position:relative;
     }
 }
@@ -220,23 +220,23 @@ $class-type:            unquote(".");
 // * 3. Apply a negative `margin-left` to negate the columns’ gutters.
 // * 4. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
 // */
-#{$class-type}grid {
+#{$grid__class-type}grid {
     list-style:none;                      //* [1] */
     margin:0;                             //* [2] */
     padding:0;                            //* [2] */
-    @include rem("margin-left",-$gutter); //* [3] */
+    @include rem("margin-left",-$grid__gutter); //* [3] */
     display: block;                       //* [4] */
     display: flex;                        //* [4] */
     flex-flow: row wrap;
-    @if $use-markup-fix != true{
+    @if $grid__use-markup-fix != true{
         letter-spacing:-0.31em;
     }
 }
 
-@if $use-markup-fix != true{
+@if $grid__use-markup-fix != true {
     //* Opera hack */
     .opera:-o-prefocus,
-    #{$class-type}grid{
+    #{$grid__class-type}grid{
         word-spacing:-0.43em;
     }
 }
@@ -249,15 +249,15 @@ $class-type:            unquote(".");
     // * 4. Full-width unless told to behave otherwise.
     // * 5. Required to combine fluid widths and fixed gutters.
     // */
-    #{$class-type}grid__item{
+    #{$grid__class-type}grid__item {
         display:inline-block;                 //* [1] */
-        @include rem("padding-left",$gutter); //* [3] */
+        @include rem("padding-left",$grid__gutter); //* [3] */
         vertical-align:top;                   //* [3] */
-        @if $mobile-first == true{
+        @if $grid__mobile-first == true{
             width:100%;                       //* [4] */
         }
         box-sizing:border-box;                //* [5] */
-        @if $use-markup-fix != true{
+        @if $grid__use-markup-fix != true{
             letter-spacing:normal;
             word-spacing:normal;
         }
@@ -268,11 +268,12 @@ $class-type:            unquote(".");
 // * Reversed grids allow you to structure your source in the opposite order to
 // * how your rendered layout will appear. Extends `.grid`.
 // */
-#{$class-type}grid--rev{
+#{$grid__class-type}grid--rev {
     direction:rtl;
     text-align:left;
     justify-content: flex-end;
-    > #{$class-type}grid__item{
+
+    > #{$grid__class-type}grid__item {
         direction:ltr;
         text-align:left;
     }
@@ -283,10 +284,10 @@ $class-type:            unquote(".");
 // * Gutterless grids have all the properties of regular grids, minus any spacing.
 // * Extends `.grid`.
 // */
-#{$class-type}grid--full{
+#{$grid__class-type}grid--full {
     margin-left:0;
 
-    > #{$class-type}grid__item{
+    > #{$grid__class-type}grid__item {
         padding-left:0;
     }
 }
@@ -295,11 +296,11 @@ $class-type:            unquote(".");
 //**
 // * Align the entire grid to the right. Extends `.grid`.
 // */
-#{$class-type}grid--right{
+#{$grid__class-type}grid--right {
     text-align:right;
     justify-content: flex-end;
 
-    > #{$class-type}grid__item{
+    > #{$grid__class-type}grid__item {
         text-align:left;
     }
 }
@@ -309,11 +310,11 @@ $class-type:            unquote(".");
 // * Centered grids align grid items centrally without needing to use push or pull
 // * classes. Extends `.grid`.
 // */
-#{$class-type}grid--center{
+#{$grid__class-type}grid--center {
     text-align:center;
     justify-content: center;
 
-    > #{$class-type}grid__item{
+    > #{$grid__class-type}grid__item {
         text-align:left;
     }
 }
@@ -323,14 +324,14 @@ $class-type:            unquote(".");
 // * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
 // * `.grid`.
 // */
-#{$class-type}grid--middle{
-    > #{$class-type}grid__item{
+#{$grid__class-type}grid--middle {
+    > #{$grid__class-type}grid__item{
         vertical-align:middle;
     }
 }
 
-#{$class-type}grid--bottom{
-    > #{$class-type}grid__item{
+#{$grid__class-type}grid--bottom {
+    > #{$grid__class-type}grid__item{
         vertical-align:bottom;
     }
 }
@@ -339,11 +340,11 @@ $class-type:            unquote(".");
 //**
 // * Create grids with narrower gutters. Extends `.grid`.
 // */
-#{$class-type}grid--narrow{
-    margin-left:-($gutter / 2);
+#{$grid__class-type}grid--narrow {
+    @include rem("margin-left", (-$grid__gutter / 2)); //* [3] */
 
-    > #{$class-type}grid__item{
-        padding-left:$gutter / 2;
+    > #{$grid__class-type}grid__item {
+        @include rem("padding-left", ($grid__gutter / 2)); //* [3] */
     }
 }
 
@@ -351,11 +352,11 @@ $class-type:            unquote(".");
 //**
 // * Create grids with wider gutters. Extends `.grid`.
 // */
-#{$class-type}grid--wide{
-    margin-left:-($gutter * 2);
+#{$grid__class-type}grid--wide {
+    @include rem("margin-left",(-$grid__gutter * 2 )); //* [3] */
 
-    > #{$class-type}grid__item{
-        padding-left:$gutter * 2;
+    > #{$grid__class-type}grid__item {
+        @include rem("padding-left", ($grid__gutter * 2)); //* [3] */
     }
 }
 
@@ -369,95 +370,95 @@ $class-type:            unquote(".");
 //**
 // * Create our width classes, prefixed by the specified namespace.
 // */
-@mixin device-type($namespace:""){
+@mixin device-type($namespace:"") {
 
 
     //**
     // * Whole
     // */
-    #{$class-type}#{$namespace}one-whole         { width:100%; }
+    #{$grid__class-type}#{$namespace}one-whole         { width:100%; }
 
 
     //**
     // * Halves
     // */
-    #{$class-type}#{$namespace}one-half          { width:50%; }
+    #{$grid__class-type}#{$namespace}one-half          { width:50%; }
 
 
     //**
     // * Thirds
     // */
-    #{$class-type}#{$namespace}one-third         { width:33.333%; }
-    #{$class-type}#{$namespace}two-thirds        { width:66.666%; }
+    #{$grid__class-type}#{$namespace}one-third         { width:33.333%; }
+    #{$grid__class-type}#{$namespace}two-thirds        { width:66.666%; }
 
 
     //**
     // * Quarters
     // */
-    #{$class-type}#{$namespace}one-quarter       { width:25%; }
-    #{$class-type}#{$namespace}two-quarters      { @extend #{$class-type}#{$namespace}one-half; }
-    #{$class-type}#{$namespace}three-quarters    { width:75%; }
+    #{$grid__class-type}#{$namespace}one-quarter       { width:25%; }
+    #{$grid__class-type}#{$namespace}two-quarters      { @extend #{$grid__class-type}#{$namespace}one-half; }
+    #{$grid__class-type}#{$namespace}three-quarters    { width:75%; }
 
 
     //**
     // * Fifths
     // */
-    #{$class-type}#{$namespace}one-fifth         { width:20%; }
-    #{$class-type}#{$namespace}two-fifths        { width:40%; }
-    #{$class-type}#{$namespace}three-fifths      { width:60%; }
-    #{$class-type}#{$namespace}four-fifths       { width:80%; }
+    #{$grid__class-type}#{$namespace}one-fifth         { width:20%; }
+    #{$grid__class-type}#{$namespace}two-fifths        { width:40%; }
+    #{$grid__class-type}#{$namespace}three-fifths      { width:60%; }
+    #{$grid__class-type}#{$namespace}four-fifths       { width:80%; }
 
 
     //**
     // * Sixths
     // */
-    #{$class-type}#{$namespace}one-sixth         { width:16.666%; }
-    #{$class-type}#{$namespace}two-sixths        { @extend #{$class-type}#{$namespace}one-third; }
-    #{$class-type}#{$namespace}three-sixths      { @extend #{$class-type}#{$namespace}one-half; }
-    #{$class-type}#{$namespace}four-sixths       { @extend #{$class-type}#{$namespace}two-thirds; }
-    #{$class-type}#{$namespace}five-sixths       { width:83.333%; }
+    #{$grid__class-type}#{$namespace}one-sixth         { width:16.666%; }
+    #{$grid__class-type}#{$namespace}two-sixths        { @extend #{$grid__class-type}#{$namespace}one-third; }
+    #{$grid__class-type}#{$namespace}three-sixths      { @extend #{$grid__class-type}#{$namespace}one-half; }
+    #{$grid__class-type}#{$namespace}four-sixths       { @extend #{$grid__class-type}#{$namespace}two-thirds; }
+    #{$grid__class-type}#{$namespace}five-sixths       { width:83.333%; }
 
 
     //**
     // * Eighths
     // */
-    #{$class-type}#{$namespace}one-eighth        { width:12.5%; }
-    #{$class-type}#{$namespace}two-eighths       { @extend #{$class-type}#{$namespace}one-quarter; }
-    #{$class-type}#{$namespace}three-eighths     { width:37.5%; }
-    #{$class-type}#{$namespace}four-eighths      { @extend #{$class-type}#{$namespace}one-half; }
-    #{$class-type}#{$namespace}five-eighths      { width:62.5%; }
-    #{$class-type}#{$namespace}six-eighths       { @extend #{$class-type}#{$namespace}three-quarters; }
-    #{$class-type}#{$namespace}seven-eighths     { width:87.5%; }
+    #{$grid__class-type}#{$namespace}one-eighth        { width:12.5%; }
+    #{$grid__class-type}#{$namespace}two-eighths       { @extend #{$grid__class-type}#{$namespace}one-quarter; }
+    #{$grid__class-type}#{$namespace}three-eighths     { width:37.5%; }
+    #{$grid__class-type}#{$namespace}four-eighths      { @extend #{$grid__class-type}#{$namespace}one-half; }
+    #{$grid__class-type}#{$namespace}five-eighths      { width:62.5%; }
+    #{$grid__class-type}#{$namespace}six-eighths       { @extend #{$grid__class-type}#{$namespace}three-quarters; }
+    #{$grid__class-type}#{$namespace}seven-eighths     { width:87.5%; }
 
 
     //**
     // * Tenths
     // */
-    #{$class-type}#{$namespace}one-tenth         { width:10%; }
-    #{$class-type}#{$namespace}two-tenths        { @extend #{$class-type}#{$namespace}one-fifth; }
-    #{$class-type}#{$namespace}three-tenths      { width:30%; }
-    #{$class-type}#{$namespace}four-tenths       { @extend #{$class-type}#{$namespace}two-fifths; }
-    #{$class-type}#{$namespace}five-tenths       { @extend #{$class-type}#{$namespace}one-half; }
-    #{$class-type}#{$namespace}six-tenths        { @extend #{$class-type}#{$namespace}three-fifths; }
-    #{$class-type}#{$namespace}seven-tenths      { width:70%; }
-    #{$class-type}#{$namespace}eight-tenths      { @extend #{$class-type}#{$namespace}four-fifths; }
-    #{$class-type}#{$namespace}nine-tenths       { width:90%; }
+    #{$grid__class-type}#{$namespace}one-tenth         { width:10%; }
+    #{$grid__class-type}#{$namespace}two-tenths        { @extend #{$grid__class-type}#{$namespace}one-fifth; }
+    #{$grid__class-type}#{$namespace}three-tenths      { width:30%; }
+    #{$grid__class-type}#{$namespace}four-tenths       { @extend #{$grid__class-type}#{$namespace}two-fifths; }
+    #{$grid__class-type}#{$namespace}five-tenths       { @extend #{$grid__class-type}#{$namespace}one-half; }
+    #{$grid__class-type}#{$namespace}six-tenths        { @extend #{$grid__class-type}#{$namespace}three-fifths; }
+    #{$grid__class-type}#{$namespace}seven-tenths      { width:70%; }
+    #{$grid__class-type}#{$namespace}eight-tenths      { @extend #{$grid__class-type}#{$namespace}four-fifths; }
+    #{$grid__class-type}#{$namespace}nine-tenths       { width:90%; }
 
 
     //**
     // * Twelfths
     // */
-    #{$class-type}#{$namespace}one-twelfth       { width:8.333%; }
-    #{$class-type}#{$namespace}two-twelfths      { @extend #{$class-type}#{$namespace}one-sixth; }
-    #{$class-type}#{$namespace}three-twelfths    { @extend #{$class-type}#{$namespace}one-quarter; }
-    #{$class-type}#{$namespace}four-twelfths     { @extend #{$class-type}#{$namespace}one-third; }
-    #{$class-type}#{$namespace}five-twelfths     { width:41.666% }
-    #{$class-type}#{$namespace}six-twelfths      { @extend #{$class-type}#{$namespace}one-half; }
-    #{$class-type}#{$namespace}seven-twelfths    { width:58.333%; }
-    #{$class-type}#{$namespace}eight-twelfths    { @extend #{$class-type}#{$namespace}two-thirds; }
-    #{$class-type}#{$namespace}nine-twelfths     { @extend #{$class-type}#{$namespace}three-quarters; }
-    #{$class-type}#{$namespace}ten-twelfths      { @extend #{$class-type}#{$namespace}five-sixths; }
-    #{$class-type}#{$namespace}eleven-twelfths   { width:91.666%; }
+    #{$grid__class-type}#{$namespace}one-twelfth       { width:8.333%; }
+    #{$grid__class-type}#{$namespace}two-twelfths      { @extend #{$grid__class-type}#{$namespace}one-sixth; }
+    #{$grid__class-type}#{$namespace}three-twelfths    { @extend #{$grid__class-type}#{$namespace}one-quarter; }
+    #{$grid__class-type}#{$namespace}four-twelfths     { @extend #{$grid__class-type}#{$namespace}one-third; }
+    #{$grid__class-type}#{$namespace}five-twelfths     { width:41.666% }
+    #{$grid__class-type}#{$namespace}six-twelfths      { @extend #{$grid__class-type}#{$namespace}one-half; }
+    #{$grid__class-type}#{$namespace}seven-twelfths    { width:58.333%; }
+    #{$grid__class-type}#{$namespace}eight-twelfths    { @extend #{$grid__class-type}#{$namespace}two-thirds; }
+    #{$grid__class-type}#{$namespace}nine-twelfths     { @extend #{$grid__class-type}#{$namespace}three-quarters; }
+    #{$grid__class-type}#{$namespace}ten-twelfths      { @extend #{$grid__class-type}#{$namespace}five-sixths; }
+    #{$grid__class-type}#{$namespace}eleven-twelfths   { width:91.666%; }
 
 
 }
@@ -472,9 +473,9 @@ $class-type:            unquote(".");
 //**
 // * Our responsive classes, if we have enabled them.
 // */
-@if $responsive == true{
+@if $grid__responsive == true {
 
-    @each $name in $breakpoint-has-widths {
+    @each $name in $grid__breakpoint-has-widths {
         @include grid-media-query($name) {
            @include device-type("#{$name}--");
         }
@@ -493,109 +494,109 @@ $class-type:            unquote(".");
 //**
 // * Push classes, to move grid items over to the right by certain amounts.
 // */
-@mixin push-setup($namespace: ""){
+@mixin push-setup($namespace: "") {
 
     //**
     // * Whole
     // */
-    #{$class-type}push--#{$namespace}one-whole           { left:100%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-whole           { left:100%; @include silent-relative(); }
 
 
     //**
     // * Halves
     // */
-    #{$class-type}push--#{$namespace}one-half            { left:50%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-half            { left:50%; @include silent-relative(); }
 
 
     //**
     // * Thirds
     // */
-    #{$class-type}push--#{$namespace}one-third           { left:33.333%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-thirds          { left:66.666%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-third           { left:33.333%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-thirds          { left:66.666%; @include silent-relative(); }
 
 
     //**
     // * Quarters
     // */
-    #{$class-type}push--#{$namespace}one-quarter         { left:25%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-quarters        { @extend #{$class-type}push--#{$namespace}one-half; }
-    #{$class-type}push--#{$namespace}three-quarters      { left:75%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-quarter         { left:25%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-quarters        { @extend #{$grid__class-type}push--#{$namespace}one-half; }
+    #{$grid__class-type}push--#{$namespace}three-quarters      { left:75%; @include silent-relative(); }
 
 
     //**
     // * Fifths
     // */
-    #{$class-type}push--#{$namespace}one-fifth           { left:20%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-fifths          { left:40%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}three-fifths        { left:60%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}four-fifths         { left:80%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-fifth           { left:20%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-fifths          { left:40%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}three-fifths        { left:60%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}four-fifths         { left:80%; @include silent-relative(); }
 
 
     //**
     // * Sixths
     // */
-    #{$class-type}push--#{$namespace}one-sixth           { left:16.666%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-sixths          { @extend #{$class-type}push--#{$namespace}one-third; }
-    #{$class-type}push--#{$namespace}three-sixths        { @extend #{$class-type}push--#{$namespace}one-half; }
-    #{$class-type}push--#{$namespace}four-sixths         { @extend #{$class-type}push--#{$namespace}two-thirds; }
-    #{$class-type}push--#{$namespace}five-sixths         { left:83.333%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-sixth           { left:16.666%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-sixths          { @extend #{$grid__class-type}push--#{$namespace}one-third; }
+    #{$grid__class-type}push--#{$namespace}three-sixths        { @extend #{$grid__class-type}push--#{$namespace}one-half; }
+    #{$grid__class-type}push--#{$namespace}four-sixths         { @extend #{$grid__class-type}push--#{$namespace}two-thirds; }
+    #{$grid__class-type}push--#{$namespace}five-sixths         { left:83.333%; @include silent-relative(); }
 
 
     //**
     // * Eighths
     // */
-    #{$class-type}push--#{$namespace}one-eighth          { left:12.5%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-eighths         { @extend #{$class-type}push--#{$namespace}one-quarter; }
-    #{$class-type}push--#{$namespace}three-eighths       { left:37.5%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}four-eighths        { @extend #{$class-type}push--#{$namespace}one-half; }
-    #{$class-type}push--#{$namespace}five-eighths        { left:62.5%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}six-eighths         { @extend #{$class-type}push--#{$namespace}three-quarters; }
-    #{$class-type}push--#{$namespace}seven-eighths       { left:87.5%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-eighth          { left:12.5%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-eighths         { @extend #{$grid__class-type}push--#{$namespace}one-quarter; }
+    #{$grid__class-type}push--#{$namespace}three-eighths       { left:37.5%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}four-eighths        { @extend #{$grid__class-type}push--#{$namespace}one-half; }
+    #{$grid__class-type}push--#{$namespace}five-eighths        { left:62.5%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}six-eighths         { @extend #{$grid__class-type}push--#{$namespace}three-quarters; }
+    #{$grid__class-type}push--#{$namespace}seven-eighths       { left:87.5%; @include silent-relative(); }
 
 
     //**
     // * Tenths
     // */
-    #{$class-type}push--#{$namespace}one-tenth           { left:10%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-tenths          { @extend #{$class-type}push--#{$namespace}one-fifth; }
-    #{$class-type}push--#{$namespace}three-tenths        { left:30%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}four-tenths         { @extend #{$class-type}push--#{$namespace}two-fifths; }
-    #{$class-type}push--#{$namespace}five-tenths         { @extend #{$class-type}push--#{$namespace}one-half; }
-    #{$class-type}push--#{$namespace}six-tenths          { @extend #{$class-type}push--#{$namespace}three-fifths; }
-    #{$class-type}push--#{$namespace}seven-tenths        { left:70%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}eight-tenths        { @extend #{$class-type}push--#{$namespace}four-fifths; }
-    #{$class-type}push--#{$namespace}nine-tenths         { left:90%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-tenth           { left:10%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-tenths          { @extend #{$grid__class-type}push--#{$namespace}one-fifth; }
+    #{$grid__class-type}push--#{$namespace}three-tenths        { left:30%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}four-tenths         { @extend #{$grid__class-type}push--#{$namespace}two-fifths; }
+    #{$grid__class-type}push--#{$namespace}five-tenths         { @extend #{$grid__class-type}push--#{$namespace}one-half; }
+    #{$grid__class-type}push--#{$namespace}six-tenths          { @extend #{$grid__class-type}push--#{$namespace}three-fifths; }
+    #{$grid__class-type}push--#{$namespace}seven-tenths        { left:70%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}eight-tenths        { @extend #{$grid__class-type}push--#{$namespace}four-fifths; }
+    #{$grid__class-type}push--#{$namespace}nine-tenths         { left:90%; @include silent-relative(); }
 
 
     //**
     // * Twelfths
     // */
-    #{$class-type}push--#{$namespace}one-twelfth         { left:8.333%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}two-twelfths        { @extend #{$class-type}push--#{$namespace}one-sixth; }
-    #{$class-type}push--#{$namespace}three-twelfths      { @extend #{$class-type}push--#{$namespace}one-quarter; }
-    #{$class-type}push--#{$namespace}four-twelfths       { @extend #{$class-type}push--#{$namespace}one-third; }
-    #{$class-type}push--#{$namespace}five-twelfths       { left:41.666%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}six-twelfths        { @extend #{$class-type}push--#{$namespace}one-half; }
-    #{$class-type}push--#{$namespace}seven-twelfths      { left:58.333%; @include silent-relative(); }
-    #{$class-type}push--#{$namespace}eight-twelfths      { @extend #{$class-type}push--#{$namespace}two-thirds; }
-    #{$class-type}push--#{$namespace}nine-twelfths       { @extend #{$class-type}push--#{$namespace}three-quarters; }
-    #{$class-type}push--#{$namespace}ten-twelfths        { @extend #{$class-type}push--#{$namespace}five-sixths; }
-    #{$class-type}push--#{$namespace}eleven-twelfths     { left:91.666%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}one-twelfth         { left:8.333%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}two-twelfths        { @extend #{$grid__class-type}push--#{$namespace}one-sixth; }
+    #{$grid__class-type}push--#{$namespace}three-twelfths      { @extend #{$grid__class-type}push--#{$namespace}one-quarter; }
+    #{$grid__class-type}push--#{$namespace}four-twelfths       { @extend #{$grid__class-type}push--#{$namespace}one-third; }
+    #{$grid__class-type}push--#{$namespace}five-twelfths       { left:41.666%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}six-twelfths        { @extend #{$grid__class-type}push--#{$namespace}one-half; }
+    #{$grid__class-type}push--#{$namespace}seven-twelfths      { left:58.333%; @include silent-relative(); }
+    #{$grid__class-type}push--#{$namespace}eight-twelfths      { @extend #{$grid__class-type}push--#{$namespace}two-thirds; }
+    #{$grid__class-type}push--#{$namespace}nine-twelfths       { @extend #{$grid__class-type}push--#{$namespace}three-quarters; }
+    #{$grid__class-type}push--#{$namespace}ten-twelfths        { @extend #{$grid__class-type}push--#{$namespace}five-sixths; }
+    #{$grid__class-type}push--#{$namespace}eleven-twelfths     { left:91.666%; @include silent-relative(); }
 }
 
-@if $push == true {
+@if $grid__push == true {
 
     //**
     // * Not a particularly great selector, but the DRYest way to do things.
     // */
-    [class*="push--"]{ position:relative; }
+    [class*="push--"] { position:relative; }
 
 
     @include push-setup();
 
 
-    @if $responsive == true{
-        @each $name in $breakpoint-has-push {
+    @if $grid__responsive == true {
+        @each $name in $grid__breakpoint-has-push {
             @include grid-media-query($name) {
                @include  push-setup("#{$name}--");
             }
@@ -615,109 +616,109 @@ $class-type:            unquote(".");
 //**
 // * Pull classes, to move grid items back to the left by certain amounts.
 // */
-@mixin pull-setup($namespace: ""){
+@mixin pull-setup($namespace: "") {
 
     //**
     // * Whole
     // */
-    #{$class-type}pull--#{$namespace}one-whole           { right:100%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-whole           { right:100%; @include silent-relative(); }
 
 
     //**
     // * Halves
     // */
-    #{$class-type}pull--#{$namespace}one-half            { right:50%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-half            { right:50%; @include silent-relative(); }
 
 
     //**
     // * Thirds
     // */
-    #{$class-type}pull--#{$namespace}one-third           { right:33.333%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-thirds          { right:66.666%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-third           { right:33.333%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-thirds          { right:66.666%; @include silent-relative(); }
 
 
     //**
     // * Quarters
     // */
-    #{$class-type}pull--#{$namespace}one-quarter         { right:25%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-quarters        { @extend #{$class-type}pull--#{$namespace}one-half; }
-    #{$class-type}pull--#{$namespace}three-quarters      { right:75%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-quarter         { right:25%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-quarters        { @extend #{$grid__class-type}pull--#{$namespace}one-half; }
+    #{$grid__class-type}pull--#{$namespace}three-quarters      { right:75%; @include silent-relative(); }
 
 
     //**
     // * Fifths
     // */
-    #{$class-type}pull--#{$namespace}one-fifth           { right:20%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-fifths          { right:40%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}three-fifths        { right:60%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}four-fifths         { right:80%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-fifth           { right:20%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-fifths          { right:40%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}three-fifths        { right:60%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}four-fifths         { right:80%; @include silent-relative(); }
 
 
     //**
     // * Sixths
     // */
-    #{$class-type}pull--#{$namespace}one-sixth           { right:16.666%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-sixths          { @extend #{$class-type}pull--#{$namespace}one-third; }
-    #{$class-type}pull--#{$namespace}three-sixths        { @extend #{$class-type}pull--#{$namespace}one-half; }
-    #{$class-type}pull--#{$namespace}four-sixths         { @extend #{$class-type}pull--#{$namespace}two-thirds; }
-    #{$class-type}pull--#{$namespace}five-sixths         { right:83.333%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-sixth           { right:16.666%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-sixths          { @extend #{$grid__class-type}pull--#{$namespace}one-third; }
+    #{$grid__class-type}pull--#{$namespace}three-sixths        { @extend #{$grid__class-type}pull--#{$namespace}one-half; }
+    #{$grid__class-type}pull--#{$namespace}four-sixths         { @extend #{$grid__class-type}pull--#{$namespace}two-thirds; }
+    #{$grid__class-type}pull--#{$namespace}five-sixths         { right:83.333%; @include silent-relative(); }
 
 
     //**
     // * Eighths
     // */
-    #{$class-type}pull--#{$namespace}one-eighth          { right:12.5%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-eighths         { @extend #{$class-type}pull--#{$namespace}one-quarter; }
-    #{$class-type}pull--#{$namespace}three-eighths       { right:37.5%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}four-eighths        { @extend #{$class-type}pull--#{$namespace}one-half; }
-    #{$class-type}pull--#{$namespace}five-eighths        { right:62.5%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}six-eighths         { @extend #{$class-type}pull--#{$namespace}three-quarters; }
-    #{$class-type}pull--#{$namespace}seven-eighths       { right:87.5%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-eighth          { right:12.5%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-eighths         { @extend #{$grid__class-type}pull--#{$namespace}one-quarter; }
+    #{$grid__class-type}pull--#{$namespace}three-eighths       { right:37.5%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}four-eighths        { @extend #{$grid__class-type}pull--#{$namespace}one-half; }
+    #{$grid__class-type}pull--#{$namespace}five-eighths        { right:62.5%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}six-eighths         { @extend #{$grid__class-type}pull--#{$namespace}three-quarters; }
+    #{$grid__class-type}pull--#{$namespace}seven-eighths       { right:87.5%; @include silent-relative(); }
 
 
     //**
     // * Tenths
     // */
-    #{$class-type}pull--#{$namespace}one-tenth           { right:10%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-tenths          { @extend #{$class-type}pull--#{$namespace}one-fifth; }
-    #{$class-type}pull--#{$namespace}three-tenths        { right:30%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}four-tenths         { @extend #{$class-type}pull--#{$namespace}two-fifths; }
-    #{$class-type}pull--#{$namespace}five-tenths         { @extend #{$class-type}pull--#{$namespace}one-half; }
-    #{$class-type}pull--#{$namespace}six-tenths          { @extend #{$class-type}pull--#{$namespace}three-fifths; }
-    #{$class-type}pull--#{$namespace}seven-tenths        { right:70%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}eight-tenths        { @extend #{$class-type}pull--#{$namespace}four-fifths; }
-    #{$class-type}pull--#{$namespace}nine-tenths         { right:90%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-tenth           { right:10%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-tenths          { @extend #{$grid__class-type}pull--#{$namespace}one-fifth; }
+    #{$grid__class-type}pull--#{$namespace}three-tenths        { right:30%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}four-tenths         { @extend #{$grid__class-type}pull--#{$namespace}two-fifths; }
+    #{$grid__class-type}pull--#{$namespace}five-tenths         { @extend #{$grid__class-type}pull--#{$namespace}one-half; }
+    #{$grid__class-type}pull--#{$namespace}six-tenths          { @extend #{$grid__class-type}pull--#{$namespace}three-fifths; }
+    #{$grid__class-type}pull--#{$namespace}seven-tenths        { right:70%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}eight-tenths        { @extend #{$grid__class-type}pull--#{$namespace}four-fifths; }
+    #{$grid__class-type}pull--#{$namespace}nine-tenths         { right:90%; @include silent-relative(); }
 
 
     //**
     // * Twelfths
     // */
-    #{$class-type}pull--#{$namespace}one-twelfth         { right:8.333%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}two-twelfths        { @extend #{$class-type}pull--#{$namespace}one-sixth; }
-    #{$class-type}pull--#{$namespace}three-twelfths      { @extend #{$class-type}pull--#{$namespace}one-quarter; }
-    #{$class-type}pull--#{$namespace}four-twelfths       { @extend #{$class-type}pull--#{$namespace}one-third; }
-    #{$class-type}pull--#{$namespace}five-twelfths       { right:41.666%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}six-twelfths        { @extend #{$class-type}pull--#{$namespace}one-half; }
-    #{$class-type}pull--#{$namespace}seven-twelfths      { right:58.333%; @include silent-relative(); }
-    #{$class-type}pull--#{$namespace}eight-twelfths      { @extend #{$class-type}pull--#{$namespace}two-thirds; }
-    #{$class-type}pull--#{$namespace}nine-twelfths       { @extend #{$class-type}pull--#{$namespace}three-quarters; }
-    #{$class-type}pull--#{$namespace}ten-twelfths        { @extend #{$class-type}pull--#{$namespace}five-sixths; }
-    #{$class-type}pull--#{$namespace}eleven-twelfths     { right:91.666%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}one-twelfth         { right:8.333%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}two-twelfths        { @extend #{$grid__class-type}pull--#{$namespace}one-sixth; }
+    #{$grid__class-type}pull--#{$namespace}three-twelfths      { @extend #{$grid__class-type}pull--#{$namespace}one-quarter; }
+    #{$grid__class-type}pull--#{$namespace}four-twelfths       { @extend #{$grid__class-type}pull--#{$namespace}one-third; }
+    #{$grid__class-type}pull--#{$namespace}five-twelfths       { right:41.666%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}six-twelfths        { @extend #{$grid__class-type}pull--#{$namespace}one-half; }
+    #{$grid__class-type}pull--#{$namespace}seven-twelfths      { right:58.333%; @include silent-relative(); }
+    #{$grid__class-type}pull--#{$namespace}eight-twelfths      { @extend #{$grid__class-type}pull--#{$namespace}two-thirds; }
+    #{$grid__class-type}pull--#{$namespace}nine-twelfths       { @extend #{$grid__class-type}pull--#{$namespace}three-quarters; }
+    #{$grid__class-type}pull--#{$namespace}ten-twelfths        { @extend #{$grid__class-type}pull--#{$namespace}five-sixths; }
+    #{$grid__class-type}pull--#{$namespace}eleven-twelfths     { right:91.666%; @include silent-relative(); }
 }
 
-@if $pull == true{
+@if $grid__pull == true {
 
     //**
     // * Not a particularly great selector, but the DRYest way to do things.
     // */
-    [class*="pull--"]{ position:relative; }
+    [class*="pull--"] { position:relative; }
 
 
     @include pull-setup();
 
 
-    @if $responsive == true{
-        @each $name in $breakpoint-has-pull {
+    @if $grid__responsive == true {
+        @each $name in $grid__breakpoint-has-pull {
             @include grid-media-query($name) {
                @include  pull-setup("#{$name}--");
             }
