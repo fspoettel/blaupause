@@ -1,1 +1,0 @@
-/* Global script file for user functions */

@@ -1,5 +1,5 @@
 #############
-## Windows detritus
+## File System
 #############
 
 # Windows image file caches
@@ -23,7 +23,6 @@ $RECYCLE.BIN/
 # Core
 _app
 admin
-
 admin.php
 index.php
 
@@ -61,5 +60,4 @@ _themes/index.html
 node_modules
 
 # Sublime projetcs
-
 *sublime*

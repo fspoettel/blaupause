@@ -29,17 +29,17 @@ img[height] {
 
 // Image placement
 
-.img--right{
+.img--right {
     float:right;
     margin-bottom: $image-spacing + em;
     margin-left: $image-spacing + em;
 }
-.img--left{
+.img--left {
     float:left;
     margin-right: $image-spacing + em;
     margin-bottom: $image-spacing + em;
 }
-.img--center{
+.img--center {
     display:block;
     margin-right:auto;
     margin-bottom: $image-spacing + em;

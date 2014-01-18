@@ -30,4 +30,3 @@ function isInViewport(element) {
     rect.right <= (window.innerWidth || html.clientWidth)
   );
 } 
-/* Global script file for user functions */
