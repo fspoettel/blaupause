@@ -18,8 +18,8 @@
     @else if $point == lap {
         @media #{$bp__lap} { @content; }
     }
-    @else if $point == lap-up {
-        @media #{$bp__lap-up} { @content; }
+    @else if $point == lapUp {
+        @media #{$bp__lapUp} { @content; }
     }
     @else if $point == desk {
         @media #{$bp__desk} { @content; }

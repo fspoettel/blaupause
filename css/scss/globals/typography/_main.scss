@@ -4,12 +4,12 @@
 // Basic type-settings.
 //---------------------------------
 
-$typeface--body:     $typeface__primary;
-$typeface--content:  $typeface__secondary;
+$type__bodyFont:         $type__primary;
+$type__contentFont:  $type__secondary;
 
-$palm-font-size: 75%;   // 12px baseline 
-$lap-font-size:  87.5%; // 14px baseline
-$desk-font-size: 100%;  // 16px baseline
+$palmFontSize: 75%;   // 12px baseline 
+$lapFontSize:  87.5%; // 14px baseline
+$deskFontSize: 100%;  // 16px baseline
 
 // Core declaration
 
@@ -17,20 +17,20 @@ html,
 textarea,
 input,
 select {
-    line-height: $line-height-ratio;
-    font-family: $typeface__body;
-    font-size: $palm-font-size;
+    line-height: $type__ratio;
+    font-family: $type__bodyFont;
+    font-size: $palmFontSize;
     @include bp(lap) {
-        font-size: $lap-font-size;
+        font-size: $lapFontSize;
     }
     @include bp(desk) {
-        font-size: 100%;
+        font-size: $deskFontSize;
     }
 }
 
 body {
-    @include rem( "font-size", $scale-base );
-    color: $color__body-text;
+    @include rem( "font-size", $type__scaleBase );
+    color: $color__bodyText;
 }
 
 // Typographic reset
@@ -53,10 +53,11 @@ td {
 }
 
 // Vertical rhythm class
+// By default coupled to $ratio & $base-size, but it can be uncoupled by setting $scale-base &&|| $type__ratio
 
 .vR{
     margin-top: 0;
-    @include rem( "margin-bottom", ($scale-base * $line-height-ratio) );
+    @include rem( "margin-bottom", ($type__scaleBase * $type__ratio) );
 }
 
 // Content typography
@@ -74,7 +75,7 @@ td {
 #{$content-namespace} blockquote,
 #{$content-namespace} table {
     @extend .vR;
-    font-family: $typeface__content;
+    font-family: $type__contentFont;
 }
 
 // Modifiers

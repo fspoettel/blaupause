@@ -4,7 +4,7 @@
 // Responsive media settings.
 //---------------------------------
 
-$image-spacing: $base-sizing-unit;
+$type__imageSpacing: $type__sizingUnit;
 
 // Images
 //---
@@ -31,18 +31,18 @@ img[height] {
 
 .img--right {
     float:right;
-    margin-bottom: $image-spacing + em;
-    margin-left: $image-spacing + em;
+    margin-bottom: $type__imageSpacing + em;
+    margin-left: $type__imageSpacing + em;
 }
 .img--left {
     float:left;
-    margin-right: $image-spacing + em;
-    margin-bottom: $image-spacing + em;
+    margin-right: $type__imageSpacing + em;
+    margin-bottom: $type__imageSpacing + em;
 }
 .img--center {
     display:block;
     margin-right:auto;
-    margin-bottom: $image-spacing + em;
+    margin-bottom: $type__imageSpacing + em;
     margin-left:auto;
 }
 

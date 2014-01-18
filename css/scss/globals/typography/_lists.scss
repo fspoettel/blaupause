@@ -17,7 +17,7 @@ li,
 #{$content-namespace} li {
     >ul,
     >ol {
-        margin-left: $base-sizing-unit + em;
+        margin-left: $type__sizingUnit+ em;
     }
 }
 

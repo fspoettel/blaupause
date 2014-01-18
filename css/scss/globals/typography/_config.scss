@@ -10,8 +10,16 @@
 
 // Base
 
-$scale-base:        $base-size; // Default: 16
-$line-height-ratio: $ratio !default;
+$type__scaleBase:  $base__size; // Default: 16
+$type__ratio:      $base__ratio !default;
+
+// Units
+
+$type__sizingUnit:      $type__scaleBase / $base__browserDefault;
+$type__sizingNumerical: $type__scaleBase;
+
+$type__rhythmUnit:      $type__ratio;
+$type__rhythmNumerical: $type__scaleBase * $type__ratio;
 
 // Namespace for content-typography ( introduces vertical rhtythm for type, gives content heading hook )
 
@@ -36,9 +44,9 @@ $scale6:  18 !default; // h6, zeta
 
 // Font-stacks
 
-$typeface__primary:   sans-serif;
-$typeface__secondary: serif;
+$type__primary:   sans-serif;
+$type__secondary: serif;
 
 // Links
 
-$link__decoration: none;
+$type__linkDecoration: none;

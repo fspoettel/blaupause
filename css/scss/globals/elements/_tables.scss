@@ -8,32 +8,32 @@
 // 
 //---------------------------------
 
-$table__background-color: #fff;
-$table__odd-color:        #eee;
-$table__head-background:  #fff;
-$table__head-color:       $color__body-text;
+$table__backgroundColor: #fff;
+$table__oddColor:        #eee;
+$table__headBackground:  #fff;
+$table__headColor:       $color__bodyText;
 
 // Core table styles
 
 table {
     width: 100%;
-    background: $table__background-color;
+    background: $table__backgroundColor;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 th,
 td {
-    padding: ($base-sizing-unit/4+em);
-    @include bp(lap-up) {
-        padding: ($base-sizing-unit/2+em);
+    padding: ($base__sizingUnit/4+em);
+    @include bp(lapUp) {
+        padding: ($base__sizingUnit/2+em);
     }
     text-align: left;
 }
 
 thead {
-    background: $table__head-background;
-    color: $table__head-color;
+    background: $table__headBackground;
+    color: $table__headColor;
 }
 
 // Bordered tables
@@ -41,16 +41,16 @@ thead {
 .table--bordered {
     th,
     td{
-        border:$brand__border-width solid $brand--border-color;
+        border:$brand__borderWidth solid $brand--borderColor;
         &:empty {
             border: none;
         }
     }
     thead tr:last-child th {
-        border-bottom-width: $brand__border-width;
+        border-bottom-width: $brand__borderWidth;
     }
     tbody tr th:last-of-type {
-        border-right-width: $brand__border-width;
+        border-right-width: $brand__borderWidth;
     }
 }
 
@@ -58,7 +58,7 @@ thead {
 
 .table--striped {
     tbody tr:nth-of-type(odd){
-        background-color: $table__odd-color;
+        background-color: $table__oddColor;
     }
 }
 

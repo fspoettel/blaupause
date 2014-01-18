@@ -7,7 +7,7 @@
 // Base
 
 form {
-    @include rem( "margin-bottom", $base-rhythm-numerical );
+    @include rem( "margin-bottom", $base__rhythmNumerical );
 }
 
 button,
@@ -22,8 +22,8 @@ textarea {
 
 fieldset {
     margin: 0 2px; // (from normalize.css)
-    padding: ($base-sizing-unit/4+em) ($base-sizing-unit/2+em);
-    border: $brand__border-width solid $brand__border-color;
+    padding: ($base__sizingUnit/4+em) ($base__sizingUnit/2+em);
+    border: $brand__borderWidth solid $brand__borderColor;
 }
 
 legend {

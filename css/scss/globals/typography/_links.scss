@@ -8,7 +8,7 @@ a {
     line-height: inherit;
     background: transparent; //(from normalize.css)
     color: $color__link;
-    text-decoration: $link__decoration;
+    text-decoration: $type__linkDecoration;
     img {
         border:none;
     }
@@ -16,7 +16,7 @@ a {
 
  a {
     &:hover {
-        color: $color__link-hover;
+        color: $color__linkHover;
         outline: none;
     }
 }

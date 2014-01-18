@@ -12,22 +12,22 @@
 // @usage <a class="btn  btn--full"></a>
 //---------------------------------
 
-$btn__primary-color:   $color__primary;
-$btn__secondary-color: $color__secondary;
-$btn__tertiary-color:  tint( $color__secondary, 20% );
-$btn__muted-color:     $color__disabled;
-$btn__positive-color:  $color__success;
-$btn__negative-color:  $color__error;
-$btn__text-color:      #fff !default;
+$btn__primaryColor:   $color__primary;
+$btn__secondaryColor: $color__secondary;
+$btn__tertiaryColor:  tint( $color__secondary, 20% );
+$btn__mutedColor:     $color__disabled;
+$btn__positiveColor:  $color__success;
+$btn__negativeColor:  $color__error;
+$btn__textColor:      #fff !default;
 
 // Structure
 
 .btn {
     display: inline-block;
-    padding: ($base-sizing-unit+em) ($base-rhythm-ratio+em);
+    padding: ($base__sizingUnit+em) ($base__rhythmUnit+em);
     line-height: normal;
-    background: $btn__primary-color;
-    color: $btn__text-color;
+    background: $btn__primaryColor;
+    color: $btn__textColor;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -71,24 +71,24 @@ $btn__text-color:      #fff !default;
 }
 
 .btn--secondary { 
-    background: $btn__secondary-color;
+    background: $btn__secondaryColor;
 }
 
 .btn--tertiary { 
-    background: $btn__tertiary-color;
+    background: $btn__tertiaryColor;
 }
 
 // Button-states / Callbacks
 
 .btn--positive {
-    background: $btn__positive-color;
+    background: $btn__positiveColor;
 }
 
 .btn--negative {
-    background: $btn__negative-color;
+    background: $btn__negativeColor;
 }
 
 .btn[disabled],
 .btn--disabled {
-    background: $btn__muted-color;
+    background: $btn__mutedColor;
 }

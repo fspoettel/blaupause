@@ -7,12 +7,11 @@
 // $base-rhythm-*: Used for rhythm for elements outside typography, by default.
 //---------------------------------
 
-$base-size: 16 !default;
-$browser-default: 16 !default;
+$base__size: 16 !default;
+$base__browserDefault: 16 !default;
+$base__ratio: 1.5 !default;
 
-$base-sizing-unit: $base-size / $browser-default;
-
-$ratio: 1.5 !default;
-
-$base-rhythm-ratio: $ratio;
-$base-rhythm-numerical: ($base-size * $ratio);
+$base__sizingUnit: $base__size / $base__browserDefault;
+$base__sizingNumerical: $base__size;
+$base__rhythmUnit: $base__ratio;
+$base__rhythmNumerical: ($base__size * $base__ratio);
