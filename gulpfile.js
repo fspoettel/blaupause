@@ -58,7 +58,7 @@ gulp.task('watch', function () {
     });
 
     // Watch & build js
-    gulp.watch("js/**/*.js", function(ev){
+    gulp.watch(["js/lib/plugins/**/*.js","js/user/**/*.js", "js/global.js"], function(ev){
         gulp.run("scripts")
     });
 
@@ -68,7 +68,7 @@ gulp.task('watch', function () {
     });
 
     // Trigger reload
-    gulp.watch(["css/build/prefixed/global.min.css","**/*.html"], function (e) {
+    gulp.watch(["css/**/*.scss","**/*.html","js/build/global.min.js"], function (e) {
     server.changed({
         body: {
             files: [e.path]
