@@ -7,7 +7,9 @@ var gulp         = require("gulp"),
     prefix       = require("gulp-autoprefixer"),
     cssmin       = require("gulp-minify-css"),
     plumber      = require("gulp-plumber"),
-    imagemin     = require ("gulp-imagemin");
+    imagemin     = require ("gulp-imagemin"),
+    tinylr       = require("tiny-lr"),
+    server       = tinylr();
 
 // Concat & Minify JS
 gulp.task("scripts", function(){
@@ -40,16 +42,19 @@ gulp.task("images", function () {
         .pipe(gulp.dest("img/opti"))
 });
 
-//
+// Watch
+gulp.task('watch', function () {
 
-// Default
-gulp.task("default", function(){
-    // Run Task
-    gulp.run("scripts", "sass", "images");
+    // Server
+    server.listen(35729, function (err) {
+      if (err){
+            return console.log(err);
+        }
+    });
 
     // Watch & build .scss
     gulp.watch("css/**/*.scss" , function(ev){
-        gulp.run("sass")
+        gulp.run("sass");
     });
 
     // Watch & build js
@@ -61,4 +66,22 @@ gulp.task("default", function(){
     gulp.watch(["img/src/*"], function(ev){
         gulp.run("images")
     });
+
+    // Trigger reload
+    gulp.watch(["css/build/prefixed/global.min.css","**/*.html"], function (e) {
+    server.changed({
+        body: {
+            files: [e.path]
+        }
+    });
+});
+
+
+});
+
+// Default
+gulp.task("default", function(){
+    // Run Task
+    gulp.run("scripts", "sass", "images");
+    gulp.run("watch");
 });
