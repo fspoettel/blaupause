@@ -11,9 +11,16 @@ var gulp         = require("gulp"),
     tinylr       = require("tiny-lr"),
     server       = tinylr();
 
+var jsSrcPath = ["js/user/*.js", "js/user/**/*.js", "js/global.js"],
+    jsWatchPath = "js/**/*.js",
+    lrPath  = ["css/build/prefixed/global.min.css","**/*.html","js/build/global.min.js"],
+    sassSrcPath = "css/build.scss",
+    sassWatchPath = "css/**/*.scss",
+    imgPaths = "img/src/*";
+
 // Concat & Minify JS
 gulp.task("scripts", function(){
-    gulp.src(["js/lib/plugins/**/*.js","js/user/**/*.js", "js/global.js"])
+    gulp.src(jsSrcPath)
         .pipe(concat("global.js"))
         .pipe(gulp.dest("js/build"))
         .pipe(uglify())
@@ -23,7 +30,7 @@ gulp.task("scripts", function(){
 
 // Build, autoprefix & minify CSS
 gulp.task("sass", function () {
-    gulp.src("css/build.scss")
+    gulp.src(sassSrcPath)
         .pipe(plumber())
         .pipe(sass({noCache:true}))
         .pipe(rename("global.css"))
@@ -37,7 +44,7 @@ gulp.task("sass", function () {
 
 // Minify images
 gulp.task("images", function () {
-    gulp.src("img/src/*")
+    gulp.src(imgPaths)
         .pipe(imagemin())
         .pipe(gulp.dest("img/opti"))
 });
@@ -53,27 +60,27 @@ gulp.task('watch', function () {
     });
 
     // Watch & build .scss
-    gulp.watch("css/**/*.scss" , function(ev){
+    gulp.watch(sassWatchPath , function(ev){
         gulp.run("sass");
     });
 
     // Watch & build js
-    gulp.watch(["js/lib/plugins/**/*.js","js/user/**/*.js", "js/global.js"], function(ev){
+    gulp.watch(jsWatchPath, function(ev){
         gulp.run("scripts")
     });
 
     // Watch & minify images
-    gulp.watch(["img/src/*"], function(ev){
+    gulp.watch(imgPaths, function(ev){
         gulp.run("images")
     });
 
     // Trigger reload
-    gulp.watch(["css/**/*.scss","**/*.html","js/build/global.min.js"], function (e) {
-    server.changed({
-        body: {
-            files: [e.path]
-        }
-    });
+    gulp.watch(lrPath, function (e) {
+        server.changed({
+            body: {
+                files: [e.path]
+            }
+        });
 });
 
 
@@ -82,6 +89,5 @@ gulp.task('watch', function () {
 // Default
 gulp.task("default", function(){
     // Run Task
-    gulp.run("scripts", "sass", "images");
-    gulp.run("watch");
+    gulp.run("scripts", "sass", "images","watch");
 });
