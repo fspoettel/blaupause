@@ -16,19 +16,19 @@ $table__headColor:       $color__bodyText;
 // Core table styles
 
 table {
-    width: 100%;
     background: $table__backgroundColor;
     border-collapse: collapse;
     border-spacing: 0;
+    width: 100%;
 }
 
 th,
 td {
     padding: ($base__sizingUnit/4+em);
+    text-align: left;
     @include bp(lapUp) {
         padding: ($base__sizingUnit/2+em);
     }
-    text-align: left;
 }
 
 thead {
@@ -40,7 +40,7 @@ thead {
 
 .table--bordered {
     th,
-    td{
+    td {
         border:$brand__borderWidth solid $brand--borderColor;
         &:empty {
             border: none;

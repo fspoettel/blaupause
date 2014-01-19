@@ -36,14 +36,15 @@ img[height] {
 }
 .img--left {
     float:left;
-    margin-right: $type__imageSpacing + em;
     margin-bottom: $type__imageSpacing + em;
+    margin-right: $type__imageSpacing + em;
 }
 .img--center {
     display:block;
-    margin-right:auto;
     margin-bottom: $type__imageSpacing + em;
     margin-left:auto;
+    margin-right:auto;
+
 }
 
 // Figures 

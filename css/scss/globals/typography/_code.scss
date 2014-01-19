@@ -9,8 +9,8 @@ pre {
     white-space: pre-wrap;
     mark { //(from normalize.css)
         background: none;
-        color: inherit;
         border-bottom: 1px solid;
+        color: inherit;
     }
  }
 
@@ -26,9 +26,9 @@ pre {
 
  sub,
  sup {
-    position: relative;
-    line-height: 0;
     font-size: 75%;
+    line-height: 0;
+    position: relative;
     vertical-align: baseline;
  }
 

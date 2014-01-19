@@ -13,8 +13,8 @@
              url("#{$font-filename}.woff") format("woff"),
              url("#{$font-filename}.ttf") format("truetype"),
              url("#{$font-filename}.svg##{$font-family}") format("svg");
-        font-weight: $font-weight;
-        font-style: $font-style;
         font-stretch: $font-stretch;
+        font-style: $font-style;
+        font-weight: $font-weight;
     }
 }

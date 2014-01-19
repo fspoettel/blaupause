@@ -26,8 +26,8 @@
 // *
 // * palm     --  palm-based devices, like phones and small tablets
 // * lap      --  lap-based devices, like iPads or laptops
+// * lapUp    --  All devices starting at lap-based
 // * desk     --  stationary devices, like desktop computers
-// * high     --  deviced with a big screen and high res
 // * regular  --  any/all types of device
 // *
 // * These namespaces are then used in the library to give you the ability to
@@ -65,7 +65,7 @@
 // *     - Shares media-queries with mq-mixin [3]
 // *     - Uses flexbox for browsers that support it to get rid of letter-spacing dependency. [4]
 // *     - Uses .scss-comments
-// *      - Namespaced variables
+// *     - Namespaced variables
 // */
 
 
@@ -221,13 +221,13 @@ $grid__classType:            unquote(".");
 // * 4. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
 // */
 #{$grid__classType}grid {
+    display: block;                       //* [4] */
+    display: flex;                        //* [4] */
+    flex-flow: row wrap;
     list-style:none;                      //* [1] */
     margin:0;                             //* [2] */
     padding:0;                            //* [2] */
     @include rem("margin-left",-$grid__gutter); //* [3] */
-    display: block;                       //* [4] */
-    display: flex;                        //* [4] */
-    flex-flow: row wrap;
     @if $grid__useMarkupFix != true{
         letter-spacing:-0.31em;
     }
@@ -250,13 +250,13 @@ $grid__classType:            unquote(".");
     // * 5. Required to combine fluid widths and fixed gutters.
     // */
     #{$grid__classType}grid__item {
+        box-sizing:border-box;                //* [5] */
         display:inline-block;                 //* [1] */
         @include rem("padding-left",$grid__gutter); //* [3] */
         vertical-align:top;                   //* [3] */
         @if $grid__mobileFirst == true{
             width:100%;                       //* [4] */
         }
-        box-sizing:border-box;                //* [5] */
         @if $grid__useMarkupFix != true{
             letter-spacing:normal;
             word-spacing:normal;
@@ -270,8 +270,8 @@ $grid__classType:            unquote(".");
 // */
 #{$grid__classType}grid--rev {
     direction:rtl;
-    text-align:left;
     justify-content: flex-end;
+    text-align:left;
 
     > #{$grid__classType}grid__item {
         direction:ltr;
@@ -297,8 +297,8 @@ $grid__classType:            unquote(".");
 // * Align the entire grid to the right. Extends `.grid`.
 // */
 #{$grid__classType}grid--right {
-    text-align:right;
     justify-content: flex-end;
+    text-align:right;
 
     > #{$grid__classType}grid__item {
         text-align:left;
@@ -311,8 +311,8 @@ $grid__classType:            unquote(".");
 // * classes. Extends `.grid`.
 // */
 #{$grid__classType}grid--center {
-    text-align:center;
     justify-content: center;
+    text-align:center;
 
     > #{$grid__classType}grid__item {
         text-align:left;
@@ -325,13 +325,13 @@ $grid__classType:            unquote(".");
 // * `.grid`.
 // */
 #{$grid__classType}grid--middle {
-    > #{$grid__classType}grid__item{
+    > #{$grid__classType}grid__item {
         vertical-align:middle;
     }
 }
 
 #{$grid__classType}grid--bottom {
-    > #{$grid__classType}grid__item{
+    > #{$grid__classType}grid__item {
         vertical-align:bottom;
     }
 }

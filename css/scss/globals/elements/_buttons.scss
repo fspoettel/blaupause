@@ -23,34 +23,33 @@ $btn__textColor:      #fff !default;
 // Structure
 
 .btn {
-    display: inline-block;
-    padding: ($base__sizingUnit+em) ($base__rhythmUnit+em);
-    line-height: normal;
+    -webkit-appearance: none;
     background: $btn__primaryColor;
     color: $btn__textColor;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    zoom: 1;
     cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: ($base__sizingUnit+em) ($base__rhythmUnit+em);
+    text-align: center;
     -webkit-user-drag: none;
     user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    zoom: 1;
     // Firefox: Get rid of the inner focus border (from normalize.css)
     &::-moz-focus-inner {
-        padding: 0;
         border: 0;
+        padding: 0;
     }
 }
 
 // Interactivity
 
 .btn {
-    &:hover {
-        text-decoration: none;
-    }
+    &:hover,
     &:focus,
     &:active {
-        outline: none;
+        text-decoration: none;
     }
 }
 
@@ -88,7 +87,7 @@ $btn__textColor:      #fff !default;
     background: $btn__negativeColor;
 }
 
-.btn[disabled],
+.btn:disabled,
 .btn--disabled {
     background: $btn__mutedColor;
 }

@@ -5,9 +5,9 @@
 //---------------------------------
 
 a {
-    line-height: inherit;
     background: transparent; //(from normalize.css)
     color: $color__link;
+    line-height: inherit;
     text-decoration: $type__linkDecoration;
     img {
         border:none;

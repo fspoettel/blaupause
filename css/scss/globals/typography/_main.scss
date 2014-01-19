@@ -17,9 +17,9 @@ html,
 textarea,
 input,
 select {
-    line-height: $type__ratio;
     font-family: $type__bodyFont;
     font-size: $palmFontSize;
+    line-height: $type__ratio;
     @include bp(lap) {
         font-size: $lapFontSize;
     }
@@ -82,14 +82,14 @@ td {
 
 em,
 i {
-    line-height: inherit;
     font-style: italic;
+    line-height: inherit;
 }
 
 strong,
 b {
-    line-height: inherit;
     font-weight: bold;
+    line-height: inherit;
 }
 
 // Lines (from normalize.css)

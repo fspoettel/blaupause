@@ -3,11 +3,9 @@ Boilerplate
 
 ![Dev](https://david-dm.org/felics/boilerplate.png)
 
-A boilerplate for new projects, with a Statamic-twist. This is very early alpha-stuff.
-
 ## About
 
-This project is a collection of best practices wrapped around a Gulp build process.
+A boilerplate for new projects, with a Statamic-twist. This is very early alpha-stuff. This project is a collection of best practices wrapped around a Gulp build process.
 
 ## Installation
 
