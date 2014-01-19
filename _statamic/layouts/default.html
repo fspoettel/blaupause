@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ _site_author }}">
     <link rel="stylesheet" href="{{ theme:css src="build/prefixed/global.min" }}">
-    <script src="{{ theme:js src="lib/modernizr-2.6.3" }}"></script>
+    {{ # Teach IE8/below some manners # }} 
+    <!--[if lt IE 9]>
+        <script src="{{ theme:js src="lib/html5shiv-3.7.0" }}"></script>
+        <script src="{{ theme:js src="lib/respond-1.4.2.min" }}"></script>
+    <![endif]-->
     {{ if typekit_id }}
     <script type="text/javascript">
       (function() {
