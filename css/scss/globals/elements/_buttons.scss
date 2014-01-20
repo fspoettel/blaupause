@@ -29,7 +29,7 @@ $btn__textColor:      #fff !default;
     cursor: pointer;
     display: inline-block;
     line-height: normal;
-    padding: ($base__sizingUnit+em) ($base__rhythmUnit+em);
+    padding: ($base__sizingUnit / 2+em) ($base__rhythmUnit+em);
     text-align: center;
     -webkit-user-drag: none;
     user-select: none;

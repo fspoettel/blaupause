@@ -293,7 +293,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-block;
   line-height: normal;
-  padding: 1em 1.5em;
+  padding: 0.5em 1.5em;
   text-align: center;
   -webkit-user-drag: none;
   -webkit-user-select: none;

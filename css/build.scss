@@ -22,6 +22,7 @@
 @import "scss/globals/var/brand";
 @import "scss/globals/var/colors";
 @import "scss/globals/var/mediaqueries";
+@import "scss/globals/var/type";
 
 // Where are most of the reset-styles? Normalize.css is ingrained across the project as this makes the scope of the normalizations more visual.
 
@@ -33,8 +34,6 @@
 @import "scss/globals/layout/grids";
 
 // Get the typography -> folder: scss/globals/typography
-
-@import "scss/globals/typography/config";
 
 @import "scss/globals/typography/code";
 @import "scss/globals/typography/fontface";
