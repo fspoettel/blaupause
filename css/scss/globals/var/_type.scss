@@ -33,20 +33,20 @@ $content-namespace: unquote(".content");
 //   It is of course possible, to make the scale dynamic to $type__scaleBase & type__ratio 
 // - Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
 
-$scaleU:  96 !default; // kilo
-$scaleM:  84 !default; // mega
-$scaleG:  72 !default; // giga
-$scale1:  60 !default; // h1, alpha
-$scale2:  48 !default; // h2, beta
-$scale3:  36 !default; // h3, gamma
+$scaleU:  84 !default; // kilo
+$scaleM:  72 !default; // mega
+$scaleG:  60 !default; // giga
+$scale1:  48 !default; // h1, alpha
+$scale2:  36 !default; // h2, beta
+$scale3:  30 !default; // h3, gamma
 $scale4:  24 !default; // h4, delta
 $scale5:  21 !default; // h5, epsilon
-$scale6:  18 !default; // h6, zeta
+$scale6:  16 !default; // h6, zeta
 
 // Font-stacks
 
-$type__primary:   sans-serif;
-$type__secondary: serif;
+$type__primary:   $franklinGothic;
+$type__secondary: $palatino;
 
 // Links
 
