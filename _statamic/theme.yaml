@@ -6,18 +6,18 @@
 
 # Theme data
 
-_site_author: Felix Spoettel
-_site_language: de
-_description: Placeholder
-_theme_name: Boilerplate
+_site_author:
+_site_language: "de"
+_site_description:
+_theme_name:
 
 # Comments-toggle
 
-show_comments:yes
+show_comments: true
 
 # Accounts
 
-disqus_account:test
+disqus_account: test
 typekit_id:
 
 # Global text snippets
