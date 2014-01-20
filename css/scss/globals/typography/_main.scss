@@ -4,8 +4,8 @@
 // Basic type-settings.
 //---------------------------------
 
-$type__bodyFont:         $type__primary;
-$type__contentFont:  $type__secondary;
+$type__body:     $type__primary;
+$type__content:  $type__secondary;
 
 $palmFontSize: 75%;   // 12px baseline 
 $lapFontSize:  87.5%; // 14px baseline
@@ -17,7 +17,7 @@ html,
 textarea,
 input,
 select {
-    font-family: $type__bodyFont;
+    font-family: $type__body;
     font-size: $palmFontSize;
     line-height: $type__ratio;
     @include bp(lap) {
@@ -75,7 +75,7 @@ td {
 #{$content-namespace} blockquote,
 #{$content-namespace} table {
     @extend .vR;
-    font-family: $type__contentFont;
+    font-family: $type__content;
 }
 
 // Modifiers

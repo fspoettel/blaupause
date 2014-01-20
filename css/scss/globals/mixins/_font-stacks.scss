@@ -1,0 +1,81 @@
+//*------------------------------------*\
+//     $FONTFACE MIXIN
+//*------------------------------------*/
+// A set of web-safe font-stacks as variables to use as stand-alone or web-font fallback.
+// @usage: font-family: "some", $baskerville;
+//---------------------------------
+
+
+// Serifs
+
+
+// Baskerville
+$baskerville: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+// Big Caslon
+$bigCaslon: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+
+// Bodoni
+$bodoni: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+// Didot
+$didot: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+// Garamond
+$garamond: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+
+// Georgia
+$georgia: Georgia, Times, "Times New Roman", serif;
+
+// Goudy Old Style
+$goudyOldStyle: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+
+// Hoefler Text
+$hoeflerText: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+
+// Palatino
+$palatino: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+
+// Times New Romam
+$timesNewRoman: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+
+
+// Sans-Serif
+
+
+// Calibri
+$calibri: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+// Century Gothic
+$centuryGothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+
+// Franklin Gothic Medium
+$franklinGothic: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+
+// Futura
+$futura: Futura, "Trebuchet MS", Arial, sans-serif;
+
+// Gill Sans
+$gillSans: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+// Helvetica
+$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Lucida Grande
+$lucidaGrande: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+
+// Optima
+$optima: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+
+// Segoe UI
+$segoeUI: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+// Verdana
+$verdana: Verdana, Geneva, sans-serif;
+
+
+// Monospace
+
+
+// Monospace
+$monospace: "DejaVu Sans Mono", Menlo, Monaco, Consolas, Courier, monospace;

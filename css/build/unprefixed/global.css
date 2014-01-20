@@ -79,7 +79,7 @@ h4,
 h5,
 h6 {
   color: #222222;
-  font-family: sans-serif;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
   font-feature-settings: "kern", "liga";
   font-weight: normal;
   line-height: 1;
@@ -87,31 +87,31 @@ h6 {
   text-rendering: optimizeLegibility; }
 
 .ultra {
-  font-size: 96px;
-  font-size: 6rem; }
-
-.giga {
-  font-size: 72px;
-  font-size: 4.5rem; }
-
-.mega {
   font-size: 84px;
   font-size: 5.25rem; }
 
-h1,
-.alpha {
+.giga {
   font-size: 60px;
   font-size: 3.75rem; }
 
-h2,
-.beta {
+.mega {
+  font-size: 72px;
+  font-size: 4.5rem; }
+
+h1,
+.alpha {
   font-size: 48px;
   font-size: 3rem; }
 
-h3,
-.gamma {
+h2,
+.beta {
   font-size: 36px;
   font-size: 2.25rem; }
+
+h3,
+.gamma {
+  font-size: 30px;
+  font-size: 1.875rem; }
 
 h4,
 .delta {
@@ -125,8 +125,8 @@ h5,
 
 h6,
 .zeta {
-  font-size: 18px;
-  font-size: 1.125rem; }
+  font-size: 16px;
+  font-size: 1rem; }
 
 .vR--heading, .content h1,
 .content h2,
@@ -153,7 +153,7 @@ html,
 textarea,
 input,
 select {
-  font-family: sans-serif;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
   font-size: 75%;
   line-height: 1.5; }
   @media (min-width: 481px) and (max-width: 1023px) {
@@ -218,7 +218,7 @@ td {
 .content p,
 .content blockquote,
 .content table {
-  font-family: serif; }
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 
 em,
 i {
