@@ -7,6 +7,23 @@
 // Snippets borrowed from normalize are marked with scss-comments.
 //---------------------------------
 
+// Base
+
+* {
+    box-sizing: border-box; 
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin:0;
+}
+
+// Display definitions (from normalize.css)
+
 article,
 aside,
 details,
