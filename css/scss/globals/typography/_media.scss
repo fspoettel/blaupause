@@ -34,11 +34,13 @@ img[height] {
     margin-bottom: $type__imageSpacing + em;
     margin-left: $type__imageSpacing + em;
 }
+
 .img--left {
     float:left;
     margin-bottom: $type__imageSpacing + em;
     margin-right: $type__imageSpacing + em;
 }
+
 .img--center {
     display:block;
     margin-bottom: $type__imageSpacing + em;
