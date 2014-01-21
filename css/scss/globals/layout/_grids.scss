@@ -21,7 +21,7 @@
 //*------------------------------------*/
 //**
 // * This fork of csswizardry grids provides you with widths to suit a number of breakpoints
-// * designed around devices of a size you specify. Out of the box, csswizardry
+// * designed around devices of a size you specify. Out of the box, this fork of csswizardry
 // * grids caters to the following types of device:
 // *
 // * palm     --  palm-based devices, like phones and small tablets
@@ -86,7 +86,7 @@ $grid__responsive:            true!default;
 // * Is this build mobile first? Setting to ‘true’ means that all grids will be
 // * 100% width if you do not apply a more specific class to them.
 // */
-$grid__mobileFirst:          true!default;
+$grid__mobileFirst:           true!default;
 
 
 //**
@@ -98,7 +98,7 @@ $grid__gutter:                $base__rhythmNumerical!default; // [2]
 //**
 // * Would you like Sass’ silent classes, or regular CSS classes?
 // */
-$grid__useSilentClasses:    true!default;
+$grid__useSilentClasses:      true!default;
 
 
 //**
@@ -109,6 +109,7 @@ $grid__pull:                  true!default; // [1]
 
 
 //**
+// * This fork uses flexbox where possible to eliminate this issue.
 // * Using `inline-block` means that the grid items need their whitespace removing
 // * in order for them to work correctly. Set the following to true if you are
 // * going to achieve this by manually removing/commenting out any whitespace in

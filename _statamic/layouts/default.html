@@ -2,6 +2,8 @@
 <html class="no-js" lang="{{ _site_language }}">
 <head>
     <meta charset="utf-8">
+    {{# DNS Prefetching for later - needs testing #}}
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
     <title>{{ _site_name }}</title>
     <meta name="description" content="{{ _site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +14,9 @@
         <script src="{{ theme:js src="lib/html5shiv-3.7.0" }}"></script>
         <script src="{{ theme:js src="lib/respond-1.4.2.min" }}"></script>
     <![endif]-->
+    <script>
+        document.documentElement.className = "js";
+    </script>
     {{# Async typekit-snippet. Remember to prevent FOUT. See: http://blog.typekit.com/2011/05/25/loading-typekit-fonts-asynchronously/ #}}
     {{ if typekit_id }}
     <script type="text/javascript">

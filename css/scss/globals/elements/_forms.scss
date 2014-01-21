@@ -16,14 +16,17 @@ select,
 textarea {
     margin: 0;
     text-transform: none;
+
 }
 
 label,
 input,
 textarea,
-select {
+select,
+legend {
     display: inline-block;
     vertical-align: middle;
+    font-family: $type__primary;
 }
 
 // Fieldsets
