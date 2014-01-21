@@ -64,6 +64,7 @@ thead {
 
 // Data table
 
-.table--data {
+.table--data,
+#{$content-namespace} .table--data {
     font:12px/1.5 sans-serif;
 }

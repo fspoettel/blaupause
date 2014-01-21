@@ -441,7 +441,8 @@ thead {
 .table--striped tbody tr:nth-of-type(odd) {
   background-color: #eeeeee; }
 
-.table--data {
+.table--data,
+.content .table--data {
   font: 12px/1.5 sans-serif; }
 
 body {

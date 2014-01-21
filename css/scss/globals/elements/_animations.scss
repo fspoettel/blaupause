@@ -10,6 +10,7 @@
 
 $animation__duration: 1s !default;
 $animation__fillmode: both !default;
+$animation__startDelay: 0s !default; // Use with animationDelay-mixin
 $animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
 
 // Core

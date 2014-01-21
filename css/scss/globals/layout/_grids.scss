@@ -224,6 +224,9 @@ $grid__classType:            unquote(".");
 #{$grid__classType}grid {
     display: block;                       //* [4] */
     display: flex;                        //* [4] */
+    @supports not (flex-wrap: wrap) {     // Firefox till 26
+        display: block;
+    }
     flex-flow: row wrap;
     list-style:none;                      //* [1] */
     margin:0;                             //* [2] */

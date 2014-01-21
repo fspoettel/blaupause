@@ -5,6 +5,6 @@
 // @usage @include animationDelay(steps,start,step-length);
 //---------------------------------
 
-@mixin animationDelay( $steps:1, $startDelay: 0s, $offset: $animation__delayOffset) {
+@mixin animationDelay( $steps:1, $startDelay: $animation__startDelay, $offset: $animation__delayOffset) {
     animation-delay: $startDelay + ($offset * $steps);
 }
