@@ -281,6 +281,7 @@ $grid__classType:            unquote(".");
 #{$grid__classType}grid--rev {
     direction:rtl;
     justify-content: flex-end;
+    flex-flow: wrap-reverse row;
     text-align:left;
 
     > #{$grid__classType}grid__item {
@@ -335,12 +336,14 @@ $grid__classType:            unquote(".");
 // * `.grid`.
 // */
 #{$grid__classType}grid--middle {
+    align-items: center;
     > #{$grid__classType}grid__item {
         vertical-align:middle;
     }
 }
 
 #{$grid__classType}grid--bottom {
+    align-items: flex-end;
     > #{$grid__classType}grid__item {
         vertical-align:bottom;
     }
