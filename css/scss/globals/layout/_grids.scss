@@ -216,25 +216,31 @@ $grid__classType:            unquote(".");
 //    $GRID SETUP
 //*------------------------------------*/
 //**
-// * 1. Allow the grid system to be used on lists.
-// * 2. Remove any margins and paddings that might affect the grid system.
-// * 3. Apply a negative `margin-left` to negate the columns’ gutters.
-// * 4. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
+// * 1. Use display:block for old browsers
+// * 2. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
+// * 3. Remove list-styles so that the grid can be used on lists
+// * 4. Remove all spacing affecting the grid
+// * 5. Negative gutter to keep the grid centered
+// * 6. Fall back to the display:block / inline-block-grid on Firefox<28
+// * 7. Use letter-spacing to fix inline-block spacing quirks
 // */
 #{$grid__classType}grid {
-    display: block;                       //* [4] */
-    display: flex;                        //* [4] */
-    @supports not (flex-wrap: wrap) {     // Firefox till 26
+    display: block;                       //* [1] */
+    display: flex;                        //* [2] */
+    flex-flow: row wrap;
+    list-style:none;                      //* [3] */
+    margin:0;                             //* [4] */
+    padding:0;                            //* [4] */
+    @include rem("margin-left",-$grid__gutter); //* [5] */
+
+    @supports not (flex-wrap: wrap) {     //* [6] */
         display: block;
     }
-    flex-flow: row wrap;
-    list-style:none;                      //* [1] */
-    margin:0;                             //* [2] */
-    padding:0;                            //* [2] */
-    @include rem("margin-left",-$grid__gutter); //* [3] */
-    @if $grid__useMarkupFix != true{
+
+    @if $grid__useMarkupFix != true{ //* [7] */
         letter-spacing:-0.31em;
     }
+
 }
 
 @if $grid__useMarkupFix != true {
