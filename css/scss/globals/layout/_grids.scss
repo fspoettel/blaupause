@@ -274,21 +274,22 @@ $grid__classType:            unquote(".");
     }
 
 
-//**
-// * Reversed grids allow you to structure your source in the opposite order to
-// * how your rendered layout will appear. Extends `.grid`.
-// */
-#{$grid__classType}grid--rev {
-    direction:rtl;
-    justify-content: flex-end;
-    flex-flow: wrap-reverse row;
-    text-align:left;
-
-    > #{$grid__classType}grid__item {
-        direction:ltr;
+    //**
+    // * Reversed grids allow you to structure your source in the opposite order to
+    // * how your rendered layout will appear. Extends `.grid`.
+    // * Issue #6
+    // */
+    #{$grid__classType}grid--rev {
+        direction:rtl;
+        justify-content: flex-end;
+        flex-flow: wrap-reverse row;
         text-align:left;
+
+        > #{$grid__classType}grid__item {
+            direction:ltr;
+            text-align:left;
+        }
     }
-}
 
 
 //**
