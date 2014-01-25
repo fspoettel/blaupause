@@ -27,6 +27,7 @@ summary {
 
 audio,
 canvas,
+progress,
 video {
   display: inline-block; }
 
@@ -356,6 +357,8 @@ button,
 input,
 select,
 textarea {
+  color: inherit;
+  font: inherit;
   margin: 0;
   text-transform: none; }
 
@@ -365,8 +368,8 @@ textarea,
 select,
 legend {
   display: inline-block;
-  vertical-align: middle;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: middle; }
 
 fieldset {
   border: 1px solid #cccccc;
@@ -384,8 +387,7 @@ textarea {
   width: 100%; }
 
 textarea {
-  overflow: auto;
-  vertical-align: top; }
+  overflow: auto; }
 
 button,
 html input[type="button"],
@@ -395,6 +397,9 @@ input[type="submit"] {
   border: 0;
   -webkit-box-shadow: 0;
   box-shadow: 0; }
+
+button {
+  overflow: visbile; }
 
 button[disabled],
 html input[disabled] {
@@ -421,6 +426,10 @@ input[type="search"] {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
 
 table {
   background: white;
