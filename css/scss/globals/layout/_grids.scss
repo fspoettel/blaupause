@@ -156,6 +156,7 @@ $grid__breakpointHasPull:   ("palm", "lap","lapUp", "desk")!default;
 // * You do not need to edit anything from this line onward; csswizardry-grids is
 // * good to go. Happy griddin’!
 // */
+
 $grid__classType:            unquote(".");
 
 @if $grid__useSilentClasses == true {
@@ -175,6 +176,7 @@ $grid__classType:            unquote(".");
 // *
 // * Enclose a block of code with a media query as named in `$breakpoints`.
 // */
+
 @mixin grid-media-query($media-query) {
     $breakpoint-found: false;
 
@@ -224,6 +226,7 @@ $grid__classType:            unquote(".");
 // * 6. Fall back to the display:block / inline-block-grid on Firefox<28
 // * 7. Use letter-spacing to fix inline-block spacing quirks
 // */
+
 #{$grid__classType}grid {
     display: block;                       //* [1] */
     display: flex;                        //* [2] */
@@ -252,50 +255,51 @@ $grid__classType:            unquote(".");
 }
 
 
-    //**
-    // * 1. Cause columns to stack side-by-side.
-    // * 2. Space columns apart.
-    // * 3. Align columns to the tops of each other.
-    // * 4. Full-width unless told to behave otherwise.
-    // * 5. Required to combine fluid widths and fixed gutters.
-    // */
-    #{$grid__classType}grid__item {
-        box-sizing:border-box;                //* [5] */
-        display:inline-block;                 //* [1] */
-        @include rem("padding-left",$grid__gutter); //* [3] */
-        vertical-align:top;                   //* [3] */
-        @if $grid__mobileFirst == true{
-            width:100%;                       //* [4] */
-        }
-        @if $grid__useMarkupFix != true{
-            letter-spacing:normal;
-            word-spacing:normal;
-        }
+//**
+// * 1. Cause columns to stack side-by-side.
+// * 2. Space columns apart.
+// * 3. Align columns to the tops of each other.
+// * 4. Full-width unless told to behave otherwise.
+// * 5. Required to combine fluid widths and fixed gutters.
+// */
+
+#{$grid__classType}grid__item {
+    box-sizing:border-box;                //* [5] */
+    display:inline-block;                 //* [1] */
+    @include rem("padding-left",$grid__gutter); //* [3] */
+    vertical-align:top;                   //* [3] */
+    @if $grid__mobileFirst == true{
+        width:100%;                       //* [4] */
     }
+    @if $grid__useMarkupFix != true{
+        letter-spacing:normal;
+        word-spacing:normal;
+    }
+}
 
+//**
+// * Reversed grids allow you to structure your source in the opposite order to
+// * how your rendered layout will appear. Extends `.grid`.
+// * Issue #6
+// */
 
-    //**
-    // * Reversed grids allow you to structure your source in the opposite order to
-    // * how your rendered layout will appear. Extends `.grid`.
-    // * Issue #6
-    // */
-    #{$grid__classType}grid--rev {
-        direction:rtl;
-        justify-content: flex-end;
-        flex-flow: wrap-reverse row;
+#{$grid__classType}grid--rev {
+    direction:rtl;
+    justify-content: flex-end;
+    flex-flow: wrap-reverse row;
+    text-align:left;
+
+    > #{$grid__classType}grid__item {
+        direction:ltr;
         text-align:left;
-
-        > #{$grid__classType}grid__item {
-            direction:ltr;
-            text-align:left;
-        }
     }
-
+}
 
 //**
 // * Gutterless grids have all the properties of regular grids, minus any spacing.
 // * Extends `.grid`.
 // */
+
 #{$grid__classType}grid--full {
     margin-left:0;
 
@@ -304,10 +308,10 @@ $grid__classType:            unquote(".");
     }
 }
 
-
 //**
 // * Align the entire grid to the right. Extends `.grid`.
 // */
+
 #{$grid__classType}grid--right {
     justify-content: flex-end;
     text-align:right;
@@ -317,11 +321,11 @@ $grid__classType:            unquote(".");
     }
 }
 
-
 //**
 // * Centered grids align grid items centrally without needing to use push or pull
 // * classes. Extends `.grid`.
 // */
+
 #{$grid__classType}grid--center {
     justify-content: center;
     text-align:center;
@@ -331,11 +335,11 @@ $grid__classType:            unquote(".");
     }
 }
 
-
 //**
 // * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
 // * `.grid`.
 // */
+
 #{$grid__classType}grid--middle {
     align-items: center;
     > #{$grid__classType}grid__item {
@@ -350,10 +354,10 @@ $grid__classType:            unquote(".");
     }
 }
 
-
 //**
 // * Create grids with narrower gutters. Extends `.grid`.
 // */
+
 #{$grid__classType}grid--narrow {
     @include rem("margin-left", (-$grid__gutter / 2)); //* [3] */
 
@@ -362,10 +366,10 @@ $grid__classType:            unquote(".");
     }
 }
 
-
 //**
 // * Create grids with wider gutters. Extends `.grid`.
 // */
+
 #{$grid__classType}grid--wide {
     @include rem("margin-left",(-$grid__gutter * 2 )); //* [3] */
 
@@ -384,6 +388,7 @@ $grid__classType:            unquote(".");
 //**
 // * Create our width classes, prefixed by the specified namespace.
 // */
+
 @mixin device-type($namespace:"") {
 
 

@@ -16,8 +16,8 @@ $animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
 // Core
 
 %animated {
-  animation-duration: $animation__duration;
-  animation-fill-mode: $animation__fillmode;
+    animation-duration: $animation__duration;
+    animation-fill-mode: $animation__fillmode;
 }
 
 // Project declarations

@@ -23,7 +23,6 @@ $btn__textColor:      #fff !default;
 // Structure
 
 .btn {
-    -webkit-appearance: none;
     background: $btn__primaryColor;
     color: $btn__textColor;
     cursor: pointer;
@@ -36,11 +35,6 @@ $btn__textColor:      #fff !default;
     vertical-align: middle;
     white-space: nowrap;
     zoom: 1;
-    // Firefox: Get rid of the inner focus border (from normalize.css)
-    &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-    }
 }
 
 // Interactivity
@@ -63,7 +57,7 @@ $btn__textColor:      #fff !default;
     display: block;
 }
 
- // Visual modifiers
+// Visual modifiers
 
 .btn--round {
     border-radius: $brand__rounding;

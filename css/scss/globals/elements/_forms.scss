@@ -90,10 +90,10 @@ button,
 html input[type="button"], // 1.
 input[type="reset"],
 input[type="submit"] {
-    @extend .btn;
     -webkit-appearance: none;
     border: 0;
     box-shadow: 0;
+    @extend .btn;
 }
 
 //** Normalize.css

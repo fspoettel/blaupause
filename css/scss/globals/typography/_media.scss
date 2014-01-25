@@ -6,9 +6,6 @@
 
 $type__imageSpacing: $type__sizingUnit;
 
-// Images
-//---
-
 // Fluid images
 
 //** Normalize.css
@@ -21,6 +18,7 @@ img {
 }
 
 // Non fluid-images when height & width is present
+
 img[width],
 img[height] {
     max-width:none;

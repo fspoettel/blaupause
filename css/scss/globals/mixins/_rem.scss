@@ -12,7 +12,7 @@ $baselinePx: $base__browserDefault;
     #{$property}: ($px-values+px);
     @if type-of($px-values) == "number" {
         #{$property}: ($px-values/$baselineRem);
-    } 
+    }
     @else {
         $rem-values: ();
         @each $value in $px-values {
