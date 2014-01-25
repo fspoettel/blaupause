@@ -2,7 +2,8 @@
 var gulp          = require("gulp"),
     concat        = require("gulp-concat"),
     cssmin        = require("gulp-minify-css"),
-    imagemin      = require ("gulp-imagemin"),
+    imagemin      = require("gulp-imagemin"),
+    jshint        = require("gulp-jshint"),
     plumber       = require("gulp-plumber"),
     prefix        = require("gulp-autoprefixer"),
     rename        = require("gulp-rename"),
@@ -21,6 +22,8 @@ var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
 // Concat & Minify JS
 gulp.task("scripts", function(){
   gulp.src(jsSrcPath)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe(concat("global.js"))
     .pipe(gulp.dest("js/build"))
     .pipe(uglify())
