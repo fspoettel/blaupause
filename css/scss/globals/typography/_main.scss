@@ -62,18 +62,18 @@ td {
 
 // Content typography
 
-#{$content-namespace} div,
-#{$content-namespace} dl,
-#{$content-namespace} dt,
-#{$content-namespace} dd,
-#{$content-namespace} form,
-#{$content-namespace} figure,
-#{$content-namespace} img,
-#{$content-namespace} ol,
-#{$content-namespace} ul,
-#{$content-namespace} p,
-#{$content-namespace} blockquote,
-#{$content-namespace} table {
+#{$contentNamespace} div,
+#{$contentNamespace} dl,
+#{$contentNamespace} dt,
+#{$contentNamespace} dd,
+#{$contentNamespace} form,
+#{$contentNamespace} figure,
+#{$contentNamespace} img,
+#{$contentNamespace} ol,
+#{$contentNamespace} ul,
+#{$contentNamespace} p,
+#{$contentNamespace} blockquote,
+#{$contentNamespace} table {
     @extend .vR;
     font-family: $type__content;
 }

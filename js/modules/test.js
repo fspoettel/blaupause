@@ -1,0 +1,2 @@
+/* A module */
+var a;

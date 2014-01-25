@@ -1,21 +1,21 @@
 // Require plugins
 var gulp          = require("gulp"),
-    rename        = require("gulp-rename"),
     concat        = require("gulp-concat"),
-    uglify        = require("gulp-uglify"),
-    sass          = require("gulp-ruby-sass"),
-    prefix        = require("gulp-autoprefixer"),
     cssmin        = require("gulp-minify-css"),
-    plumber       = require("gulp-plumber"),
     imagemin      = require ("gulp-imagemin"),
+    plumber       = require("gulp-plumber"),
+    prefix        = require("gulp-autoprefixer"),
+    rename        = require("gulp-rename"),
+    sass          = require("gulp-ruby-sass"),
     tinylr        = require("tiny-lr"),
+    uglify        = require("gulp-uglify"),
     server        = tinylr();
 
-var jsSrcPath     = ["js/modules/*.js", "js/modules/**/*.js", "js/global.js"],
+var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
     jsWatchPath   = jsSrcPath,
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
-    imgPaths      = "img/src/*",
+    imgPaths      = "img/src/**",
     lrPath        = ["css/build/prefixed/global.min.css","**/*.html","js/build/global.min.js"];
 
 // Concat & Minify JS
@@ -60,19 +60,13 @@ server.listen(35729, function (err) {
 });
 
 // Watch & build .scss
-gulp.watch(sassWatchPath , function(ev){
-  gulp.run("sass");
-});
+gulp.watch(sassWatchPath , ["sass"]);
 
 // Watch & build js
-gulp.watch(jsWatchPath, function(ev){
-  gulp.run("scripts")
-});
+gulp.watch(jsWatchPath, ["scripts"]);
 
 // Watch & minify images
-gulp.watch(imgPaths, function(ev){
-  gulp.run("images")
-});
+gulp.watch(imgPaths, ["images"]);
 
 // Trigger reload
 gulp.watch(lrPath, function (e) {
@@ -87,7 +81,4 @@ gulp.watch(lrPath, function (e) {
 });
 
 // Default
-gulp.task("default", function() {
-  // Run Task
-  gulp.run("scripts", "sass", "images","watch");
-});
+gulp.task("default", ["scripts","sass","images","watch"]);

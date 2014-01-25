@@ -23,7 +23,7 @@ $type__rhythmNumerical: $type__scaleBase * $type__ratio;
 
 // Namespace for content-typography ( introduces vertical rhtythm for type, gives content heading hook )
 
-$content-namespace: unquote(".content");
+$contentNamespace: unquote(".content");
 
 // Typographc Scale
 // - $type__scaleBase will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)

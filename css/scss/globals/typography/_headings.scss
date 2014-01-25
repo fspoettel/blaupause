@@ -93,11 +93,11 @@ h6,
 }
 
 // Content headings
-#{$content-namespace} h1,
-#{$content-namespace} h2,
-#{$content-namespace} h3,
-#{$content-namespace} h4,
-#{$content-namespace} h5,
-#{$content-namespace} h6, {
+#{$contentNamespace} h1,
+#{$contentNamespace} h2,
+#{$contentNamespace} h3,
+#{$contentNamespace} h4,
+#{$contentNamespace} h5,
+#{$contentNamespace} h6, {
     @extend .vR--heading;
 }
