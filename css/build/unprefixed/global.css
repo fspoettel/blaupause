@@ -224,13 +224,14 @@ td {
 
 em,
 i {
-  font-style: italic;
-  line-height: inherit; }
+  font-style: italic; }
 
 strong,
 b {
-  font-weight: bold;
-  line-height: inherit; }
+  font-weight: bold; }
+
+small {
+  font-size: 80%; }
 
 hr {
   box-sizing: content-box;
@@ -243,7 +244,8 @@ dfn {
   font-style: italic; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  border: 0; }
 
 img[width],
 img[height] {
@@ -360,11 +362,13 @@ select,
 legend {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: normal;
   vertical-align: middle; }
 
 fieldset {
   border: 1px solid #cccccc;
   margin: 0 2px;
+  min-width: 0;
   padding: 0.25em 0.5em; }
 
 legend {
@@ -407,11 +411,14 @@ input[type="radio"] {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: border-box; }
+  box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
+
+optgroup {
+  font-weight: bold; }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

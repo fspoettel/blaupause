@@ -13,6 +13,11 @@
     box-sizing: border-box; 
 }
 
+//** Normalize.css
+// * Prevent iOS text size adjust after orientation change, without disabling
+// * user zoom.
+// */
+
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -23,7 +28,9 @@ body {
     overflow-y: scroll;
 }
 
-// Display definitions (from normalize.css)
+//** Normalize.css
+// * Correct `block` display not defined in IE 8/9.
+// */
 
 article,
 aside,
@@ -40,6 +47,10 @@ summary {
     display: block;
 }
 
+//** Normalize.css
+// * Correct `inline-block` display not defined in IE 8/9.
+// */
+
 audio,
 canvas,
 progress,
@@ -47,10 +58,20 @@ video {
     display: inline-block;
 }
 
+//** Normalize.css
+// * Address `[hidden]` styling not present in IE 8/9.
+// * Hide the `template` element in IE, Safari, and Firefox < 22.
+// */
+
 [hidden],
 template {
     display: none;
 }
+
+//** Normalize.css
+// * Prevent modern browsers from displaying `audio` without controls.
+// * Remove excess height in iOS 5 devices.
+// */
 
 audio:not([controls]) {
     display: none;

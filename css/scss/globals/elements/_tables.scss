@@ -15,10 +15,14 @@ $table__headColor:       $color__bodyText;
 
 // Core table styles
 
+//** Normalize.css
+// * 1. Remove most spacing between table cells.
+// */
+
 table {
     background: $table__backgroundColor;
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: collapse; // 1.
+    border-spacing: 0; // 1.
     width: 100%;
 }
 
