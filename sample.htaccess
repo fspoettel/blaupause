@@ -21,9 +21,11 @@
 
 # If you're running in a subfolder (like http://example.com/statamic),
 # add that here. E.g. /statamic/
+
 RewriteBase /
 
 # Protect your system files from prying eyes
+
 RewriteRule ^(_app) - [F,L]
 RewriteRule ^(_config) - [F,L]
 RewriteRule ^(_content) - [F,L]
@@ -35,13 +37,16 @@ RewriteRule ^(.*/)?\.git+ - [F,L]
 # This will prevent all .html files from being accessed.
 # You may want to remove this line if you want to serve
 # static files outside of Statamic
+
 RewriteRule ^(.*)?\.html$ - [F,L]
 
 # Remove trailing slashes from your URL
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)\/(\?.*)?$ $1$2 [R=301,L]
 
 # Remove the index.php
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
@@ -170,6 +175,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
     # Force compression for mangled headers.
     # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+
     <IfModule mod_setenvif.c>
         <IfModule mod_headers.c>
             SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
@@ -181,6 +187,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
     # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
     #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
     #  as `AddOutputFilterByType` is still in the core directives).
+
     <IfModule mod_filter.c>
         AddOutputFilterByType DEFLATE application/atom+xml \
                                       application/javascript \

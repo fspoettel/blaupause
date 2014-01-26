@@ -1,2 +1,2 @@
 /* A module */
-/*Specify global stuff here - e.g. a docuemtn.ready? */
+/*Specify global stuff here - e.g. a document.ready? */
