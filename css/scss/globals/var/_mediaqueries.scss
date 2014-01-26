@@ -1,8 +1,8 @@
-//*------------------------------------*\
-//     $MQ'S
-//*------------------------------------*/
-// Cache the media-queries (used in MQ-mixin & grid)
-//---------------------------------
+
+// *   Media Queries
+// * ---------------------
+// * Re-usable media queries for the bp-mixin and grid.
+// * ---------------------
 
 $bp__palm:     "(max-width: 480px)";
 $bp__lap:      "(min-width:481px) and (max-width: 1023px)";

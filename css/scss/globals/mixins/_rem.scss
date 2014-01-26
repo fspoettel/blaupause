@@ -1,9 +1,9 @@
-//*------------------------------------*\
-//     $REM-MIXIN
-//*------------------------------------*/
-// Get the rem's of a px-value.
-// @usage: @include rem('margin-bottom',24);
-//---------------------------------
+
+// *    REM-Function
+// * ---------------------
+// * Get the rem's of a px-value.
+// * @usage: @include rem('margin-bottom',24);
+// * ---------------------
 
 $baselinePx: $base__browserDefault;
 

@@ -1,11 +1,12 @@
-//*------------------------------------*\
-//     $BRAND
-//*------------------------------------*/
-// This file specifies a branding class that can be extended in other stylesheets and used throughout the project to maintain consistent styling across elements.
-// @usage: .selector {
-//             @extend %brand;
-//         }
-//---------------------------------
+
+// *    Brand.scss
+// * ---------------------
+// *  Consistent branding that can be extended throughout the project.
+// *  @usage: 
+// * .selector {
+// *   @extend %brand;
+// * }
+// * ---------------------
 
 %brand {}
 

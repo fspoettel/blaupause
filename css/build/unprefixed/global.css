@@ -369,13 +369,6 @@ pre mark {
   border-bottom: 1px solid;
   color: inherit; }
 
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em; }
-
 h1,
 h2,
 h3,
@@ -629,7 +622,6 @@ select,
 legend {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: normal;
   vertical-align: middle; }
 
 fieldset {

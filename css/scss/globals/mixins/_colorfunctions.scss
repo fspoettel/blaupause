@@ -1,8 +1,9 @@
-//*------------------------------------*\
-//     $COLOR FUNCTIONS & BLENDMODES
-//*------------------------------------*/
-// Tint and shade functions for SCSS
-//---------------------------------
+
+// *    Color Functions
+// * ---------------------
+// * Tint & Shade Functions.
+// * @usage: @include tint($color, 20%);
+// * ---------------------
 
 // Add percentage of white to a color
 @function tint($color, $percent) {

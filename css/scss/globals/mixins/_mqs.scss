@@ -1,15 +1,15 @@
-//*------------------------------------*\
-//     $MEDIA QUERIES MIXIN
-//*------------------------------------*/
-// Use MQ's right inside your selector. Repeated code will be absorbed by gzip.
-// @usage: 
-// .selector {
-//    value: value;
-//    @include bp('palm') {
-//        mq-value: mq-value;
-//    };
-// }
-//---------------------------------
+
+// *    MediaQueries-Mixin
+// * ---------------------
+// *  Use MQ's right inside your selector. Repeated code will be absorbed by gzip.
+// * @usage: 
+// * .selector {
+// *    value: value;
+// *    @include bp('palm') {
+// *        mq-value: mq-value;
+// *    };
+// * }
+// * ---------------------
 
 @mixin bp($point) {
     @if $point == palm {

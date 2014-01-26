@@ -1,8 +1,8 @@
-//*------------------------------------*\
-//     $FORMS
-//*------------------------------------*/
-// Forms.
-//---------------------------------
+
+// *    Forms
+// * ---------------------
+// * Really basic-styling for responsive forms.
+// * ---------------------
 
 // Base
 
@@ -17,7 +17,6 @@ select,
 legend {
     display: inline-block;
     font-family: $type__primary;
-    line-height: normal;
     vertical-align: middle;
 }
 

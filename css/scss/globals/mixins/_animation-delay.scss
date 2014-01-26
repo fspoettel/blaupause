@@ -1,9 +1,9 @@
-//*------------------------------------*\
-//     $Animation-Delay Mixin
-//*------------------------------------*/
-// Mixin for maintaining consistend animation delays.
-// @usage @include animationDelay(steps,start,step-length);
-//---------------------------------
+
+// *    AnimationDelay-Mixin
+// * ---------------------
+// * Mixin for maintaining consistend animation delays.
+// * @usage @include animationDelay(steps,start,step-length);
+// * ---------------------
 
 @mixin animationDelay( $steps:1, $startDelay: $animation__startDelay, $offset: $animation__delayOffset) {
     animation-delay: $startDelay + ($offset * $steps);
