@@ -10,31 +10,71 @@ form {
     @include rem( "margin-bottom", $base__rhythmNumerical );
 }
 
+// Consistent display,font & alignment
+
 label,
-input,
-textarea,
+html input,
 select,
-legend {
+textarea,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     display: inline-block;
     font-family: $type__primary;
-    vertical-align: middle;
+}
+
+input[type="file"],
+output {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    vertical-align: baseline;
 }
 
 // Fieldsets
 
 fieldset {
     border: $brand__borderWidth solid $brand__borderColor;
-    padding: ($base__sizingUnit/4+em) ($base__sizingUnit/2+em);
+    padding: ($base__sizingUnit/2+em) ($base__sizingUnit/2+em);
 }
 
 // Text inputs
 
-input[type="text"],
 input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
 input[type="search"],
+input[type="text"],
+input[type^="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="time"],
+input[type="url"],
 textarea {
     width: 100%;
+    box-sizing: border-box;
+    padding: ($base__sizingUnit/2) + em;
 }
+
+// Clickable
+
+button,
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+html input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+// Buttons
 
 button,
 input[type="reset"],
@@ -43,4 +83,22 @@ input[type="submit"] {
     border: 0;
     box-shadow: 0;
     @extend .btn;
+}
+
+// Checkboxes & Radios
+
+label input[type="radio"],
+label input[type="checkbox"] {
+    margin-right: ($base__sizingUnit/2) + em;
+}
+
+label + input[type="radio"],
+label + input[type="checkbox"] {
+    margin-left: ($base__sizingUnit/2) + em;
+}
+
+// Select
+
+select {
+    width: 100%;
 }

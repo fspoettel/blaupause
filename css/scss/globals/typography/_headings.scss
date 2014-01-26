@@ -16,13 +16,13 @@ $heading3: $scale3;
 $heading4: $scale4;
 $heading5: $scale5;
 $heading6: $scale6;
-$giga:     $scaleG;
 $mega:     $scaleM;
+$giga:     $scaleG;
 $ultra:    $scaleU;
 
-$type__heading: $type__primary;
+$type__heading: $type__secondary;
 $type__headingRatio: 1.25 !default;
-$type__headingWeight: normal !default;
+$type__headingWeight: 700 !default;
 
 //  Genereal heading styles
 //      [1]. Inherited from var/colors

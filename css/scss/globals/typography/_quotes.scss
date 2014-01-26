@@ -3,3 +3,12 @@
 // * ---------------------
 // * Quotes and blockquotes.
 // * ---------------------
+
+blockquote {
+    border-left: ($type__sizingUnit/2) + em solid $color__primary;
+    padding-left: ($type__sizingUnit/2) + em;
+}
+
+#{$contentNamespace} blockquote p {
+    margin-bottom: 0;
+}

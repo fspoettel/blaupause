@@ -381,11 +381,11 @@ h4,
 h5,
 h6 {
   color: #222222;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
   -webkit-font-feature-settings: "kern", "liga";
   -moz-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
-  font-weight: normal;
+  font-weight: 700;
   line-height: 1;
   margin: 0;
   text-rendering: optimizeLegibility; }
@@ -395,12 +395,12 @@ h6 {
   font-size: 5.25rem; }
 
 .giga {
-  font-size: 60px;
-  font-size: 3.75rem; }
-
-.mega {
   font-size: 72px;
   font-size: 4.5rem; }
+
+.mega {
+  font-size: 60px;
+  font-size: 3.75rem; }
 
 h1,
 .alpha {
@@ -453,6 +453,19 @@ li > ol,
 .numbered-list {
   list-style-type: decimal; }
 
+dt {
+  font-weight: bold; }
+
+a {
+  color: #c10900;
+  line-height: inherit;
+  text-decoration: none; }
+  a img {
+    border: none; }
+
+a a:active, a:hover {
+  color: #ad0800; }
+
 html,
 textarea,
 input,
@@ -496,11 +509,7 @@ td {
 
 .vR, .content div,
 .content dl,
-.content dt,
-.content dd,
-.content form,
 .content figure,
-.content img,
 .content ol,
 .content ul,
 .content p,
@@ -510,19 +519,8 @@ td {
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
-.content div,
-.content dl,
-.content dt,
-.content dd,
-.content form,
-.content figure,
-.content img,
-.content ol,
-.content ul,
-.content p,
-.content blockquote,
-.content table {
-  font-family: Georgia, Times, "Times New Roman", serif; }
+.content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 em,
 i {
@@ -567,6 +565,13 @@ figure {
     display: block; }
 
 .content figure > img {
+  margin-bottom: 0; }
+
+blockquote {
+  border-left: 0.5em solid #c10900;
+  padding-left: 0.5em; }
+
+.content blockquote p {
   margin-bottom: 0; }
 
 .btn, button,
@@ -626,23 +631,56 @@ form {
   margin-bottom: 1.5rem; }
 
 label,
-input,
-textarea,
+html input,
 select,
-legend {
+textarea,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  vertical-align: middle; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+input[type="file"],
+output {
+  display: block; }
+
+input,
+select,
+textarea {
+  vertical-align: baseline; }
 
 fieldset {
   border: 1px solid #cccccc;
-  padding: 0.25em 0.5em; }
+  padding: 0.5em 0.5em; }
 
-input[type="text"],
 input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
 input[type="search"],
+input[type="text"],
+input[type^="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="time"],
+input[type="url"],
 textarea {
-  width: 100%; }
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.5em; }
+
+button,
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+html input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; }
 
 button,
 input[type="reset"],
@@ -651,6 +689,17 @@ input[type="submit"] {
   border: 0;
   -webkit-box-shadow: 0;
   box-shadow: 0; }
+
+label input[type="radio"],
+label input[type="checkbox"] {
+  margin-right: 0.5em; }
+
+label + input[type="radio"],
+label + input[type="checkbox"] {
+  margin-left: 0.5em; }
+
+select {
+  width: 100%; }
 
 table {
   background: white;

@@ -4,9 +4,6 @@
 // * Basic type-setting
 // * ---------------------
 
-$type__body:     $type__primary;
-$type__content:  $type__secondary;
-
 $palmFontSize: 75%;   // 12px baseline 
 $lapFontSize:  87.5%; // 14px baseline
 $deskFontSize: 100%;  // 16px baseline
@@ -17,7 +14,7 @@ html,
 textarea,
 input,
 select {
-    font-family: $type__body;
+    font-family: $type__primary;
     font-size: $palmFontSize;
     line-height: $type__ratio;
     @include bp(lap) {
@@ -57,25 +54,24 @@ td {
 
 .vR{
     margin-top: 0;
-    @include rem( "margin-bottom", ($type__scaleBase * $type__ratio) );
+    @include rem( "margin-bottom", ($type__rhythmNumerical) );
 }
 
 // Content typography
 
+#{$contentNamespace} {
+    font-family: $type__primary;
+}
+
 #{$contentNamespace} div,
 #{$contentNamespace} dl,
-#{$contentNamespace} dt,
-#{$contentNamespace} dd,
-#{$contentNamespace} form,
 #{$contentNamespace} figure,
-#{$contentNamespace} img,
 #{$contentNamespace} ol,
 #{$contentNamespace} ul,
 #{$contentNamespace} p,
 #{$contentNamespace} blockquote,
 #{$contentNamespace} table {
     @extend .vR;
-    font-family: $type__content;
 }
 
 // Modifiers
