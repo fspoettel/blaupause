@@ -5,13 +5,10 @@
 //---------------------------------
 
 //** Normalize.css
-// * 1. Improve readability of pre-formatted text in all browsers.
-// * 2. Correct font family set oddly in Safari 5 and Chrome.
+// * 1. Correct font family set oddly in Safari 5 and Chrome.
 // */
 
 pre {
-    overflow: auto;
-    white-space: pre-wrap; // 1.
     mark {
         background: none;
         border-bottom: 1px solid;
@@ -23,26 +20,6 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif; // 2.
+    font-family: monospace, serif; // 1.
     font-size: 1em;
-}
-
- //** Normalize.css
- // * 1. Prevent `sub` and `sup` affecting `line-height` in all browsers.
- // */
-
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
 }

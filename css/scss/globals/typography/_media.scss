@@ -8,13 +8,8 @@ $type__imageSpacing: $type__sizingUnit;
 
 // Fluid images
 
-//** Normalize.css
-// * 1. Remove border when inside `a` element in IE 8/9.
-// */
-
 img {
     max-width: 100%;
-    border: 0; // 1.
 }
 
 // Non fluid-images when height & width is present
@@ -64,14 +59,4 @@ figure {
     > img {
         margin-bottom: 0;
     }
-}
-
-// SVG
-
-//** Normalize.css
-// * Correct overflow displayed oddly in IE 9.
-// */
-
-svg:not(:root) {
-    overflow: hidden;
 }

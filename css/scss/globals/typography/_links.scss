@@ -4,13 +4,7 @@
 // Links
 //---------------------------------
 
-//** Normalize.css
-// * 1. Remove the gray background color from active links in IE 10.
-// * 2. Improve readability when focused and also mouse hovered in all browsers.
-// */
-
 a {
-    background: transparent; // 1.
     color: $color__link;
     line-height: inherit;
     text-decoration: $type__linkDecoration;
@@ -23,6 +17,5 @@ a {
     a:active,
     &:hover {
         color: $color__linkHover;
-        outline: 0; // 2.
     }
 }

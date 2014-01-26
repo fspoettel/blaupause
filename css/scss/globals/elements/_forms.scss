@@ -10,24 +10,6 @@ form {
     @include rem( "margin-bottom", $base__rhythmNumerical );
 }
 
-//**
-// * 1. Correct color not being inherited in all browsers.
-// *    Known issue: `select` will not inherit color in Chrome and Safari on OS X.
-// * 2. Correct font properties not being inherited in all browsers.
-// * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
-// */
-
-button,
-input,
-select,
-textarea {
-    color: inherit; // 1.
-    font: inherit; // 2.
-    margin: 0; // 3.
-    text-transform: none;
-
-}
-
 label,
 input,
 textarea,
@@ -41,25 +23,9 @@ legend {
 
 // Fieldsets
 
-//** Normalize.css
-// * 1. Define consistent border, margin, and padding.
-// * 2. Address width being affected by wide descendants in Chrome and Firefox.
-// */
-
 fieldset {
     border: $brand__borderWidth solid $brand__borderColor;
-    margin: 0 2px;
-    min-width: 0; // 2.
     padding: ($base__sizingUnit/4+em) ($base__sizingUnit/2+em);
-}
-
-//** Normalize.css
-// * 1. Remove padding so people aren't caught out if they zero out fieldsets.
-// */
-
-legend {
-    border: 0;
-    padding: 0;
 }
 
 // Text inputs
@@ -71,112 +37,11 @@ textarea {
     width: 100%;
 }
 
-//** Normalize.css
-// * Remove default vertical scrollbar in IE 8/9.
-// */
-
-textarea {
-    overflow: auto;
-}
-
-// Buttons
-
-//**
-// * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
-// *    and `video` controls.
-// */
-
 button,
-html input[type="button"], // 1.
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: none;
     border: 0;
     box-shadow: 0;
     @extend .btn;
-}
-
-//** Normalize.css
-// * Address `overflow` set to `hidden` in IE 8/9/10.
-// */
-
-button {
-    overflow: visbile;
-}
-
-//** Normalize.css
-// *  Re-set default cursor for disabled elements.
-// */
-
-button[disabled],
-html input[disabled] {
-    cursor: default; // (from normalize.css)
-}
-
-//** Normalize.css
-// * Remove inner padding and border in Firefox 4+.
-// */
-
-button::-moz-focus-inner,
-input::-moz-focus-inner { // (from normalize.css)
-    border: 0;
-    padding: 0;
-}
-
-// Checkboxes & Radios
-
-//** Normalize.css
-// * 1. Address box sizing set to `content-box` in IE 8/9/10.
-// * 2. Remove excess padding in IE 8/9/10.
-// */
-
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box; // 1.
-    padding: 0; // 2.
-}
-
-// Search
-
-//** Normalize.css
-// * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-// * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
-// *    (include `-moz` to future-proof).
-// * Remove inner padding and search cancel button in Safari 5 and Chrome
-// * on OS X.
-// */
-
-
-input[type="search"] {
-    -webkit-appearance: textfield;
-    box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none; // 3.
-}
-
-// Select
-
-//** Normalize.css
-// * Re-apply the `font-weight` to avoid modifying the default UX, and because
-// * the default cannot be changed in Chrome and Safari on OS X.
-// */
-
-optgroup {
-    font-weight: bold;
-}
-
-// Number inputs (from normalize.css)
-
-//**
-// * Fix the cursor style for Chrome's increment/decrement buttons. For certain
-// * `font-size` values of the `input`, it causes the cursor style of the
-// * decrement button to change from `default` to `text`.
-// */
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    height: auto;
 }
