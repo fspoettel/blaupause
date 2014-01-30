@@ -38,7 +38,7 @@ gulp.task("sass", function () {
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(gulp.dest("css/build/unprefixed"))
-    .pipe(prefix("last 2 versions", "> 1%"))
+    .pipe(prefix("last 1 version", "Explorer 10"))
     .pipe(gulp.dest("css/build/prefixed"))
     .pipe(cssmin())
     .pipe(rename("global.min.css"))
