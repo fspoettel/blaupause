@@ -20,6 +20,10 @@ $animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
     animation-fill-mode: $animation__fillmode;
 }
 
+%immediate {
+    @include animationDelay(0,$animation__startDelay,0);
+}
+
 // Project declarations
 
 // Project keyframes

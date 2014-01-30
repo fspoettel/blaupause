@@ -376,9 +376,10 @@ h4,
 h5,
 h6 {
   color: #222222;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-feature-settings: "kern", "liga";
   font-weight: 700;
+  font-style: italic;
   line-height: 1;
   margin: 0;
   text-rendering: optimizeLegibility; }
@@ -407,18 +408,18 @@ h2,
 
 h3,
 .gamma {
-  font-size: 30px;
-  font-size: 1.875rem; }
-
-h4,
-.delta {
   font-size: 24px;
   font-size: 1.5rem; }
 
-h5,
-.epsilon {
+h4,
+.delta {
   font-size: 21px;
   font-size: 1.3125rem; }
+
+h5,
+.epsilon {
+  font-size: 18px;
+  font-size: 1.125rem; }
 
 h6,
 .zeta {
@@ -431,7 +432,9 @@ h6,
 .content h4,
 .content h5,
 .content h6 {
-  line-height: 1.25; }
+  line-height: 1.25;
+  margin-bottom: 4px;
+  margin-bottom: 0.25rem; }
 
 li > ul,
 li > ol,
@@ -482,7 +485,7 @@ select {
 body {
   font-size: 16px;
   font-size: 1rem;
-  color: #333333; }
+  color: #444444; }
 
 div,
 dl,
@@ -513,7 +516,7 @@ td {
   margin-bottom: 1.5rem; }
 
 .content {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif; }
 
 em,
 i {
@@ -621,11 +624,11 @@ form {
   margin-bottom: 1.5rem; }
 
 label,
-html input,
+input,
 select,
 textarea,
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   display: inline-block;
@@ -705,7 +708,7 @@ td {
 
 thead {
   background: white;
-  color: #333333; }
+  color: #444444; }
 
 .table--bordered th,
 .table--bordered td {

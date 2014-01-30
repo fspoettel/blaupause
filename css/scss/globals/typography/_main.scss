@@ -8,13 +8,16 @@ $palmFontSize: 75%;   // 12px baseline
 $lapFontSize:  87.5%; // 14px baseline
 $deskFontSize: 100%;  // 16px baseline
 
+$type__bodyType: $type__primary;
+$type__contentType: $type__secondary;
+
 // Core declaration
 
 html,
 textarea,
 input,
 select {
-    font-family: $type__primary;
+    font-family: $type__bodyType;
     font-size: $palmFontSize;
     line-height: $type__ratio;
     @include bp(lap) {
@@ -60,7 +63,7 @@ td {
 // Content typography
 
 #{$contentNamespace} {
-    font-family: $type__primary;
+    font-family: $type__contentType;
 }
 
 #{$contentNamespace} div,

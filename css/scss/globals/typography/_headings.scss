@@ -8,7 +8,7 @@
 // * ---------------------
 
 //  Variables & size declarations
-//  @ size from "config" > scale
+//  @ size from var/type > scale
 
 $heading1: $scale1;
 $heading2: $scale2;
@@ -20,9 +20,10 @@ $mega:     $scaleM;
 $giga:     $scaleG;
 $ultra:    $scaleU;
 
-$type__heading: $type__secondary;
+$type__headingType: $type__secondary;
 $type__headingRatio: 1.25 !default;
 $type__headingWeight: 700 !default;
+$type__headingStyle: italic !default;
 
 //  Genereal heading styles
 //      [1]. Inherited from var/colors
@@ -35,9 +36,10 @@ h4,
 h5,
 h6 {
     color: $color__heading; //[1]
-    font-family: $type__heading; //[2]
+    font-family: $type__headingType; //[2]
     font-feature-settings: "kern", "liga";
     font-weight: $type__headingWeight;
+    font-style: $type__headingStyle;
     line-height: 1;
     margin: 0;
     text-rendering: optimizeLegibility; // [3]
@@ -90,6 +92,7 @@ h6,
 
 .vR--heading {
     line-height: $type__headingRatio;
+    @include rem("margin-bottom", $type__sizingNumerical/4);
 }
 
 // Content headings

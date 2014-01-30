@@ -13,11 +13,11 @@ form {
 // Consistent display,font & alignment
 
 label,
-html input,
+input,
 select,
 textarea,
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     display: inline-block;
@@ -59,7 +59,7 @@ input[type="url"],
 textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: ($base__sizingUnit/2) + em;
+    padding: ($base__sizingUnit/2 + em);
 }
 
 // Clickable
