@@ -219,7 +219,7 @@ $grid__classType:            unquote(".");
 //*------------------------------------*/
 //**
 // * 1. Use display:block for old browsers
-// * 2. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:21+;FF:28+;IE:10+)
+// * 2. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:30+;FF:28+;IE:10+,Android:4.4+,iOS: 7+, Safari: 7+, Opera: 17+)
 // * 3. Remove list-styles so that the grid can be used on lists
 // * 4. Remove all spacing affecting the grid
 // * 5. Negative gutter to keep the grid centered
@@ -230,7 +230,7 @@ $grid__classType:            unquote(".");
 #{$grid__classType}grid {
     display: block;                       //* [1] */
     display: flex;                        //* [2] */
-    flex-flow: row wrap;
+    flex-flow: row wrap;                  //* [2] */
     list-style:none;                      //* [3] */
     margin:0;                             //* [4] */
     padding:0;                            //* [4] */

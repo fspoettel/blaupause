@@ -12,6 +12,7 @@ var gulp          = require("gulp"),
     uglify        = require("gulp-uglify"),
     server        = tinylr();
 
+// Paths
 var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
     jsWatchPath   = jsSrcPath,
     sassSrcPath   = "css/build.scss",
@@ -38,7 +39,7 @@ gulp.task("sass", function () {
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(gulp.dest("css/build/unprefixed"))
-    .pipe(prefix("last 1 version", "Explorer 10"))
+    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
     .pipe(gulp.dest("css/build/prefixed"))
     .pipe(cssmin())
     .pipe(rename("global.min.css"))
