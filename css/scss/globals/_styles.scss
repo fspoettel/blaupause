@@ -8,8 +8,7 @@ body {
     background: $color__background;
 }
 
-// Grid
-// Add grid top levels if silent classes is true so that grid-structure can be used in Markup)
+// * Grid classes
 
 @if $grid__useSilentClasses == true {
     .grid {

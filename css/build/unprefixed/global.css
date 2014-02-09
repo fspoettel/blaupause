@@ -497,14 +497,14 @@ textarea,
 input,
 select {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 75%;
+  font-size: 87.5%;
   line-height: 1.5; }
   @media (min-width: 481px) and (max-width: 1023px) {
     html,
     textarea,
     input,
     select {
-      font-size: 87.5%; } }
+      font-size: 100%; } }
   @media (min-width: 1024px) {
     html,
     textarea,

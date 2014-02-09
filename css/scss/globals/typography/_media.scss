@@ -6,26 +6,26 @@
 
 $type__imageSpacing: $type__sizingUnit;
 
-// Fluid images
+// * Fluid images
 
 img {
     max-width: 100%;
 }
 
-// Non fluid-images when height & width is present
+// * Non fluid-images when height & width is present
 
 img[width],
 img[height] {
     max-width:none;
 }
 
-// Rounded images 
+// * Rounded images 
 
 .img--round { 
     border-radius: $brand__rounding;
 }
 
-// Image placement
+// * Image placement
 
 .img--right {
     float:right;
@@ -46,7 +46,7 @@ img[height] {
     margin-right:auto;
 }
 
-// Figures 
+// * Figures 
 
 figure {
     margin:0;

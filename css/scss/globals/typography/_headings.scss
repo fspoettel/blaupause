@@ -2,13 +2,14 @@
 // *    Headings
 // * ---------------------
 // * Contents:
-// *   [1]. Variables & size-declarations
-// *   [2]. General heading styles
-// *   [3]. Font-size declarations
+// *   1. Variables & size-declarations
+// *   2. General heading styles
+// *   3. Font-size declarations
 // * ---------------------
 
-//  Variables & size declarations
-//  @ size from var/type > scale
+// * Variables & size declarations
+// * 1. Sizes inherited from `var/_type.scss`
+// * ---------------------
 
 $heading1: $scale1;
 $heading2: $scale2;
@@ -25,9 +26,9 @@ $type__headingRatio: 1.25 !default;
 $type__headingWeight: 700 !default;
 $type__headingStyle: italic !default;
 
-//  Genereal heading styles
-//      [1]. Inherited from var/colors
-//      [2]. Inherited from config
+// * Genereal heading styles
+// *     1. Inherited from var/colors
+// *     2. Inherited from config
 
 h1,
 h2,
@@ -45,8 +46,9 @@ h6 {
     text-rendering: optimizeLegibility; // [3]
 }
 
-// Font Size Declarations
-// Class names can be used if hierarchy is different from size
+// * Font Size Declarations
+// * Class names can be used if hierarchy is different from size
+// * ---------------------
 
 .ultra {
     @include rem( "font-size", $ultra );
@@ -92,10 +94,13 @@ h6,
 
 .vR--heading {
     line-height: $type__headingRatio;
-    @include rem("margin-bottom", $type__sizingNumerical/4);
+    @include rem("margin-bottom", $type__sizingNumber/4);
 }
 
-// Content headings
+// * Content headings
+// * Hook for headings inside you content-element.
+// * ---------------------
+
 #{$contentNamespace} h1,
 #{$contentNamespace} h2,
 #{$contentNamespace} h3,

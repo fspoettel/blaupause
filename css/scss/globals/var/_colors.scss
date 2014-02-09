@@ -4,23 +4,23 @@
 // * Project colors.
 // * ---------------------
 
-// Basic
+// * Core
 $color__background:   #fefefe !default;
 
-// Typography
+// * Typography
 $color__bodyText:    #444 !default;
-$color__heading:      #222 !default;
+$color__heading:     #222 !default;
 
-//Links
-$color__link:         #c10900 !default;
+// * Links
+$color__link:        #c10900 !default;
 $color__linkHover:   shade($color__link,10%)!default;
 
-// Branding
+// * Branding
 $color__primary:      #c10900 !default;
 $color__secondary:    yellow !default;
 $color__disabled:     grey !default;
 
-// States
+// * States
 
 $color__success:      green !default;
 $color__error:        red !default;

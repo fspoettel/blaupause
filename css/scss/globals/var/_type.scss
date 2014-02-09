@@ -7,30 +7,31 @@
 // *    [3]. Font-Stacks
 // * ---------------------
 
-// Base
+// * Core
 
 $type__scaleBase:  $base__size; // Default: 16
 $type__ratio:      $base__ratio !default;
 
 // Units
 
-$type__sizingUnit:      $type__scaleBase / $base__browserDefault;
-$type__sizingNumerical: $type__scaleBase;
+$type__sizingUnit:   $type__scaleBase / $base__browserDefault;
+$type__sizingNumber: $type__scaleBase;
 
-$type__rhythmUnit:      $type__ratio;
-$type__rhythmNumerical: $type__scaleBase * $type__ratio;
+$type__rhythmUnit:   $type__ratio;
+$type__rhythmNumber: $type__scaleBase * $type__ratio;
 
 // Namespace for content-typography ( introduces vertical rhtythm for type, gives content heading hook )
 
 $contentNamespace: unquote(".content");
 
-// Typographc Scale
-// - $type__scaleBase will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
-// - $type__scaleBase is equal to $base-size by default. $base__size is used to calcualte the $base__sizing-unit, $type__sizing-unit & grid__gutters
-//   So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
-// - The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type__scaleBase doesn't affect the scale
-//   It is of course possible, to make the scale dynamic to $type__scaleBase & type__ratio 
-// - Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
+// * Typographc Scale
+// * $type__scaleBase will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
+// * $type__scaleBase is equal to $base-size by default. $base__size is used to calcualte the $base__sizing-unit, $type__sizing-unit & grid__gutters
+// * So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
+// * The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type__scaleBase doesn't affect the scale
+// * It is of course possible, to make the scale dynamic to $type__scaleBase & type__ratio 
+// * Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
+// * ---------------------
 
 $scaleU:  84 !default; // kilo
 $scaleG:  72 !default; // giga
@@ -42,7 +43,8 @@ $scale4:  21 !default; // h4, delta
 $scale5:  18 !default; // h5, epsilon
 $scale6:  16 !default; // h6, zeta
 
-// Font-stacks
+// * Font-stacks
+
 $type__sans: $helveticaNeue;
 $type__serif: $baskerville;
 

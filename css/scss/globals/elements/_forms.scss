@@ -4,13 +4,15 @@
 // * Really basic-styling for responsive forms.
 // * ---------------------
 
-// Base
+// * Core
+// * 1. Consistent display-type
+// * 2. Consistend type-family
+// * 3. Make sure fields are aligned with type
+// * ---------------------
 
 form {
-    @include rem( "margin-bottom", $base__rhythmNumerical );
+    @include rem( "margin-bottom", $base__rhythmNumber );
 }
-
-// Consistent display,font & alignment
 
 label,
 input,
@@ -35,14 +37,14 @@ textarea {
     vertical-align: baseline;
 }
 
-// Fieldsets
+// * Fieldsets
 
 fieldset {
     border: $brand__borderWidth solid $brand__borderColor;
     padding: ($base__sizingUnit/2+em) ($base__sizingUnit/2+em);
 }
 
-// Text inputs
+// * Text inputs
 
 input[type="email"],
 input[type="number"],
@@ -62,7 +64,7 @@ textarea {
     padding: ($base__sizingUnit/2 + em);
 }
 
-// Clickable
+// * Clickable inputs
 
 button,
 input[type="image"],
@@ -74,7 +76,7 @@ input[type="checkbox"] {
     width: auto;
 }
 
-// Buttons
+// * Buttons
 
 button,
 input[type="reset"],
@@ -85,7 +87,7 @@ input[type="submit"] {
     @extend .btn;
 }
 
-// Checkboxes & Radios
+// * Checkboxes & Radios
 
 label input[type="radio"],
 label input[type="checkbox"] {
@@ -97,7 +99,7 @@ label + input[type="checkbox"] {
     margin-left: ($base__sizingUnit/2) + em;
 }
 
-// Select
+// * Selects
 
 select {
     width: 100%;

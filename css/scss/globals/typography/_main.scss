@@ -4,14 +4,14 @@
 // * Basic type-setting
 // * ---------------------
 
-$palmFontSize: 75%;   // 12px baseline 
-$lapFontSize:  87.5%; // 14px baseline
+$palmFontSize: 87.5%; // 14px baseline 
+$lapFontSize: 100%;   // 16px baseline
 $deskFontSize: 100%;  // 16px baseline
 
 $type__bodyType: $type__primary;
 $type__contentType: $type__secondary;
 
-// Core declaration
+// * Core
 
 html,
 textarea,
@@ -33,7 +33,7 @@ body {
     color: $color__bodyText;
 }
 
-// Typographic reset
+// * Typographic reset
 
 div,
 dl,
@@ -52,15 +52,15 @@ td {
     padding: 0;
 }
 
-// Vertical rhythm class
-// By default coupled to $ratio & $base-size, but it can be uncoupled by setting $scale-base &&|| $type__ratio
+// * Vertical rhythm class
+// * By default coupled to $base__ratio & $base__size, but it can be uncoupled by setting $type__scaleBase &&|| $type__ratio
 
 .vR{
     margin-top: 0;
-    @include rem( "margin-bottom", ($type__rhythmNumerical) );
+    @include rem( "margin-bottom", ($type__rhythmNumber) );
 }
 
-// Content typography
+// * Content typography
 
 #{$contentNamespace} {
     font-family: $type__contentType;
@@ -77,7 +77,7 @@ td {
     @extend .vR;
 }
 
-// Modifiers
+// * Modifiers
 
 em,
 i {
@@ -88,8 +88,6 @@ strong,
 b {
     font-weight: bold;
 }
-
-// Small text
 
 small { 
     font-size: 80%;

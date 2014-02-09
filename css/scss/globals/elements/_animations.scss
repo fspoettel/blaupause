@@ -6,24 +6,44 @@
 // *   https://github.com/IanLunn/Hover
 // * ---------------------
 
-// Defaults
+// * Defaults
 
 $animation__duration: 1s !default;
 $animation__fillmode: both !default;
-$animation__startDelay: 0s !default; // Use with animationDelay-mixin
+$animation__startDelay: 0s !default;    // Use with animationDelay-mixin
 $animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
 
-// Core
+// * Core
 
 %animated {
     animation-duration: $animation__duration;
     animation-fill-mode: $animation__fillmode;
 }
 
+// * Delays
+// * Pre-defined animation-delays that can be used to orchestrate animated page-loads or JS-events.
+// * ---------------------
+
 %immediate {
     @include animationDelay(0,$animation__startDelay,0);
 }
 
-// Project declarations
+%delay1 {
+    @include animationDelay(1,$animation__startDelay,$animation__delayOffset);
+}
 
-// Project keyframes
+%delay2 {
+    @include animationDelay(2,$animation__startDelay,$animation__delayOffset);
+}
+
+%delay3 {
+    @include animationDelay(3,$animation__startDelay,$animation__delayOffset);
+}
+
+%delay4 {
+    @include animationDelay(4,$animation__startDelay,$animation__delayOffset);
+}
+
+// * Project declarations
+
+// * Project keyframes

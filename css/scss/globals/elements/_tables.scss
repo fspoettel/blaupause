@@ -11,7 +11,9 @@ $table__oddColor:        #eee;
 $table__headBackground:  #fff;
 $table__headColor:       $color__bodyText;
 
-// Core table styles
+// * Core table styles
+// * 1. Remove most spacing from tables.
+// * ---------------------
 
 table {
     background: $table__backgroundColor;
@@ -34,7 +36,7 @@ thead {
     color: $table__headColor;
 }
 
-// Bordered tables
+// * Bordered tables
 
 .table--bordered {
     th,
@@ -52,7 +54,7 @@ thead {
     }
 }
 
-// Striped Tables
+// * Striped Tables
 
 .table--striped {
     tbody tr:nth-of-type(odd){
@@ -60,7 +62,7 @@ thead {
     }
 }
 
-// Data table
+// * Data table
 
 .table--data,
 #{$contentNamespace} .table--data {

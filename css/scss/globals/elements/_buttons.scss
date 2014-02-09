@@ -18,7 +18,11 @@ $btn__positiveColor:  $color__success;
 $btn__negativeColor:  $color__error;
 $btn__textColor:      #fff !default;
 
-// Structure
+// * Core
+// * 1. Use colors from `var/_colors.scss`
+// * 2. Inherit line-height and normalize zoom to prevent odd UA-defaults.
+// * 3. Prevent unexpected selection color or dragging events.
+// * ---------------------
 
 .btn {
     background: $btn__primaryColor;
@@ -35,7 +39,7 @@ $btn__textColor:      #fff !default;
     zoom: 1;
 }
 
-// Interactivity
+// * Interactivity
 
 .btn {
     &:hover,
@@ -45,7 +49,7 @@ $btn__textColor:      #fff !default;
     }
 }
 
-// Size modifiers
+// * Size modifiers
 
 .btn--small {}
 .btn--medium {}
@@ -55,7 +59,7 @@ $btn__textColor:      #fff !default;
     display: block;
 }
 
-// Visual modifiers
+// * Visual modifiers
 
 .btn--round {
     border-radius: $brand__rounding;
@@ -69,7 +73,7 @@ $btn__textColor:      #fff !default;
     background: $btn__tertiaryColor;
 }
 
-// Button-states / Callbacks
+// * Button-states / Callbacks
 
 .btn--positive {
     background: $btn__positiveColor;
