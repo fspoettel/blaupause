@@ -5,7 +5,7 @@
 // *@usage: @include font-face("Futura", "../fonts/futura-regular", 400);
 // * ---------------------
 
-@mixin font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+@mixin ff($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
     @font-face {
         font-family: "#{$font-family}";
         src: url("#{$font-filename}.eot");

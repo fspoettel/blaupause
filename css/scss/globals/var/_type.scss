@@ -43,7 +43,9 @@ $scale5:  18 !default; // h5, epsilon
 $scale6:  16 !default; // h6, zeta
 
 // Font-stacks
+$type__sans: $helveticaNeue;
+$type__serif: $baskerville;
 
-$type__primary:   $helveticaNeue;
-$type__secondary: $baskerville;
+$type__primary:   $type__sans;
+$type__secondary: $type__serif;
 

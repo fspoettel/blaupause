@@ -356,8 +356,11 @@ th {
   padding: 0; }
 
 .grid {
-  display: block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   list-style: none;
   margin: 0;
@@ -374,12 +377,14 @@ th {
   word-spacing: -0.43em; }
 
 .grid__item {
-  box-sizing: border-box;
   display: inline-block;
   padding-left: 24px;
   padding-left: 1.5rem;
   vertical-align: top;
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   letter-spacing: normal;
   word-spacing: normal; }
 

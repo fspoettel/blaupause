@@ -1,32 +1,32 @@
-
-// *    Grid (Fork of css-wizardry-grids)
-// * ---------------------
-// *
-// * Contens
-// * Introduction.........How the grid system works.
-// * Variables............Your settings.
-// * Mixins...............Library mixins.
-// * Grid Setup...........Build the grid structure.
-// * Widths...............Build our responsive widths around our breakpoints.
-// * Push.................Push classes.
-// * Pull.................Pull classes.
+//*------------------------------------*\
+//    $CSSWIZARDRY-GRIDS
+//*------------------------------------*/
+//**
+// * CONTENTS
+// * INTRODUCTION.........How the grid system works.
+// * VARIABLES............Your settings.
+// * MIXINS...............Library mixins.
+// * GRID SETUP...........Build the grid structure.
+// * WIDTHS...............Build our responsive widths around our breakpoints.
+// * PUSH.................Push classes.
+// * PULL.................Pull classes.
 // */
-//
-//
-//
-//
-//
+
+
+
+
+
 //*------------------------------------*\
 //    $INTRODUCTION
 //*------------------------------------*/
-//**
-// * This fork of csswizardry grids provides you with widths to suit a number of breakpoints
-// * designed around devices of a size you specify. Out of the box, this fork of csswizardry
+/**
+// * csswizardry grids provides you with widths to suit a number of breakpoints
+// * designed around devices of a size you specify. Out of the box, csswizardry
 // * grids caters to the following types of device:
 // *
 // * palm     --  palm-based devices, like phones and small tablets
 // * lap      --  lap-based devices, like iPads or laptops
-// * lapUp    --  All devices starting at lap-based
+// * lapUp    --  all of the above
 // * desk     --  stationary devices, like desktop computers
 // * regular  --  any/all types of device
 // *
@@ -58,14 +58,6 @@
 //   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
 // *
 //   `class="grid__item  palm--one-third  desk--five-twelfths"`
-// 
-// * Things different from src:
-// *     - Different defaults [1]
-// *     - Uses rem for spacing [2]
-// *     - Shares media-queries with mq-mixin [3]
-// *     - Uses flexbox for browsers that support it to get rid of letter-spacing dependency. [4]
-// *     - Uses .scss-comments
-// *     - Namespaced variables
 // */
 
 
@@ -86,34 +78,33 @@ $grid__responsive:            true!default;
 // * Is this build mobile first? Setting to ‘true’ means that all grids will be
 // * 100% width if you do not apply a more specific class to them.
 // */
-$grid__mobileFirst:           true!default;
+$grid__mobileFirst:          true!default;
 
 
 //**
 // * Set the spacing between your grid items.
 // */
-$grid__gutter:                $base__rhythmNumerical!default; // [2]
+$grid__gutter:                $base__rhythmNumerical!default;
 
 
 //**
 // * Would you like Sass’ silent classes, or regular CSS classes?
 // */
-$grid__useSilentClasses:      true!default;
+$grid__useSilentClasses:    true!default;
 
 
 //**
 // * Would you like push and pull classes enabled?
 // */
-$grid__push:                  true!default; // [1]
-$grid__pull:                  true!default; // [1]
+$grid__push:                  true!default;
+$grid__pull:                  true!default;
 
 
 //**
-// * This fork uses flexbox where possible to eliminate this issue.
-// * Using `inline-block` means that the grid items need their whitespace removing
-// * in order for them to work correctly. Set the following to true if you are
-// * going to achieve this by manually removing/commenting out any whitespace in
-// * your HTML yourself.
+// * This grid uses flex-box for browsers that support it and falls back to `inline-block`.
+// * `Using `inline-block` means that the grid items need their whitespace removed in order for them to work 
+// * correctly. Set the following to true if you are going to achieve this by manually removing/commenting out
+// * any whitespace in your HTML yourself.
 // *
 // * Setting this to false invokes a hack which cannot always be guaranteed,
 // * please see the following for more detail:
@@ -121,7 +112,7 @@ $grid__pull:                  true!default; // [1]
 // * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
 // * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
 // */
-$grid__useMarkupFix:        false!default; // [1]
+$grid__useMarkupFix:        false!default;
 
 
 //**
@@ -134,7 +125,7 @@ $grid__breakpoints: (
     "lap"   $bp__lap,
     "lapUp" $bp__lapUp,
     "desk"  $bp__desk
-    )!default; // [3]
+)!default;
 
 
 //**
@@ -144,7 +135,7 @@ $grid__breakpoints: (
 // * compile as much CSS as you need. All are turned on by default, but you can
 // * add and remove breakpoints at will.
 // *
-// * Push and pull shall only be used if `$push` and/or `$pull` and `$grid__responsive`
+// * Push and pull shall only be used if `$grid__push` and/or `$grid__pull` and `$grid__responsive`
 // * have been set to ‘true’.
 // */
 $grid__breakpointHasWidths: ("palm", "lap","lapUp", "desk")!default;
@@ -156,10 +147,9 @@ $grid__breakpointHasPull:   ("palm", "lap","lapUp", "desk")!default;
 // * You do not need to edit anything from this line onward; csswizardry-grids is
 // * good to go. Happy griddin’!
 // */
-
 $grid__classType:            unquote(".");
 
-@if $grid__useSilentClasses == true {
+@if $grid__useSilentClasses == true{
     $grid__classType:        unquote("%");
 }
 
@@ -174,27 +164,26 @@ $grid__classType:            unquote(".");
 // * These mixins are for the library to use only, you should not need to modify
 // * them at all.
 // *
-// * Enclose a block of code with a media query as named in `$breakpoints`.
+// * Enclose a block of code with a media query as named in `$grid__breakpoints`.
 // */
-
-@mixin grid-media-query($media-query) {
+@mixin grid-media-query($media-query){
     $breakpoint-found: false;
 
-    @each $breakpoint in $grid__breakpoints {
+    @each $breakpoint in $grid__breakpoints{
         $name: nth($breakpoint, 1);
         $declaration: nth($breakpoint, 2);
 
-        @if $media-query == $name and $declaration {
+        @if $media-query == $name and $declaration{
             $breakpoint-found: true;
 
-            @media only screen and #{$declaration} {
+            @media only screen and #{$declaration}{
                 @content;
             }
         }
     }
 
-    @if $breakpoint-found == false {
-        @warn "Breakpoint ‘#{$media-query}’ does not exist";
+    @if $breakpoint-found == false{
+        @warn "Breakpoint ‘#{$media-query}’ does not exist"
     }
 }
 
@@ -203,8 +192,7 @@ $grid__classType:            unquote(".");
 // * Drop relative positioning into silent classes which can’t take advantage of
 // * the `[class*="push--"]` and `[class*="pull--"]` selectors.
 // */
-
-@mixin silent-relative() {
+@mixin silent-relative(){
     @if $grid__useSilentClasses == true{
         position:relative;
     }
@@ -218,35 +206,32 @@ $grid__classType:            unquote(".");
 //    $GRID SETUP
 //*------------------------------------*/
 //**
-// * 1. Use display:block for old browsers
-// * 2. Use flexbox when possible to avoid `letter-spacing` side-effects. (Ch:30+;FF:28+;IE:10+,Android:4.4+,iOS: 7+, Safari: 7+, Opera: 17+)
-// * 3. Remove list-styles so that the grid can be used on lists
-// * 4. Remove all spacing affecting the grid
-// * 5. Negative gutter to keep the grid centered
-// * 6. Fall back to the display:block / inline-block-grid on Firefox<28
-// * 7. Use letter-spacing to fix inline-block spacing quirks
+// * 1. Use (new) flex-box if supported.
+// * 2. Allow the grid system to be used on lists.
+// * 3. Remove any margins and paddings that might affect the grid system.
+// * 4. Apply a negative `margin-left` to negate the columns’ gutters.
+// * 5. Use standard grid on Firefox < 28 because it does not support flex-flow
 // */
-
-#{$grid__classType}grid {
-    display: block;                       //* [1] */
-    display: flex;                        //* [2] */
-    flex-flow: row wrap;                  //* [2] */
-    list-style:none;                      //* [3] */
-    margin:0;                             //* [4] */
-    padding:0;                            //* [4] */
-    @include rem("margin-left",-$grid__gutter); //* [5] */
-
-    @supports not (flex-wrap: wrap) {     //* [6] */
-        display: block;
+#{$grid__classType}grid{
+    display: -webkit-flex;                      //* [1] */
+    display: -ms-flexbox;                       //* [1] */
+    display: flex;                              //* [1] */
+    -webkit-flex-flow: row wrap;                //* [1] */
+    -ms-flex-flow: row wrap;                    //* [1] */
+    flex-flow: row wrap;                        //* [1] */
+    list-style:none;                            //* [2] */
+    margin:0;                                   //* [3] */
+    padding:0;                                  //* [3] */
+    @include rem("margin-left",-$grid__gutter); //* [4] */
+    @supports not (flex-wrap: wrap) {           //* [5] */
+            display: block; 
     }
-
-    @if $grid__useMarkupFix != true{ //* [7] */
+    @if $grid__useMarkupFix != true{
         letter-spacing:-0.31em;
     }
-
 }
 
-@if $grid__useMarkupFix != true {
+@if $grid__useMarkupFix != true{
     //* Opera hack */
     .opera:-o-prefocus,
     #{$grid__classType}grid{
@@ -255,126 +240,140 @@ $grid__classType:            unquote(".");
 }
 
 
-//**
-// * 1. Cause columns to stack side-by-side.
-// * 2. Space columns apart.
-// * 3. Align columns to the tops of each other.
-// * 4. Full-width unless told to behave otherwise.
-// * 5. Required to combine fluid widths and fixed gutters.
-// */
+    //**
+    // * 1. Cause columns to stack side-by-side.
+    // * 2. Space columns apart.
+    // * 3. Align columns to the tops of each other.
+    // * 4. Full-width unless told to behave otherwise.
+    // * 5. Required to combine fluid widths and fixed gutters.
+    // */
+    #{$grid__classType}grid__item{
+        display:inline-block;                       //* [1] */
+        @include rem("padding-left",$grid__gutter); //* [2] */
+        vertical-align:top;                         //* [3] */
+        @if $grid__mobileFirst == true{
+            width:100%;                             //* [4] */
+        }
+        -webkit-box-sizing:border-box;              //* [5] */
+           -moz-box-sizing:border-box;              //* [5] */
+                box-sizing:border-box;              //* [5] */
+        @if $grid__useMarkupFix != true{
+            letter-spacing:normal;
+            word-spacing:normal;
+        }
+    }
 
-#{$grid__classType}grid__item {
-    box-sizing:border-box;                //* [5] */
-    display:inline-block;                 //* [1] */
-    @include rem("padding-left",$grid__gutter); //* [3] */
-    vertical-align:top;                   //* [3] */
-    @if $grid__mobileFirst == true{
-        width:100%;                       //* [4] */
-    }
-    @if $grid__useMarkupFix != true{
-        letter-spacing:normal;
-        word-spacing:normal;
-    }
-}
 
 //**
 // * Reversed grids allow you to structure your source in the opposite order to
 // * how your rendered layout will appear. Extends `.grid`.
-// * Issue #6
 // */
-
-#{$grid__classType}grid--rev {
+#{$grid__classType}grid--rev{
     direction:rtl;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-flex-flow: wrap-reverse row;
+    -ms-flex-flow: wrap-reverse row;
     flex-flow: wrap-reverse row;
     text-align:left;
 
-    > #{$grid__classType}grid__item {
+    > #{$grid__classType}grid__item{
         direction:ltr;
         text-align:left;
     }
 }
 
+
 //**
 // * Gutterless grids have all the properties of regular grids, minus any spacing.
 // * Extends `.grid`.
 // */
-
-#{$grid__classType}grid--full {
+#{$grid__classType}grid--full{
     margin-left:0;
 
-    > #{$grid__classType}grid__item {
+    > #{$grid__classType}grid__item{
         padding-left:0;
     }
 }
 
+
 //**
 // * Align the entire grid to the right. Extends `.grid`.
 // */
-
-#{$grid__classType}grid--right {
+#{$grid__classType}grid--right{
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     text-align:right;
 
-    > #{$grid__classType}grid__item {
+    > #{$grid__classType}grid__item{
         text-align:left;
     }
 }
+
 
 //**
 // * Centered grids align grid items centrally without needing to use push or pull
 // * classes. Extends `.grid`.
 // */
-
-#{$grid__classType}grid--center {
+#{$grid__classType}grid--center{
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align:center;
 
-    > #{$grid__classType}grid__item {
+    > #{$grid__classType}grid__item{
         text-align:left;
     }
 }
+
 
 //**
 // * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
 // * `.grid`.
 // */
-
-#{$grid__classType}grid--middle {
+#{$grid__classType}grid--middle{
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
-    > #{$grid__classType}grid__item {
+
+    > #{$grid__classType}grid__item{
         vertical-align:middle;
     }
 }
 
-#{$grid__classType}grid--bottom {
+#{$grid__classType}grid--bottom{
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
     align-items: flex-end;
-    > #{$grid__classType}grid__item {
+
+    > #{$grid__classType}grid__item{
         vertical-align:bottom;
     }
 }
 
+
 //**
 // * Create grids with narrower gutters. Extends `.grid`.
 // */
+#{$grid__classType}grid--narrow{
+    @include rem("margin-left", (-$grid__gutter / 2));
 
-#{$grid__classType}grid--narrow {
-    @include rem("margin-left", (-$grid__gutter / 2)); //* [3] */
-
-    > #{$grid__classType}grid__item {
-        @include rem("padding-left", ($grid__gutter / 2)); //* [3] */
+    > #{$grid__classType}grid__item{
+        @include rem("padding-left", ($grid__gutter / 2));
     }
 }
+
 
 //**
 // * Create grids with wider gutters. Extends `.grid`.
 // */
+#{$grid__classType}grid--wide{
+    @include rem("margin-left",(-$grid__gutter * 2 ));
 
-#{$grid__classType}grid--wide {
-    @include rem("margin-left",(-$grid__gutter * 2 )); //* [3] */
-
-    > #{$grid__classType}grid__item {
-        @include rem("padding-left", ($grid__gutter * 2)); //* [3] */
+    > #{$grid__classType}grid__item{
+        @include rem("padding-left", ($grid__gutter * 2));
     }
 }
 
@@ -388,8 +387,7 @@ $grid__classType:            unquote(".");
 //**
 // * Create our width classes, prefixed by the specified namespace.
 // */
-
-@mixin device-type($namespace:"") {
+@mixin device-type($namespace:""){
 
 
     //**
@@ -492,11 +490,11 @@ $grid__classType:            unquote(".");
 //**
 // * Our responsive classes, if we have enabled them.
 // */
-@if $grid__responsive == true {
+@if $grid__responsive == true{
 
     @each $name in $grid__breakpointHasWidths {
         @include grid-media-query($name) {
-           @include device-type("#{$name}--");
+           @include device-type('#{$name}--');
         }
     }
 
@@ -513,7 +511,7 @@ $grid__classType:            unquote(".");
 //**
 // * Push classes, to move grid items over to the right by certain amounts.
 // */
-@mixin push-setup($namespace: "") {
+@mixin push-setup($namespace: ""){
 
     //**
     // * Whole
@@ -608,16 +606,16 @@ $grid__classType:            unquote(".");
     //**
     // * Not a particularly great selector, but the DRYest way to do things.
     // */
-    [class*="push--"] { position:relative; }
+    [class*="push--"]{ position:relative; }
 
 
     @include push-setup();
 
 
-    @if $grid__responsive == true {
+    @if $grid__responsive == true{
         @each $name in $grid__breakpointHasPush {
             @include grid-media-query($name) {
-               @include  push-setup("#{$name}--");
+               @include  push-setup('#{$name}--');
             }
         }
     }
@@ -635,7 +633,7 @@ $grid__classType:            unquote(".");
 //**
 // * Pull classes, to move grid items back to the left by certain amounts.
 // */
-@mixin pull-setup($namespace: "") {
+@mixin pull-setup($namespace: ""){
 
     //**
     // * Whole
@@ -725,21 +723,21 @@ $grid__classType:            unquote(".");
     #{$grid__classType}pull--#{$namespace}eleven-twelfths     { right:91.666%; @include silent-relative(); }
 }
 
-@if $grid__pull == true {
+@if $grid__pull == true{
 
     //**
     // * Not a particularly great selector, but the DRYest way to do things.
     // */
-    [class*="pull--"] { position:relative; }
+    [class*="pull--"]{ position:relative; }
 
 
     @include pull-setup();
 
 
-    @if $grid__responsive == true {
+    @if $grid__responsive == true{
         @each $name in $grid__breakpointHasPull {
             @include grid-media-query($name) {
-               @include  pull-setup("#{$name}--");
+               @include  pull-setup('#{$name}--');
             }
         }
     }
