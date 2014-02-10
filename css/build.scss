@@ -22,8 +22,8 @@
 
 // * Get the global variables.  -> folder: scss/globals/config
 
-@import "scss/globals/var/brand";
 @import "scss/globals/var/colors";
+@import "scss/globals/var/brand";
 @import "scss/globals/var/mediaqueries";
 @import "scss/globals/var/type";
 
@@ -69,3 +69,5 @@
 @import "scss/recipes/text-columns";
 
 // * Get local-stuff - page-styles, custom elements etc.
+
+@import "scss/locals/styles";

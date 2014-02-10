@@ -19,7 +19,7 @@
 }
 
 .media > img {
-    margin-right: $base__rhythmUnit + em;
+    margin-right: $base--rhythm-unit + em;
 }
 
 .media__caption,
@@ -36,6 +36,6 @@
 .media--rev {
     > img {
     order: 1;
-    margin: 0 0 0 ($base__rhythmUnit+em);
+    margin: 0 0 0 ($base--rhythm-unit+em);
     }
 }

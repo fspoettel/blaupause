@@ -17,8 +17,8 @@
 
 // * Variables
 
-$color__fixedContent: #fff !default;
-$fixedBg__height: 500px !default;
+$color__fixed--content: #fff !default;
+$fixed--height: 360px !default;
 
 // * Background-images declarations
 // * Must be declared before other styles
@@ -44,24 +44,22 @@ $fixedBg__height: 500px !default;
     background-attachment: fixed;
 }
 
+// * Center the content
+
 .fixed__inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    // * Sizing goes here
-    min-height: $fixedBg__height;
-    background: rgba(0,0,0,.5);
+    min-height: $fixed--height;
 }
 
-// * Center the content
-
 .fixed__content {
-    color: $color__fixedContent;
+    color: $color__fixed--content;
 }
 
 // * Declare a .content-background for effect
 
 .fixed__contrast { 
-    background: $color__background;
+    background: $color--background;
 }
 

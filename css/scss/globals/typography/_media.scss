@@ -4,7 +4,7 @@
 // * Responsiveness for media-elements.
 // * ---------------------
 
-$type__imageSpacing: $type__sizingUnit;
+$type--image-spacing: $type--sizing-unit;
 
 // * Fluid images
 
@@ -22,19 +22,19 @@ img {
 
 .img--right {
     float:right;
-    margin-bottom: $type__imageSpacing + em;
-    margin-left: $type__imageSpacing + em;
+    margin-bottom: $type--image-spacing + em;
+    margin-left: $type--image-spacing + em;
 }
 
 .img--left {
     float:left;
-    margin-bottom: $type__imageSpacing + em;
-    margin-right: $type__imageSpacing + em;
+    margin-bottom: $type--image-spacing + em;
+    margin-right: $type--image-spacing + em;
 }
 
 .img--center {
     display:block;
-    margin-bottom: $type__imageSpacing + em;
+    margin-bottom: $type--image-spacing + em;
     margin-left:auto;
     margin-right:auto;
 }
@@ -48,7 +48,7 @@ figure {
     }
 }
 
-#{$contentNamespace} figure {
+#{$base--content-namespace} figure {
     > img {
         margin-bottom: 0;
     }

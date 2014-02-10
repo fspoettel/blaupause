@@ -7,10 +7,10 @@
 // * Blockquotes
 
 blockquote {
-    border-left: ($type__sizingUnit/2) + em solid $color__primary;
-    padding-left: ($type__sizingUnit/2) + em;
+    border-left: ($type--sizing-unit/2) + em solid $color--brand;
+    padding-left: ($type--sizing-unit/2) + em;
 }
 
-#{$contentNamespace} blockquote p {
+#{$base--content-namespace} blockquote p {
     margin-bottom: 0;
 }

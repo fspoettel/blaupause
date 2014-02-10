@@ -15,16 +15,16 @@
 
 // * Core
 
-.imageGrid {
-    @extend #{$grid__classType}grid;
+.image-grid {
+    @extend #{$grid--class-type}grid;
 }
 
-.imageGrid__item,
-.imageGrid > figure {
-    @extend #{$grid__classType}grid__item;
-    @extend #{$grid__classType}lap--one-half;
-    @extend #{$grid__classType}desk--one-third;
-    @extend #{$grid__classType}high--one-quarter;
+.image-grid__item,
+.image-grid > figure {
+    @extend #{$grid--class-type}grid__item;
+    @extend #{$grid--class-type}lap--one-half;
+    @extend #{$grid--class-type}desk--one-third;
+    @extend #{$grid--class-type}high--one-quarter;
+    margin-bottom: $base--rhythm-unit + em;
     text-align: center;
-    margin-bottom: $base__rhythmUnit + em;
 }

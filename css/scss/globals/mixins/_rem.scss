@@ -5,13 +5,13 @@
 // * @usage: @include rem('margin-bottom',24);
 // * ---------------------
 
-$baselinePx: $base__browserDefault;
+$baseline-number: $base--browser-default;
 
 @mixin rem($property, $px-values) {
-    $baselineRem: ($baselinePx/1rem * 1);
+    $baseline-rem: ($baseline-number/1rem * 1);
     #{$property}: ($px-values+px);
     @if type-of($px-values) == "number" {
-        #{$property}: ($px-values/$baselineRem);
+        #{$property}: ($px-values/$baseline-rem);
     }
     @else {
         $rem-values: ();
@@ -20,7 +20,7 @@ $baselinePx: $base__browserDefault;
                 $rem-values: append($rem-values, $value);
             } 
             @else {
-                $rem-values: append($rem-values, $value / $baselineRem); 
+                $rem-values: append($rem-values, $value / $baseline-rem); 
             } 
         }
     #{$property}: $rem-values;

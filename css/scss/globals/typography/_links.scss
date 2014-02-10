@@ -5,7 +5,7 @@
 // * ---------------------
 
 a {
-    color: $color__link;
+    color: $color__type--link;
     line-height: inherit;
     text-decoration: none;
     img {
@@ -16,6 +16,6 @@ a {
 a {
     a:active,
     &:hover {
-        color: $color__linkHover;
+        color: $color__type--link-hover;
     }
 }

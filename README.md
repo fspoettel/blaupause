@@ -53,11 +53,11 @@ Contains basic configuration variables:
 
 ### css
 
-This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file.
+This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again.
 
 #### css/scss
 
-The scss is divided in two main categories: *globals & locals*. Globals are stuff that is shared across your whole project. The locals-folder is meant for page or module-specific styles.
+The scss is divided in three main categories: *globals, locals & recipes*. Globals are stuff that is shared across your whole project. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns.
 
 The *globals*-folder is grouped in several sub-folders: 
 
@@ -90,4 +90,4 @@ By default, the js-build process takes all scripts inside *modules* and the glob
 
 ## Naming conventions & CSS authoring principles
 
-The whole project is centered around an BEM and OOP approach. The .scss is divided into small files that each serve one purpose only. Variables are namspaced and camelCase is used. A sample variable looks like this: `base__size` or `base__sizingUnit`. The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple the typeSizing form the baseSizing, which are by default coupled.
+The whole project is centered around an BEM and OOP approach. The .scss is divided into small files that each serve one purpose only. Variables are namspaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value). The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple the typeSizing form the baseSizing, which are by default coupled.

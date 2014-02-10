@@ -8,16 +8,16 @@
 
 // * Defaults
 
-$animation__duration: 1s !default;
-$animation__fillmode: both !default;
-$animation__startDelay: 0s !default;    // Use with animationDelay-mixin
-$animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
+$animation--duration: 1s !default;
+$animation--fill-mode: both !default;
+$animation--start-delay: 0s !default;    // Use with animationDelay-mixin
+$animation--delay-offset: 0.1s !default; // Use with animationDelay-mixin
 
 // * Core
 
 %animated {
-    animation-duration: $animation__duration;
-    animation-fill-mode: $animation__fillmode;
+    animation-duration: $animation--duration;
+    animation-fill-mode: $animation--fill-mode;
 }
 
 // * Delays
@@ -25,23 +25,23 @@ $animation__delayOffset: 0.1s !default; // Use with animationDelay-mixin
 // * ---------------------
 
 %immediate {
-    @include animationDelay(0,$animation__startDelay,0);
+    @include delay(0,$animation--start-delay,0);
 }
 
 %delay1 {
-    @include animationDelay(1,$animation__startDelay,$animation__delayOffset);
+    @include delay(1);
 }
 
 %delay2 {
-    @include animationDelay(2,$animation__startDelay,$animation__delayOffset);
+    @include delay(2);
 }
 
 %delay3 {
-    @include animationDelay(3,$animation__startDelay,$animation__delayOffset);
+    @include delay(3);
 }
 
 %delay4 {
-    @include animationDelay(4,$animation__startDelay,$animation__delayOffset);
+    @include delay(4);
 }
 
 // * Project declarations

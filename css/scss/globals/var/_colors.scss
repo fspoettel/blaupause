@@ -5,22 +5,22 @@
 // * ---------------------
 
 // * Core
-$color__background:   #fefefe !default;
+$color--background:        #fefefe !default;
 
 // * Typography
-$color__bodyText:    #444 !default;
-$color__heading:     #222 !default;
+$color__type--text:        #444 !default;
+$color__type--heading:     #222 !default;
 
 // * Links
-$color__link:        #c10900 !default;
-$color__linkHover:   shade($color__link,10%)!default;
+$color__type--link:        #c10900 !default;
+$color__type--link-hover:  shade($color__type--link,10%)!default;
 
 // * Branding
-$color__primary:      #c10900 !default;
-$color__secondary:    yellow !default;
-$color__disabled:     grey !default;
+$color--primary:            #c10900 !default;
+$color--secondary:          yellow !default;
+$color--disabled:           grey !default;
 
 // * States
 
-$color__success:      green !default;
-$color__error:        red !default;
+$color--success:            green !default;
+$color--error:              red !default;

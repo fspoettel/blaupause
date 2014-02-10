@@ -6,17 +6,17 @@
 // * table--striped
 // * ---------------------
 
-$table__backgroundColor: #fff;
-$table__oddColor:        #eee;
-$table__headBackground:  #fff;
-$table__headColor:       $color__bodyText;
+$color__table--background: #fff;
+$color__table--odd:        #eee;
+$color__table--head:       #fff;
+$color__table--head-text:  $color__type--text;
 
 // * Core table styles
 // * 1. Remove most spacing from tables.
 // * ---------------------
 
 table {
-    background: $table__backgroundColor;
+    background: $color__table--background;
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -24,16 +24,16 @@ table {
 
 th,
 td {
-    padding: ($base__sizingUnit/4+em);
+    padding: ($base--sizing-unit/4+em);
     text-align: left;
     @include bp(lapUp) {
-        padding: ($base__sizingUnit/2+em);
+        padding: ($base--sizing-unit/2+em);
     }
 }
 
 thead {
-    background: $table__headBackground;
-    color: $table__headColor;
+    background: $color__table--head;
+    color: $color__table--head-text;
 }
 
 // * Bordered tables
@@ -41,16 +41,16 @@ thead {
 .table--bordered {
     th,
     td {
-        border:$brand__borderWidth solid $brand--borderColor;
+        border:$brand--border-width solid $color__brand--border;
         &:empty {
             border: none;
         }
     }
     thead tr:last-child th {
-        border-bottom-width: $brand__borderWidth;
+        border-bottom-width: $brand--border-width;
     }
     tbody tr th:last-of-type {
-        border-right-width: $brand__borderWidth;
+        border-right-width: $brand--border-width;
     }
 }
 
@@ -58,13 +58,13 @@ thead {
 
 .table--striped {
     tbody tr:nth-of-type(odd){
-        background-color: $table__oddColor;
+        background-color: $color__table--odd;
     }
 }
 
 // * Data table
 
 .table--data,
-#{$contentNamespace} .table--data {
+#{$base--content-namespace} .table--data {
     font:12px/1.5 sans-serif;
 }

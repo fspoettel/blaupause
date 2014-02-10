@@ -1,9 +1,11 @@
 
-// *    Animations
+// *    Brand
 // * ---------------------
 // * Variables connected to the project's branding.
 // * ---------------------
 
-$brand__borderRadius: .25em !default;
-$brand__borderColor: #ccc !default;
-$brand__borderWidth: 1px !default;
+$brand--border-radius: .25em !default;
+$brand--border-width: 1px !default;
+
+$color--brand:         $color--primary !default;
+$color__brand--border: #ccc !default;

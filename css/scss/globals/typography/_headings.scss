@@ -11,20 +11,20 @@
 // * 1. Sizes inherited from `var/_type.scss`
 // * ---------------------
 
-$heading1: $scale1;
-$heading2: $scale2;
-$heading3: $scale3;
-$heading4: $scale4;
-$heading5: $scale5;
-$heading6: $scale6;
-$mega:     $scaleM;
-$giga:     $scaleG;
-$ultra:    $scaleU;
+$type--heading1: $type--scale1;
+$type--heading2: $type--scale2;
+$type--heading3: $type--scale3;
+$type--heading4: $type--scale4;
+$type--heading5: $type--scale5;
+$type--heading6: $type--scale6;
+$type--mega:     $type--scaleM;
+$type--giga:     $type--scaleG;
+$type--ultra:    $type--scaleU;
 
-$type__headingType: $type__secondary;
-$type__headingRatio: 1.25 !default;
-$type__headingWeight: 700 !default;
-$type__headingStyle: italic !default;
+$font--heading: $font--secondary;
+$type__heading--ratio: 1.25 !default;
+$type__heading--font-weight: 700 !default;
+$type__heading--font-style: italic !default;
 
 // * Genereal heading styles
 // *     1. Inherited from var/colors
@@ -36,11 +36,11 @@ h3,
 h4,
 h5,
 h6 {
-    color: $color__heading; //[1]
-    font-family: $type__headingType; //[2]
+    color: $color__type--heading; //[1]
+    font-family: $font--heading; //[2]
     font-feature-settings: "kern", "liga";
-    font-weight: $type__headingWeight;
-    font-style: $type__headingStyle;
+    font-weight: $type__heading--font-weight;
+    font-style: $type__heading--font-style;
     line-height: 1;
     margin: 0;
     text-rendering: optimizeLegibility; // [3]
@@ -51,61 +51,61 @@ h6 {
 // * ---------------------
 
 .ultra {
-    @include rem( "font-size", $ultra );
+    @include rem( "font-size", $type--ultra );
 }
 
 .giga {
-    @include rem( "font-size", $giga );
+    @include rem( "font-size", $type--giga );
 }
 
 .mega {
-    @include rem( "font-size", $mega );
+    @include rem( "font-size", $type--mega );
 }
 
 h1,
 .alpha {
-    @include rem( "font-size", $heading1 );
+    @include rem( "font-size", $type--heading1 );
 }
 
 h2,
 .beta {
-    @include rem( "font-size", $heading2 );
+    @include rem( "font-size", $type--heading2 );
 }
 
 h3,
 .gamma {
-    @include rem( "font-size", $heading3 );
+    @include rem( "font-size", $type--heading3 );
 }
 
 h4,
 .delta {
-    @include rem("font-size", $heading4);
+    @include rem("font-size", $type--heading4);
 }
 
 h5,
 .epsilon {
-    @include rem( "font-size", $heading5 );
+    @include rem( "font-size", $type--heading5 );
 }
 
 h6,
 .zeta {
-    @include rem( "font-size", $heading6 );
+    @include rem( "font-size", $type--heading6 );
 }
 
 .vR--heading {
-    line-height: $type__headingRatio;
-    @include rem("margin-bottom", $type__sizingNumber/4);
+    line-height: $type__heading--ratio;
+    @include rem("margin-bottom", $type--sizing-number/4);
 }
 
 // * Content headings
 // * Hook for headings inside you content-element.
 // * ---------------------
 
-#{$contentNamespace} h1,
-#{$contentNamespace} h2,
-#{$contentNamespace} h3,
-#{$contentNamespace} h4,
-#{$contentNamespace} h5,
-#{$contentNamespace} h6, {
+#{$base--content-namespace} h1,
+#{$base--content-namespace} h2,
+#{$base--content-namespace} h3,
+#{$base--content-namespace} h4,
+#{$base--content-namespace} h5,
+#{$base--content-namespace} h6, {
     @extend .vR--heading;
 }

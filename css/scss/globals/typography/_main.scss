@@ -6,15 +6,10 @@
 
 // * Responsive typography
 
-$palmFontSize: 87.5%;
-$lapFontSize: 87.5%;
-$deskFontSize: 100%;
-$highFontSize: 112.5%;
-
-// * Typefaces
-
-$type__bodyType: $type__primary;
-$type__contentType: $type__secondary;
+$palm--font-size: 87.5%;
+$lap--font-size: 87.5%;
+$desk--font-size: 100%;
+$high--font-size: 112.5%;
 
 // * Core
 
@@ -22,23 +17,23 @@ html,
 textarea,
 input,
 select {
-    font-family: $type__bodyType;
-    font-size: $palmFontSize;
-    line-height: $type__ratio;
+    font-family: $font--primary;
+    font-size: $palm--font-size;
+    line-height: $type--ratio;
     @include bp(lap) {
-        font-size: $lapFontSize;
+        font-size: $lap--font-size;
     }
     @include bp(desk) {
-        font-size: $deskFontSize;
+        font-size: $desk--font-size;
     }
     @include bp(high) {
-        font-size: $highFontSize;
+        font-size: $high--font-size;
     }
 }
 
 body {
-    @include rem( "font-size", $type__scaleBase );
-    color: $color__bodyText;
+    @include rem( "font-size", $type--scale-base );
+    color: $color__type--text;
 }
 
 // * Typographic reset
@@ -61,27 +56,27 @@ td {
 }
 
 // * Vertical rhythm class
-// * By default coupled to $base__ratio & $base__size, but it can be uncoupled by setting $type__scaleBase &&|| $type__ratio
+// * By default coupled to $base--ratio & $base--size, but it can be uncoupled by setting $type--scaleBase &&|| $type--ratio
 
 .vR{
     margin-top: 0;
-    @include rem( "margin-bottom", ($type__rhythmNumber) );
+    @include rem( "margin-bottom", $type--rhythm-number);
 }
 
 // * Content typography
 
-#{$contentNamespace} {
-    font-family: $type__contentType;
+#{$base--content-namespace} {
+    font-family: $font--primary;
 }
 
-#{$contentNamespace} div,
-#{$contentNamespace} dl,
-#{$contentNamespace} figure,
-#{$contentNamespace} ol,
-#{$contentNamespace} ul,
-#{$contentNamespace} p,
-#{$contentNamespace} blockquote,
-#{$contentNamespace} table {
+#{$base--content-namespace} div,
+#{$base--content-namespace} dl,
+#{$base--content-namespace} figure,
+#{$base--content-namespace} ol,
+#{$base--content-namespace} ul,
+#{$base--content-namespace} p,
+#{$base--content-namespace} blockquote,
+#{$base--content-namespace} table {
     @extend .vR;
 }
 

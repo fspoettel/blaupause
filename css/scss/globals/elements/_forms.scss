@@ -11,7 +11,7 @@
 // * ---------------------
 
 form {
-    @include rem( "margin-bottom", $base__rhythmNumber );
+    @include rem( "margin-bottom", $base--rhythm-number );
 }
 
 label,
@@ -23,7 +23,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     display: inline-block;
-    font-family: $type__primary;
+    font-family: $font--primary;
 }
 
 input[type="file"],
@@ -40,8 +40,8 @@ textarea {
 // * Fieldsets
 
 fieldset {
-    border: $brand__borderWidth solid $brand__borderColor;
-    padding: ($base__sizingUnit/2+em) ($base__sizingUnit/2+em);
+    border: $brand--border-width solid $color__brand--border;
+    padding: ($base--sizing-unit/2+em) ($base--sizing-unit/2+em);
 }
 
 // * Text inputs
@@ -61,7 +61,7 @@ input[type="url"],
 textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: ($base__sizingUnit/2 + em);
+    padding: ($base--sizing-unit/2 + em);
 }
 
 // * Clickable inputs
@@ -91,12 +91,12 @@ input[type="submit"] {
 
 label input[type="radio"],
 label input[type="checkbox"] {
-    margin-right: ($base__sizingUnit/2) + em;
+    margin-right: ($base--sizing-unit/2) + em;
 }
 
 label + input[type="radio"],
 label + input[type="checkbox"] {
-    margin-left: ($base__sizingUnit/2) + em;
+    margin-left: ($base--sizing-unit/2) + em;
 }
 
 // * Selects

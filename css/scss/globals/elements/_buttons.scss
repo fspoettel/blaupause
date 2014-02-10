@@ -10,13 +10,13 @@
 // * @usage <a class="btn  btn--full"></a>
 // * ---------------------
 
-$btn__primaryColor:   $color__primary;
-$btn__secondaryColor: $color__secondary;
-$btn__tertiaryColor:  tint( $color__secondary, 20% );
-$btn__mutedColor:     $color__disabled;
-$btn__positiveColor:  $color__success;
-$btn__negativeColor:  $color__error;
-$btn__textColor:      #fff !default;
+$color__btn--primary:   $color--primary;
+$color__btn--secondary: $color--secondary;
+$color__btn--tertiary:  tint( $color--secondary, 20% );
+$color__btn--muted:     $color--disabled;
+$color__btn--positive:  $color--success;
+$color__btn--negative:  $color--error;
+$color__btn--text:      #fff !default;
 
 // * Core
 // * 1. Use colors from `var/_colors.scss`
@@ -25,12 +25,12 @@ $btn__textColor:      #fff !default;
 // * ---------------------
 
 .btn {
-    background: $btn__primaryColor;
-    color: $btn__textColor;
+    background: $color__btn--primary;
+    color: $color__btn--text;
     cursor: pointer;
     display: inline-block;
     line-height: normal;
-    padding: ($base__sizingUnit / 2+em) ($base__rhythmUnit+em);
+    padding: ($base--sizing-unit / 2+em) ($base--rhythm-unit+em);
     text-align: center;
     -webkit-user-drag: none;
     user-select: none;
@@ -66,24 +66,24 @@ $btn__textColor:      #fff !default;
 }
 
 .btn--secondary { 
-    background: $btn__secondaryColor;
+    background: $color__btn--secondary;
 }
 
 .btn--tertiary { 
-    background: $btn__tertiaryColor;
+    background: $color__btn--tertiary;
 }
 
 // * Button-states / Callbacks
 
 .btn--positive {
-    background: $btn__positiveColor;
+    background: $color__btn--positive;
 }
 
 .btn--negative {
-    background: $btn__negativeColor;
+    background: $color__btn--negative;
 }
 
 .btn:disabled,
 .btn--disabled {
-    background: $btn__mutedColor;
+    background: $color__btn--muted;
 }

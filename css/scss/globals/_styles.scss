@@ -5,17 +5,17 @@
 // * ---------------------
 
 body {
-    background: $color__background;
+    background: $color--background;
 }
 
 // * Grid classes
 
-@if $grid__useSilentClasses == true {
+@if $grid--use-silent-classes == true {
     .grid {
-        @extend #{$grid__classType}grid;
+        @extend #{$grid--class-type}grid;
     }
 
     .grid__item {
-        @extend #{$grid__classType}grid__item;
+        @extend #{$grid--class-type}grid__item;
     }
 }

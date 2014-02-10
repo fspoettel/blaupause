@@ -355,7 +355,7 @@ td,
 th {
   padding: 0; }
 
-.grid, .imageGrid {
+.grid, .image-grid {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -369,16 +369,16 @@ th {
   margin-left: -1.5rem;
   letter-spacing: -0.31em; }
   @supports not (flex-wrap: wrap) {
-    .grid, .imageGrid {
+    .grid, .image-grid {
       display: block; } }
 
 .opera:-o-prefocus,
 .grid,
-.imageGrid {
+.image-grid {
   word-spacing: -0.43em; }
 
-.grid__item, .imageGrid__item,
-.imageGrid > figure {
+.grid__item, .image-grid__item,
+.image-grid > figure {
   display: inline-block;
   padding-left: 24px;
   padding-left: 1.5rem;
@@ -391,16 +391,16 @@ th {
   word-spacing: normal; }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
-  .imageGrid__item,
-  .imageGrid > figure {
+  .image-grid__item,
+  .image-grid > figure {
     width: 50%; } }
 @media only screen and (min-width: 1024px) {
-  .imageGrid__item,
-  .imageGrid > figure {
+  .image-grid__item,
+  .image-grid > figure {
     width: 33.333%; } }
 @media only screen and (min-width: 1400px) {
-  .imageGrid__item,
-  .imageGrid > figure {
+  .image-grid__item,
+  .image-grid > figure {
     width: 25%; } }
 [class*="push--"] {
   position: relative; }
@@ -566,7 +566,7 @@ td {
   margin-bottom: 1.5rem; }
 
 .content {
-  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 em,
 i {
@@ -744,10 +744,6 @@ th,
 td {
   padding: 0.25em;
   text-align: left; }
-  @media (min-width: 481px) {
-    th,
-    td {
-      padding: 0.5em; } }
 
 thead {
   background: white;
@@ -799,10 +795,10 @@ body {
 .fixed__contrast {
   background: #fefefe; }
 
-.imageGrid__item,
-.imageGrid > figure {
-  text-align: center;
-  margin-bottom: 1.5em; }
+.image-grid__item,
+.image-grid > figure {
+  margin-bottom: 1.5em;
+  text-align: center; }
 
 .media {
   display: block; }
