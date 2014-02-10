@@ -5,7 +5,7 @@ Boilerplate
 
 ## About
 
-This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-framework, a Gulp buildprocess (SCSS, js, img & Liverolad) and an optional Statamic twist. It aims to give you a flexible, UI-less core to get web-projects running quickly.
+This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-framework, a Gulp build-process (SCSS, js, img & Liverolad) and an optional Statamic twist. It aims to give you a flexible, UI-less core to get web-projects running quickly.
 
 ## Installation
 
@@ -18,7 +18,7 @@ npm install
 
 When using with Statamic: 
 
-Copy all the stuff into your installation's theme-folder. Copy the stuff out of the `_statamic` folder into the theme-base. Done.
+Copy everything into your installation's theme-folder. Copy all folders out of the `_statamic` folder into the theme-base. Done.
 
 ## File Structure
 
@@ -28,7 +28,7 @@ Contains really basic statamic-theme files.
 
 #### /layout
 
-Contains the default theme-layout based on HTML5 Boilerplate. It imports all low-level *partials* (footer, header, nav(in header), scripts). It sets up a Typekit-conditional and some basic variables that can be configured in *theme.yaml*. Core-vars are prefixed with an underscore to mimic core-statamic variables (e.g. `_site_root`).
+Contains the default theme-layout based on HTML5 Boilerplate. It imports all low-level *partials* (footer, header, nav(in header), scripts). It sets up a Typekit-conditional and some basic variables that can be configured in *theme.yaml*. Core-vars are prefixed with an underscore to mimic core statamic variables (e.g. `_site_root`).
 
 #### /templates
 
@@ -36,7 +36,7 @@ Contains a sample-template with a content-section.
 
 #### /partials
 
-Contains wrappers for low-level partials. *Scripts* is the bottom-page script-block, *Header* imports *Nav* and is the page header, *footer* the footer. I decided to decouple the *scripts* from the layout so that one can easily add scripts per template.
+Contains wrappers for low-level partials. *Scripts* is the bottom-page script-block, *header* imports *nav* and is the page header, *footer* the footer. I decided to decouple the *scripts* from the layout so that one can easily add scripts per template.
 
 #### theme.yaml
 
@@ -53,17 +53,17 @@ Contains basic configuration variables:
 
 ### css
 
-This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again.
+This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again and debugging is a breeze.
 
 #### css/scss
 
-The scss is divided in three main categories: *globals, locals & recipes*. Globals are stuff that is shared across your whole project. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns.
+The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns.
 
 The *globals*-folder is grouped in several sub-folders: 
 
  - `/var`
  
-   Stores basic-configuration such as base-sizes, colors, mediaqueries (for inline MQ, see mixin), type and brand-specific as variables.
+   Stores basic-configuration such as sizes, colors, mediaqueries (for inline MQ, see mixin), type and brand-specific as variables.
 
  - `/typography`
  
@@ -81,13 +81,28 @@ The *globals*-folder is grouped in several sub-folders:
  
    Stores core UI abstractions such as tables or forms.
    
-In the base-directory, there is a reset, a styles.scss for global styles that don't fit any of the folders above and a shame.scss.
+In the base-directory, there is a reset(normalize.scss), a styles.scss for global styles that don't fit any of the folders above and a shame.scss. For detailed documentation regarding the .scss-modules read the inline documentation.
 
 
 ### js
 
-By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently: jQuery, Modernizr (dev build), Respond.js, HTML5-shiv.
+By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently: jQuery (1.11.0 / 2.1.0), Modernizr (2.7.1 dev build), Respond.js (1.4.2), HTML5-shiv(3.7.0).
 
 ## Naming conventions & CSS authoring principles
 
-The whole project is centered around an BEM and OOP approach. The .scss is divided into small files that each serve one purpose only. Variables are namspaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value). The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple the typeSizing form the baseSizing, which are by default coupled.
+The whole project is centered around an BEM and OOP approach. The .scss is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value). Classes are constructed with a BEM approach: 
+
+```html
+    <section class="house house--red">
+        <article class="house__room">
+        </article>
+        <article class="house__bath  house__bath--red">
+        </article>
+    </section>
+```
+
+`--` is used for modifiers (SCSS vars: values), while `__` is reserved for sub-elements (SCSS vars: sub-groups).
+
+ The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple type--sizing-unit from base--sizing--unit, which are by default coupled. This gives the author the freedom to scope variable contexts.
+
+ By providing a js-build-process, it is easy to modularize JS. All .js files in `modules` will be combined with global.js and minfied. One can for example set up modules in `js/modules`and fire them from a centralized `document.ready` or `window.load` in global.js.
