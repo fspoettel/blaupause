@@ -117,6 +117,7 @@ $color__btn--text:      #fff !default;
 .btn:disabled,
 .btn--disabled {
     background: $color__btn--disabled;
+    cursor: default;
     &:hover,
     &:active,
     &:focus {
