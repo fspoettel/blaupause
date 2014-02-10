@@ -18,7 +18,7 @@ var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
     imgPaths      = "img/src/**",
-    lrPath        = ["css/build/prefixed/global.min.css","**/*.html","js/build/global.min.js"];
+    lrPath        = ["css/build/prefixed/global.min.css","**/**/*.html","js/build/global.min.js"];
 
 // Concat & Minify JS
 gulp.task("scripts", function(){
