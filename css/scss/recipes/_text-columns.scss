@@ -1,0 +1,22 @@
+
+// *    Text Columns
+// * ---------------------
+// * Split content into columns with _columns.scss-mixin. See: 
+// @ usage:
+// *
+// * <figure class="media">
+// *     <img src="" />
+// *     <figcaption (class="media__caption")>
+// *     </figcaption>
+// * </figure>
+// * ---------------------
+
+.columns--one-half {
+    @include columns(2);
+}
+.columns--one-third {
+    @include columns(3);
+}
+.columns--one-quarter {
+    @include columns(4);
+}

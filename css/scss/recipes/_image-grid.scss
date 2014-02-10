@@ -1,0 +1,30 @@
+
+// *    Image grid recipe
+// * ---------------------
+// * A basic implementation of an image grid.
+// @ usage:
+// * <section class="imageGrid">
+// *     <figure (class="imageGrid__item")>
+// *         <img src="#" />
+// *         <figcaption>
+// *         </figcaption>
+// *     </figure>
+// *     ...
+// * </section>
+// * ---------------------
+
+// * Core
+
+.imageGrid {
+    @extend #{$grid__classType}grid;
+}
+
+.imageGrid__item,
+.imageGrid > figure {
+    @extend #{$grid__classType}grid__item;
+    @extend #{$grid__classType}lap--one-half;
+    @extend #{$grid__classType}desk--one-third;
+    @extend #{$grid__classType}high--one-quarter;
+    text-align: center;
+    margin-bottom: $base__rhythmUnit + em;
+}

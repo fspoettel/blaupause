@@ -1,0 +1,41 @@
+
+// *    Media-Element
+// * ---------------------
+// * Place any content next to an image.
+// @ usage:
+// *
+// * <figure class="media">
+// *     <img src="" />
+// *     <figcaption (class="media__caption")>
+// *     </figcaption>
+// * </figure>
+// * ---------------------
+
+// * Core
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media > img {
+    margin-right: $base__rhythmUnit + em;
+}
+
+.media__caption,
+.media > figcaption {
+    flex: 1 0 0;
+}
+
+// * Modifiers
+
+.media--center {
+    align-items: center;
+}
+
+.media--rev {
+    > img {
+    order: 1;
+    margin: 0 0 0 ($base__rhythmUnit+em);
+    }
+}

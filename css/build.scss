@@ -4,37 +4,39 @@
 // Handle with care!
 //---------------------------------
 
-// Base units
+// * Base units
 
 @import "scss/globals/var/base";
 
-// Get the mixins first - they do no harm and may be needed by the config -> folder: scss/globals/mixins
+// * Get the mixins first - they do no harm and may be needed by the config -> folder: scss/globals/mixins
 
 @import "scss/globals/mixins/animation-delay";
 @import "scss/globals/mixins/bulletproof-ff";
+@import "scss/globals/mixins/clearfix";
 @import "scss/globals/mixins/colorfunctions";
+@import "scss/globals/mixins/columns";
 @import "scss/globals/mixins/easing";
 @import "scss/globals/mixins/font-stacks";
 @import "scss/globals/mixins/mqs";
 @import "scss/globals/mixins/rem";
 
-// Get the global variables.  -> folder: scss/globals/config
+// * Get the global variables.  -> folder: scss/globals/config
 
 @import "scss/globals/var/brand";
 @import "scss/globals/var/colors";
 @import "scss/globals/var/mediaqueries";
 @import "scss/globals/var/type";
 
-// Where are most of the reset-styles? Normalize.css is ingrained across the project as this makes the scope of the normalizations more visual.
+// * Where are most of the reset-styles? Normalize.css is ingrained across the project as this makes the scope of the normalizations more visual.
 
 @import "scss/globals/reset";
 
-// Get the layout files -> folder: scss/layout
-// The grid is based on my fork of csswizardry-grids
+// * Get the layout files -> folder: scss/layout
+// * The grid is based on my fork of csswizardry-grids
 
 @import "scss/globals/layout/grids";
 
-// Get the typography -> folder: scss/globals/typography
+// * Get the typography -> folder: scss/globals/typography
 
 @import "scss/globals/typography/code";
 @import "scss/globals/typography/fontface";
@@ -45,7 +47,7 @@
 @import "scss/globals/typography/media";
 @import "scss/globals/typography/quotes";
 
-// Get basic UI elements -> folder: scss/globals/elements
+// * Get basic UI elements -> folder: scss/globals/elements
 
 @import "scss/globals/elements/animations";
 @import "scss/globals/elements/brand";
@@ -54,9 +56,16 @@
 @import "scss/globals/elements/icons";
 @import "scss/globals/elements/tables";
 
-// Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
+// * Get the styles - these should contain project-specific globals, e.g. core-layout. -> folder: scss/globals
 
 @import "scss/globals/shame";
 @import "scss/globals/styles";
 
-// Get local-stuff - page-styles, custom elements etc.
+// * Get the recipes
+
+@import "scss/recipes/fixed-backgrounds";
+@import "scss/recipes/image-grid";
+@import "scss/recipes/media-element";
+@import "scss/recipes/text-columns";
+
+// * Get local-stuff - page-styles, custom elements etc.

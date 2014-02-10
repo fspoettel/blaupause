@@ -1,0 +1,39 @@
+
+// *    Media-Element
+// * ---------------------
+// * Place any content next to an image.
+// @ usage:
+// *
+// * <figure class="media">
+// *     <img src="" />
+// *     <figcaption (class="media__caption")>
+// *     </figcaption>
+// * </figure>
+// * ---------------------
+
+// * Core
+
+.media {
+    display: block;
+    @include cf();
+}
+
+.media > img {
+    float: left;
+    margin-right: $base__rhythmUnit + em;
+}
+
+.media__caption,
+.media > figcaption {
+    overflow: hidden;
+}
+
+// * Modifiers
+
+.media--rev {
+    > img {
+        float: right;
+        margin-left: $base__rhythmUnit + em;
+        margin-right: 0;
+    }
+}

@@ -5,13 +5,19 @@
     <meta name="description" content="" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/build/prefixed/global.min.css">
     <style>
         .content {
             max-width: 640px;
             margin: 0 auto;
         }
+        .fixed__content > h3 {
+            color: #fff;
+        }
+        .fixed--1 {
+            background: url(http://placekitten.com/640/640);
+        }
     </style>
+    <link rel="stylesheet" href="css/build/prefixed/global.min.css">
     <script>
         document.documentElement.className = "js";
     </script>
@@ -339,6 +345,77 @@
      </form>
     <p> Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.
     </p>
+    <h2>Recipes</h2>
+    <h3>Media Element</h3>
+    <figure class="media">
+        <img src="http://placekitten.com/300" />
+        <figcaption>
+            <p>Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
+        </figcaption>
+    </figure>
+    <h3>Image-Grid</h3>
+    <section class="imageGrid">
+        <figure>
+            <img src="http://placekitten.com/500" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/550" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/540" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/530" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/520" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/510" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/580" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/570" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/560" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/590" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/600" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+        <figure>
+            <img src="http://placekitten.com/610" />
+            <figcaption>A nice kitty</figcaption>
+        </figure>
+    </section>
+    <section class="fixed  fixed--1">
+        <div class="fixed__inner">
+            <div class="fixed__content">
+                <h3>Fixed image background</h3>
+            </div>
+        </div>
+    </section>
+    <section class="fixed__contrast">
+        <h3>Text columns</h3>
+        <p class="columns--one-half">Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
+        <p class="columns--one-third">Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
+    </section>
 </section>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/lib/jquery/jquery-1.11.0.min.js"><\/script>')</script>

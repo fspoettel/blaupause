@@ -62,7 +62,7 @@ $btn__textColor:      #fff !default;
 // * Visual modifiers
 
 .btn--round {
-    border-radius: $brand__rounding;
+    @extend %brand--round;
 }
 
 .btn--secondary { 

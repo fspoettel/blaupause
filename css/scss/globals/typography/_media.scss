@@ -15,7 +15,7 @@ img {
 // * Rounded images 
 
 .img--round { 
-    border-radius: $brand__rounding;
+    @extend %brand--round;
 }
 
 // * Image placement

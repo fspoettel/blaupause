@@ -1,0 +1,14 @@
+
+// *    Cleafix
+// * ---------------------
+// * Modern clearfix mixin.
+// * @usage @include clearfix();
+// * ---------------------
+
+@mixin cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

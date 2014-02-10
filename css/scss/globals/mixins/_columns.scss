@@ -1,0 +1,13 @@
+
+// *    CSS3 Columns
+// * ---------------------
+// * Use CSS3-columns. See: http://caniuse.com/#feat=multicolumn
+// * @usage @include columns($number,($gap));
+// * ---------------------
+
+$column__gap: $base__sizingUnit + em !default;
+
+@mixin columns($number, $gap:$column__gap) {
+    column-count: $number;
+    column-gap: $column__gap;
+} 
