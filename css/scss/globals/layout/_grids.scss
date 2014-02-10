@@ -124,7 +124,8 @@ $grid__breakpoints: (
     "palm"  $bp__palm,
     "lap"   $bp__lap,
     "lapUp" $bp__lapUp,
-    "desk"  $bp__desk
+    "desk"  $bp__desk,
+    "high"  $bp__high
 )!default;
 
 
@@ -138,9 +139,9 @@ $grid__breakpoints: (
 // * Push and pull shall only be used if `$grid__push` and/or `$grid__pull` and `$grid__responsive`
 // * have been set to ‘true’.
 // */
-$grid__breakpointHasWidths: ("palm", "lap","lapUp", "desk")!default;
-$grid__breakpointHasPush:   ("palm", "lap","lapUp", "desk")!default;
-$grid__breakpointHasPull:   ("palm", "lap","lapUp", "desk")!default;
+$grid__breakpointHasWidths: ("palm", "lap","lapUp", "desk","high")!default;
+$grid__breakpointHasPush:   ("palm", "lap","lapUp", "desk","high")!default;
+$grid__breakpointHasPull:   ("palm", "lap","lapUp", "desk","high")!default;
 
 
 //**
@@ -270,9 +271,6 @@ $grid__classType:            unquote(".");
 // */
 #{$grid__classType}grid--rev{
     direction:rtl;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
     -webkit-flex-flow: wrap-reverse row;
     -ms-flex-flow: wrap-reverse row;
     flex-flow: wrap-reverse row;

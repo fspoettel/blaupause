@@ -24,4 +24,7 @@
     @else if $point == desk {
         @media #{$bp__desk} { @content; }
     }
+    @else if $point == high {
+        @media #{$bp__high} { @content; }
+    }
 }

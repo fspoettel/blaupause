@@ -4,9 +4,14 @@
 // * Basic type-setting
 // * ---------------------
 
-$palmFontSize: 87.5%; // 14px baseline 
-$lapFontSize: 100%;   // 16px baseline
-$deskFontSize: 100%;  // 16px baseline
+// * Responsive typography
+
+$palmFontSize: 87.5%;
+$lapFontSize: 87.5%;
+$deskFontSize: 100%;
+$highFontSize: 112.5%;
+
+// * Typefaces
 
 $type__bodyType: $type__primary;
 $type__contentType: $type__secondary;
@@ -25,6 +30,9 @@ select {
     }
     @include bp(desk) {
         font-size: $deskFontSize;
+    }
+    @include bp(high) {
+        font-size: $highFontSize;
     }
 }
 

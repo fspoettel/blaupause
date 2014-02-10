@@ -8,16 +8,16 @@
 
 // * Calculation basics
 
-$base__size: 16 !default;
+$base__size:           16 !default;
 $base__browserDefault: 16 !default;
-$base__ratio: 1.5 !default;
+$base__ratio:          1.5 !default;
 
 // * Base sizing unit (in (r)em & px)
 
-$base__sizingUnit: $base__size / $base__browserDefault;
+$base__sizingUnit:  ($base__size / $base__browserDefault);
 $base__sizingNumber: $base__size;
 
 // * Base rhythm unit (in (r)em & px)
 
-$base__rhythmUnit: $base__ratio;
+$base__rhythmUnit:    $base__ratio;
 $base__rhythmNumber: ($base__size * $base__ratio);

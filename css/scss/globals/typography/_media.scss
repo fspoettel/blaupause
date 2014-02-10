@@ -12,13 +12,6 @@ img {
     max-width: 100%;
 }
 
-// * Non fluid-images when height & width is present
-
-img[width],
-img[height] {
-    max-width:none;
-}
-
 // * Rounded images 
 
 .img--round { 
