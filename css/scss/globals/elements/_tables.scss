@@ -26,7 +26,7 @@ th,
 td {
     padding: ($base--sizing-unit/4+em);
     text-align: left;
-    @include bp(lapUp) {
+    @include bp(lap-up) {
         padding: ($base--sizing-unit/2+em);
     }
 }

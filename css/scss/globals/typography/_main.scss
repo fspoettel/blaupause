@@ -17,7 +17,7 @@ html,
 textarea,
 input,
 select {
-    font-family: $font--primary;
+    font-family: $type__font--primary;
     font-size: $palm--font-size;
     line-height: $type--ratio;
     @include bp(lap) {
@@ -32,7 +32,7 @@ select {
 }
 
 body {
-    @include rem( "font-size", $type--scale-base );
+    @include rem( "font-size", $type--size );
     color: $color__type--text;
 }
 
@@ -66,7 +66,7 @@ td {
 // * Content typography
 
 #{$base--content-namespace} {
-    font-family: $font--primary;
+    font-family: $type__font--primary;
 }
 
 #{$base--content-namespace} div,

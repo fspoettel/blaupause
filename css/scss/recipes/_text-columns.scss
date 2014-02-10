@@ -11,12 +11,12 @@
 // * </figure>
 // * ---------------------
 
-.columns--one-half {
+.columns--halfs {
     @include columns(2);
 }
-.columns--one-third {
+.columns--thirds {
     @include columns(3);
 }
-.columns--one-quarter {
-    @include columns(4);
+.columns--quarters {
+    @include columns(4,$base--sizing-unit/2+em);
 }

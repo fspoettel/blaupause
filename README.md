@@ -83,6 +83,94 @@ The *globals*-folder is grouped in several sub-folders:
    
 In the base-directory, there is a reset(normalize.scss), a styles.scss for global styles that don't fit any of the folders above and a shame.scss. For detailed documentation regarding the .scss-modules read the inline documentation.
 
+#### scss variable structure
+
+Variable structure:
+
+ - **Base**
+    - `--size`
+    - `--ratio`
+    - `--browser-default`
+    - `--sizing-unit`
+    - `--sizing-number`
+    - `--rhythm-unit`
+    - `--rhythm-number`
+    - `--content-namespace`
+ - **Color**
+    - `--background`
+    - `--primary`
+    - `--secondary`
+    - `--success`
+    - `--error`
+    - **`__brand`**
+        - `--primary`
+        - `--border`
+    - **`__btn`**
+         - `--primary`
+         - `--secondary`
+         - `--tertiary`
+         - `--hover`
+         - `--success`
+         - `--error`
+         - `--disabled`
+    - **`__tables`**
+         - `--background`
+         - `--head`
+         - `--headtext`
+         - `--odd`
+    - **`__type`**
+         - `--text`
+         - `--heading`
+         - `--link`
+         - `--link-hover`
+ - **Type**
+    - `--size`
+    - `--ratio`
+    - `--sizing-unit`
+    - `--sizing-number`
+    - `--rhythm-unit`
+    - `--rhythm-number`
+    - **`__scale`**
+         - `--1`
+         - `--2`
+         - `--3`
+         - `--4`
+         - `--5`
+         - `--6`
+         - `--mega`
+         - `--giga`
+         - `--ultra`
+    - **`__font`**
+         - `--sans`
+         - `--serif`
+         - `--primary`
+         - `--secondary`
+         - `--heading`
+    - **`__heading`**
+         - `--font-weight`
+         - `--font-style`
+         - `--ratio`
+ - **Brand**
+    - `--border-radius`
+    - `--border-width`
+    - `--transition-style`
+    - `--transition-duration`
+ - **Animation**
+    - `--duration`
+    - `--fill-mode`
+    - `--start-delay`
+    - `--delay-offset`
+ - **Grid**
+    - `--responsive`
+    - `--gutter`
+    - `--mobile-first`
+    - `--use-silent-classes`
+    - `--push`
+    - `--pull`
+    - `--use-markup-fix`
+    - `--breakpoints`
+
+
 
 ### js
 

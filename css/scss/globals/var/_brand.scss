@@ -7,5 +7,8 @@
 $brand--border-radius: .25em !default;
 $brand--border-width: 1px !default;
 
-$color--brand:         $color--primary !default;
-$color__brand--border: #ccc !default;
+$brand--transition-duration: .3s !default;
+$brand--transition-style: $ease-in-out-cubic !default;
+
+$color__brand--primary: $color--primary !default;
+$color__brand--border:  #ccc !default;

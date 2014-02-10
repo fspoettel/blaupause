@@ -12,10 +12,11 @@
 
 $color__btn--primary:   $color--primary;
 $color__btn--secondary: $color--secondary;
-$color__btn--tertiary:  tint( $color--secondary, 20% );
-$color__btn--muted:     $color--disabled;
-$color__btn--positive:  $color--success;
-$color__btn--negative:  $color--error;
+$color__btn--tertiary:  tint($color--secondary, 20% );
+$color__btn--hover:     shade($color__btn--primary,10%);
+$color__btn--disabled:  $color--disabled;
+$color__btn--success:   $color--success;
+$color__btn--error:     $color--error;
 $color__btn--text:      #fff !default;
 
 // * Core
@@ -30,7 +31,6 @@ $color__btn--text:      #fff !default;
     cursor: pointer;
     display: inline-block;
     line-height: normal;
-    padding: ($base--sizing-unit / 2+em) ($base--rhythm-unit+em);
     text-align: center;
     -webkit-user-drag: none;
     user-select: none;
@@ -45,15 +45,26 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:focus,
     &:active {
+        background: $color__btn--hover;
         text-decoration: none;
+        color: $color__btn--text;
     }
 }
 
 // * Size modifiers
 
-.btn--small {}
-.btn--medium {}
-.btn--large {}
+.btn,
+.btn--medium {
+    padding: ($base--sizing-unit / 2+em) ($base--rhythm-unit+em);
+}
+
+.btn--small {
+    padding: ($base--sizing-unit/4 +em) ($base--rhythm-unit/2+em);
+}
+
+.btn--large {
+    padding: ($base--sizing-unit +em) ($base--rhythm-unit*2+em);
+}
 
 .btn--full { 
     display: block;
@@ -67,23 +78,48 @@ $color__btn--text:      #fff !default;
 
 .btn--secondary { 
     background: $color__btn--secondary;
+    &:hover,
+    &:active,
+    &:focus {
+        background: shade($color__btn--secondary,10%);
+    }
 }
 
 .btn--tertiary { 
     background: $color__btn--tertiary;
+    &:hover,
+    &:active,
+    &:focus {
+        background: shade($color__btn--tertiary,15%);
+    }
 }
 
 // * Button-states / Callbacks
 
-.btn--positive {
-    background: $color__btn--positive;
+.btn--success {
+    background: $color__btn--success;
+    &:hover,
+    &:active,
+    &:focus {
+        background: shade($color__btn--success,15%);
+    }
 }
 
-.btn--negative {
-    background: $color__btn--negative;
+.btn--error {
+    background: $color__btn--error;
+    &:hover,
+    &:active,
+    &:focus {
+        background: shade($color__btn--error,15%);
+    }
 }
 
 .btn:disabled,
 .btn--disabled {
-    background: $color__btn--muted;
+    background: $color__btn--disabled;
+    &:hover,
+    &:active,
+    &:focus {
+        background: shade($color__btn--disabled,15%);
+    }
 }

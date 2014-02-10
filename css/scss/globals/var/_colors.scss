@@ -12,15 +12,15 @@ $color__type--text:        #444 !default;
 $color__type--heading:     #222 !default;
 
 // * Links
-$color__type--link:        #c10900 !default;
+$color__type--link:        #D85E2E !default;
 $color__type--link-hover:  shade($color__type--link,10%)!default;
 
 // * Branding
-$color--primary:            #c10900 !default;
-$color--secondary:          yellow !default;
-$color--disabled:           grey !default;
+$color--primary:            #D85E2E !default;
+$color--secondary:          #F0B913 !default;
+$color--disabled:           #696762 !default;
 
 // * States
 
-$color--success:            green !default;
-$color--error:              red !default;
+$color--success:            #27922E !default;
+$color--error:              #AD3E3B !default;

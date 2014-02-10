@@ -9,41 +9,41 @@
 
 // * Core
 
-$type--scale-base: $base--size; // Default: 16
+$type--size:       $base--size; // Default: 16
 $type--ratio:      $base--ratio !default;
 
 // Units
 
-$type--sizing-unit:   $type--scale-base / $base--browser-default;
-$type--sizing-number: $type--scale-base;
+$type--sizing-unit:   $type--size / $base--browser-default;
+$type--sizing-number: $type--size;
 
 $type--rhythm-unit:   $type--ratio;
-$type--rhythm-number: $type--scale-base * $type--ratio;
+$type--rhythm-number: $type--size * $type--ratio;
 
 // * Typographc Scale
-// * $type--scaleBase will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
-// * $type--scaleBase is equal to $base-size by default. $base--size is used to calcualte the $base--sizing-unit, $type--sizing-unit & grid__gutters
+// * $type__scale--Base will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
+// * $type__scale--Base is equal to $base-size by default. $base--size is used to calcualte the $base--sizing-unit, $type--sizing-unit & grid__gutters
 // * So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
-// * The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type--scaleBase doesn't affect the scale
-// * It is of course possible, to make the scale dynamic to $type--scaleBase & type__ratio 
+// * The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type__scale--Base doesn't affect the scale
+// * It is of course possible, to make the scale dynamic to $type__scale--Base & type__ratio 
 // * Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
 // * ---------------------
 
-$type--scaleU:  84 !default; // kilo
-$type--scaleG:  72 !default; // giga
-$type--scaleM:  60 !default; // mega
-$type--scale1:  48 !default; // h1, alpha
-$type--scale2:  36 !default; // h2, beta
-$type--scale3:  24 !default; // h3, gamma
-$type--scale4:  21 !default; // h4, delta
-$type--scale5:  18 !default; // h5, epsilon
-$type--scale6:  16 !default; // h6, zeta
+$type__scale--U:  84 !default; // kilo
+$type__scale--G:  72 !default; // giga
+$type__scale--M:  60 !default; // mega
+$type__scale--1:  48 !default; // h1, alpha
+$type__scale--2:  36 !default; // h2, beta
+$type__scale--3:  24 !default; // h3, gamma
+$type__scale--4:  21 !default; // h4, delta
+$type__scale--5:  18 !default; // h5, epsilon
+$type__scale--6:  16 !default; // h6, zeta
 
 // * Font-stacks
 
-$font--sans: $helvetica-neue;
-$font--serif: $baskerville;
+$type__font--sans: $helvetica-neue;
+$type__font--serif: $baskerville;
 
-$font--primary:   $font--sans;
-$font--secondary: $font--serif;
+$type__font--primary:   $type__font--sans;
+$type__font--secondary: $type__font--serif;
 

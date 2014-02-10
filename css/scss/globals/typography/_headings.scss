@@ -11,17 +11,17 @@
 // * 1. Sizes inherited from `var/_type.scss`
 // * ---------------------
 
-$type--heading1: $type--scale1;
-$type--heading2: $type--scale2;
-$type--heading3: $type--scale3;
-$type--heading4: $type--scale4;
-$type--heading5: $type--scale5;
-$type--heading6: $type--scale6;
-$type--mega:     $type--scaleM;
-$type--giga:     $type--scaleG;
-$type--ultra:    $type--scaleU;
+$type__scale--heading6: $type__scale--6;
+$type__scale--heading5: $type__scale--5;
+$type__scale--heading4: $type__scale--4;
+$type__scale--heading3: $type__scale--3;
+$type__scale--heading2: $type__scale--2;
+$type__scale--heading1: $type__scale--1;
+$type__scale--mega:     $type__scale--M;
+$type__scale--giga:     $type__scale--G;
+$type__scale--ultra:    $type__scale--U;
 
-$font--heading: $font--secondary;
+$type__font--heading: $type__font--secondary;
 $type__heading--ratio: 1.25 !default;
 $type__heading--font-weight: 700 !default;
 $type__heading--font-style: italic !default;
@@ -37,7 +37,7 @@ h4,
 h5,
 h6 {
     color: $color__type--heading; //[1]
-    font-family: $font--heading; //[2]
+    font-family: $type__font--heading; //[2]
     font-feature-settings: "kern", "liga";
     font-weight: $type__heading--font-weight;
     font-style: $type__heading--font-style;
@@ -51,45 +51,45 @@ h6 {
 // * ---------------------
 
 .ultra {
-    @include rem( "font-size", $type--ultra );
+    @include rem( "font-size", $type__scale--ultra );
 }
 
 .giga {
-    @include rem( "font-size", $type--giga );
+    @include rem( "font-size", $type__scale--giga );
 }
 
 .mega {
-    @include rem( "font-size", $type--mega );
+    @include rem( "font-size", $type__scale--mega );
 }
 
 h1,
 .alpha {
-    @include rem( "font-size", $type--heading1 );
+    @include rem( "font-size", $type__scale--heading1 );
 }
 
 h2,
 .beta {
-    @include rem( "font-size", $type--heading2 );
+    @include rem( "font-size", $type__scale--heading2 );
 }
 
 h3,
 .gamma {
-    @include rem( "font-size", $type--heading3 );
+    @include rem( "font-size", $type__scale--heading3 );
 }
 
 h4,
 .delta {
-    @include rem("font-size", $type--heading4);
+    @include rem("font-size", $type__scale--heading4);
 }
 
 h5,
 .epsilon {
-    @include rem( "font-size", $type--heading5 );
+    @include rem( "font-size", $type__scale--heading5 );
 }
 
 h6,
 .zeta {
-    @include rem( "font-size", $type--heading6 );
+    @include rem( "font-size", $type__scale--heading6 );
 }
 
 .vR--heading {
