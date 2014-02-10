@@ -59,7 +59,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 <IfModule mod_headers.c>
    
-    <FilesMatch "\.(eot|otf|ttc|ttf|woff)$">
+    <FilesMatch "\.(eot|otf|tt[cf]|woff)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 
@@ -108,9 +108,10 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
   # Data interchange
     AddType application/json                            json map
-
+    AddType application/ld+json                         jsonld
+  
   # JavaScript
-    # Normalize to standard type (it's sniffed in IE anyways):
+    # Normalize to standard type.
     # http://tools.ietf.org/html/rfc4329#section-7.2
     AddType application/javascript                      js
 
@@ -158,14 +159,8 @@ RewriteRule ^(.*)$ index.php [QSA,L]
     AddDefaultCharset utf-8
 
 <IfModule mod_mime.c>
-
-    AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
-
+    AddCharset utf-8 .atom .css .js .json .jsonld .rss .vtt .webapp .xml
 </IfModule>
-
-# ----------------------------------------------------------------------
-# Gzip compression
-# ----------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # | Compression                                                                |
@@ -211,7 +206,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>
 
 # ------------------------------------------------------------------------------
-# | Expires headers (for better cache control)                                 |
+# | Expires headers
 # ------------------------------------------------------------------------------
 
 # The following expires headers are set pretty far in the future. If you don't
@@ -229,6 +224,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
   # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
 
