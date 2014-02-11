@@ -1,0 +1,25 @@
+
+// *    Block-List
+// * ---------------------
+// * Big, blocked of lists
+// * ---------------------
+
+.block-list,
+.block-list ul {
+    @extend #{$grid--class-type}grid;
+    @extend #{$grid--class-type}grid--full;
+    border-top: $brand--border-width solid $color__brand--border;
+    li {
+        @extend #{$grid--class-type}grid__item;
+        padding: $base--rhythm-unit + em inherit;
+        border-bottom: $brand--border-width solid $color__brand--border;
+    }
+    ul {
+        margin-top: $base--rhythm-unit / 2 + em;
+    }
+    .block-list__link {
+        display: block;
+        padding: $base--rhythm-unit + em 0;
+        margin: -$base--rhythm-unit + em 0;
+    }
+}

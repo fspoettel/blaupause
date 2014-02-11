@@ -356,7 +356,8 @@ td,
 th {
   padding: 0; }
 
-.grid, .image-grid {
+.grid, .block-list,
+.block-list ul, .image-grid {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -370,15 +371,19 @@ th {
   margin-left: -1.5rem;
   letter-spacing: -0.31em; }
   @supports not (flex-wrap: wrap) {
-    .grid, .image-grid {
+    .grid, .block-list,
+    .block-list ul, .image-grid {
       display: block; } }
 
 .opera:-o-prefocus,
 .grid,
+.block-list,
+.block-list ul,
 .image-grid {
   word-spacing: -0.43em; }
 
-.grid__item, .image-grid__item,
+.grid__item, .block-list li,
+.block-list ul li, .image-grid__item,
 .image-grid > figure {
   display: inline-block;
   padding-left: 24px;
@@ -389,6 +394,18 @@ th {
   box-sizing: border-box;
   letter-spacing: normal;
   word-spacing: normal; }
+
+.block-list,
+.block-list ul {
+  margin-left: 0; }
+  .block-list > .grid__item,
+  .block-list ul > .grid__item, .block-list > li,
+  .block-list ul .block-list > li,
+  .block-list ul > li, .block-list > .image-grid__item,
+  .block-list ul > .image-grid__item,
+  .image-grid.block-list > figure,
+  .block-list ul.image-grid > figure {
+    padding-left: 0; }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   .image-grid__item,
@@ -812,6 +829,22 @@ thead {
 
 body {
   background: #fefefe; }
+
+.block-list,
+.block-list ul {
+  border-top: 1px solid #cccccc; }
+  .block-list li,
+  .block-list ul li {
+    padding: 1.5em inherit;
+    border-bottom: 1px solid #cccccc; }
+  .block-list ul,
+  .block-list ul ul {
+    margin-top: 0.75em; }
+  .block-list .block-list__link,
+  .block-list ul .block-list__link {
+    display: block;
+    padding: 1.5em 0;
+    margin: -1.5em 0; }
 
 .fixed,
 .fixed__contrast {
