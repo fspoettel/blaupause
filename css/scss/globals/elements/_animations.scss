@@ -24,7 +24,7 @@ $animation--delay-offset: 0.1s !default; // Use with delay-mixin
 // * Pre-defined animation-delays that can be used to orchestrate anything from animated page-loads to JS-events.
 // * ---------------------
 
-%immediate {
+%delay0 {
     @include delay(0);
 }
 

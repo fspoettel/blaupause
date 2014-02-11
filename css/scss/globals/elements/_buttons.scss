@@ -51,7 +51,7 @@ $color__btn--text:      #fff !default;
     }
 }
 
-// * Size modifiers
+// * Size
 
 .btn,
 .btn--medium {
@@ -70,7 +70,7 @@ $color__btn--text:      #fff !default;
     display: block;
 }
 
-// * Visual modifiers
+// * Visual
 
 .btn--round {
     @extend %brand--round;
@@ -94,7 +94,7 @@ $color__btn--text:      #fff !default;
     }
 }
 
-// * Button-states / Callbacks
+// * States
 
 .btn--success {
     background: $color__btn--success;
