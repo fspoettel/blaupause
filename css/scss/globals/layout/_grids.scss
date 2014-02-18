@@ -123,7 +123,7 @@ $grid--use-markup-fix:        false!default;
 $grid--breakpoints: (
     "palm"  $bp--palm,
     "lap"   $bp--lap,
-    "lapUp" $bp--lap-up,
+    "lap-up" $bp--lap-up,
     "desk"  $bp--desk,
     "high"  $bp--high
 )!default;
@@ -139,9 +139,9 @@ $grid--breakpoints: (
 // * Push and pull shall only be used if `$grid--push` and/or `$grid--pull` and `$grid--responsive`
 // * have been set to ‘true’.
 // */
-$grid--breakpoint-has-widths: ("palm", "lap","lapUp", "desk","high")!default;
-$grid--breakpoint-has-push:   ("palm", "lap","lapUp", "desk","high")!default;
-$grid--breakpoint-has-pull:   ("palm", "lap","lapUp", "desk","high")!default;
+$grid--breakpoint-has-widths: ("palm", "lap","lap-up", "desk","high")!default;
+$grid--breakpoint-has-push:   ("palm", "lap","lap-up", "desk","high")!default;
+$grid--breakpoint-has-pull:   ("palm", "lap","lap-up", "desk","high")!default;
 
 
 //**
