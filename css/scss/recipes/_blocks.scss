@@ -1,0 +1,24 @@
+
+// *    Blocks
+// * ---------------------
+// * Blocked off content.
+// * 
+// @ usage:
+// * <div class="block  block--small">
+// * </div>
+// * ---------------------
+
+$color__blocks--background: $color--primary;
+$color__blocks--text:       $color--background;
+
+
+.blocked {
+    display: block;
+    padding: $base--rhythm-unit +em;
+    background: $color__blocks--background;
+    color: $color__blocks--text;
+}
+
+.blocked--small {
+    padding: ( $base--rhythm-unit / 2 +em)
+}

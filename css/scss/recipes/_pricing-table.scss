@@ -1,0 +1,38 @@
+
+// *    Pricing Table
+// * ---------------------
+// * Simple pricing-table abstraction.
+// * Requires `_blocks.scss` && `_block-list.scss`. Can be used with splits
+// * 
+// @ usage:
+// * <article class="pricing">
+// * <header (class="pricing__header")>
+// *     <h1>Premium</h1>
+// * </header>
+// * <ul (class="pricing__list")>
+// *     <li>...
+// *     <li>....
+// * </ul>
+// * <footer>
+// * ....
+// * </footer>
+// * ---------------------
+
+.pricing {
+    text-align: center;
+    header,
+    footer {
+        @extend .blocked;
+    }
+}
+
+.pricing__list {
+    @extend .block-list;
+    border-top: 0;
+    li {
+        border-left: $brand--border-width solid $color__brand--border;
+        border-right: $brand--border-width solid $color__brand--border;
+        padding-left: $base--sizing-unit +em;
+        padding-right: $base--sizing-unit +em;
+    }
+}
