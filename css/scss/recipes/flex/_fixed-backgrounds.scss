@@ -1,5 +1,5 @@
 
-// *    Fixed background-scrolling images
+// *    Fixed background-scrolling images (flex)
 // * ---------------------
 // * This file contains markup and styles to produce a fixed background image effect.
 // @ usage:
@@ -47,14 +47,13 @@ $fixed--height: 360px !default;
 // * Center the content
 
 .fixed__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-child(".fixed__content", "flex");
     min-height: $fixed--height;
 }
 
 .fixed__content {
     color: $color__fixed--content;
+    margin: 0 !important;
 }
 
 // * Declare a .content-background for effect
