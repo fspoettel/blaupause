@@ -9,11 +9,14 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
 
 ## Installation
 
-(You need Node.js & NPM on your machine):
+(You need NPM on your machine):
 
 ```
+npm install -g bower
+npm install -g gulp
 cd your-project
 npm install
+bower install
 ```
 
 When using with Statamic: 

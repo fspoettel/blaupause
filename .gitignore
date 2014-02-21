@@ -23,6 +23,7 @@ admin/*
 ######################
 
 node_modules/*
+bower_components/*
 
 #  Sublime projects #
 ######################
