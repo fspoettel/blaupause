@@ -1,0 +1,22 @@
+
+// *   Absolute centering
+// * ---------------------
+// * Center a child of an element with unknown dimensions vertically and horizontally.
+// * @usage @include center-child("selector", "transform(default)" or "flex");
+// * ---------------------
+
+@mixin center-child($child-selector, $tech: "transform") {
+    @if ($tech == "flex") {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } @else {
+        position: relative;
+        #{$child-selector} {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+}

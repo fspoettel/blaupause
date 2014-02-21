@@ -46,18 +46,16 @@ $fixed--height: 360px !default;
 }
 
 .fixed__inner {
-    position: relative;
     min-height: $fixed--height;
+    @include center-child(".fixed__content");
+
 }
 
 // * Center the content
 
 .fixed__content {
     color: $color__fixed--content;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    margin: 0 !important;
 }
 
 // * Declare a .content-background for effect

@@ -10,6 +10,7 @@
 
 // * Get the mixins first -the config may depend on them -> folder: scss/globals/mixins
 
+@import "scss/globals/mixins/absolutely-center-child";
 @import "scss/globals/mixins/breakpoints";
 @import "scss/globals/mixins/clearfix";
 @import "scss/globals/mixins/colorfunctions";
@@ -68,6 +69,7 @@
 @import "scss/recipes/fixed-backgrounds";
 @import "scss/recipes/image-grid";
 @import "scss/recipes/media-element";
+@import "scss/recipes/nav";
 @import "scss/recipes/text-columns";
 
 // * Local stylesheets (pages, modules)

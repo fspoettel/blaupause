@@ -1,0 +1,91 @@
+
+// *    Nav abstraction (flex)
+// * ---------------------
+// * A navigation-pattern for use with lists.
+// * @usage:
+// *
+// * <ul class="nav  nav--modifier">
+// * <li><a>Items</a>
+// * ....
+// * </ul>
+// * ---------------------
+
+$color__nav--background: $color--primary !default;
+$color__nav--text:       $color--background !default;
+
+// * Core
+// * Stack items next to each other and space them apart. Make links fill the nav-items.
+// * ---------------------
+
+.nav {
+    list-style: none;
+    > li {
+        display: inline-block;
+        margin-right: ($base--sizing-unit / 2 +em);
+        > a {
+            background: $color__nav--background;
+            color: $color__nav--text;
+            display: block;
+            padding: ($base--sizing-unit / 2 +em);
+            &:hover {
+                background: darken($color__nav--background, 10%);
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// * Placement modifiers
+
+.nav--center {
+    text-align: center;
+}
+
+.nav--right {
+    text-align: right;
+}
+
+// * Vertical navigations 
+// * ---------------------
+
+.nav--stacked,
+.nav--block {
+    > li {
+        margin-right: 0;
+        margin-bottom: ($base--sizing-unit / 2 +em);
+        > a {
+            display: inline-block;
+        }
+    }
+}
+
+.nav--stacked {
+    > li {
+        display: list-item;
+    }
+}
+
+.nav--block {
+    display: block;
+    > li {
+        display: block;
+        > a {
+            display: block;
+        }
+    }
+}
+
+// * Nav-bar (requires flex-box!)
+// * Evenly distribute items along the axis. Only works where flex-box is supported.
+// * ---------------------
+
+.nav--bar {
+    display: flex;
+    > li {
+        flex-grow: 1;
+        margin: 0;
+        text-align: center;
+    }
+}
