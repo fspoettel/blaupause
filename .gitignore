@@ -1,63 +1,30 @@
-#############
-## File System
-#############
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Mac crap
+# OS generated files #
+######################
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
+# Statamic files #
+######################
+_cache/*
+_logs/*
 
-#############
-## Statamic
-#############
+# Statamic copyrighted #
+######################
 
-# Core
-_app
-admin
-admin.php
-index.php
+_app/*
+admin/*
 
-# Media
-_cache
-assets
-_logs
+#  Node modules #
+######################
 
-#Standard Addons
-_add-ons/color
-_add-ons/disqus
-_add-ons/image
-_add-ons/location
-_add-ons/lorem
-_add-ons/redactor
-_add-ons/simplepie
-_add-ons/tasks
-_add-ons/truncate
-_add-ons/index.html
+node_modules/*
 
-#Standard config
-_config/add-ons/location
-_config/add-ons/color
-_config/add-ons/redactor
-_config/index.html
-_config/users/index.html
+#  Sublime projects #
+######################
 
-# Themes index files
-_themes/index.html
-
-#Sample files
-*.sample
-
-# Node modules
-node_modules
-
-# Sublime projetcs
 *sublime*
