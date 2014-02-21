@@ -1,4 +1,13 @@
-// Require plugins
+
+// *    Gulpfile
+// * ---------------------
+// * This file contains the gulp build-process.
+// * ---------------------
+
+// *   Core
+// * ---------------------
+
+// Require gulp modules 
 var gulp          = require("gulp"),
     concat        = require("gulp-concat"),
     cssmin        = require("gulp-minify-css"),
@@ -8,19 +17,32 @@ var gulp          = require("gulp"),
     prefix        = require("gulp-autoprefixer"),
     rename        = require("gulp-rename"),
     sass          = require("gulp-ruby-sass"),
-    tinylr        = require("tiny-lr"),
-    uglify        = require("gulp-uglify"),
-    server        = tinylr();
+    uglify        = require("gulp-uglify");
 
-// Paths
+    livereload    = require("gulp-livereload"),
+    server        = livereload();
+
+// Cache watch & source paths
 var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
     jsWatchPath   = jsSrcPath,
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
     imgPaths      = "img/src/**",
-    lrPath        = ["css/build/prefixed/global.min.css","**/**/*.html","js/build/global.min.js"];
+    lrPath        = ["css/build/prefixed/global.css","**/**/*.html","js/build/global.min.js"];
 
-// Concat & Minify JS
+
+// *    Gulp tasks
+// * ---------------------
+
+// JS
+// * 1. js-hint
+// * 2. concat
+// * --> write out
+// * 3. uglify
+// * 4. rename
+// * --> write out
+// * ---------------------
+
 gulp.task("scripts", function(){
   gulp.src(jsSrcPath)
     .pipe(jshint())
@@ -32,7 +54,16 @@ gulp.task("scripts", function(){
     .pipe(gulp.dest("js/build"));
 });
 
-// Build, autoprefix & minify CSS
+// CSS
+// * 1. handle errors
+// * 2. sass
+// * --> write out
+// * 3. prefix
+// * --> write out
+// * 4. minify
+// * --> write out
+// * ---------------------
+
 gulp.task("sass", function () {
   gulp.src(sassSrcPath)
     .pipe(plumber())
@@ -46,43 +77,30 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("css/build/prefixed"));
 });
 
-// Minify images
+// * Images
+// * 1. Minify
+// * --> write out
+// * ---------------------
+
 gulp.task("images", function () {
   gulp.src(imgPaths)
     .pipe(imagemin())
     .pipe(gulp.dest("img/opti"));
 });
 
-// Watch
+// * Watch
+// * ---------------------
+
 gulp.task('watch', function () {
-
-// Server
-server.listen(35729, function (err) {
-  if (err){
-    return console.log(err);
-  }
-});
-
-// Watch & build .scss
-gulp.watch(sassWatchPath , ["sass"]);
-
-// Watch & build js
-gulp.watch(jsWatchPath, ["scripts"]);
-
-// Watch & minify images
-gulp.watch(imgPaths, ["images"]);
-
-// Trigger reload
-gulp.watch(lrPath, function (e) {
-  server.changed({
-    body: {
-      files: [e.path]
-    }
+  gulp.watch(sassWatchPath, ["sass"]);
+  gulp.watch(jsWatchPath, ["scripts"]);
+  gulp.watch(imgPaths, ["images"]);
+  gulp.watch(lrPath).on('change', function(file) {
+      server.changed(file.path);
   });
 });
 
+// * Tasks
+// * ---------------------
 
-});
-
-// Default
 gulp.task("default", ["scripts","sass","images","watch"]);
