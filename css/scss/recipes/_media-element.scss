@@ -20,7 +20,7 @@
 
 .media > img {
     float: left;
-    margin-right: $base--rhythm-unit + em;
+    margin-right: $base--rhythm-unit +em;
 }
 
 .media__caption,
@@ -33,7 +33,7 @@
 .media--rev {
     > img {
         float: right;
-        margin-left: $base--rhythm-unit + em;
+        margin-left: $base--rhythm-unit +em;
         margin-right: 0;
     }
 }

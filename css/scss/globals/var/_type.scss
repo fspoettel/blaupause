@@ -9,8 +9,8 @@
 
 // * Core
 
-$type--size:       $base--size; // Default: 16
-$type--ratio:      $base--ratio !default;
+$type--size:          $base--size; // Default: 16
+$type--ratio:         $base--ratio !default;
 
 // Units
 
@@ -41,8 +41,8 @@ $type__scale--6:  16 !default; // h6, zeta
 
 // * Font-stacks
 
-$type__font--sans: $helvetica-neue;
-$type__font--serif: $baskerville;
+$type__font--sans:      $helvetica-neue;
+$type__font--serif:     $baskerville;
 
 $type__font--primary:   $type__font--sans;
 $type__font--secondary: $type__font--serif;

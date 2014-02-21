@@ -11,7 +11,7 @@
 // * ---------------------
 
 form {
-    @include rem( "margin-bottom", $base--rhythm-number );
+    @include rem("margin-bottom", $base--rhythm-number);
 }
 
 label,
@@ -41,7 +41,7 @@ textarea {
 
 fieldset {
     border: $brand--border-width solid $color__brand--border;
-    padding: ($base--sizing-unit/2+em) ($base--sizing-unit/2+em);
+    padding: ($base--sizing-unit / 2 +em) ($base--sizing-unit / 2 +em);
 }
 
 // * Text inputs
@@ -61,7 +61,7 @@ input[type="url"],
 textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: ($base--sizing-unit/2 + em);
+    padding: ($base--sizing-unit / 2 +em);
 }
 
 // * Clickable inputs
@@ -91,12 +91,12 @@ input[type="submit"] {
 
 label input[type="radio"],
 label input[type="checkbox"] {
-    margin-right: ($base--sizing-unit/2) + em;
+    margin-right: ($base--sizing-unit / 2 +em);
 }
 
 label + input[type="radio"],
 label + input[type="checkbox"] {
-    margin-left: ($base--sizing-unit/2) + em;
+    margin-left: ($base--sizing-unit / 2 +em);
 }
 
 // * Selects

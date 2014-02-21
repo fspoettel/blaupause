@@ -223,7 +223,7 @@ $grid--class-type:            unquote(".");
     list-style:none;                            //* [2] */
     margin:0;                                   //* [3] */
     padding:0;                                  //* [3] */
-    @include rem("margin-left",-$grid--gutter); //* [4] */
+    @include rem("margin-left", -$grid--gutter); //* [4] */
     @supports not (flex-wrap: wrap) {           //* [5] */
             display: block; 
     }
@@ -250,7 +250,7 @@ $grid--class-type:            unquote(".");
     // */
     #{$grid--class-type}grid__item{
         display:inline-block;                       //* [1] */
-        @include rem("padding-left",$grid--gutter); //* [2] */
+        @include rem("padding-left", $grid--gutter); //* [2] */
         vertical-align:top;                         //* [3] */
         @if $grid--mobile-first == true{
             width:100%;                             //* [4] */
@@ -368,7 +368,7 @@ $grid--class-type:            unquote(".");
 // * Create grids with wider gutters. Extends `.grid`.
 // */
 #{$grid--class-type}grid--wide{
-    @include rem("margin-left",(-$grid--gutter * 2 ));
+    @include rem("margin-left", (-$grid--gutter * 2 ));
 
     > #{$grid--class-type}grid__item{
         @include rem("padding-left", ($grid--gutter * 2));

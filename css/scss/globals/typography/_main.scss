@@ -7,7 +7,7 @@
 // * Responsive typography
 
 $palm--font-size: 87.5%;
-$lap--font-size: 87.5%;
+$lap--font-size:  87.5%;
 $desk--font-size: 100%;
 $high--font-size: 112.5%;
 
@@ -32,7 +32,7 @@ select {
 }
 
 body {
-    @include rem( "font-size", $type--size );
+    @include rem("font-size", $type--size );
     color: $color__type--text;
 }
 
@@ -60,7 +60,7 @@ td {
 
 .vR{
     margin-top: 0;
-    @include rem( "margin-bottom", $type--rhythm-number);
+    @include rem("margin-bottom", $type--rhythm-number);
 }
 
 // * Content typography

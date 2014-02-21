@@ -497,6 +497,16 @@ h6,
   margin-bottom: 4px;
   margin-bottom: 0.25rem; }
 
+a {
+  color: #d85e2e;
+  line-height: inherit;
+  text-decoration: none; }
+  a img {
+    border: none; }
+
+a a:active, a:hover {
+  color: #c25429; }
+
 li > ul,
 li > ol,
 .content li > ul,
@@ -512,16 +522,6 @@ li > ol,
 
 dt {
   font-weight: bold; }
-
-a {
-  color: #d85e2e;
-  line-height: inherit;
-  text-decoration: none; }
-  a img {
-    border: none; }
-
-a a:active, a:hover {
-  color: #c25429; }
 
 html,
 textarea,
@@ -629,6 +629,9 @@ blockquote {
 
 .content blockquote p {
   margin-bottom: 0; }
+
+::selection {
+  background: #d85e2e; }
 
 .img--round, .btn--round {
   border-radius: 0.25em; }

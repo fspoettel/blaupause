@@ -24,10 +24,10 @@ table {
 
 th,
 td {
-    padding: ($base--sizing-unit/4+em);
+    padding: ($base--sizing-unit / 4 +em);
     text-align: left;
     @include bp(lap-up) {
-        padding: ($base--sizing-unit/2+em);
+        padding: ($base--sizing-unit / 2 +em);
     }
 }
 

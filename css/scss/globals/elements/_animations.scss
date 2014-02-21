@@ -8,10 +8,10 @@
 
 // * Defaults
 
-$animation--duration: 1s !default;
-$animation--fill-mode: both !default;
-$animation--start-delay: 0s !default;    // Use with delay-mixin
-$animation--delay-offset: 0.1s !default; // Use with delay-mixin
+$animation--fill-mode:    both !default;
+$animation--duration:     1s !default;
+$animation--start-delay:  0s !default;    // Use with delay-mixin
+$animation--delay-offset: 0.1s !default;  // Use with delay-mixin
 
 // * Core
 

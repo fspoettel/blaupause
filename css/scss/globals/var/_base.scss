@@ -14,13 +14,13 @@ $base--ratio:           1.5 !default;
 
 // * Base sizing unit (in (r)em & px)
 
-$base--sizing-unit:  ($base--size / $base--browser-default);
-$base--sizing-number: $base--size;
+$base--sizing-unit:    ($base--size / $base--browser-default);
+$base--sizing-number:   $base--size;
 
 // * Base rhythm unit (in (r)em & px)
 
-$base--rhythm-unit:    $base--ratio;
-$base--rhythm-number: ($base--size * $base--ratio);
+$base--rhythm-unit:     $base--ratio;
+$base--rhythm-number:  ($base--size * $base--ratio);
 
 // Hook for content typography / elements
 

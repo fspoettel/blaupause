@@ -21,10 +21,10 @@ $type__scale--mega:     $type__scale--M;
 $type__scale--giga:     $type__scale--G;
 $type__scale--ultra:    $type__scale--U;
 
-$type__font--heading: $type__font--secondary;
-$type__heading--ratio: 1.25 !default;
+$type__font--heading:        $type__font--secondary;
+$type__heading--ratio:       1.25 !default;
 $type__heading--font-weight: 700 !default;
-$type__heading--font-style: italic !default;
+$type__heading--font-style:  italic !default;
 
 // * Genereal heading styles
 // *     1. Inherited from var/colors
@@ -51,30 +51,30 @@ h6 {
 // * ---------------------
 
 .ultra {
-    @include rem( "font-size", $type__scale--ultra );
+    @include rem("font-size", $type__scale--ultra);
 }
 
 .giga {
-    @include rem( "font-size", $type__scale--giga );
+    @include rem("font-size", $type__scale--giga);
 }
 
 .mega {
-    @include rem( "font-size", $type__scale--mega );
+    @include rem("font-size", $type__scale--mega);
 }
 
 h1,
 .alpha {
-    @include rem( "font-size", $type__scale--heading1 );
+    @include rem("font-size", $type__scale--heading1);
 }
 
 h2,
 .beta {
-    @include rem( "font-size", $type__scale--heading2 );
+    @include rem("font-size", $type__scale--heading2);
 }
 
 h3,
 .gamma {
-    @include rem( "font-size", $type__scale--heading3 );
+    @include rem("font-size", $type__scale--heading3);
 }
 
 h4,
@@ -84,17 +84,17 @@ h4,
 
 h5,
 .epsilon {
-    @include rem( "font-size", $type__scale--heading5 );
+    @include rem("font-size", $type__scale--heading5);
 }
 
 h6,
 .zeta {
-    @include rem( "font-size", $type__scale--heading6 );
+    @include rem("font-size", $type__scale--heading6);
 }
 
 .vR--heading {
     line-height: $type__heading--ratio;
-    @include rem("margin-bottom", $type--sizing-number/4);
+    @include rem("margin-bottom", ($type--sizing-number / 4));
 }
 
 // * Content headings

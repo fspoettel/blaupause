@@ -18,5 +18,5 @@
     @include columns(3);
 }
 .columns--quarters {
-    @include columns(4,$base--sizing-unit/2+em);
+    @include columns(4, ($base--sizing-unit / 2 +em));
 }

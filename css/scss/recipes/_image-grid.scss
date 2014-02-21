@@ -25,6 +25,6 @@
     @extend #{$grid--class-type}lap--one-half;
     @extend #{$grid--class-type}desk--one-third;
     @extend #{$grid--class-type}high--one-quarter;
-    margin-bottom: $base--rhythm-unit + em;
+    margin-bottom: $base--rhythm-unit +em;
     text-align: center;
 }

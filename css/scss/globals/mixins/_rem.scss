@@ -8,10 +8,10 @@
 $baseline-number: $base--browser-default;
 
 @mixin rem($property, $px-values) {
-    $baseline-rem: ($baseline-number/1rem * 1);
-    #{$property}: ($px-values+px);
+    $baseline-rem: ($baseline-number / 1rem * 1);
+    #{$property}: ($px-values +px);
     @if type-of($px-values) == "number" {
-        #{$property}: ($px-values/$baseline-rem);
+        #{$property}: ($px-values / $baseline-rem);
     }
     @else {
         $rem-values: ();

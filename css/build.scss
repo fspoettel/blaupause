@@ -20,7 +20,7 @@
 @import "scss/globals/mixins/font-stacks";
 @import "scss/globals/mixins/rem";
 
-// * Global variable cache  -> folder: scss/globals/config
+// * Global variable cache. Colors first. -> folder: scss/globals/config
 
 @import "scss/globals/var/colors";
 @import "scss/globals/var/brand";
@@ -41,11 +41,12 @@
 @import "scss/globals/typography/code";
 @import "scss/globals/typography/fontface";
 @import "scss/globals/typography/headings";
-@import "scss/globals/typography/lists";
 @import "scss/globals/typography/links";
+@import "scss/globals/typography/lists";
 @import "scss/globals/typography/main";
 @import "scss/globals/typography/media";
 @import "scss/globals/typography/quotes";
+@import "scss/globals/typography/selections";
 
 // * UI abstractions -> folder: scss/globals/elements
 

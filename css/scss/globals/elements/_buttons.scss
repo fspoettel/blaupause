@@ -13,7 +13,7 @@
 $color__btn--primary:   $color--primary;
 $color__btn--secondary: $color--secondary;
 $color__btn--tertiary:  tint($color--secondary, 20% );
-$color__btn--hover:     shade($color__btn--primary,10%);
+$color__btn--hover:     shade($color__btn--primary, 10%);
 $color__btn--disabled:  $color--disabled;
 $color__btn--success:   $color--success;
 $color__btn--error:     $color--error;
@@ -55,15 +55,15 @@ $color__btn--text:      #fff !default;
 
 .btn,
 .btn--medium {
-    padding: ($base--sizing-unit / 2+em) ($base--rhythm-unit+em);
+    padding: ($base--sizing-unit / 2 +em) $base--rhythm-unit +em;
 }
 
 .btn--small {
-    padding: ($base--sizing-unit/4 +em) ($base--rhythm-unit/2+em);
+    padding: ($base--sizing-unit / 4 +em) ($base--rhythm-unit / 2 +em);
 }
 
 .btn--large {
-    padding: ($base--sizing-unit +em) ($base--rhythm-unit*2+em);
+    padding: $base--sizing-unit +em ($base--rhythm-unit * 2 +em);
 }
 
 .btn--full { 
@@ -81,7 +81,7 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:active,
     &:focus {
-        background: shade($color__btn--secondary,10%);
+        background: shade($color__btn--secondary, 10%);
     }
 }
 
@@ -90,7 +90,7 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:active,
     &:focus {
-        background: shade($color__btn--tertiary,15%);
+        background: shade($color__btn--tertiary, 15%);
     }
 }
 
@@ -101,7 +101,7 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:active,
     &:focus {
-        background: shade($color__btn--success,15%);
+        background: shade($color__btn--success, 15%);
     }
 }
 
@@ -110,7 +110,7 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:active,
     &:focus {
-        background: shade($color__btn--error,15%);
+        background: shade($color__btn--error, 15%);
     }
 }
 
@@ -121,6 +121,6 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:active,
     &:focus {
-        background: shade($color__btn--disabled,15%);
+        background: shade($color__btn--disabled, 15%);
     }
 }

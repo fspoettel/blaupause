@@ -22,19 +22,19 @@ img {
 
 .img--right {
     float:right;
-    margin-bottom: $type--image-spacing + em;
-    margin-left: $type--image-spacing + em;
+    margin-bottom: $type--image-spacing +em;
+    margin-left: $type--image-spacing +em;
 }
 
 .img--left {
     float:left;
-    margin-bottom: $type--image-spacing + em;
-    margin-right: $type--image-spacing + em;
+    margin-bottom: $type--image-spacing +em;
+    margin-right: $type--image-spacing +em;
 }
 
 .img--center {
     display:block;
-    margin-bottom: $type--image-spacing + em;
+    margin-bottom: $type--image-spacing +em;
     margin-left:auto;
     margin-right:auto;
 }
