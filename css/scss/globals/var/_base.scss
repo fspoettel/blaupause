@@ -21,7 +21,3 @@ $base--sizing-number:   $base--size;
 
 $base--rhythm-unit:     $base--ratio;
 $base--rhythm-number:  ($base--size * $base--ratio);
-
-// Hook for content typography / elements
-
-$base--content-namespace: unquote(".content");

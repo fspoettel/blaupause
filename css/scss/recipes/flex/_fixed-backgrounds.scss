@@ -50,6 +50,7 @@ $fixed--height: 360px !default;
 .fixed__inner {
     @include center-child(".fixed__content", "flex");
     min-height: $fixed--height;
+    margin: 0;
 }
 
 .fixed__content {

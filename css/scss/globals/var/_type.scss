@@ -12,7 +12,11 @@
 $type--size:          $base--size; // Default: 16
 $type--ratio:         $base--ratio !default;
 
-// Units
+// * Hook for content typography / elements
+
+$base--content-namespace: unquote(".typography");
+
+// * Units
 
 $type--sizing-unit:   $type--size / $base--browser-default;
 $type--sizing-number: $type--size;

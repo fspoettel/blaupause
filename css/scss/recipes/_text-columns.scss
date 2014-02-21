@@ -11,12 +11,19 @@
 // * </figure>
 // * ---------------------
 
+%columns {
+    margin-bottom: $base--sizing-unit +em;
+}
+
 .columns--halfs {
+    @extend %columns;
     @include columns(2);
 }
 .columns--thirds {
+    @extend %columns;
     @include columns(3);
 }
 .columns--quarters {
+    @extend %columns;
     @include columns(4, ($base--sizing-unit / 2 +em));
 }

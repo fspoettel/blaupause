@@ -355,8 +355,7 @@ td,
 th {
   padding: 0; }
 
-.grid, .block-list,
-.block-list ul, .image-grid {
+.grid, .block-list, .pricing__list, .image-grid {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -370,19 +369,17 @@ th {
   margin-left: -1.5rem;
   letter-spacing: -0.31em; }
   @supports not (flex-wrap: wrap) {
-    .grid, .block-list,
-    .block-list ul, .image-grid {
+    .grid, .block-list, .pricing__list, .image-grid {
       display: block; } }
 
 .opera:-o-prefocus,
 .grid,
 .block-list,
-.block-list ul,
+.pricing__list,
 .image-grid {
   word-spacing: -0.43em; }
 
-.grid__item, .block-list li,
-.block-list ul li, .image-grid__item,
+.grid__item, .block-list li, .pricing__list li, .image-grid__item,
 .image-grid > figure {
   display: inline-block;
   padding-left: 24px;
@@ -395,16 +392,11 @@ th {
   letter-spacing: normal;
   word-spacing: normal; }
 
-.block-list,
-.block-list ul {
+.block-list, .pricing__list {
   margin-left: 0; }
-  .block-list > .grid__item,
-  .block-list ul > .grid__item, .block-list > li,
-  .block-list ul .block-list > li,
-  .block-list ul > li, .block-list > .image-grid__item,
-  .block-list ul > .image-grid__item,
+  .block-list > .grid__item, .pricing__list > .grid__item, .block-list > li, .pricing__list > li, .block-list > .image-grid__item, .pricing__list > .image-grid__item,
   .image-grid.block-list > figure,
-  .block-list ul.image-grid > figure {
+  .image-grid.pricing__list > figure {
     padding-left: 0; }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -487,12 +479,12 @@ h6,
   font-size: 16px;
   font-size: 1rem; }
 
-.vR--heading, .content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
+.vR--heading, .typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
   line-height: 1.25;
   margin-bottom: 4px;
   margin-bottom: 0.25rem; }
@@ -509,12 +501,12 @@ a a:active, a:hover {
 
 li > ul,
 li > ol,
-.content li > ul,
-.content li > ol {
+.typography li > ul,
+.typography li > ol {
   margin-bottom: 0; }
 
-.content li > ul,
-.content li > ol {
+.typography li > ul,
+.typography li > ol {
   margin-left: 1em; }
 
 .numbered-list {
@@ -570,19 +562,19 @@ td {
   margin: 0;
   padding: 0; }
 
-.vR, .content div,
-.content dl,
-.content figure,
-.content ol,
-.content ul,
-.content p,
-.content blockquote,
-.content table {
+.vR, .typography div,
+.typography dl,
+.typography figure,
+.typography ol,
+.typography ul,
+.typography p,
+.typography blockquote,
+.typography table {
   margin-top: 0;
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
-.content {
+.typography {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 em,
@@ -620,14 +612,14 @@ figure {
   figure > img {
     display: block; }
 
-.content figure > img {
+.typography figure > img {
   margin-bottom: 0; }
 
 blockquote {
   border-left: 0.5em solid #d85e2e;
   padding-left: 0.5em; }
 
-.content blockquote p {
+.typography blockquote p {
   margin-bottom: 0; }
 
 ::selection {
@@ -737,7 +729,8 @@ output {
 input,
 select,
 textarea {
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  margin-bottom: 1.5em; }
 
 fieldset {
   border: 1px solid #cccccc;
@@ -821,27 +814,34 @@ thead {
   background-color: #eeeeee; }
 
 .table--data,
-.content .table--data {
+.typography .table--data {
   font: 12px/1.5 sans-serif; }
 
 body {
   background: #fefefe; }
 
-.block-list,
-.block-list ul {
-  border-top: 1px solid #cccccc; }
-  .block-list li,
-  .block-list ul li {
+.block-list, .pricing__list {
+  border-top: 1px solid #cccccc;
+  margin-bottom: 0; }
+  .block-list li, .pricing__list li {
     padding: 1.5em inherit;
     border-bottom: 1px solid #cccccc; }
-  .block-list ul,
-  .block-list ul ul {
+  .block-list ul, .pricing__list ul {
     margin-top: 0.75em; }
-  .block-list .block-list__link,
-  .block-list ul .block-list__link {
+  .block-list .block-list__link, .pricing__list .block-list__link {
     display: block;
     padding: 1.5em 0;
     margin: -1.5em 0; }
+
+.blocked, .pricing header,
+.pricing footer {
+  display: block;
+  padding: 1.5em;
+  background: #d85e2e;
+  color: #fefefe; }
+
+.blocked--small {
+  padding: 0.75em; }
 
 .fixed,
 .fixed__contrast {
@@ -851,12 +851,12 @@ body {
 .fixed {
   text-align: center;
   background-size: cover;
-  background-position: center center;
   background-attachment: fixed; }
 
 .fixed__inner {
   min-height: 360px;
-  position: relative; }
+  position: relative;
+  margin: 0; }
   .fixed__inner .fixed__content {
     position: absolute;
     top: 50%;
@@ -869,6 +869,9 @@ body {
 
 .fixed__contrast {
   background: #fefefe; }
+
+.fixed {
+  background-position: center center; }
 
 .image-grid__item,
 .image-grid > figure {
@@ -943,6 +946,17 @@ body {
     .nav--bar > li > a {
       display: block; }
 
+.pricing {
+  text-align: center; }
+
+.pricing__list {
+  border-top: 0; }
+  .pricing__list li {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    padding-left: 1em;
+    padding-right: 1em; }
+
 .split {
   display: block;
   list-style: none;
@@ -951,6 +965,9 @@ body {
   .split .split__left {
     clear: left;
     float: left; }
+
+.columns--halfs, .columns--thirds, .columns--quarters {
+  margin-bottom: 1em; }
 
 .columns--halfs {
   column-count: 2;

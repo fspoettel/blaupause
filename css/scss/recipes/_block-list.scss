@@ -12,11 +12,11 @@
 // * </ul>
 // * ---------------------
 
-.block-list,
-.block-list ul {
+.block-list {
     @extend #{$grid--class-type}grid;
     @extend #{$grid--class-type}grid--full;
     border-top: $brand--border-width solid $color__brand--border;
+    margin-bottom: 0;
     li {
         @extend #{$grid--class-type}grid__item;
         padding: $base--rhythm-unit +em inherit;

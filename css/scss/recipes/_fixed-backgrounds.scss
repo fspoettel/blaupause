@@ -43,14 +43,14 @@ $fixed--height: 360px !default;
 .fixed {
     text-align: center;
     background-size: cover;
-    background-position: center center;
+    @extend %fixed--center;
     background-attachment: fixed;
 }
 
 .fixed__inner {
     min-height: $fixed--height;
     @include center-child(".fixed__content");
-
+    margin: 0;
 }
 
 // * Center the content
@@ -65,4 +65,20 @@ $fixed--height: 360px !default;
 .fixed__contrast { 
     background: $color--background;
 }
+
+// * Background-position modifiers
+
+%fixed--left {
+    background-position: left center;
+}
+
+%fixed--center {
+    background-position: center center;
+}
+
+
+%fixed--right {
+    background-position: right center;
+}
+
 
