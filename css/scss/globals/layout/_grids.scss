@@ -26,7 +26,7 @@
 // *
 // * palm     --  palm-based devices, like phones and small tablets
 // * lap      --  lap-based devices, like iPads or laptops
-// * lapUp    --  all of the above
+// * lap-up   --  everything except palm
 // * desk     --  stationary devices, like desktop computers
 // * regular  --  any/all types of device
 // *
@@ -121,11 +121,11 @@ $grid--use-markup-fix:        false!default;
 // * that the breakpoint fires at.
 // */
 $grid--breakpoints: (
-    "palm"  $bp--palm,
-    "lap"   $bp--lap,
+    "palm"   $bp--palm,
+    "lap"    $bp--lap,
     "lap-up" $bp--lap-up,
-    "desk"  $bp--desk,
-    "high"  $bp--high
+    "desk"   $bp--desk,
+    "high"   $bp--high
 )!default;
 
 
@@ -214,17 +214,17 @@ $grid--class-type:            unquote(".");
 // * 5. Use standard grid on Firefox < 28 because it does not support flex-flow
 // */
 #{$grid--class-type}grid{
-    display: -webkit-flex;                      //* [1] */
-    display: -ms-flexbox;                       //* [1] */
-    display: flex;                              //* [1] */
-    -webkit-flex-flow: row wrap;                //* [1] */
-    -ms-flex-flow: row wrap;                    //* [1] */
-    flex-flow: row wrap;                        //* [1] */
-    list-style:none;                            //* [2] */
-    margin:0;                                   //* [3] */
-    padding:0;                                  //* [3] */
+    display: -webkit-flex;                       //* [1] */
+    display: -ms-flexbox;                        //* [1] */
+    display: flex;                               //* [1] */
+    -webkit-flex-flow: row wrap;                 //* [1] */
+    -ms-flex-flow: row wrap;                     //* [1] */
+    flex-flow: row wrap;                         //* [1] */
+    list-style:none;                             //* [2] */
+    margin:0;                                    //* [3] */
+    padding:0;                                   //* [3] */
     @include rem("margin-left", -$grid--gutter); //* [4] */
-    @supports not (flex-wrap: wrap) {           //* [5] */
+    @supports not (flex-wrap: wrap) {            //* [5] */
             display: block; 
     }
     @if $grid--use-markup-fix != true{
@@ -249,15 +249,15 @@ $grid--class-type:            unquote(".");
     // * 5. Required to combine fluid widths and fixed gutters.
     // */
     #{$grid--class-type}grid__item{
-        display:inline-block;                       //* [1] */
+        display:inline-block;                        //* [1] */
         @include rem("padding-left", $grid--gutter); //* [2] */
-        vertical-align:top;                         //* [3] */
+        vertical-align:top;                          //* [3] */
         @if $grid--mobile-first == true{
-            width:100%;                             //* [4] */
+            width:100%;                              //* [4] */
         }
-        -webkit-box-sizing:border-box;              //* [5] */
-           -moz-box-sizing:border-box;              //* [5] */
-                box-sizing:border-box;              //* [5] */
+        -webkit-box-sizing:border-box;               //* [5] */
+           -moz-box-sizing:border-box;               //* [5] */
+                box-sizing:border-box;               //* [5] */
         @if $grid--use-markup-fix != true{
             letter-spacing:normal;
             word-spacing:normal;
