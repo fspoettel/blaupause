@@ -1,7 +1,15 @@
 
 // *    Block-List
 // * ---------------------
-// * Big, blocked of lists
+// * Big, blocked of lists.
+// * Inspired by inuit.css (by Harry Roberts)
+// * 
+// @ usage:
+// * <ul class="block-list">
+// * <li></li>
+// * <li><a class="block-list__link"></li>
+// * ...
+// * </ul>
 // * ---------------------
 
 .block-list,

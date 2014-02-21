@@ -2,6 +2,8 @@
 // *    Fixed background-scrolling images
 // * ---------------------
 // * This file contains markup and styles to produce a fixed background image effect.
+// * [Has a flex-box variant]
+// *
 // @ usage:
 // * <section class="fixed  fixed--1">
 // *   <div class="fixed__inner">
@@ -11,7 +13,7 @@
 // *   </div>
 // * </section>
 // * <section class="fixed__contrast">
-// *  /* Some content */
+// *  ...
 // * </section>
 // * ---------------------
 

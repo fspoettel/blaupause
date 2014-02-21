@@ -5,7 +5,20 @@ Boilerplate
 
 ## About
 
-This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-framework, a Gulp build-process (SCSS, js, img & Liverolad) and an optional Statamic twist. It aims to give you a flexible, UI-less core to get web-projects running quickly.
+This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-boilerplate, a Gulp build-process and an optional [Statamic](www.statamic.com) twist. It aims to give you a flexible, UI-less core to get web-projects running quickly. The grid used is based on my [fork](https://github.com/felics/csswizardry-grids/tree/boilerplate) of [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids) (which introduces a flex-box enhancement for browsers that support it). The SCSS-recipes are best practices found around the internet, most notably in [inuit.css](https://github.com/csswizardry/inuit.css), coded and simplified in the style of the boilerplate. I added flex-box options for items where they make sense and either simplify or enhance the output.
+
+## Dependencies:
+
+ - [normalize.css](https://github.com/necolas/normalize.css) (3.0.0)
+ - [respond.js](https://github.com/scottjehl/Respond) (1.4.2)
+ - [html5shiv](https://github.com/aFarkas/html5shiv) (3.7.0)
+ - [csswizardry-grids (fork)](https://github.com/felics/csswizardry-grids) (#boilerplate-branch)
+ - [gulp & plugin packages](https://github.com/gulpjs/gulp) (3.5.2)
+
+## Credit:
+
+ - [inuit.css](https://github.com/csswizardry/inuit.css)
+ - [html5bp](https://github.com/h5bp/html5-boilerplate)
 
 ## Installation
 
@@ -21,13 +34,13 @@ bower install
 
 When using with Statamic: 
 
-Copy everything into your installation's theme-folder. Copy all folders out of the `_statamic` folder into the theme-base. Done.
+Copy everything into your theme-folder. Copy all folders out of the `_statamic` folder into the theme-base.
 
 ## File Structure
 
 ### _statamic
 
-Contains really basic statamic-theme files.
+Contains really basic statamic-theme files. *(1.7.1 compatible)*
 
 #### /layout
 
@@ -39,7 +52,7 @@ Contains a sample-template with a content-section.
 
 #### /partials
 
-Contains wrappers for low-level partials. *Scripts* is the bottom-page script-block, *header* imports *nav* and is the page header, *footer* the footer. I decided to decouple the *scripts* from the layout so that one can easily add scripts per template.
+Contains wrappers for low-level partials. *Scripts* is the bottom-page script-block, *header* imports *nav* and is the page header, *footer* contains the page footer. I decided to decouple the *scripts* from the layout so that one can easily add scripts in a template.
 
 #### theme.yaml
 
@@ -56,11 +69,16 @@ Contains basic configuration variables:
 
 ### css
 
-This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again and debugging is a breeze.
+This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again and debugging is a breeze. You fire it up like this:
+
+```bash
+cd your-project
+gulp
+```
 
 #### css/scss
 
-The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns.
+The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from inuit.css's great implementations).
 
 The *globals*-folder is grouped in several sub-folders: 
 
@@ -84,11 +102,11 @@ The *globals*-folder is grouped in several sub-folders:
  
    Stores core UI abstractions such as tables or forms.
    
-In the base-directory, there is a reset(normalize.scss), a styles.scss for global styles that don't fit any of the folders above and a shame.scss. For detailed documentation regarding the .scss-modules read the inline documentation.
+In the base-directory, there is a reset(based on normalize.css), a styles.scss for global styles that don't fit any of the folders above and a [shame.scss](http://csswizardry.com/2013/04/shame-css/). For detailed documentation regarding the .scss-modules read the inline documentation.
 
 #### scss variable structure
 
-Variable structure:
+Variable structure (excluding recipes):
 
  - **Base**
     - `--size`
@@ -177,11 +195,16 @@ Variable structure:
 
 ### js
 
-By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently: jQuery (1.11.0 / 2.1.0), Modernizr (2.7.1 dev build), Respond.js (1.4.2), HTML5-shiv(3.7.0).
+By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently: 
 
-## Naming conventions & CSS authoring principles
+ - jQuery (1.11.0 / 2.1.0)
+ - Modernizr (2.7.1 dev build)
+ - Respond.js (1.4.2)
+ - HTML5-shiv(3.7.0).
 
-The whole project is centered around an BEM and OOP approach. The .scss is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value). Classes are constructed with a BEM approach: 
+## Naming conventions & authoring principles
+
+The whole project is centered around an **BEM** and **OOP** approach. The `.scss` is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value; see variable list). Classes are constructed with a BEM approach: 
 
 ```html
     <section class="house house--red">
@@ -194,6 +217,7 @@ The whole project is centered around an BEM and OOP approach. The .scss is divid
 
 `--` is used for modifiers (SCSS vars: values), while `__` is reserved for sub-elements (SCSS vars: sub-groups).
 
- The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple type--sizing-unit from base--sizing--unit, which are by default coupled. This gives the author the freedom to scope variable contexts.
+ The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple `$type--sizing-unit` from `$base--sizing--unit`, which are by default coupled. This gives you the freedom to scope variable contexts.
 
  By providing a js-build-process, it is easy to modularize JS. All .js files in `modules` will be combined with global.js and minfied. One can for example set up modules in `js/modules`and fire them from a centralized `document.ready` or `window.load` in global.js.
+
