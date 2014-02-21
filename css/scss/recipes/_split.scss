@@ -1,0 +1,22 @@
+
+// *    Split
+// * ---------------------
+// * Space two elements apart.
+// * Base on inuit.css (by Harry Roberts)
+// *
+// @ usage:
+// * <ul class="split">
+// * <li><b class="split__left">Left</b>Right item</li>
+// * </ul>
+// * ---------------------
+
+.split {
+    display: block;
+    list-style: none;
+    text-align: right;
+    width: 100%;
+    .split__left {
+        clear: left;
+        float: left;
+    }
+}
