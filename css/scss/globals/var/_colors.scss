@@ -5,22 +5,22 @@
 // * ---------------------
 
 // * Core
-$color--background:         #fefefe !default;
+$color--background:       #fefefe !default;
 
 // * Typography
-$color__type--text:         #444 !default;
-$color__type--heading:      #222 !default;
+$color__type--text:       #444 !default;
+$color__type--heading:    #222 !default;
 
 // * Links
-$color__type--link:         #D85E2E !default;
-$color__type--link-hover:   shade($color__type--link, 10%)!default;
+$color__type--link:       #D85E2E !default;
+$color__type--link-hover: shade($color__type--link, 10%)!default;
 
 // * Palette
-$color--primary:            #D85E2E !default;
-$color--secondary:          #F0B913 !default;
-$color--disabled:           #696762 !default;
+$color--primary:          #D85E2E !default;
+$color--secondary:        #F0B913 !default;
+$color--disabled:         #696762 !default;
 
 // * States
 
-$color--success:            #27922E !default;
-$color--error:              #AD3E3B !default;
+$color--success:          #27922E !default;
+$color--error:            #AD3E3B !default;

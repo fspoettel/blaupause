@@ -9,8 +9,8 @@
 
 // * Core
 
-$type--size:          $base--size; // Default: 16
-$type--ratio:         $base--ratio !default;
+$type--size:              $base--size; // Default: 16
+$type--ratio:             $base--ratio !default;
 
 // * Hook for content typography / elements
 
@@ -18,11 +18,11 @@ $base--content-namespace: unquote(".typography");
 
 // * Units
 
-$type--sizing-unit:   $type--size / $base--browser-default;
-$type--sizing-number: $type--size;
+$type--sizing-unit:       $type--size / $base--browser-default;
+$type--sizing-number:     $type--size;
 
-$type--rhythm-unit:   $type--ratio;
-$type--rhythm-number: $type--size * $type--ratio;
+$type--rhythm-unit:       $type--ratio;
+$type--rhythm-number:     $type--size * $type--ratio;
 
 // * Typographc Scale
 // * $type__scale--Base will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
@@ -33,21 +33,21 @@ $type--rhythm-number: $type--size * $type--ratio;
 // * Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
 // * ---------------------
 
-$type__scale--U:  84 !default; // kilo
-$type__scale--G:  72 !default; // giga
-$type__scale--M:  60 !default; // mega
-$type__scale--1:  48 !default; // h1, alpha
-$type__scale--2:  36 !default; // h2, beta
-$type__scale--3:  24 !default; // h3, gamma
-$type__scale--4:  21 !default; // h4, delta
-$type__scale--5:  18 !default; // h5, epsilon
-$type__scale--6:  16 !default; // h6, zeta
+$type__scale--U:          84 !default; // kilo
+$type__scale--G:          72 !default; // giga
+$type__scale--M:          60 !default; // mega
+$type__scale--1:          48 !default; // h1, alpha
+$type__scale--2:          36 !default; // h2, beta
+$type__scale--3:          24 !default; // h3, gamma
+$type__scale--4:          21 !default; // h4, delta
+$type__scale--5:          18 !default; // h5, epsilon
+$type__scale--6:          16 !default; // h6, zeta
 
 // * Font-stacks
 
-$type__font--sans:      $helvetica-neue;
-$type__font--serif:     $baskerville;
+$type__font--sans:        $helvetica-neue;
+$type__font--serif:       $baskerville;
 
-$type__font--primary:   $type__font--sans;
-$type__font--secondary: $type__font--serif;
+$type__font--primary:     $type__font--sans;
+$type__font--secondary:   $type__font--serif;
 
