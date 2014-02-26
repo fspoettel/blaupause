@@ -69,13 +69,14 @@ td {
     font-family: $type__font--primary;
 }
 
-#{$base--content-namespace} div,
+#{$base--content-namespace} blockquote,
 #{$base--content-namespace} dl,
 #{$base--content-namespace} figure,
+#{$base--content-namespace} hr,
 #{$base--content-namespace} ol,
-#{$base--content-namespace} ul,
 #{$base--content-namespace} p,
-#{$base--content-namespace} blockquote,
+#{$base--content-namespace} pre,
+#{$base--content-namespace} ul,
 #{$base--content-namespace} table {
     @extend .vR;
 }

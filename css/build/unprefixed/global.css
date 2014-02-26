@@ -562,13 +562,14 @@ td {
   margin: 0;
   padding: 0; }
 
-.vR, .typography div,
+.vR, .typography blockquote,
 .typography dl,
 .typography figure,
+.typography hr,
 .typography ol,
-.typography ul,
 .typography p,
-.typography blockquote,
+.typography pre,
+.typography ul,
 .typography table {
   margin-top: 0;
   margin-bottom: 24px;
