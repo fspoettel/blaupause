@@ -19,13 +19,8 @@ $color__nav--text:       $color--background !default;
         display: inline-block;
         margin-right: ($base--sizing-unit / 2 +em);
         > a {
-            background: $color__nav--background;
-            color: $color__nav--text;
             display: block;
             padding: ($base--sizing-unit / 2 +em);
-            &:hover {
-                background: darken($color__nav--background, 10%);
-            }
         }
         &:last-child {
             margin-right: 0;

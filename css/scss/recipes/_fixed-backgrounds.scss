@@ -2,6 +2,7 @@
 // *    Fixed background-scrolling images
 // * ---------------------
 // * This file contains markup and styles to produce a fixed background image effect.
+// * Be careful with big images.
 // * [Has a flex-box variant]
 // *
 // @ usage:
@@ -51,6 +52,7 @@ $fixed--height:         360px !default;
     min-height: $fixed--height;
     @include center-child(".fixed__content");
     margin: 0;
+    width: 100%;
 }
 
 // * Center the content

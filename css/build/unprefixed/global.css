@@ -521,6 +521,7 @@ input,
 select {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 87.5%;
+  font-weight: regular;
   line-height: 1.5; }
   @media (min-width: 481px) and (max-width: 1023px) {
     html,
@@ -857,7 +858,8 @@ body {
 .fixed__inner {
   min-height: 360px;
   position: relative;
-  margin: 0; }
+  margin: 0;
+  width: 100%; }
   .fixed__inner .fixed__content {
     position: absolute;
     top: 50%;
@@ -905,12 +907,8 @@ body {
     display: inline-block;
     margin-right: 0.5em; }
     .nav > li > a {
-      background: #d85e2e;
-      color: #fefefe;
       display: block;
       padding: 0.5em; }
-      .nav > li > a:hover {
-        background: #b24a21; }
     .nav > li:last-child {
       margin-right: 0; }
 
