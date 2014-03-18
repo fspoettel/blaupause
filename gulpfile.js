@@ -7,7 +7,7 @@
 // *   Core
 // * ---------------------
 
-// Require gulp modules 
+// Require gulp modules
 var gulp          = require("gulp"),
     concat        = require("gulp-concat"),
     cssmin        = require("gulp-minify-css"),
@@ -17,42 +17,50 @@ var gulp          = require("gulp"),
     prefix        = require("gulp-autoprefixer"),
     rename        = require("gulp-rename"),
     sass          = require("gulp-ruby-sass"),
-    uglify        = require("gulp-uglify");
-
+    uglify        = require("gulp-uglify"),
     livereload    = require("gulp-livereload"),
     server        = livereload();
 
 // Cache watch & source paths
-var jsSrcPath     = ["js/modules/**/*.js", "js/modules/*.js", "js/global.js"],
+var jsSrcPath     = ["js/modules/polyfills/**/*.js", "js/modules/globals/**/*.js", "js/modules/plugins/**/*.js", "js/global.js"],
     jsWatchPath   = jsSrcPath,
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
-    imgPaths      = "img/src/**",
+    imgSrcPath    = "img/src/**",
+    imgDestPath   = "img/opti",
     lrPath        = ["css/build/prefixed/global.css","**/**/*.html","js/build/global.min.js"];
 
 
 // *    Gulp tasks
 // * ---------------------
 
-// JS
-// * 1. js-hint
-// * 2. concat
+// js
+// * 1. concat
 // * --> write out
-// * 3. uglify
-// * 4. rename
+// * 2. uglify
+// * 3. rename
 // * --> write out
 // * ---------------------
 
 gulp.task("scripts", function(){
   gulp.src(jsSrcPath)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
     .pipe(concat("global.js"))
     .pipe(gulp.dest("js/build"))
     .pipe(uglify())
     .pipe(rename("global.min.js"))
     .pipe(gulp.dest("js/build"));
 });
+
+// jshint
+// * 1. jshint with default params
+// * ---------------------
+
+gulp.task("jshint", function(){
+  gulp.src(jsSrcPath)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
 
 // CSS
 // * 1. handle errors
@@ -82,19 +90,21 @@ gulp.task("sass", function () {
 // * --> write out
 // * ---------------------
 
-gulp.task("images", function () {
-  gulp.src(imgPaths)
+gulp.task("imgTask", function () {
+  gulp.src(imgSrcPath)
     .pipe(imagemin())
-    .pipe(gulp.dest("img/opti"));
+    .pipe(gulp.dest(imgDestPath));
 });
 
 // * Watch
+// * 1. Watch SCSS changes
+// * 2. Watch JS changrs
+// * 3. Start livereload server
 // * ---------------------
 
-gulp.task('watch', function () {
+gulp.task('watchTask', function () {
   gulp.watch(sassWatchPath, ["sass"]);
   gulp.watch(jsWatchPath, ["scripts"]);
-  gulp.watch(imgPaths, ["images"]);
   gulp.watch(lrPath).on('change', function(file) {
       server.changed(file.path);
   });
@@ -103,4 +113,11 @@ gulp.task('watch', function () {
 // * Tasks
 // * ---------------------
 
-gulp.task("default", ["scripts","sass","images","watch"]);
+gulp.task("default", ["scripts", "sass"]);
+
+gulp.task("watch", ["default", "watchTask"]);
+
+gulp.task("hint", ["scripts", "jshint"]);
+
+gulp.task("images",["imgTask"]);
+

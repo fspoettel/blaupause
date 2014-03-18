@@ -1,7 +1,7 @@
 
 // *    Text Columns
 // * ---------------------
-// * Split content into columns with _columns.scss-mixin. See: 
+// * Split content into columns with _columns.scss-mixin. See:
 // *
 // @ usage:
 // * <figure class="media">
@@ -15,15 +15,17 @@
     margin-bottom: $base--sizing-unit +em;
 }
 
-.columns--halfs {
-    @extend %columns;
-    @include columns(2);
-}
-.columns--thirds {
-    @extend %columns;
-    @include columns(3);
-}
-.columns--quarters {
-    @extend %columns;
-    @include columns(4, ($base--sizing-unit / 2 +em));
+.columns {
+    &--halfs {
+        @extend %columns;
+        @include columns(2);
+    }
+    &--thirds {
+        @extend %columns;
+        @include columns(3);
+    }
+    &--quarters {
+        @extend %columns;
+        @include columns(4, ($base--sizing-unit / 2 +em));
+    }
 }
