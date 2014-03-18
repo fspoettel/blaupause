@@ -2,7 +2,7 @@
 // *    Image grid recipe
 // * ---------------------
 // * A basic implementation of an image grid.
-// * 
+// *
 // @ usage:
 // * <section class="imageGrid">
 // *     <figure (class="imageGrid__item")>
@@ -18,14 +18,13 @@
 
 .image-grid {
     @extend #{$grid--class-type}grid;
-}
-
-.image-grid__item,
-.image-grid > figure {
-    @extend #{$grid--class-type}grid__item;
-    @extend #{$grid--class-type}lap--one-half;
-    @extend #{$grid--class-type}desk--one-third;
-    @extend #{$grid--class-type}high--one-quarter;
-    margin-bottom: $base--rhythm-unit +em;
-    text-align: center;
+    &__item,
+    > figure {
+        @extend #{$grid--class-type}grid__item;
+        @extend #{$grid--class-type}lap--one-half;
+        @extend #{$grid--class-type}desk--one-third;
+        @extend #{$grid--class-type}high--one-quarter;
+        margin-bottom: $base--rhythm-unit +em;
+        text-align: center;
+    }
 }

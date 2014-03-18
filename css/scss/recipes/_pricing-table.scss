@@ -24,15 +24,16 @@
     footer {
         @extend .blocked;
     }
-}
-
-.pricing__list {
-    @extend .block-list;
-    border-top: 0;
-    li {
-        border-left: $brand--border-width solid $color__brand--border;
-        border-right: $brand--border-width solid $color__brand--border;
-        padding-left: $base--sizing-unit +em;
-        padding-right: $base--sizing-unit +em;
+    &__list,
+    ul {
+        @extend .block-list;
+        border-top: 0;
+        li {
+            border-left: $brand--border-width solid $color__brand--border;
+            border-right: $brand--border-width solid $color__brand--border;
+            padding-left: $base--sizing-unit +em;
+            padding-right: $base--sizing-unit +em;
+        }
     }
 }
+

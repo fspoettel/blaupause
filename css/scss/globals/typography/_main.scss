@@ -17,10 +17,10 @@ html,
 textarea,
 input,
 select {
+    line-height: $type--ratio;
     font-family: $type__font--primary;
     font-size: $palm--font-size;
     font-weight: $type--font-weight;
-    line-height: $type--ratio;
     @include bp(lap) {
         font-size: $lap--font-size;
     }
@@ -94,7 +94,6 @@ b {
     font-weight: bold;
 }
 
-small { 
+small {
     font-size: 80%;
  }
- 

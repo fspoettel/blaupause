@@ -34,15 +34,15 @@ output {
 input,
 select,
 textarea {
-    vertical-align: baseline;
     margin-bottom: $base--rhythm-unit +em;
+    vertical-align: baseline;
 }
 
 // * Fieldsets
 
 fieldset {
-    border: $brand--border-width solid $color__brand--border;
     padding: ($base--sizing-unit / 2 +em) ($base--sizing-unit / 2 +em);
+    border: $brand--border-width solid $color__brand--border;
 }
 
 // * Text inputs

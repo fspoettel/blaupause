@@ -2,9 +2,9 @@
 // *    Media-Element
 // * ---------------------
 // * Place any content next to an image.
+// * Inspired by inuit.css (by Harry Roberts)
+// * Original concept by stubornella
 // * [Has a flex-box variant]
-// * // * Inspired by inuit.css (by Harry Roberts)
-// * // * Original concept by stubornella
 // *
 // @ usage:
 // * <figure class="media">
@@ -19,24 +19,57 @@
 .media {
     display: block;
     @include cf();
-}
 
-.media > img {
-    float: left;
-    margin-right: $base--rhythm-unit +em;
-}
+    // * Elements
 
-.media__caption,
-.media > figcaption {
-    overflow: hidden;
-}
-
-// * Modifiers
-
-.media--rev {
     > img {
-        float: right;
-        margin-left: $base--rhythm-unit +em;
-        margin-right: 0;
+        float: left;
+        margin-right: $base--rhythm-unit +em;
     }
+    &__caption,
+    > figcaption {
+        overflow: hidden;
+    }
+
+    // * Modifiers
+
+    &--rev {
+        > img {
+            float: right;
+            margin-left: $base--rhythm-unit +em;
+            margin-right: 0;
+        }
+    }
+
+}
+
+
+// * Flex-box enhancements
+// * ---------------------
+
+.flex .media {
+    display: flex;
+    align-items: flex-start;
+
+    // * Elements
+
+    &__caption,
+    > figcaption {
+        flex: 1;
+    }
+
+    // * Modifiers
+    // * NEW: media--center
+
+    &--center {
+        align-items: center;
+    }
+
+    &--rev {
+        > img {
+            order: 1;
+            margin: 0 0 0 $base--rhythm-unit +em;
+        }
+    }
+    
 }

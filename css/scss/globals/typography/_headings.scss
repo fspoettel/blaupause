@@ -27,8 +27,8 @@ $type__heading--font-weight: 700 !default;
 $type__heading--font-style:  italic !default;
 
 // * Genereal heading styles
-// *     1. Inherited from var/colors
-// *     2. Inherited from config
+// *     1. Hinders performance on old Android / iOS if  > 1000 words to render
+// * ---------------------
 
 h1,
 h2,
@@ -36,14 +36,14 @@ h3,
 h4,
 h5,
 h6 {
-    color: $color__type--heading; //[1]
-    font-family: $type__font--heading; //[2]
+    margin: 0;
+    line-height: 1;
+    font-family: $type__font--heading;
     font-feature-settings: "kern", "liga";
     font-weight: $type__heading--font-weight;
     font-style: $type__heading--font-style;
-    line-height: 1;
-    margin: 0;
-    text-rendering: optimizeLegibility; // [3]
+    text-rendering: optimizeLegibility; // [1]
+    color: $color__type--heading;
 }
 
 // * Font Size Declarations

@@ -18,10 +18,10 @@ $baseline-number: $base--browser-default;
         @each $value in $px-values {
             @if $value == 0 or type-of( $value ) != "number" {
                 $rem-values: append($rem-values, $value);
-            } 
+            }
             @else {
-                $rem-values: append($rem-values, $value / $baseline-rem); 
-            } 
+                $rem-values: append($rem-values, $value / $baseline-rem);
+            }
         }
     #{$property}: $rem-values;
     }

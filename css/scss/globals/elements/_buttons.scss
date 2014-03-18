@@ -26,15 +26,15 @@ $color__btn--text:      #fff !default;
 // * ---------------------
 
 .btn {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: center;
     background: $color__btn--primary;
     color: $color__btn--text;
     cursor: pointer;
-    display: inline-block;
-    line-height: normal;
-    text-align: center;
     -webkit-user-drag: none;
     user-select: none;
-    vertical-align: middle;
     white-space: nowrap;
     zoom: 1;
 }
@@ -45,8 +45,8 @@ $color__btn--text:      #fff !default;
     &:hover,
     &:focus,
     &:active {
-        background: $color__btn--hover;
         text-decoration: none;
+        background: $color__btn--hover;
         color: $color__btn--text;
     }
 }
@@ -66,7 +66,7 @@ $color__btn--text:      #fff !default;
     padding: $base--sizing-unit +em ($base--rhythm-unit * 2 +em);
 }
 
-.btn--full { 
+.btn--full {
     display: block;
 }
 
@@ -76,7 +76,7 @@ $color__btn--text:      #fff !default;
     @extend %brand--round;
 }
 
-.btn--secondary { 
+.btn--secondary {
     background: $color__btn--secondary;
     &:hover,
     &:active,
@@ -85,7 +85,7 @@ $color__btn--text:      #fff !default;
     }
 }
 
-.btn--tertiary { 
+.btn--tertiary {
     background: $color__btn--tertiary;
     &:hover,
     &:active,
@@ -114,7 +114,7 @@ $color__btn--text:      #fff !default;
     }
 }
 
-.btn:disabled,
+.btn[disabled="disabled"],
 .btn--disabled {
     background: $color__btn--disabled;
     cursor: default;

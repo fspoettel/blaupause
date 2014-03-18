@@ -16,10 +16,10 @@ $color__table--head-text:  $color__type--text;
 // * ---------------------
 
 table {
+    width: 100%;
     background: $color__table--background;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
 }
 
 th,

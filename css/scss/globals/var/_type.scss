@@ -29,7 +29,7 @@ $type--rhythm-number:     $type--size * $type--ratio;
 // * $type__scale--Base is equal to $base-size by default. $base--size is used to calcualte the $base--sizing-unit, $type--sizing-unit & grid__gutters
 // * So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
 // * The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type__scale--Base doesn't affect the scale
-// * It is of course possible, to make the scale dynamic to $type__scale--Base & type__ratio 
+// * It is of course possible, to make the scale dynamic to $type__scale--Base & type__ratio
 // * Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
 // * ---------------------
 

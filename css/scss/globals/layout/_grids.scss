@@ -19,7 +19,7 @@
 //*------------------------------------*\
 //    $INTRODUCTION
 //*------------------------------------*/
-/**
+// *
 // * csswizardry grids provides you with widths to suit a number of breakpoints
 // * designed around devices of a size you specify. Out of the box, csswizardry
 // * grids caters to the following types of device:
@@ -58,7 +58,6 @@
 //   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
 // *
 //   `class="grid__item  palm--one-third  desk--five-twelfths"`
-// */
 
 
 
@@ -102,7 +101,7 @@ $grid--pull:                  true!default;
 
 //**
 // * This grid uses flex-box for browsers that support it and falls back to `inline-block`.
-// * `Using `inline-block` means that the grid items need their whitespace removed in order for them to work 
+// * `Using `inline-block` means that the grid items need their whitespace removed in order for them to work
 // * correctly. Set the following to true if you are going to achieve this by manually removing/commenting out
 // * any whitespace in your HTML yourself.
 // *
@@ -151,7 +150,7 @@ $grid--breakpoint-has-pull:   ("palm", "lap","lap-up", "desk","high")!default;
 $grid--class-type:            unquote(".");
 
 @if $grid--use-silent-classes == true{
-    $grid--class-type:        unquote("%");
+    $grid--class-type:        unquote("%")!global;
 }
 
 
@@ -275,13 +274,12 @@ $grid--class-type:            unquote(".");
     -ms-flex-flow: wrap-reverse row;
     flex-flow: wrap-reverse row;
     text-align:left;
-
-    > #{$grid--class-type}grid__item{
-        direction:ltr;
-        text-align:left;
-    }
 }
 
+#{$grid--class-type}grid--rev__item{
+    direction:ltr;
+    text-align:left;
+}
 
 //**
 // * Gutterless grids have all the properties of regular grids, minus any spacing.
@@ -290,11 +288,11 @@ $grid--class-type:            unquote(".");
 #{$grid--class-type}grid--full{
     margin-left:0;
 
-    > #{$grid--class-type}grid__item{
-        padding-left:0;
-    }
 }
 
+#{$grid--class-type}grid--full__item{
+    padding-left:0;
+}
 
 //**
 // * Align the entire grid to the right. Extends `.grid`.
@@ -304,12 +302,11 @@ $grid--class-type:            unquote(".");
     -ms-flex-pack: end;
     justify-content: flex-end;
     text-align:right;
-
-    > #{$grid--class-type}grid__item{
-        text-align:left;
-    }
 }
 
+#{$grid--class-type}grid--right__item{
+    text-align:left;
+}
 
 //**
 // * Centered grids align grid items centrally without needing to use push or pull
@@ -321,9 +318,10 @@ $grid--class-type:            unquote(".");
     justify-content: center;
     text-align:center;
 
-    > #{$grid--class-type}grid__item{
-        text-align:left;
-    }
+}
+
+#{$grid--class-type}grid--center__item{
+    text-align:left;
 }
 
 
@@ -335,32 +333,31 @@ $grid--class-type:            unquote(".");
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+}
 
-    > #{$grid--class-type}grid__item{
-        vertical-align:middle;
-    }
+#{$grid--class-type}grid--middle__item{
+    vertical-align:middle;
 }
 
 #{$grid--class-type}grid--bottom{
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
-
-    > #{$grid--class-type}grid__item{
-        vertical-align:bottom;
-    }
 }
 
+#{$grid--class-type}grid--bottom__item{
+    vertical-align:bottom;
+}
 
 //**
 // * Create grids with narrower gutters. Extends `.grid`.
 // */
 #{$grid--class-type}grid--narrow{
     @include rem("margin-left", (-$grid--gutter / 2));
+}
 
-    > #{$grid--class-type}grid__item{
-        @include rem("padding-left", ($grid--gutter / 2));
-    }
+#{$grid--class-type}grid--narrow__item{
+    @include rem("padding-left", ($grid--gutter / 2));
 }
 
 
@@ -369,14 +366,11 @@ $grid--class-type:            unquote(".");
 // */
 #{$grid--class-type}grid--wide{
     @include rem("margin-left", (-$grid--gutter * 2 ));
-
-    > #{$grid--class-type}grid__item{
-        @include rem("padding-left", ($grid--gutter * 2));
-    }
 }
 
-
-
+#{$grid--class-type}grid--wide__item{
+    @include rem("padding-left", ($grid--gutter * 2));
+}
 
 
 //*------------------------------------*\

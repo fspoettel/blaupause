@@ -2,85 +2,62 @@
 // *    Fixed background-scrolling images
 // * ---------------------
 // * This file contains markup and styles to produce a fixed background image effect.
-// * Be careful with big images.
-// * [Has a flex-box variant]
 // *
 // @ usage:
-// * <section class="fixed  fixed--1">
+// * <section class="fixed">
 // *   <div class="fixed__inner">
+// *       <div class="fixed__layer  fixed--1">
+// *       </div>
 // *       <div class="fixed__content">
 // *          /*Content here*/
 // *       </div>
 // *   </div>
-// * </section>
-// * <section class="fixed__contrast">
-// *  ...
 // * </section>
 // * ---------------------
 
 // * Variables
 
 $color__fixed--content: #fff !default;
-$fixed--height:         360px !default;
 
-// * Background-images declarations
-// * Must be declared before other styles
-// * ---------------------
+// * Height of the fixed background element (in em)
 
-.fixed--1 { }
-
-.fixed--2 { }
-
-// * Core
-
-.fixed,
-.fixed__contrast {
-    width: 100%;
-    position: relative;
-}
+$fixed--height:        45 !default;
 
 // * Hero styles
 
 .fixed {
     text-align: center;
-    background-size: cover;
-    @extend %fixed--center;
-    background-attachment: fixed;
+    &__layer {
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        top: 0px;
+        position: fixed;
+        transform: translateZ(0);
+        pointer-events: none;
+        z-index: -1;
+    }
+    &__inner {
+        @include center-child(".fixed__content");
+        width: 100%;
+        margin: 0;
+        padding: ($fixed--height / 2 +em) 0;
+        background: rgba(0,0,0,.6);
+    }
+    &__content {
+        width: 100%;
+        margin: 0 !important;
+        color: $color__fixed--content;
+        z-index: 3;
+    }
 }
 
-.fixed__inner {
-    min-height: $fixed--height;
-    @include center-child(".fixed__content");
-    margin: 0;
-    width: 100%;
+// * Flex-box enhancements
+// * ---------------------
+
+.flex .fixed {
+    &__inner {
+        @include center-child(".fixed__content", "flex");
+    }
 }
-
-// * Center the content
-
-.fixed__content {
-    color: $color__fixed--content;
-    margin: 0 !important;
-}
-
-// * Declare a .content-background for effect
-
-.fixed__contrast { 
-    background: $color--background;
-}
-
-// * Background-position modifiers
-
-%fixed--left {
-    background-position: left center;
-}
-
-%fixed--center {
-    background-position: center center;
-}
-
-
-%fixed--right {
-    background-position: right center;
-}
-
 

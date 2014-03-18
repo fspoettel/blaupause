@@ -10,4 +10,4 @@ $column--gap: $base--sizing-unit + em !default;
 @mixin columns($number, $gap:$column--gap) {
     column-count: $number;
     column-gap: $gap;
-} 
+}

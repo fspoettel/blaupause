@@ -12,34 +12,35 @@ img {
     max-width: 100%;
 }
 
-// * Rounded images 
+.img {
 
-.img--round { 
-    @extend %brand--round;
+    // * Rounded images
+
+    &--round {
+        @extend %brand--round;
+    }
+
+    // * Image placement
+
+    &--left {
+        float:left;
+        margin-bottom: $type--image-spacing +em;
+        margin-right: $type--image-spacing +em;
+    }
+    &--right {
+        float:right;
+        margin-bottom: $type--image-spacing +em;
+        margin-left: $type--image-spacing +em;
+    }
+    &--center {
+        display:block;
+        margin-bottom: $type--image-spacing +em;
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
 
-// * Image placement
-
-.img--right {
-    float:right;
-    margin-bottom: $type--image-spacing +em;
-    margin-left: $type--image-spacing +em;
-}
-
-.img--left {
-    float:left;
-    margin-bottom: $type--image-spacing +em;
-    margin-right: $type--image-spacing +em;
-}
-
-.img--center {
-    display:block;
-    margin-bottom: $type--image-spacing +em;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-// * Figures 
+// * Figures
 
 figure {
     margin:0;

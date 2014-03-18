@@ -2,8 +2,8 @@
 // *    Nav abstraction
 // * ---------------------
 // * A navigation-pattern for use with lists.
-// * [Has a flex-box variant]
 // * Inspired by inuit.css (by Harry Roberts)
+// * [Has a flex-box variant]
 // * ---------------------
 
 $color__nav--background: $color--primary !default;
@@ -26,60 +26,77 @@ $color__nav--text:       $color--background !default;
             margin-right: 0;
         }
     }
-}
 
-// * Placement modifiers
+    // * Placement modifiers
+    // * ---------------------
 
-.nav--center {
-    text-align: center;
-}
-
-.nav--right {
-    text-align: right;
-}
-
-// * Vertical navigations 
-// * ---------------------
-
-.nav--stacked,
-.nav--block {
-    > li {
-        margin-right: 0;
-        margin-bottom: ($base--sizing-unit / 2 +em);
-        > a {
-            display: inline-block;
-        }
-    }
-}
-
-.nav--stacked {
-    > li {
-        display: list-item;
-    }
-}
-
-.nav--block {
-    display: block;
-    > li {
-        display: block;
-        > a {
-            display: block;
-        }
-    }
-}
-
-// * Nav-bar (see /flex for a flex-box alternative)
-// * Evenly distribute items along the axis. Only works where flex-box is supported.
-// * ---------------------
-
-.nav--bar {
-    display: table;
-    width: 100%;
-    > li {
-        display: table-cell;
+    &--center {
         text-align: center;
-        > a {
+    }
+    &--right {
+        text-align: right;
+    }
+
+    // * Vertical navigation
+    // * ---------------------
+
+    &--stacked,
+    &--blocked {
+        > li {
+            margin-bottom: ($base--sizing-unit / 2 +em);
+            margin-right: 0;
+            > a {
+                display: inline-block;
+            }
+        }
+    }
+
+    &--stacked {
+        > li {
+            display: list-item;
+        }
+    }
+
+    &--block {
+        display: block;
+        > li {
             display: block;
+            > a {
+                display: block;
+            }
+        }
+    }
+
+    // * Navigation Bar
+    // * Evenly distribute items along the x-axis.
+    // * ---------------------
+
+    &--bar {
+        display: table;
+        width: 100%;
+        > li {
+            display: table-cell;
+            text-align: center;
+            > a {
+                display: block;
+            }
+        }
+    }
+
+}
+
+
+// * Flexbox enhancements
+// * ---------------------
+
+.flex .nav {
+    &--bar {
+        display: flex;
+        > li {
+            flex-grow: 1;
+            margin: 0;
+            text-align: center;
         }
     }
 }
+

@@ -32,7 +32,7 @@ npm install
 bower install
 ```
 
-When using with Statamic: 
+When using with Statamic:
 
 Copy everything into your theme-folder. Copy all folders out of the `_statamic` folder into the theme-base.
 
@@ -80,28 +80,28 @@ gulp
 
 The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from inuit.css's great implementations).
 
-The *globals*-folder is grouped in several sub-folders: 
+The *globals*-folder is grouped in several sub-folders:
 
  - `/var`
- 
+
    Stores basic-configuration such as sizes, colors, mediaqueries (for inline MQ, see mixin), type and brand-specific as variables.
 
  - `/typography`
- 
+
    Stores all typographic elements.
 
  - `/mixins`
- 
+
    Stores mixins.
 
  - `/layouts`
- 
+
    Stores the grid and other layout-abstractions.
 
  - `/elements`
- 
+
    Stores core UI abstractions such as tables or forms.
-   
+
 In the base-directory, there is a reset(based on normalize.css), a styles.scss for global styles that don't fit any of the folders above and a [shame.scss](http://csswizardry.com/2013/04/shame-css/). For detailed documentation regarding the .scss-modules read the inline documentation.
 
 #### scss variable structure
@@ -195,7 +195,7 @@ Variable structure (excluding recipes):
 
 ### js
 
-By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently: 
+By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently:
 
  - jQuery (1.11.0 / 2.1.0)
  - Modernizr (2.7.1 dev build)
@@ -204,7 +204,7 @@ By default, the js-build process takes all scripts inside *modules* and the glob
 
 ## Naming conventions & authoring principles
 
-The whole project is centered around an **BEM** and **OOP** approach. The `.scss` is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value; see variable list). Classes are constructed with a BEM approach: 
+The whole project is centered around an **BEM** and **OOP** approach. The `.scss` is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value; see variable list). Classes are constructed with a BEM approach:
 
 ```html
     <section class="house house--red">
