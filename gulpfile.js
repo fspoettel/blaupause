@@ -87,6 +87,16 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("css/build/prefixed"));
 });
 
+gulp.task("test-sass", function () {
+  gulp.src(sassSrcPath)
+    .pipe(plumber())
+    .pipe(sass({noCache:true}))
+    .pipe(rename("global.css"))
+    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
+    .pipe(rename("global.css"))
+    .pipe(gulp.dest("test/css"));
+});
+
 // * img
 // * 1. Minify
 // * --> write out
@@ -116,6 +126,8 @@ gulp.task('watchTask', function () {
 // * ---------------------
 
 gulp.task("default", ["scripts", "sass"]);
+
+gulp.task("test", ["scripts", "test-sass"]);
 
 gulp.task("watch", ["default", "watchTask"]);
 

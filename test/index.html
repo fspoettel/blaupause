@@ -6,9 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        section {
+        body {
+            background: #fff;
+        }
+        .wrapper {
+            width: 80%;
             max-width: 640px;
             margin: 0 auto;
+            z-index: 1;
         }
         .recipes article {
             margin-bottom: 1.5em;
@@ -24,23 +29,33 @@
         .btn {
             margin-bottom: .5em;
         }
-        .fixed__content > h3 {
+        .test-block {
+            background: #c10900;
+            color: #fff;
+            padding: .25em;
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+        .flexbox .test-block,
+        .flexbox .nav--bar a,
+        .flexbox .media {
+            background: green;
             color: #fff;
         }
-        .fixed--1 {
-            background: url(http://placekitten.com/640/360);
+        .pricing h2 a {
+            color:#fff;
+            display: block;
         }
     </style>
-    <link rel="stylesheet" href="css/build/prefixed/global.min.css">
-    <script>
-        document.documentElement.className = "js";
-    </script>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/lib/modernizr-2.7.1.js"></script>
     <!--[if lt IE 9]>
         <script src="js/lib/html5shiv-3.7.0.min.js"></script>
         <script src="js/lib/respond-1.4.2.min.js"></script>
     <![endif]-->
 </head>
 <body>
+<div class="wrapper">
     <section class="typography">
         <header>
             <h1>Typography</h1>
@@ -438,24 +453,6 @@
     </section>
     </article>
     <article>
-    <h2>Fixed image</h2>
-    <section class="fixed  fixed--1">
-        <div class="fixed__inner">
-            <div class="fixed__content">
-                <h3>Fixed image background (has flex-box variant)</h3>
-            </div>
-        </div>
-    </section>
-    </article>
-    <article>
-    <section class="fixed__contrast">
-        <h2>Text columns</h2>
-        <p class="columns--halfs">Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
-        <p class="columns--thirds">Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
-        <p class="columns--quarters">Ham hock chicken turducken, t-bone hamburger kielbasa shankle tenderloin biltong shank prosciutto. Drumstick rump turducken, beef tongue prosciutto jerky capicola. Sausage brisket turkey pork, chicken cow sirloin shoulder prosciutto tenderloin. Pork loin spare ribs chuck beef, beef ribs t-bone meatball corned beef pork chop biltong bresaola ribeye turkey. Boudin spare ribs tenderloin, shoulder corned beef beef pork chicken. Boudin short loin strip steak rump.</p>
-    </section>
-    </article>
-    <article>
     <h2>Block List</h2>
     <ul class="block-list">
       <li>list item 1</li>
@@ -548,7 +545,7 @@
             <li>No drunk support staff <small><i>before 2pm</i></small></li>
           </ul>
           <footer>
-            <h2>Sign up, now!</h2>
+            <h2><a href="#">Sign up, now!</a></h2>
           </footer>
       </article>
       <article class="pricing">
@@ -562,8 +559,347 @@
           </ul>
       </article>
 </section>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/lib/jquery/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="js/build/global.min.js"></script>
+<p>If the grid is red, you are using the fallback. If it is green, you are using the flexbox grid.</p>
+<h3>Standard grid</h3>
+<section class="grid">
+    <article class="grid__item  one-half">
+        <p class="test-block">1.1.1 1/2</p>
+    </article>
+    <article class="grid__item  one-half">
+        <p class="test-block">1.1.2 1/2</p>
+    </article>
+    <!--Test thirds -->
+    <article class="grid__item  one-third">
+        <p class="test-block">1.2.1 1/3</p>
+    </article>
+    <article class="grid__item  two-thirds">
+        <p class="test-block">1.2.2 2/3</p>
+    </article>
+    <!--Test fourths -->
+    <article class="grid__item  one-quarter">
+        <p class="test-block">1.3.1 1/4</p>
+    </article>
+    <article class="grid__item  three-quarters">
+        <p class="test-block">1.3.2 3/4</p>
+    </article>
+    <!-- Test fifths -->
+    <article class="grid__item one-fifth">
+        <p class="test-block">1.4.1 1/5</p>
+    </article>
+    <article class="grid__item four-fifths">
+        <p class="test-block">1.4.2 4/5</p>
+    </article>
+    <!-- Test sixth -->
+    <article class="grid__item  one-sixth">
+        <p class="test-block">1.5.1 1/6</p>
+    </article>
+    <article class="grid__item  five-sixths">
+        <p class="test-block">1.5.2 5/6</p>
+    </article>
+    <!-- Test eigths -->
+    <article class="grid__item  one-eighth">
+        <p class="test-block">1.6.1 1/8</p>
+    </article>
+    <article class="grid__item  seven-eighths">
+        <p class="test-block">1.6.2 7/8</p>
+    </article>
+    <!-- test tenths -->
+    <article class="grid__item  one-tenth">
+        <p class="test-block">1.7.1 1/10</p>
+    </article>
+    <article class="grid__item  nine-tenths">
+        <p class="test-block">1.7.2 9/10</p>
+    </article>
+    <!-- test tenths -->
+    <article class="grid__item  one-twelfth">
+        <p class="test-block">1.8.1 1/12</p>
+    </article>
+    <article class="grid__item  eleven-twelfths">
+        <p class="test-block">1.8.2 1/12</p>
+    </article>
+</section>
+<h3> Test reversed grid</h3>
+<section class="grid grid--rev">
+    <!-- Test reversed grid -->
+    <article class="grid__item  grid--rev__item  one-quarter palm--one-whole">
+        <p class="test-block">2.1 1/4</p>
+    </article>
+    <article class="grid__item grid--rev__item  one-quarter palm--one-whole">
+        <p class="test-block">2.2 1/4</p>
+    </article>
+    <article class="grid__item grid--rev__item  one-quarter palm--one-whole">
+        <p class="test-block">2.3 1/4</p>
+    </article>
+    <article class="grid__item grid--rev__item  one-quarter palm--one-whole">
+        <p class="test-block">2.4 1/4</p>
+    </article>
+</section>
+<h3>Test full grid</h3>
+<section class="grid  grid--full">
+    <article class="grid__item grid--full__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">3.1 1/5</p>
+    </article>
+    <article class="grid__item  grid--full__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">3.2 1/5</p>
+    </article>
+    <article class="grid__item  grid--full__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">3.3 1/5</p>
+    </article>
+    <article class="grid__item  grid--full__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">3.4 1/5</p>
+    </article>
+    <article class="grid__item  grid--full__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">3.5 1/5</p>
+    </article>
+</section>
+<h3>Test narrow grid</h3>
+<section class="grid  grid--narrow">
+    <article class="grid__item  grid--narrow__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">4.1 1/5</p>
+    </article>
+    <article class="grid__item  grid--narrow__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">4.2 1/5</p>
+    </article>
+    <article class="grid__item  grid--narrow__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">4.3 1/5</p>
+    </article>
+    <article class="grid__item  grid--narrow__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">4.4 1/5</p>
+    </article>
+    <article class="grid__item  grid--narrow__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">4.5 1/5</p>
+    </article>
+</section>
+<h3>Test wide grid</h3>
+<section class="grid  grid--wide">
+    <article class="grid__item   grid--wide__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">5.1 1/5</p>
+    </article>
+    <article class="grid__item grid--wide__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">5.2 1/5</p>
+    </article>
+    <article class="grid__item grid--wide__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">5.3 1/5</p>
+    </article>
+    <article class="grid__item grid--wide__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">5.4 1/5</p>
+    </article>
+    <article class="grid__item grid--wide__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">5.5 1/5</p>
+    </article>
+</section>
+<h3>Test aligned grids</h3>
+<section class="grid">
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">6.1 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">6.2 1/5</p>
+    </article>
+</section>
+<section class="grid grid--right">
+    <article class="grid__item grid--right__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">7.1 1/5</p>
+    </article>
+    <article class="grid__item grid--right__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">7.2 1/5</p>
+    </article>
+</section>
+<section class="grid grid--center">
+    <article class="grid__item grid--center__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">8.1 1/5</p>
+    </article>
+    <article class="grid__item grid--center__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">8.2 1/5</p>
+    </article>
+</section>
+<h3>Test cell-alignment</h3>
+<section class="grid">
+    <article class="grid__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.1 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.2 1/2</p>
+    </article>
+    <article class="grid__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.3 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.4 1/2</p>
+    </article>
+</section>
+<section class="grid grid--bottom">
+    <article class="grid__item grid--bottom__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.1 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item grid--bottom__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.2 1/2</p>
+    </article>
+    <article class="grid__item grid--bottom__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.3 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item grid--bottom__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">9.4 1/2</p>
+    </article>
+</section>
+<section class="grid grid--middle">
+    <article class="grid__item grid--middle__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">10.1 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item grid--middle__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">10.2 1/2</p>
+    </article>
+    <article class="grid__item grid--middle__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">10.3 1/2 Wrap the line Wrap the line Wrap the line Wrap the line Wrap the line</p>
+    </article>
+    <article class="grid__item grid--middle__item lap--one-quarter  desk--one-quarter">
+        <p class="test-block">10.4 1/2</p>
+    </article>
+</section>
+<h3>Test palm breakpoint</h3>
+<section class="grid">
+    <article class="grid__item one-whole  palm--one-half">
+        <p class="test-block">11.1 1/2</p>
+    </article>
+    <article class="grid__item one-whole  palm--one-half">
+        <p class="test-block">11.2 1/2</p>
+    </article>
+</section>
+<h3>Test lap breakpoint</h3>
+<section class="grid">
+    <article class="grid__item one-whole  lap--one-half">
+        <p class="test-block">12.1 1/2</p>
+    </article>
+    <article class="grid__item one-whole  lap--one-half">
+        <p class="test-block">12.2 1/2</p>
+    </article>
+</section>
+<h3>Test desk breakpoint</h3>
+<section class="grid">
+    <article class="grid__item one-half  desk--one-half">
+        <p class="test-block">14.1 1/2</p>
+    </article>
+    <article class="grid__item one-half  desk--one-half">
+        <p class="test-block">14.2 1/2</p>
+    </article>
+</section>
+<h3>Test push / pull</h3>
+<section class="grid">
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.1 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.2 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.3 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth  push--one-fifth">
+        <p class="test-block">15.4 1/5</p>
+    </article>
+</section>
+<section class="grid  grid--right">
+    <article class="grid__item lap--one-fifth  desk--one-fifth  pull--one-fifth">
+        <p class="test-block">15.5 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.6 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.7 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">15.8 1/5</p>
+    </article>
+</section>
+<h3>test push / pull desk</h3>
+<section class="grid  grid--right">
+    <article class="grid__item lap--one-fifth  desk--one-fifth  pull--desk--one-fifth">
+        <p class="test-block">16.1 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.2 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.3 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.4 1/5</p>
+    </article>
+</section>
+<section class="grid">
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.5 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.6 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.7 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth  push--desk--one-fifth">
+        <p class="test-block">16.8 1/5</p>
+    </article>
+</section>
+<h3>test push / pull lap</h3>
+<section class="grid  grid--right">
+    <article class="grid__item lap--one-fifth  desk--one-fifth  pull--lap--one-fifth">
+        <p class="test-block">16.1 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.2 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.3 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.4 1/5</p>
+    </article>
+</section>
+<section class="grid">
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.5 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.6 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.7 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth  push--lap--one-fifth">
+        <p class="test-block">16.8 1/5</p>
+    </article>
+</section>
+<h3>test push / pull palm</h3>
+<section class="grid  grid--right">
+    <article class="grid__item lap--one-fifth  desk--one-fifth  pull--palm--one-fifth">
+        <p class="test-block">16.1 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.2 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.3 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.4 1/5</p>
+    </article>
+</section>
+<section class="grid">
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.5 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.6 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth">
+        <p class="test-block">16.7 1/5</p>
+    </article>
+    <article class="grid__item lap--one-fifth  desk--one-fifth  push--palm--one-fifth">
+        <p class="test-block">16.8 1/5</p>
+    </article>
+</section>
+</div>
+<script src="../js/build/global.min.js"></script>
 </body>
 </html>

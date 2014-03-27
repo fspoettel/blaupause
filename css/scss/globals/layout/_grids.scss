@@ -92,6 +92,10 @@ $grid--gutter:                $base--rhythm-number!default;
 // */
 $grid--use-silent-classes:    true!default;
 
+@if($test == "true") {
+    $grid--use-silent-classes:    false!global;
+}
+
 
 //**
 // * Would you like push and pull classes enabled?
