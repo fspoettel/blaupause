@@ -19,7 +19,7 @@
 //*------------------------------------*\
 //    $INTRODUCTION
 //*------------------------------------*/
-// *
+
 // * csswizardry grids provides you with widths to suit a number of breakpoints
 // * designed around devices of a size you specify. Out of the box, csswizardry
 // * grids caters to the following types of device:
@@ -63,6 +63,7 @@
 
 
 
+
 //*------------------------------------*\
 //    $VARIABLES
 //*------------------------------------*/
@@ -99,7 +100,6 @@ $grid--push:                  true!default;
 $grid--pull:                  true!default;
 
 
-//**
 // * This grid uses flex-box for browsers that support it and falls back to `inline-block`.
 // * `Using `inline-block` means that the grid items need their whitespace removed in order for them to work
 // * correctly. Set the following to true if you are going to achieve this by manually removing/commenting out
@@ -110,7 +110,7 @@ $grid--pull:                  true!default;
 // *
 // * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
 // * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
-// */
+
 $grid--use-markup-fix:        false!default;
 
 
@@ -734,6 +734,4 @@ $grid--class-type:            unquote(".");
         }
     }
 
-
 }
-

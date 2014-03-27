@@ -33,7 +33,7 @@ select {
 }
 
 body {
-    @include rem("font-size", $type--size );
+    @include rem("font-size", $type--size);
     color: $color__type--text;
 }
 
