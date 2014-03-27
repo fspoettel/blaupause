@@ -1,6 +1,6 @@
 {
   "name": "statamic-boilerplate",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": {
     "type": "git",
     "url": "http://github.com/felics/boilerplate.git"
