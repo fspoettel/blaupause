@@ -26,7 +26,10 @@
     "jquery": "~2.1.0",
     "csswizardry-grids": "https://github.com/felics/csswizardry-grids.git#boilerplate",
     "modular-scale": "~2.0.4",
-    "normalize.css": "~3.0.0",
-    "respond": "~1.4.2"
+    "normalize.css": "~3.0.1",
+    "respond": "~1.4.2",
+    "apollo": "https://github.com/toddmotto/apollo.git#~1.3.0",
+    "stratos": "https://github.com/toddmotto/stratos.git#~1.4.0",
+    "Function.prototype.bind": "polyfill/Function.prototype.bind"
   }
 }

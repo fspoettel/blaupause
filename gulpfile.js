@@ -8,6 +8,7 @@
 // * ---------------------
 
 // Require gulp modules
+
 var gulp          = require("gulp"),
     concat        = require("gulp-concat"),
     cssmin        = require("gulp-minify-css"),
@@ -22,13 +23,14 @@ var gulp          = require("gulp"),
     server        = livereload();
 
 // Cache watch & source paths
+
 var jsSrcPath     = ["js/modules/polyfills/**/*.js", "js/modules/globals/**/*.js", "js/modules/plugins/**/*.js", "js/global.js"],
     jsWatchPath   = jsSrcPath,
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
     imgSrcPath    = "img/src/**",
     imgDestPath   = "img/opti",
-    lrPath        = ["css/build/prefixed/global.css","**/**/*.html","js/build/global.min.js"];
+    lrPath        = ["css/build/prefixed/global.css", "**/**/*.html", "js/build/global.min.js"];
 
 
 // *    Gulp tasks
@@ -62,7 +64,7 @@ gulp.task("jshint", function(){
 });
 
 
-// CSS
+// scss
 // * 1. handle errors
 // * 2. sass
 // * --> write out
@@ -85,7 +87,7 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("css/build/prefixed"));
 });
 
-// * Images
+// * img
 // * 1. Minify
 // * --> write out
 // * ---------------------
@@ -96,7 +98,7 @@ gulp.task("imgTask", function () {
     .pipe(gulp.dest(imgDestPath));
 });
 
-// * Watch
+// * watch
 // * 1. Watch SCSS changes
 // * 2. Watch JS changrs
 // * 3. Start livereload server
