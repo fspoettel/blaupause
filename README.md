@@ -85,7 +85,7 @@ Contains basic configuration variables:
 
 ### css
 
-This project uses SCSS and Gulp for building. The "default" build-process spawns three files in two directories: An unprefixed, unminified CSS-file, a prefixed, unminified CSS-file and a prefixed, minified CSS-file. This means you have never to worry about vendor prefixes again and debugging is a breeze. You fire it up like this:
+This project uses SCSS and Gulp for building. The "default" build-process spawns two files in `css/dist:` A prefixed, unminified CSS-file and a prefixed, minified CSS-file. The prefixing is handled by Autoprefixer and can be adjusted in `gulpfile.js`. You fire it up like this:
 
 ```bash
 cd your-project
@@ -93,6 +93,9 @@ gulp
 ```
 
 If you want to update the `test`-folder, use the `$test`flag in `build.scss` and update the test-folder with running `gulp test`.
+
+If you need to debug, you can run `gulp debug`. This will spawn a `debug` directory in your css folder that contains unprefixed, prefixed unminified and prefixed minified files.
+
 
 #### css/scss
 
@@ -213,12 +216,14 @@ Variable structure (excluding recipes):
 
 ### js
 
-By default, the js-build process takes all scripts inside *modules* and the global.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently:
+By default, the js-build process takes all scripts inside *globals/polyfills*, *globals*, *modules* and the `main.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently:
 
  - jQuery (1.11.0 / 2.1.0)
  - Modernizr (2.7.1 dev build)
  - Respond.js (1.4.2)
  - HTML5-shiv(3.7.0).
+
+If you have modules that depend on each other, just declare them in the `gulpfile.js` before the `**/.js`-calls.
 
 ## Naming conventions & authoring principles
 
@@ -237,5 +242,4 @@ The whole project is centered around an **BEM** and **OOP** approach. The `.scss
 
  The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple `$type--sizing-unit` from `$base--sizing--unit`, which are by default coupled. This gives you the freedom to scope variable contexts.
 
- By providing a js-build-process, it is easy to modularize JS. All .js files in `modules` will be combined with global.js and minfied. One can for example set up modules in `js/modules`and fire them from a centralized `document.ready` or `window.load` in global.js.
-
+The js takes a modular approach too.

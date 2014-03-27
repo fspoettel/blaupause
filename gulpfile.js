@@ -7,7 +7,7 @@
 // *   Core
 // * ---------------------
 
-// Require gulp modules
+// * Require gulp modules
 
 var gulp          = require("gulp"),
     concat        = require("gulp-concat"),
@@ -22,15 +22,30 @@ var gulp          = require("gulp"),
     livereload    = require("gulp-livereload"),
     server        = livereload();
 
-// Cache watch & source paths
+// * Cache watch & source paths
 
-var jsSrcPath     = ["js/modules/polyfills/**/*.js", "js/modules/globals/**/*.js", "js/modules/plugins/**/*.js", "js/global.js"],
-    jsWatchPath   = jsSrcPath,
+// * .js
+var jsSrcPath     = [
+    // * Polyfills first
+    "js/app/globals/polyfills/**/*.js",
+    // * Declare source-order for modules depending upon each other - this spares us requirejs
+    "js/app/globals/eventie.js",
+    "js/app/globals/doc-ready.js",
+    // * Source-order indpt. rest of globals
+    "js/app/globals/**/*.js",
+    // * Modules
+    "js/app/modules/**/*.js",
+    "js/app/main.js"
+  ],
+    jsWatchPath   = "js/app/**",
+// * .scss
     sassSrcPath   = "css/build.scss",
     sassWatchPath = "css/**/*.scss",
+// * img
     imgSrcPath    = "img/src/**",
-    imgDestPath   = "img/opti",
-    lrPath        = ["css/build/prefixed/global.css", "**/**/*.html", "js/build/global.min.js"];
+    imgDestPath   = "img/dist",
+// * livereload watch
+    lrPath        = ["css/dist/global.css", "**/**/*.html", "js/dist/global.js"];
 
 
 // *    Gulp tasks
@@ -47,13 +62,13 @@ var jsSrcPath     = ["js/modules/polyfills/**/*.js", "js/modules/globals/**/*.js
 gulp.task("scripts", function(){
   gulp.src(jsSrcPath)
     .pipe(concat("global.js"))
-    .pipe(gulp.dest("js/build"))
+    .pipe(gulp.dest("js/dist"))
     .pipe(uglify())
     .pipe(rename("global.min.js"))
-    .pipe(gulp.dest("js/build"));
+    .pipe(gulp.dest("js/dist"));
 });
 
-// jshint
+// * jshint
 // * 1. jshint with default params
 // * ---------------------
 
@@ -64,10 +79,9 @@ gulp.task("jshint", function(){
 });
 
 
-// scss
+// * scss
 // * 1. handle errors
 // * 2. sass
-// * --> write out
 // * 3. prefix
 // * --> write out
 // * 4. minify
@@ -79,13 +93,44 @@ gulp.task("sass", function () {
     .pipe(plumber())
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
-    .pipe(gulp.dest("css/build/unprefixed"))
     .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
-    .pipe(gulp.dest("css/build/prefixed"))
+    .pipe(gulp.dest("css/dist"))
     .pipe(cssmin())
     .pipe(rename("global.min.css"))
-    .pipe(gulp.dest("css/build/prefixed"));
+    .pipe(gulp.dest("css/dist"));
 });
+
+// * debug scss
+// * A debug build that will spawn unprefixed, prefixed and prefixed & minified files.
+// * 1. handle errors
+// * 2. sass
+// * --> write out
+// * 3. prefix
+// * --> write out
+// * 4. minify
+// * --> write out
+// * ---------------------
+
+gulp.task("debug-sass", function () {
+  gulp.src(sassSrcPath)
+    .pipe(plumber())
+    .pipe(sass({noCache:true}))
+    .pipe(rename("global.css"))
+    .pipe(gulp.dest("css/dist/debug/unprefixed"))
+    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
+    .pipe(gulp.dest("css/dist/debug/prefixed"))
+    .pipe(cssmin())
+    .pipe(rename("global.min.css"))
+    .pipe(gulp.dest("css/dist/debug/prefixed"));
+});
+
+// * test scss
+// * Spawns a css in test/css
+// * 1. handle errors
+// * 2. sass
+// * 3. prefix
+// * --> write out
+// * ---------------------
 
 gulp.task("test-sass", function () {
   gulp.src(sassSrcPath)
@@ -125,13 +170,28 @@ gulp.task('watchTask', function () {
 // * Tasks
 // * ---------------------
 
+// * Default task
+
 gulp.task("default", ["scripts", "sass"]);
 
-gulp.task("test", ["scripts", "test-sass"]);
+// * Debug task
 
-gulp.task("watch", ["default", "watchTask"]);
+gulp.task("debug", ["debug-sass", "jshint"]);
+
+// * Hint task
 
 gulp.task("hint", ["scripts", "jshint"]);
 
+// * Image task
+
 gulp.task("images",["imgTask"]);
+
+// * Rebuild tests
+
+gulp.task("test", ["scripts", "test-sass"]);
+
+// * Watch
+
+gulp.task("watch", ["default", "watchTask"]);
+
 
