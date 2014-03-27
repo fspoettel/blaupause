@@ -5,7 +5,7 @@ Boilerplate
 
 ## About
 
-This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-boilerplate, a Gulp build-process and an optional [Statamic](www.statamic.com) twist. It aims to give you a flexible, UI-less core to get web-projects running quickly. The grid used is based on my [fork](https://github.com/felics/csswizardry-grids/tree/boilerplate) of [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids) (which introduces a flex-box enhancement for browsers that support it). The SCSS-recipes are best practices found around the internet, most notably in [inuit.css](https://github.com/csswizardry/inuit.css), coded and simplified in the style of the boilerplate. I added flex-box options for items where they make sense and either simplify or enhance the output.
+This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-boilerplate, a Gulp build-process and an optional [Statamic](www.statamic.com) twist and some vanilla JS-helpers. It aims to provide a flexible, UI-less core to get web-projects running quickly. The grid used is based on my [fork](https://github.com/felics/csswizardry-grids/tree/boilerplate) of [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids) (which introduces a flex-box enhancement for browsers that support it). The SCSS-recipes are best practices found around the internet, most notably in [inuit.css](https://github.com/csswizardry/inuit.css), coded and simplified in the style of the boilerplate. I added flex-box options for items where they make sense and either simplify or enhance the output. These are triggered with Modernizr at the moment.
 
 ## Dependencies:
 
@@ -19,6 +19,7 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
  - [respond.js](https://github.com/scottjehl/Respond) (1.4.2)
  - [html5shiv](https://github.com/aFarkas/html5shiv) (3.7.0)
  - [Funtion.prototype.bind](https://github.com/polyfill/Function.prototype.bind)
+ - [Eventie](https://github.com/desandro/eventie) (1.0.5)
 
 **Build process:**
  
@@ -28,7 +29,6 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
 
  - [Apollo](https://github.com/toddmotto/apollo.git#~1.3.0) (1.3.0)
  - [Stratos](https://github.com/toddmotto/stratos.git#~1.4.0) (1.4.0)
- - [Eventie](https://github.com/desandro/eventie) (1.0.5)
  - [Doc-Ready](https://github.com/desandro/doc-ready) (1.0.2)
  
 ## Credit:
@@ -50,7 +50,7 @@ bower install
 
 When using with Statamic:
 
-Copy everything into your theme-folder. Copy all folders out of the `_statamic` folder into the theme-base.
+Copy everything into your theme-folder. Copy all folders out of the `_statamic` folder into the theme-base. Rename `sample.htaccess` to `.htaccess` and put it in the Statamic root folder.
 
 ## File Structure
 
@@ -76,12 +76,12 @@ Contains basic configuration variables:
 
  - `_site_author`
  - `_site_language`
- - `_site_description:`
- - `_theme_name:`
- - `_show_comments: (boolean)`
- - `_disqus_account:`
- - `_typekit_id:`
- - `no_results_text:`
+ - `_site_description`
+ - `_theme_name`
+ - `_show_comments (boolean)`
+ - `_disqus_account`
+ - `_typekit_id`
+ - `no_results_text`
 
 ### css
 
@@ -92,9 +92,11 @@ cd your-project
 gulp
 ```
 
+If you want to update the `test`-folder, use the `$test`flag in `build.scss` and update the test-folder with running `gulp test`.
+
 #### css/scss
 
-The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from inuit.css's great implementations).
+The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from *inuit.css'* great implementations).
 
 The *globals*-folder is grouped in several sub-folders:
 
@@ -118,7 +120,7 @@ The *globals*-folder is grouped in several sub-folders:
 
    Stores core UI abstractions such as tables or forms.
 
-In the base-directory, there is a reset(based on normalize.css), a styles.scss for global styles that don't fit any of the folders above and a [shame.scss](http://csswizardry.com/2013/04/shame-css/). For detailed documentation regarding the .scss-modules read the inline documentation.
+In the base-directory, there is a reset(based on `normalize.css`), a styles.scss for global styles that don't fit any of the folders above and a [shame.scss](http://csswizardry.com/2013/04/shame-css/). For detailed documentation regarding the .scss-modules read the inline documentation.
 
 #### scss variable structure
 
