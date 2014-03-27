@@ -89,7 +89,7 @@ $color__nav--text:       $color--background !default;
 // * Flexbox enhancements
 // * ---------------------
 
-.flex .nav {
+.flexbox .nav {
     &--bar {
         display: flex;
         > li {

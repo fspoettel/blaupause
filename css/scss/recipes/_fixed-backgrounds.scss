@@ -55,7 +55,7 @@ $fixed--height:        45 !default;
 // * Flex-box enhancements
 // * ---------------------
 
-.flex .fixed {
+.flexbox .fixed {
     &__inner {
         @include center-child(".fixed__content", "flex");
     }
