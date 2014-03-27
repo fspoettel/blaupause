@@ -9,12 +9,28 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
 
 ## Dependencies:
 
- - [normalize.css](https://github.com/necolas/normalize.css) (3.0.0)
+**(S)CSS**:
+
+ - [normalize.css](https://github.com/necolas/normalize.css) (3.0.1)
+ - [csswizardry-grids (fork)](https://github.com/felics/csswizardry-grids) (#boilerplate-branch)
+
+ **Polyfills**:
+
  - [respond.js](https://github.com/scottjehl/Respond) (1.4.2)
  - [html5shiv](https://github.com/aFarkas/html5shiv) (3.7.0)
- - [csswizardry-grids (fork)](https://github.com/felics/csswizardry-grids) (#boilerplate-branch)
- - [gulp & plugin packages](https://github.com/gulpjs/gulp) (3.5.2)
+ - [Funtion.prototype.bind](https://github.com/polyfill/Function.prototype.bind)
 
+**Build process:**
+ 
+ - [gulp & plugin packages](https://github.com/gulpjs/gulp) (3.5.6)
+ 
+**JS(optional):**
+
+ - [Apollo](https://github.com/toddmotto/apollo.git#~1.3.0) (1.3.0)
+ - [Stratos](https://github.com/toddmotto/stratos.git#~1.4.0) (1.4.0)
+ - [Eventie](https://github.com/desandro/eventie) (1.0.5)
+ - [Doc-Ready](https://github.com/desandro/doc-ready) (1.0.2)
+ 
 ## Credit:
 
  - [inuit.css](https://github.com/csswizardry/inuit.css)
@@ -40,7 +56,7 @@ Copy everything into your theme-folder. Copy all folders out of the `_statamic` 
 
 ### _statamic
 
-Contains really basic statamic-theme files. *(1.7.1 compatible)*
+Contains really basic statamic-theme files. *(1.7.4 compatible)*
 
 #### /layout
 
