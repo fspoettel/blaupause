@@ -1,16 +1,18 @@
 
 // *    Tables
 // * ---------------------
-// * Basic styles for <table>. There are two modifiers avaiable:
+// * Basic styles for <table>. There are three modifiers avaiable:
 // * table--bordered
 // * table--striped
+// * table--data
+// @exports table(value);
 // * ---------------------
 
 $table: (
     background: palette(background,light),
-    odd: palette(background,dark),
-    head:  palette(background,light),
-    type: palette(type)
+    odd:        palette(background,dark),
+    head:       palette(background,light),
+    type:       palette(type)
 );
 
 @function table($val) {
@@ -42,35 +44,36 @@ thead {
     color: table(type);
 }
 
-// * Bordered tables
+.table {
 
-.table--bordered {
-    th,
-    td {
-        border: brand(border-width) solid palette(border);
-        &:empty {
-            border: none;
+    // * Bordered tables
+    &--bordered {
+        th,
+        td {
+            border: brand(border-width) solid palette(border);
+            &:empty {
+                border: none;
+            }
+        }
+        thead tr:last-child th {
+            border-bottom-width: brand(border-width);
+        }
+        tbody tr th:last-of-type {
+            border-right-width: brand(border-width);
         }
     }
-    thead tr:last-child th {
-        border-bottom-width: brand(border-width);
+
+    // * Striped Tables
+    &--striped {
+        tbody tr:nth-of-type(odd){
+            background-color: table(odd);
+        }
     }
-    tbody tr th:last-of-type {
-        border-right-width: brand(border-width);
+
+    // * Data Tables
+    &--data {
+        font:12px/1.5 sans-serif !important;
     }
+
 }
 
-// * Striped Tables
-
-.table--striped {
-    tbody tr:nth-of-type(odd){
-        background-color: table(odd);
-    }
-}
-
-// * Data table
-
-.table--data,
-#{$base--content-namespace} .table--data {
-    font:12px/1.5 sans-serif;
-}

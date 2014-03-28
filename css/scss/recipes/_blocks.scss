@@ -6,14 +6,12 @@
 // @ usage:
 // * <div class="block  block--small">
 // * </div>
+// @exports block(value);
 // * ---------------------
-
-$color__blocks--background: palette(primary);
-$color__blocks--text:       palette(background);
 
 $blocks: (
     background: palette(primary),
-    color: palette(background)
+    color:      palette(background)
 );
 
 @function blocks($val) {

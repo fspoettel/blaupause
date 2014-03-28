@@ -1,14 +1,15 @@
 
 // *    Brand
 // * ---------------------
-// * Variables connected to the project's branding.
+// * A map containing brand-styles.
+// @exports brand(value);
 // * ---------------------
 
 $brand: (
-    border-radius: (sizing(base) / 4 +em),
-    border-width: 1px,
+    border-radius:      (sizing(base) / 4 +em),
+    border-width:        1px,
     transition-duration: 0.3s,
-    transition-style: ease(cubic)
+    transition-style:    ease(cubic)
 );
 
 @function brand($val) {

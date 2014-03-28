@@ -2,9 +2,9 @@
 // *    Headings
 // * ---------------------
 // * Contents:
-// *   1. Variables & size-declarations
-// *   2. General heading styles
-// *   3. Font-size declarations
+// *   1. General heading styles
+// *   2. Font-size declarations
+// *   3. Content Headings
 // * ---------------------
 
 
@@ -52,11 +52,11 @@ h6 {
 // * Hook for headings inside you content-element.
 // * ---------------------
 
-#{$base--content-namespace} h1,
-#{$base--content-namespace} h2,
-#{$base--content-namespace} h3,
-#{$base--content-namespace} h4,
-#{$base--content-namespace} h5,
-#{$base--content-namespace} h6, {
+#{type(base,content-namespace)} h1,
+#{type(base,content-namespace)} h2,
+#{type(base,content-namespace)} h3,
+#{type(base,content-namespace)} h4,
+#{type(base,content-namespace)} h5,
+#{type(base,content-namespace)} h6, {
     @extend .vR--heading;
 }

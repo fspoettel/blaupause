@@ -4,14 +4,15 @@
 // * Animations & keyframe-definitions. For a set of great animations and transitions see:
 // *   https://github.com/daneden/animate.css
 // *   https://github.com/IanLunn/Hover
+// @exports animation(value);
 // * ---------------------
 
 // * Defaults
 
 $animation: (
-    fill-mode: both,
-    duration: 1s,
-    start-delay: 0s,
+    fill-mode:    both,
+    duration:     1s,
+    start-delay:  0s,
     delay-offset: 0.1s
 );
 

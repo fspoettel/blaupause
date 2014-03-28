@@ -7,14 +7,14 @@
 // * Remove vertical spacing from nested lists
 
 li,
-#{$base--content-namespace} li{
+#{type(base,content-namespace)} li{
     > ul,
     > ol {
         margin-bottom:0;
     }
 }
 
-#{$base--content-namespace} li {
+#{type(base,content-namespace)} li {
     >ul,
     >ol {
         margin-left: sizing(type)+em;

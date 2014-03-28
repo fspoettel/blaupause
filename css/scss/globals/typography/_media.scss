@@ -49,7 +49,7 @@ figure {
     }
 }
 
-#{$base--content-namespace} figure {
+#{type(base,content-namespace)} figure {
     > img {
         margin-bottom: 0;
     }

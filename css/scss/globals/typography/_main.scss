@@ -1,7 +1,7 @@
 
 // *    Typography Base
 // * ---------------------
-// * Basic type-setting
+// * Basic type-setting.
 // * ---------------------
 
 // * Core
@@ -60,19 +60,19 @@ td {
 
 // * Content typography
 
-#{$base--content-namespace} {
+#{type(base,content-namespace)} {
     font-family: type(font,primary);
 }
 
-#{$base--content-namespace} blockquote,
-#{$base--content-namespace} dl,
-#{$base--content-namespace} figure,
-#{$base--content-namespace} hr,
-#{$base--content-namespace} ol,
-#{$base--content-namespace} p,
-#{$base--content-namespace} pre,
-#{$base--content-namespace} ul,
-#{$base--content-namespace} table {
+#{type(base,content-namespace)} blockquote,
+#{type(base,content-namespace)} dl,
+#{type(base,content-namespace)} figure,
+#{type(base,content-namespace)} hr,
+#{type(base,content-namespace)} ol,
+#{type(base,content-namespace)} p,
+#{type(base,content-namespace)} pre,
+#{type(base,content-namespace)} ul,
+#{type(base,content-namespace)} table {
     @extend .vR;
 }
 

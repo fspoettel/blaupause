@@ -4,13 +4,11 @@
 // * Quotes and blockquotes.
 // * ---------------------
 
-// * Blockquotes
-
 blockquote {
     padding-left: (sizing(type) / 2 +em);
     border-left: (sizing(type) / 2 +em) solid palette(primary);
 }
 
-#{$base--content-namespace} blockquote p {
+#{type(base,content-namespace)} blockquote p {
     margin-bottom: 0;
 }

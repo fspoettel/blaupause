@@ -4,11 +4,12 @@
 // * A navigation-pattern for use with lists.
 // * Inspired by inuit.css (by Harry Roberts)
 // * [Has a flex-box variant]
+// @exports nav(value)
 // * ---------------------
 
 $nav: (
     background: palette(primary),
-    color: palette(background)
+    color:      palette(background)
 );
 
 @function nav($val) {

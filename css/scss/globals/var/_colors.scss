@@ -2,13 +2,14 @@
 // *    Colors
 // * ---------------------
 // * Project colors.
+// @exports color(name,hue);
 // * ---------------------
 
 $color: (
     background: (
-        base: #fefefe,
+        base:  #fefefe,
         light: #fff,
-        dark: #eee
+        dark:  #eee
     ),
     type: (
       base: #444,
@@ -16,39 +17,39 @@ $color: (
       dark: #222
     ),
     links: (
-        base: #D85E2E,
+        base:  #D85E2E,
         light: tint(#D85E2E,10%),
-        dark: shade(#D85E2E, 10%)
+        dark:  shade(#D85E2E, 10%)
     ),
     primary: (
-        base: #D85E2E,
+        base:  #D85E2E,
         light: tint(#D85E2E, 10%),
-        dark: shade(#D85E2E,10%)
+        dark:  shade(#D85E2E,10%)
     ),
     secondary: (
-        base: #c85e2e,
+        base:  #c85e2e,
         light: tint(#c25e2e, 10%),
-        dark: shade(#c25e2e, 10%)
+        dark:  shade(#c25e2e, 10%)
     ),
     success: (
-        base: green,
+        base:  green,
         light: tint(green, 10%),
-        dark: shade(green,10%)
+        dark:  shade(green,10%)
     ),
     error: (
-        base: #AD3E3B,
+        base:  #AD3E3B,
         light: tint(#AD3E3B, 10%),
-        dark: shade(#AD3E3B,10%)
+        dark:  shade(#AD3E3B,10%)
     ),
     disabled: (
-        base: #696762,
+        base:  #696762,
         light: tint(#696762, 10%),
-        dark: shade(#696762,10%)
+        dark:  shade(#696762,10%)
     ),
     border: (
-        base: #ccc,
+        base:  #ccc,
         light: #ddd,
-        dark: #bbb
+        dark:  #bbb
     )
 );
 

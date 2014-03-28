@@ -797,13 +797,10 @@ thead {
   border-bottom-width: 1px; }
 .table--bordered tbody tr th:last-of-type {
   border-right-width: 1px; }
-
 .table--striped tbody tr:nth-of-type(odd) {
   background-color: #eeeeee; }
-
-.table--data,
-.typography .table--data {
-  font: 12px/1.5 sans-serif; }
+.table--data {
+  font: 12px/1.5 sans-serif !important; }
 
 body {
   background: #fefefe; }

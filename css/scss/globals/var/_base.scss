@@ -1,17 +1,16 @@
 
 // *    Base Variables
 // * ---------------------
-// * $base-sizing-*: Used for calculating base font-size, margins and paddings.
-// * $ratio: By default, used as typographic ratio. Used to calculate the base-rhythm.
-// * $base-rhythm-*: Used for rhythm for elements outside typography, by default.
+// * A base-map that used for calculations.
+// @exports base(value)
 // * ---------------------
 
 // * Calculation basics
 
 $base: (
-    size: 16,
+    size:            16,
     browser-default: 16,
-    ratio: 1.5
+    ratio:           1.5
 );
 
 @function base($val) {
