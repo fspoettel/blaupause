@@ -40,6 +40,7 @@ $test: "false";
 // * The grid is based on my fork of csswizardry-grids
 
 @import "scss/globals/layout/grids";
+@import "scss/globals/mixins/modular-scale";
 
 // * Typography -> folder: scss/globals/typography
 

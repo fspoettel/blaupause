@@ -447,46 +447,37 @@ h6 {
   color: #222222; }
 
 .ultra {
-  font-size: 84px;
-  font-size: 5.25rem; }
+  font-size: 6.32813em; }
 
 .giga {
-  font-size: 72px;
-  font-size: 4.5rem; }
+  font-size: 5.0625em; }
 
 .mega {
-  font-size: 60px;
-  font-size: 3.75rem; }
+  font-size: 4.21875em; }
 
 h1,
 .alpha {
-  font-size: 48px;
-  font-size: 3rem; }
+  font-size: 3.375em; }
 
 h2,
 .beta {
-  font-size: 36px;
-  font-size: 2.25rem; }
+  font-size: 2.8125em; }
 
 h3,
 .gamma {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 2.25em; }
 
 h4,
 .delta {
-  font-size: 21px;
-  font-size: 1.3125rem; }
+  font-size: 1.875em; }
 
 h5,
 .epsilon {
-  font-size: 18px;
-  font-size: 1.125rem; }
+  font-size: 1.5em; }
 
 h6,
 .zeta {
-  font-size: 16px;
-  font-size: 1rem; }
+  font-size: 1.25em; }
 
 .vR--heading, .typography h1,
 .typography h2,

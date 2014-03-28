@@ -24,24 +24,35 @@ $type--sizing-number:     $type--size;
 $type--rhythm-unit:       $type--ratio;
 $type--rhythm-number:     $type--size * $type--ratio;
 
+// * Responsive typography
+
+$palm--font-size: 87.5%;
+$lap--font-size:  87.5%;
+$desk--font-size: 100%;
+$high--font-size: 112.5%;
+
 // * Typographc Scale
-// * $type__scale--Base will be calculating vertical rhythm (body font-size) & margins between typographic content-elements (w/ line-height)
-// * $type__scale--Base is equal to $base-size by default. $base--size is used to calcualte the $base--sizing-unit, $type--sizing-unit & grid__gutters
-// * So by default, the spacing is coupled with sizing, but you can (although not recommended) decouple them.
-// * The scale works manually. Scale values get divided by $base__browserDefault to get real pixel `rem`values. Changing $type__scale--Base doesn't affect the scale
-// * It is of course possible, to make the scale dynamic to $type__scale--Base & type__ratio
-// * Changing the <html>-font-size (set in %) scales the whole typography, incl. margins.
+// *
+// * 1. <html> is assigned percentage based on breakpoint
+// * 2. $type--size set's body font-size in rem
+// * 3. if $type__use-modular-scale: "true"; -> use modular scale specified in mixins/modular-scale & type/heading
+// * 4. Otherwise, specify a scale below (will be real pixel values, so if you change the base font-size you have to re-adjust)
+// * 5.
 // * ---------------------
 
-$type__scale--U:          84 !default; // kilo
-$type__scale--G:          72 !default; // giga
-$type__scale--M:          60 !default; // mega
-$type__scale--1:          48 !default; // h1, alpha
-$type__scale--2:          36 !default; // h2, beta
-$type__scale--3:          24 !default; // h3, gamma
-$type__scale--4:          21 !default; // h4, delta
-$type__scale--5:          18 !default; // h5, epsilon
-$type__scale--6:          16 !default; // h6, zeta
+$type__use-modular-scale: "true";
+
+@if($type__use-modular-scale == "false") {
+    $type__scale--ultra:       84 !global; // ultra
+    $type__scale--giga:        72 !global; // giga
+    $type__scale--mega:        60 !global; // mega
+    $type__scale--h1:          48 !global; // h1, alpha
+    $type__scale--h2:          36 !global; // h2, beta
+    $type__scale--h3:          24 !global; // h3, gamma
+    $type__scale--h4:          21 !global; // h4, delta
+    $type__scale--h5:          18 !global; // h5, epsilon
+    $type__scale--h6:          16 !global; // h6, zeta
+}
 
 // * Font-stacks
 

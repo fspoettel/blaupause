@@ -11,23 +11,14 @@
 // * 1. Sizes inherited from `var/_type.scss`
 // * ---------------------
 
-$type__scale--heading6:      $type__scale--6;
-$type__scale--heading5:      $type__scale--5;
-$type__scale--heading4:      $type__scale--4;
-$type__scale--heading3:      $type__scale--3;
-$type__scale--heading2:      $type__scale--2;
-$type__scale--heading1:      $type__scale--1;
-$type__scale--mega:          $type__scale--M;
-$type__scale--giga:          $type__scale--G;
-$type__scale--ultra:         $type__scale--U;
-
 $type__font--heading:        $type__font--secondary;
 $type__heading--ratio:       1.25 !default;
 $type__heading--font-weight: 700 !default;
 $type__heading--font-style:  italic !default;
 
+
 // * Genereal heading styles
-// *     1. Hinders performance on old Android / iOS if  > 1000 words to render
+// *  1. Hinders performance on old Android / iOS if  > 1000 words to render
 // * ---------------------
 
 h1,
@@ -51,46 +42,74 @@ h6 {
 // * ---------------------
 
 .ultra {
-    @include rem("font-size", $type__scale--ultra);
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--ultra);
+    } @else {
+        font-size: ms(9);
+    }
 }
 
 .giga {
-    @include rem("font-size", $type__scale--giga);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--giga);
+    } @else {
+        font-size: ms(8);
+    }}
 
 .mega {
-    @include rem("font-size", $type__scale--mega);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--mega);
+    } @else {
+        font-size: ms(7);
+    }}
 
 h1,
 .alpha {
-    @include rem("font-size", $type__scale--heading1);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h1);
+    } @else {
+        font-size: ms(6);
+    }}
 
 h2,
 .beta {
-    @include rem("font-size", $type__scale--heading2);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h2);
+    } @else {
+        font-size: ms(5);
+    }}
 
 h3,
 .gamma {
-    @include rem("font-size", $type__scale--heading3);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h3);
+    } @else {
+        font-size: ms(4);
+    }}
 
 h4,
 .delta {
-    @include rem("font-size", $type__scale--heading4);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h4);
+    } @else {
+        font-size: ms(3);
+    }}
 
 h5,
 .epsilon {
-    @include rem("font-size", $type__scale--heading5);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h5);
+    } @else {
+        font-size: ms(2);
+    }}
 
 h6,
 .zeta {
-    @include rem("font-size", $type__scale--heading6);
-}
+    @if($type__use-modular-scale == "false") {
+        @include rem("font-size", $type__scale--h6);
+    } @else {
+        font-size: ms(1);
+    }}
 
 .vR--heading {
     line-height: $type__heading--ratio;
