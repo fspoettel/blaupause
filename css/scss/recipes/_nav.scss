@@ -6,8 +6,14 @@
 // * [Has a flex-box variant]
 // * ---------------------
 
-$color__nav--background: $color--primary !default;
-$color__nav--text:       $color--background !default;
+$nav: (
+    background: palette(primary),
+    color: palette(background)
+);
+
+@function nav($val) {
+    @return map-get($nav, $val);
+}
 
 // * Core
 // * Stack items next to each other and space them apart. Make links fill the nav-items.
@@ -17,10 +23,10 @@ $color__nav--text:       $color--background !default;
     list-style: none;
     > li {
         display: inline-block;
-        margin-right: ($base--sizing-unit / 2 +em);
+        margin-right: (sizing(base) / 2 +em);
         > a {
             display: block;
-            padding: ($base--sizing-unit / 2 +em);
+            padding: (sizing(base) / 2 +em);
         }
         &:last-child {
             margin-right: 0;
@@ -43,7 +49,7 @@ $color__nav--text:       $color--background !default;
     &--stacked,
     &--blocked {
         > li {
-            margin-bottom: ($base--sizing-unit / 2 +em);
+            margin-bottom: (sizing(base) / 2 +em);
             margin-right: 0;
             > a {
                 display: inline-block;

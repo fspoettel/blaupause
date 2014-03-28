@@ -3,7 +3,7 @@
 // * ---------------------
 // * Simple pricing-table abstraction.
 // * Requires `_blocks.scss` && `_block-list.scss`. Can be used with splits
-// * 
+// *
 // @ usage:
 // * <article class="pricing">
 // * <header (class="pricing__header")>
@@ -29,10 +29,10 @@
         @extend .block-list;
         border-top: 0;
         li {
-            border-left: $brand--border-width solid $color__brand--border;
-            border-right: $brand--border-width solid $color__brand--border;
-            padding-left: $base--sizing-unit +em;
-            padding-right: $base--sizing-unit +em;
+            border-left: brand(border-width) solid palette(border);
+            border-right: brand(border-width) solid palette(border);
+            padding-left: sizing(base)+em;
+            padding-right: sizing(base)+em;
         }
     }
 }

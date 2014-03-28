@@ -10,24 +10,25 @@ html,
 textarea,
 input,
 select {
-    line-height: $type--ratio;
-    font-family: $type__font--primary;
-    font-size: $palm--font-size;
-    font-weight: $type--font-weight;
+    line-height: rhythm(type);
+    font-family: type(font,primary);
+    font-weight: type(base, font-weight);
+    font-size: type(scaling,palm);
+
     @include bp(lap) {
-        font-size: $lap--font-size;
+        font-size: type(scaling,lap);
     }
     @include bp(desk) {
-        font-size: $desk--font-size;
+        font-size: type(scaling,desk);
     }
     @include bp(high) {
-        font-size: $high--font-size;
+        font-size: type(scaling,high);
     }
 }
 
 body {
-    @include rem("font-size", $type--size);
-    color: $color__type--text;
+    @include rem("font-size", sizing(type,number));
+    color: palette(type);
 }
 
 // * Typographic reset
@@ -54,13 +55,13 @@ td {
 
 .vR{
     margin-top: 0;
-    @include rem("margin-bottom", $type--rhythm-number);
+    @include rem("margin-bottom", rhythm(type,number));
 }
 
 // * Content typography
 
 #{$base--content-namespace} {
-    font-family: $type__font--primary;
+    font-family: type(font,primary);
 }
 
 #{$base--content-namespace} blockquote,

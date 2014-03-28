@@ -5,7 +5,7 @@
 // * @usage @include columns($number,($gap));
 // * ---------------------
 
-$column--gap: $base--sizing-unit + em !default;
+$column--gap: 1em !default;
 
 @mixin columns($number, $gap:$column--gap) {
     column-count: $number;

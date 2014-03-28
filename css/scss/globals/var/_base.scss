@@ -8,16 +8,12 @@
 
 // * Calculation basics
 
-$base--size:            16 !default;
-$base--browser-default: 16 !default;
-$base--ratio:           1.5 !default;
+$base: (
+    size: 16,
+    browser-default: 16,
+    ratio: 1.5
+);
 
-// * Base sizing unit (in (r)em & px)
-
-$base--sizing-unit:    ($base--size / $base--browser-default);
-$base--sizing-number:   $base--size;
-
-// * Base rhythm unit (in (r)em & px)
-
-$base--rhythm-unit:     $base--ratio;
-$base--rhythm-number:  ($base--size * $base--ratio);
+@function base($val) {
+    @return map-get($base, $val);
+}

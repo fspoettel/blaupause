@@ -84,7 +84,7 @@ $grid--mobile-first:          true!default;
 //**
 // * Set the spacing between your grid items.
 // */
-$grid--gutter:                $base--rhythm-number!default;
+$grid--gutter:                rhythm(base,number) !default;
 
 
 //**
@@ -124,11 +124,11 @@ $grid--use-markup-fix:        false!default;
 // * that the breakpoint fires at.
 // */
 $grid--breakpoints: (
-    "palm"   $bp--palm,
-    "lap"    $bp--lap,
-    "lap-up" $bp--lap-up,
-    "desk"   $bp--desk,
-    "high"   $bp--high
+    "palm"   bp(palm),
+    "lap"    bp(lap),
+    "lap-up" bp(lap-up),
+    "desk"   bp(desk),
+    "high"   bp(high)
 )!default;
 
 
@@ -228,7 +228,7 @@ $grid--class-type:            unquote(".");
     padding:0;                                   //* [3] */
     @include rem("margin-left", -$grid--gutter); //* [4] */
     @supports not (flex-wrap: wrap) {            //* [5] */
-            display: block; 
+            display: block;
     }
     @if $grid--use-markup-fix != true{
         letter-spacing:-0.31em;

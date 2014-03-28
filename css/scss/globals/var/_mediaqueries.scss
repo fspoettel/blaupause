@@ -9,3 +9,15 @@ $bp--lap:    "(min-width: 481px) and (max-width: 1023px)";
 $bp--lap-up: "(min-width: 481px)";
 $bp--desk:   "(min-width: 1024px)";
 $bp--high:   "(min-width: 1500px)";
+
+$bp: (
+    palm: "(max-width: 480px)",
+    lap: "(min-width: 481px) and (max-width: 1023px)",
+    lap-up: "(min-width: 481px)",
+    desk: "(min-width: 1024px)",
+    high: "(min-width: 1500px)"
+);
+
+@function bp($val) {
+    @return map-get($bp, $val);
+}

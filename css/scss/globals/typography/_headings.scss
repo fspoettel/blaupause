@@ -7,15 +7,6 @@
 // *   3. Font-size declarations
 // * ---------------------
 
-// * Variables & size declarations
-// * 1. Sizes inherited from `var/_type.scss`
-// * ---------------------
-
-$type__font--heading:        $type__font--secondary;
-$type__heading--ratio:       1.25 !default;
-$type__heading--font-weight: 700 !default;
-$type__heading--font-style:  italic !default;
-
 
 // * Genereal heading styles
 // *  1. Hinders performance on old Android / iOS if  > 1000 words to render
@@ -29,91 +20,32 @@ h5,
 h6 {
     margin: 0;
     line-height: 1;
-    font-family: $type__font--heading;
+    font-family: type(font,secondary);
     font-feature-settings: "kern", "liga";
-    font-weight: $type__heading--font-weight;
-    font-style: $type__heading--font-style;
+    font-weight: type(heading,font-weight);
+    font-style: type(heading,font-style);
     text-rendering: optimizeLegibility; // [1]
-    color: $color__type--heading;
+    color: palette(type,dark);
 }
 
 // * Font Size Declarations
 // * Class names can be used if hierarchy is different from size
 // * ---------------------
 
-.ultra {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--ultra);
-    } @else {
-        font-size: ms(9);
+@each $heading in $scale {
+    #{nth($heading,1)},
+    .#{nth($heading,1)}{
+        @if($type--use-modular-scale == "true"){
+            font-size: nth($heading,2);
+        } @else {
+            @include rem("font-size", nth($heading,2));
+        }
     }
 }
 
-.giga {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--giga);
-    } @else {
-        font-size: ms(8);
-    }}
-
-.mega {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--mega);
-    } @else {
-        font-size: ms(7);
-    }}
-
-h1,
-.alpha {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h1);
-    } @else {
-        font-size: ms(6);
-    }}
-
-h2,
-.beta {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h2);
-    } @else {
-        font-size: ms(5);
-    }}
-
-h3,
-.gamma {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h3);
-    } @else {
-        font-size: ms(4);
-    }}
-
-h4,
-.delta {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h4);
-    } @else {
-        font-size: ms(3);
-    }}
-
-h5,
-.epsilon {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h5);
-    } @else {
-        font-size: ms(2);
-    }}
-
-h6,
-.zeta {
-    @if($type__use-modular-scale == "false") {
-        @include rem("font-size", $type__scale--h6);
-    } @else {
-        font-size: ms(1);
-    }}
-
 .vR--heading {
-    line-height: $type__heading--ratio;
-    @include rem("margin-bottom", ($type--sizing-number / 4));
+    line-height: type(heading,ratio);
+    @include rem("margin-bottom", (sizing(type,number) / 4));
 }
 
 // * Content headings

@@ -22,15 +22,15 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
  - [Eventie](https://github.com/desandro/eventie) (1.0.5)
 
 **Build process:**
- 
+
  - [gulp & plugin packages](https://github.com/gulpjs/gulp) (3.5.6)
- 
+
 **JS(optional):**
 
  - [Apollo](https://github.com/toddmotto/apollo.git#~1.3.0) (1.3.0)
  - [Stratos](https://github.com/toddmotto/stratos.git#~1.4.0) (1.4.0)
  - [Doc-Ready](https://github.com/desandro/doc-ready) (1.0.2)
- 
+
 ## Credit:
 
  - [inuit.css](https://github.com/csswizardry/inuit.css)
@@ -125,95 +125,6 @@ The *globals*-folder is grouped in several sub-folders:
 
 In the base-directory, there is a reset(based on `normalize.css`), a styles.scss for global styles that don't fit any of the folders above and a [shame.scss](http://csswizardry.com/2013/04/shame-css/). For detailed documentation regarding the .scss-modules read the inline documentation.
 
-#### scss variable structure
-
-Variable structure (excluding recipes):
-
- - **Base**
-    - `--size`
-    - `--ratio`
-    - `--browser-default`
-    - `--sizing-unit`
-    - `--sizing-number`
-    - `--rhythm-unit`
-    - `--rhythm-number`
-    - `--content-namespace`
- - **Color**
-    - `--background`
-    - `--primary`
-    - `--secondary`
-    - `--success`
-    - `--error`
-    - **`__brand`**
-        - `--primary`
-        - `--border`
-    - **`__btn`**
-         - `--primary`
-         - `--secondary`
-         - `--tertiary`
-         - `--hover`
-         - `--success`
-         - `--error`
-         - `--disabled`
-    - **`__tables`**
-         - `--background`
-         - `--head`
-         - `--headtext`
-         - `--odd`
-    - **`__type`**
-         - `--text`
-         - `--heading`
-         - `--link`
-         - `--link-hover`
- - **Type**
-    - `--size`
-    - `--ratio`
-    - `--sizing-unit`
-    - `--sizing-number`
-    - `--rhythm-unit`
-    - `--rhythm-number`
-    - **`__scale`**
-         - `--1`
-         - `--2`
-         - `--3`
-         - `--4`
-         - `--5`
-         - `--6`
-         - `--mega`
-         - `--giga`
-         - `--ultra`
-    - **`__font`**
-         - `--sans`
-         - `--serif`
-         - `--primary`
-         - `--secondary`
-         - `--heading`
-    - **`__heading`**
-         - `--font-weight`
-         - `--font-style`
-         - `--ratio`
- - **Brand**
-    - `--border-radius`
-    - `--border-width`
-    - `--transition-style`
-    - `--transition-duration`
- - **Animation**
-    - `--duration`
-    - `--fill-mode`
-    - `--start-delay`
-    - `--delay-offset`
- - **Grid**
-    - `--responsive`
-    - `--gutter`
-    - `--mobile-first`
-    - `--use-silent-classes`
-    - `--push`
-    - `--pull`
-    - `--use-markup-fix`
-    - `--breakpoints`
-
-
-
 ### js
 
 By default, the js-build process takes all scripts inside *globals/polyfills*, *globals*, *modules* and the `main.js and builds them by concat'ing, hinting and minifying them. It ignores the lib-folder that stores external dependencies, currently:
@@ -227,7 +138,7 @@ If you have modules that depend on each other, just declare them in the `gulpfil
 
 ## Naming conventions & authoring principles
 
-The whole project is centered around an **BEM** and **OOP** approach. The `.scss` is divided into small files that each serve one purpose only. Variables are namespaced. A sample variable looks like this: `base--size` or `base--sizing-unit`. Variables can be nested to be scoped to certain project parts, e.g. `$color__btn--primary` (global namespace, scope, value; see variable list). Classes are constructed with a BEM approach:
+The whole project is centered around an **BEM** and **OOP** approach. The `.scss` is divided into small files that each serve one purpose only. Classes are constructed with a BEM approach:
 
 ```html
     <section class="house house--red">
@@ -238,8 +149,8 @@ The whole project is centered around an **BEM** and **OOP** approach. The `.scss
     </section>
 ```
 
-`--` is used for modifiers (SCSS vars: values), while `__` is reserved for sub-elements (SCSS vars: sub-groups).
+`--` is used for modifiers while `__` is reserved for sub-elements.
 
- The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple `$type--sizing-unit` from `$base--sizing--unit`, which are by default coupled. This gives you the freedom to scope variable contexts.
+ The CSS is indented by 4 spaces and nesting is kept to an absolute minimum. Variables and maps have sensible defaults and are decoupled as much as possible, so that it is for example easy to decouple `sizing(type)` from `sizing(base)`, which are by default coupled. This gives you the freedom to scope variable contexts.
 
 The js takes a modular approach too.

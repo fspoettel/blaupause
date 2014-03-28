@@ -1,0 +1,37 @@
+
+// *    Units
+// * ---------------------
+// * $base-sizing-*: Used for calculating base font-size, margins and paddings.
+// * $ratio: By default, used as typographic ratio. Used to calculate the base-rhythm.
+// * $base-rhythm-*: Used for rhythm for elements outside typography, by default.
+// * ---------------------
+
+$sizing: (
+    base:(
+        unit: (base(size) / base(browser-default)),
+        number: base(size),
+    ),
+    type: (
+        unit: (type(base,size) / base(browser-default)),
+        number: type(base,size)
+    )
+);
+
+@function sizing($sizes, $value:"unit") {
+    @return map-get(map-get($sizing, $sizes), $value);
+}
+
+$rhythm: (
+    base: (
+        unit: base(ratio),
+        number: base(ratio) * base(size),
+    ),
+    type: (
+        unit: type(base,ratio),
+        number: (type(base,size) * type(base,ratio))
+    )
+);
+
+@function rhythm($sizes, $value:"unit") {
+    @return map-get(map-get($rhythm, $sizes), $value);
+}

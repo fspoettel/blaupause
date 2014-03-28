@@ -4,23 +4,54 @@
 // * Project colors.
 // * ---------------------
 
-// * Core
-$color--background:       #fefefe !default;
+$color: (
+    background: (
+        base: #fefefe,
+        light: #fff,
+        dark: #eee
+    ),
+    type: (
+      base: #444,
+      light: #666,
+      dark: #222
+    ),
+    links: (
+        base: #D85E2E,
+        light: tint(#D85E2E,10%),
+        dark: shade(#D85E2E, 10%)
+    ),
+    primary: (
+        base: #D85E2E,
+        light: tint(#D85E2E, 10%),
+        dark: shade(#D85E2E,10%)
+    ),
+    secondary: (
+        base: #c85e2e,
+        light: tint(#c25e2e, 10%),
+        dark: shade(#c25e2e, 10%)
+    ),
+    success: (
+        base: green,
+        light: tint(green, 10%),
+        dark: shade(green,10%)
+    ),
+    error: (
+        base: #AD3E3B,
+        light: tint(#AD3E3B, 10%),
+        dark: shade(#AD3E3B,10%)
+    ),
+    disabled: (
+        base: #696762,
+        light: tint(#696762, 10%),
+        dark: shade(#696762,10%)
+    ),
+    border: (
+        base: #ccc,
+        light: #ddd,
+        dark: #bbb
+    )
+);
 
-// * Typography
-$color__type--text:       #444 !default;
-$color__type--heading:    #222 !default;
-
-// * Links
-$color__type--link:       #D85E2E !default;
-$color__type--link-hover: shade($color__type--link, 10%)!default;
-
-// * Palette
-$color--primary:          #D85E2E !default;
-$color--secondary:        #F0B913 !default;
-$color--disabled:         #696762 !default;
-
-// * States
-
-$color--success:          #27922E !default;
-$color--error:            #AD3E3B !default;
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($color, $palette), $tone);
+}

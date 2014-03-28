@@ -7,8 +7,8 @@
 // * Blockquotes
 
 blockquote {
-    padding-left: ($type--sizing-unit / 2 +em);
-    border-left: ($type--sizing-unit / 2 +em) solid $color__brand--primary;
+    padding-left: (sizing(type) / 2 +em);
+    border-left: (sizing(type) / 2 +em) solid palette(primary);
 }
 
 #{$base--content-namespace} blockquote p {

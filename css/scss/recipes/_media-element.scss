@@ -24,7 +24,7 @@
 
     > img {
         float: left;
-        margin-right: $base--rhythm-unit +em;
+        margin-right: rhythm(base)+em;
     }
     &__caption,
     > figcaption {
@@ -36,7 +36,7 @@
     &--rev {
         > img {
             float: right;
-            margin-left: $base--rhythm-unit +em;
+            margin-left: rhythm(base)+em;
             margin-right: 0;
         }
     }
@@ -68,7 +68,7 @@
     &--rev {
         > img {
             order: 1;
-            margin: 0 0 0 $base--rhythm-unit +em;
+            margin: 0 0 0 rhythm(base)+em;
         }
     }
 

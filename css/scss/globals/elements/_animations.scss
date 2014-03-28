@@ -8,16 +8,22 @@
 
 // * Defaults
 
-$animation--fill-mode:    both !default;
-$animation--duration:     1s !default;
-$animation--start-delay:  0s !default;    // Use with delay-mixin
-$animation--delay-offset: 0.1s !default;  // Use with delay-mixin
+$animation: (
+    fill-mode: both,
+    duration: 1s,
+    start-delay: 0s,
+    delay-offset: 0.1s
+);
+
+@function animation($val) {
+    @return map-get($animation, $val);
+}
 
 // * Core
 
 %animated {
-    animation-duration: $animation--duration;
-    animation-fill-mode: $animation--fill-mode;
+    animation-duration: animation(duration);
+    animation-fill-mode: animation(fill-mode);
 }
 
 // * Delays

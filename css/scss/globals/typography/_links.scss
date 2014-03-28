@@ -7,7 +7,7 @@
 a {
     line-height: inherit;
     text-decoration: none;
-    color: $color__type--link;
+    color: palette(links,light);
     img {
         border:none;
     }
@@ -16,6 +16,6 @@ a {
 a {
     a:active,
     &:hover {
-        color: $color__type--link-hover;
+        color: palette(links,dark);
     }
 }

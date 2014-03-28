@@ -9,10 +9,7 @@
 // * ---------------------
 
 %brand {
-
+    &--round {
+        border-radius: brand(border-radius);
+    }
 }
-
-%brand--round {
-    border-radius: $brand--border-radius;
-}
-

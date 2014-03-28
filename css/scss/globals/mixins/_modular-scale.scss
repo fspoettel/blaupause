@@ -1,7 +1,7 @@
 @import "modular-scale/ratios";
 
 $ms-base:  1em  1.25em !default;
-$ms-ratio: $type--ratio !default;
+$ms-ratio: $fifth !default;
 
 @import "modular-scale/tests";
 

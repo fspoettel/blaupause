@@ -4,11 +4,13 @@
 // * Variables connected to the project's branding.
 // * ---------------------
 
-$brand--border-radius:      ($base--sizing-unit / 4 +em) !default;
-$brand--border-width:        1px !default;
+$brand: (
+    border-radius: (sizing(base) / 4 +em),
+    border-width: 1px,
+    transition-duration: 0.3s,
+    transition-style: ease(cubic)
+);
 
-$brand--transition-duration: 0.3s !default;
-$brand--transition-style:    $ease-in-out-cubic !default;
-
-$color__brand--primary:      $color--primary !default;
-$color__brand--border:       #ccc !default;
+@function brand($val) {
+    @return map-get($brand, $val);
+}

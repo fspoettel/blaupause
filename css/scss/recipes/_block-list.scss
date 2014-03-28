@@ -16,19 +16,19 @@
     @extend #{$grid--class-type}grid;
     @extend #{$grid--class-type}grid--full;
     margin-bottom: 0;
-    border-top: $brand--border-width solid $color__brand--border;
+    border-top: brand(border-width) solid palette(border);
     li {
         @extend #{$grid--class-type}grid__item;
         @extend #{$grid--class-type}grid--full__item;
-        padding: $base--rhythm-unit +em inherit;
-        border-bottom: $brand--border-width solid $color__brand--border;
+        padding: rhythm(base)+em inherit;
+        border-bottom: brand(border-width) solid palette(border);
     }
     ul {
-        margin-top: ($base--rhythm-unit / 2 +em);
+        margin-top: (rhythm(base) / 2 +em);
     }
     &__link {
         display: block;
-        padding: $base--rhythm-unit +em 0;
-        margin: -$base--rhythm-unit +em 0;
+        padding: rhythm(base)+em 0;
+        margin: -(rhythm(base)+em) 0;
     }
 }

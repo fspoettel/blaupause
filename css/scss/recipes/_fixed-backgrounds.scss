@@ -15,13 +15,14 @@
 // * </section>
 // * ---------------------
 
-// * Variables
+$fixed: (
+    color: #fff,
+    height: 45
+);
 
-$color__fixed--content: #fff !default;
-
-// * Height of the fixed background element (in em)
-
-$fixed--height:        45 !default;
+@function fixed($val) {
+    @return map-get($fixed, $val);
+}
 
 // * Hero styles
 
@@ -41,13 +42,13 @@ $fixed--height:        45 !default;
         @include center-child(".fixed__content");
         width: 100%;
         margin: 0;
-        padding: ($fixed--height / 2 +em) 0;
+        padding: (fixed(height) / 2 +em) 0;
         background: rgba(0,0,0,.6);
     }
     &__content {
         width: 100%;
         margin: 0 !important;
-        color: $color__fixed--content;
+        color: fixed(color);
         z-index: 3;
     }
 }

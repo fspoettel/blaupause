@@ -10,14 +10,6 @@
 // * @usage <a class="btn  btn--full"></a>
 // * ---------------------
 
-$color__btn--primary:   $color--primary;
-$color__btn--secondary: $color--secondary;
-$color__btn--tertiary:  tint($color--secondary, 20% );
-$color__btn--hover:     shade($color__btn--primary, 10%);
-$color__btn--disabled:  $color--disabled;
-$color__btn--success:   $color--success;
-$color__btn--error:     $color--error;
-$color__btn--text:      #fff !default;
 
 // * Core
 // * 1. Use colors from `var/_colors.scss`
@@ -27,100 +19,86 @@ $color__btn--text:      #fff !default;
 
 .btn {
     display: inline-block;
+    padding: sizing(base)+em rhythm(base)+em;
     vertical-align: middle;
     line-height: normal;
     text-align: center;
-    background: $color__btn--primary;
-    color: $color__btn--text;
+    background: palette(primary);
+    color: palette(background,light);
     cursor: pointer;
     -webkit-user-drag: none;
     user-select: none;
     white-space: nowrap;
     zoom: 1;
-}
 
-// * Interactivity
+    // * Interactivity
 
-.btn {
     &:hover,
     &:focus,
     &:active {
         text-decoration: none;
-        background: $color__btn--hover;
-        color: $color__btn--text;
+        background: palette(primary,dark);
+        color: palette(background,light);
     }
-}
 
-// * Size
+    // * Size modifiers
 
-.btn,
-.btn--medium {
-    padding: ($base--sizing-unit / 2 +em) $base--rhythm-unit +em;
-}
-
-.btn--small {
-    padding: ($base--sizing-unit / 4 +em) ($base--rhythm-unit / 2 +em);
-}
-
-.btn--large {
-    padding: $base--sizing-unit +em ($base--rhythm-unit * 2 +em);
-}
-
-.btn--full {
-    display: block;
-}
-
-// * Visual
-
-.btn--round {
-    @extend %brand--round;
-}
-
-.btn--secondary {
-    background: $color__btn--secondary;
-    &:hover,
-    &:active,
-    &:focus {
-        background: shade($color__btn--secondary, 10%);
+    &--small {
+        padding: (sizing(base) / 4 +em) (rhythm(base) / 2 +em);
     }
-}
 
-.btn--tertiary {
-    background: $color__btn--tertiary;
-    &:hover,
-    &:active,
-    &:focus {
-        background: shade($color__btn--tertiary, 15%);
+    &--large {
+        padding: sizing(base)+em (rhythm(base) * 2 +em);
     }
-}
 
-// * States
-
-.btn--success {
-    background: $color__btn--success;
-    &:hover,
-    &:active,
-    &:focus {
-        background: shade($color__btn--success, 15%);
+    &--full {
+        display: block;
     }
-}
 
-.btn--error {
-    background: $color__btn--error;
-    &:hover,
-    &:active,
-    &:focus {
-        background: shade($color__btn--error, 15%);
-    }
-}
+    // * Visual
 
-.btn[disabled="disabled"],
-.btn--disabled {
-    background: $color__btn--disabled;
-    cursor: default;
-    &:hover,
-    &:active,
-    &:focus {
-        background: shade($color__btn--disabled, 15%);
+    &--round {
+        @extend %brand--round;
     }
+
+    &--secondary {
+        background: palette(secondary);
+        &:hover,
+        &:active,
+        &:focus {
+            background: palette(secondary,dark);
+        }
+    }
+
+    // * Callbacks
+
+    &--success {
+        background: palette(success);
+        &:hover,
+        &:active,
+        &:focus {
+            background: palette(success,dark);
+        }
+    }
+
+    &--error {
+        background: palette(error);
+        &:hover,
+        &:active,
+        &:focus {
+            background: palette(error,dark);
+        }
+    }
+
+    &--disabled,
+    &[disabled = "disabled"] {
+        background: palette(disabled);
+        cursor: default;
+        &:hover,
+        &:active,
+        &:focus {
+            background: palette(disabled,dark);
+        }
+    }
+
 }

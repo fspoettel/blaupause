@@ -446,37 +446,40 @@ h6 {
   text-rendering: optimizeLegibility;
   color: #222222; }
 
+ultra,
 .ultra {
   font-size: 6.32813em; }
 
+giga,
 .giga {
   font-size: 5.0625em; }
 
+mega,
 .mega {
   font-size: 4.21875em; }
 
 h1,
-.alpha {
+.h1 {
   font-size: 3.375em; }
 
 h2,
-.beta {
+.h2 {
   font-size: 2.8125em; }
 
 h3,
-.gamma {
+.h3 {
   font-size: 2.25em; }
 
 h4,
-.delta {
+.h4 {
   font-size: 1.875em; }
 
 h5,
-.epsilon {
+.h5 {
   font-size: 1.5em; }
 
 h6,
-.zeta {
+.h6 {
   font-size: 1.25em; }
 
 .vR--heading, .typography h1,
@@ -492,7 +495,7 @@ h6,
 a {
   line-height: inherit;
   text-decoration: none;
-  color: #d85e2e; }
+  color: #db6e42; }
   a img {
     border: none; }
 
@@ -521,8 +524,8 @@ input,
 select {
   line-height: 1.5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 87.5%;
-  font-weight: regular; }
+  font-weight: 400;
+  font-size: 87.5%; }
   @media (min-width: 481px) and (max-width: 1023px) {
     html,
     textarea,
@@ -623,10 +626,10 @@ blockquote {
   margin-bottom: 0; }
 
 ::-moz-selection {
-  background: #d85e2e; }
+  background: #db6e42; }
 
 ::selection {
-  background: #d85e2e; }
+  background: #db6e42; }
 
 .img--round, .btn--round {
   border-radius: 0.25em; }
@@ -635,6 +638,7 @@ blockquote {
 input[type="reset"],
 input[type="submit"] {
   display: inline-block;
+  padding: 1em 1.5em;
   vertical-align: middle;
   line-height: normal;
   text-align: center;
@@ -648,70 +652,47 @@ input[type="submit"] {
   user-select: none;
   white-space: nowrap;
   zoom: 1; }
-
-.btn:hover, button:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover, .btn:focus, button:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus, .btn:active, button:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-  text-decoration: none;
-  background: #c25429;
-  color: white; }
-
-.btn, button,
-input[type="reset"],
-input[type="submit"],
-.btn--medium {
-  padding: 0.5em 1.5em; }
-
-.btn--small {
-  padding: 0.25em 0.75em; }
-
-.btn--large {
-  padding: 1em 3em; }
-
-.btn--full {
-  display: block; }
-
-.btn--secondary {
-  background: #f0b913; }
-  .btn--secondary:hover, .btn--secondary:active, .btn--secondary:focus {
-    background: #d8a611; }
-
-.btn--tertiary {
-  background: #f3c742; }
-  .btn--tertiary:hover, .btn--tertiary:active, .btn--tertiary:focus {
-    background: #cea938; }
-
-.btn--success {
-  background: #27922e; }
-  .btn--success:hover, .btn--success:active, .btn--success:focus {
-    background: #217c27; }
-
-.btn--error {
-  background: #ad3e3b; }
-  .btn--error:hover, .btn--error:active, .btn--error:focus {
-    background: #933432; }
-
-.btn[disabled="disabled"], button[disabled="disabled"],
-input[disabled="disabled"][type="reset"],
-input[disabled="disabled"][type="submit"],
-.btn--disabled {
-  background: #696762;
-  cursor: default; }
-  .btn[disabled="disabled"]:hover, button[disabled="disabled"]:hover,
-  input[disabled="disabled"][type="reset"]:hover,
-  input[disabled="disabled"][type="submit"]:hover, .btn[disabled="disabled"]:active, button[disabled="disabled"]:active,
-  input[disabled="disabled"][type="reset"]:active,
-  input[disabled="disabled"][type="submit"]:active, .btn[disabled="disabled"]:focus, button[disabled="disabled"]:focus,
-  input[disabled="disabled"][type="reset"]:focus,
-  input[disabled="disabled"][type="submit"]:focus,
-  .btn--disabled:hover,
-  .btn--disabled:active,
-  .btn--disabled:focus {
-    background: #595753; }
+  .btn:hover, button:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover, .btn:focus, button:focus,
+  input[type="reset"]:focus,
+  input[type="submit"]:focus, .btn:active, button:active,
+  input[type="reset"]:active,
+  input[type="submit"]:active {
+    text-decoration: none;
+    background: #c25429;
+    color: white; }
+  .btn--small {
+    padding: 0.25em 0.75em; }
+  .btn--large {
+    padding: 1em 3em; }
+  .btn--full {
+    display: block; }
+  .btn--secondary {
+    background: #c85e2e; }
+    .btn--secondary:hover, .btn--secondary:active, .btn--secondary:focus {
+      background: #ae5429; }
+  .btn--success {
+    background: green; }
+    .btn--success:hover, .btn--success:active, .btn--success:focus {
+      background: #007300; }
+  .btn--error {
+    background: #ad3e3b; }
+    .btn--error:hover, .btn--error:active, .btn--error:focus {
+      background: #9b3735; }
+  .btn--disabled, .btn[disabled="disabled"], button[disabled="disabled"],
+  input[disabled="disabled"][type="reset"],
+  input[disabled="disabled"][type="submit"] {
+    background: #696762;
+    cursor: default; }
+    .btn--disabled:hover, .btn--disabled:active, .btn--disabled:focus, .btn[disabled="disabled"]:hover, button[disabled="disabled"]:hover,
+    input[disabled="disabled"][type="reset"]:hover,
+    input[disabled="disabled"][type="submit"]:hover, .btn[disabled="disabled"]:active, button[disabled="disabled"]:active,
+    input[disabled="disabled"][type="reset"]:active,
+    input[disabled="disabled"][type="submit"]:active, .btn[disabled="disabled"]:focus, button[disabled="disabled"]:focus,
+    input[disabled="disabled"][type="reset"]:focus,
+    input[disabled="disabled"][type="submit"]:focus {
+      background: #5e5c58; }
 
 form {
   margin-bottom: 24px;

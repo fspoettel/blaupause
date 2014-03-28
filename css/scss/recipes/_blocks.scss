@@ -8,17 +8,25 @@
 // * </div>
 // * ---------------------
 
-$color__blocks--background: $color--primary;
-$color__blocks--text:       $color--background;
+$color__blocks--background: palette(primary);
+$color__blocks--text:       palette(background);
 
+$blocks: (
+    background: palette(primary),
+    color: palette(background)
+);
+
+@function blocks($val) {
+    @return map-get($blocks, $val);
+}
 
 .blocked {
     display: block;
-    padding: $base--rhythm-unit +em;
-    background: $color__blocks--background;
-    color: $color__blocks--text;
+    padding: rhythm(base)+em;
+    background: blocks(background);
+    color: blocks(color);
 }
 
 .blocked--small {
-    padding: ($base--rhythm-unit / 2 +em);
+    padding: (rhythm(base) / 2 +em);
 }

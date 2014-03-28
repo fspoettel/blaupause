@@ -7,61 +7,83 @@
 // *    [3]. Font-Stacks
 // * ---------------------
 
-// * Core
-
-$type--size:              $base--size; // Default: 16
-$type--ratio:             $base--ratio !default;
-
-// * Hook for content typography / elements
-
-$base--content-namespace: unquote(".typography");
-
-// * Units
-
-$type--sizing-unit:       $type--size / $base--browser-default;
-$type--sizing-number:     $type--size;
-
-$type--rhythm-unit:       $type--ratio;
-$type--rhythm-number:     $type--size * $type--ratio;
-
-// * Responsive typography
-
-$palm--font-size: 87.5%;
-$lap--font-size:  87.5%;
-$desk--font-size: 100%;
-$high--font-size: 112.5%;
-
 // * Typographc Scale
 // *
 // * 1. <html> is assigned percentage based on breakpoint
 // * 2. $type--size set's body font-size in rem
 // * 3. if $type__use-modular-scale: "true"; -> use modular scale specified in mixins/modular-scale & type/heading
 // * 4. Otherwise, specify a scale below (will be real pixel values, so if you change the base font-size you have to re-adjust)
-// * 5.
 // * ---------------------
 
-$type__use-modular-scale: "true";
+$type--use-modular-scale: "true";
 
-@if($type__use-modular-scale == "false") {
-    $type__scale--ultra:       84 !global; // ultra
-    $type__scale--giga:        72 !global; // giga
-    $type__scale--mega:        60 !global; // mega
-    $type__scale--h1:          48 !global; // h1, alpha
-    $type__scale--h2:          36 !global; // h2, beta
-    $type__scale--h3:          24 !global; // h3, gamma
-    $type__scale--h4:          21 !global; // h4, delta
-    $type__scale--h5:          18 !global; // h5, epsilon
-    $type__scale--h6:          16 !global; // h6, zeta
+@if($type--use-modular-scale == "true") {
+    $scale:(
+        ultra: ms(9),
+        giga: ms(8),
+        mega: ms(7),
+        h1: ms(6),
+        h2: ms(5),
+        h3: ms(4),
+        h4: ms(3),
+        h5: ms(2),
+        h6: ms(1)
+    )!global;
+} @else {
+    $scale:(
+        ultra: 84,
+        giga: 72,
+        mega: 60,
+        h1: 48,
+        h2: 36,
+        h3: 24,
+        h4: 21,
+        h5: 18,
+        h6: 16
+    )!global;
 }
 
-// * Font-stacks
+// * Typography
 
-$type__font--sans:        $helvetica-neue;
-$type__font--serif:       $baskerville;
+$type: (
 
-$type__font--primary:     $type__font--sans;
-$type__font--secondary:   $type__font--serif;
+    // * Core
 
-// * Font weight
+    base: (
+        font-weight: 400,
+        size: base(size),
+        ratio: base(ratio)
+    ),
 
-$type--font-weight: regular !default;
+    // * Typefaces
+
+    font: (
+        primary: font-stack(sans,helvetica-neue),
+        secondary: font-stack(serif,baskerville)
+    ),
+
+    // * Responsive typography
+
+    scaling: (
+        palm: 87.5%,
+        lap: 87.5%,
+        desk: 100%,
+        high: 112.5%
+    ),
+
+    // * Headings
+
+    heading: (
+        ratio: 1.25,
+        font-weight: 700,
+        font-style: italic
+    )
+);
+
+@function type($values, $val) {
+    @return map-get(map-get($type, $values), $val);
+}
+
+// * Hook for content typography / elements
+
+$base--content-namespace: unquote(".typography");

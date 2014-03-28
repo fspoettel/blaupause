@@ -17,20 +17,22 @@ $test: "false";
 @import "scss/globals/mixins/absolutely-center-child";
 @import "scss/globals/mixins/breakpoints";
 @import "scss/globals/mixins/clearfix";
-@import "scss/globals/mixins/colorfunctions";
 @import "scss/globals/mixins/columns";
+@import "scss/globals/mixins/colorfunctions";
 @import "scss/globals/mixins/delay";
 @import "scss/globals/mixins/easing";
 @import "scss/globals/mixins/font-face";
 @import "scss/globals/mixins/font-stacks";
+@import "scss/globals/mixins/modular-scale";
 @import "scss/globals/mixins/rem";
 
 // * Global variable cache. Colors first. -> folder: scss/globals/config
 
+@import "scss/globals/var/type";
+@import "scss/globals/var/units";
 @import "scss/globals/var/colors";
 @import "scss/globals/var/brand";
 @import "scss/globals/var/mediaqueries";
-@import "scss/globals/var/type";
 
 // * Reset (normalize.css 3.0.0 && border-box-model)
 
@@ -40,7 +42,6 @@ $test: "false";
 // * The grid is based on my fork of csswizardry-grids
 
 @import "scss/globals/layout/grids";
-@import "scss/globals/mixins/modular-scale";
 
 // * Typography -> folder: scss/globals/typography
 

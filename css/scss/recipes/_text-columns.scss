@@ -12,7 +12,7 @@
 // * ---------------------
 
 %columns {
-    margin-bottom: $base--sizing-unit +em;
+    margin-bottom: sizing(base)+em;
 }
 
 .columns {
@@ -26,6 +26,6 @@
     }
     &--quarters {
         @extend %columns;
-        @include columns(4, ($base--sizing-unit / 2 +em));
+        @include columns(4, (sizing(base) / 2 +em));
     }
 }
