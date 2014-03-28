@@ -4,12 +4,6 @@
 // * Re-usable media queries for the bp-mixin and grid.
 // * ---------------------
 
-$bp--palm:   "(max-width: 480px)";
-$bp--lap:    "(min-width: 481px) and (max-width: 1023px)";
-$bp--lap-up: "(min-width: 481px)";
-$bp--desk:   "(min-width: 1024px)";
-$bp--high:   "(min-width: 1500px)";
-
 $bp: (
     palm: "(max-width: 480px)",
     lap: "(min-width: 481px) and (max-width: 1023px)",
