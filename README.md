@@ -1,7 +1,7 @@
-Boilerplate
+Blaupause
 ===========
 
-![Dev](https://david-dm.org/felics/boilerplate.png)
+![Dev](https://david-dm.org/felics/blaupause.png)
 
 ## About
 

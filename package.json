@@ -1,9 +1,9 @@
 {
-  "name": "statamic-boilerplate",
+  "name": "blaupause",
   "version": "0.2.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/felics/boilerplate.git"
+    "url": "http://github.com/felics/blaupause.git"
   },
   "dependencies": {
     "gulp": "^3.5.6",
