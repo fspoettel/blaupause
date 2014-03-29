@@ -69,17 +69,17 @@ $test: "false";
 @import "scss/globals/shame";
 @import "scss/globals/styles";
 
-// * Recipes
+// * Components -> folder: scss/components
 
-@import "scss/recipes/block-list";
-@import "scss/recipes/blocks";
-@import "scss/recipes/fixed-backgrounds";
-@import "scss/recipes/image-grid";
-@import "scss/recipes/media-element";
-@import "scss/recipes/nav";
-@import "scss/recipes/pricing-table";
-@import "scss/recipes/split";
-@import "scss/recipes/text-columns";
+@import "scss/components/block-list";
+@import "scss/components/blocks";
+@import "scss/components/fixed-backgrounds";
+@import "scss/components/image-grid";
+@import "scss/components/media-element";
+@import "scss/components/nav";
+@import "scss/components/pricing-table";
+@import "scss/components/split";
+@import "scss/components/text-columns";
 
 // * Local stylesheets (pages, modules)
 

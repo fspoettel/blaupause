@@ -821,8 +821,7 @@ body {
     padding: 1.5em 0;
     margin: -1.5em 0; }
 
-.blocked, .pricing header,
-.pricing footer {
+.blocked, .pricing header {
   display: block;
   padding: 1.5em;
   background: #d85e2e;
@@ -974,6 +973,10 @@ body {
       border-right: 1px solid #cccccc;
       padding-left: 1em;
       padding-right: 1em; }
+  .pricing--round header {
+    border-radius: 0.25em 0.25em 0 0; }
+  .pricing--round li:last-child {
+    border-radius: 0 0 0.25em 0.25em; }
 
 .split {
   display: block;
