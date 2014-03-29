@@ -45,7 +45,7 @@ var jsSrcPath     = [
     imgSrcPath    = "img/src/**",
     imgDestPath   = "img/dist",
 // * livereload watch
-    lrPath        = ["css/dist/global.css", "**/**/*.html", "js/dist/global.js"];
+    lrPath        = ["css/dist/global.css", "test/css/**.css", "**/**/*.html", "js/dist/global.js"];
 
 
 // *    Gulp tasks
@@ -155,12 +155,26 @@ gulp.task("imgTask", function () {
 
 // * watch
 // * 1. Watch SCSS changes
-// * 2. Watch JS changrs
+// * 2. Watch JS changes
 // * 3. Start livereload server
 // * ---------------------
 
 gulp.task('watchTask', function () {
   gulp.watch(sassWatchPath, ["sass"]);
+  gulp.watch(jsWatchPath, ["scripts"]);
+  gulp.watch(lrPath).on('change', function(file) {
+      server.changed(file.path);
+  });
+});
+
+// * watch tests
+// * 1. Watch SCSS changes, output to test-folder
+// * 2. Watch JS changes
+// * 3. Start livereload server
+// * ---------------------
+
+gulp.task('testWatch', function () {
+  gulp.watch(sassWatchPath, ["test-sass"]);
   gulp.watch(jsWatchPath, ["scripts"]);
   gulp.watch(lrPath).on('change', function(file) {
       server.changed(file.path);
@@ -189,6 +203,10 @@ gulp.task("images",["imgTask"]);
 // * Rebuild tests
 
 gulp.task("test", ["scripts", "test-sass"]);
+
+// * Test watch
+
+gulp.task("test-watch", ["scripts", "test-sass", "testWatch"]);
 
 // * Watch
 
