@@ -6,5 +6,15 @@
 // * ---------------------
 
 @mixin delay( $steps:1, $start-delay: animation(start-delay), $offset: animation(delay-offset)) {
-    animation-delay: $start-delay + ($offset * $steps);
+
+    $delay--ok: false;
+
+    @if(type-of($steps) == "number" and type-of($start-delay) == "number" and type-of($offset) == "number"){
+        $delay--ok: true;
+    } @else {
+        @warn "The delay mixin only accepts numbers as arguments."
+    }
+    @if($delay--ok == true) {
+        animation-delay: $start-delay + ($offset * $steps);
+    }
 }

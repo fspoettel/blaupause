@@ -77,5 +77,10 @@ $font-stacks: (
 );
 
 @function font-stack($stack, $typeface) {
-    @return map-get(map-get($font-stacks, $stack), $typeface);
+    @if($stack and $typeface){
+        @return map-get(map-get($font-stacks, $stack), $typeface);
+    } @else {
+        @warn "Wrong arguments for function font-stack";
+        @return false;
+    }
 }

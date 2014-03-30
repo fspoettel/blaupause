@@ -8,6 +8,17 @@
 $column--gap: 1em !default;
 
 @mixin columns($number, $gap:$column--gap) {
-    column-count: $number;
-    column-gap: $gap;
+
+    $columns--ok: false;
+
+    @if (type-of($number) == "number") {
+        $columns--ok: true;
+    } @else {
+        @warn "The first argument of columns should be a number, instead saw #{$number}";
+    }
+
+    @if($columns--ok == true) {
+        column-count: $number;
+        column-gap: $gap;
+    }
 }

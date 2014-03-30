@@ -6,17 +6,29 @@
 // * ---------------------
 
 @mixin center-child($child-selector, $tech: "transform") {
-    @if ($tech == "flex") {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+    $center-child--ok: false;
+
+    @if (type-of($child-selector) == "string" and type-of($tech) == "string") {
+        $center-child--ok: true;
     } @else {
-        position: relative;
-        #{$child-selector} {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
+        @warn "You passed non-strings to center-child!";
+    }
+
+    @if ($center-child--ok == true) {
+        @if ($tech == "flex") {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } @else {
+            position: relative;
+            #{$child-selector} {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
         }
     }
+
 }

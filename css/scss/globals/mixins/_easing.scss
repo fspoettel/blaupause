@@ -50,6 +50,11 @@ $ease: (
     )
 );
 
-@function palette($easing, $modifier: 'base') {
-    @return map-get(map-get($ease, $easing), $modifier);
+@function palette($easing, $modifier: 'in-out') {
+    @if($easing and $modifier) {
+        @return map-get(map-get($ease, $easing), $modifier);
+    } @else {
+        @warn "Wrong arguments for function easing";
+        @return false;
+    }
 }
