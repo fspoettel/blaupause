@@ -90,7 +90,7 @@ gulp.task("jshint", function(){
 
 gulp.task("sass", function () {
   gulp.src(sassSrcPath)
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: function(){console.log("Exiting")}}))
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
@@ -113,7 +113,7 @@ gulp.task("sass", function () {
 
 gulp.task("debug-sass", function () {
   gulp.src(sassSrcPath)
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: function(){console.log("Exiting")}}))
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(gulp.dest("css/dist/debug/unprefixed"))
@@ -134,7 +134,7 @@ gulp.task("debug-sass", function () {
 
 gulp.task("test-sass", function () {
   gulp.src(sassSrcPath)
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: function(){console.log("Exiting")}}))
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
