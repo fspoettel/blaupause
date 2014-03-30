@@ -18,9 +18,9 @@
 // * 4. Otherwise, specify a scale below (will be real pixel values, so if you change the base font-size you have to re-adjust)
 // * ---------------------
 
-$type--use-modular-scale: "true";
+$type--use-modular-scale: true;
 
-@if($type--use-modular-scale == "true") {
+@if($type--use-modular-scale == true) {
     $scale:(
         ultra: ms(9),
         giga:  ms(8),

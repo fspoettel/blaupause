@@ -35,7 +35,7 @@ h6 {
 @each $heading in $scale {
     #{nth($heading,1)},
     .#{nth($heading,1)}{
-        @if($type--use-modular-scale == "true"){
+        @if($type--use-modular-scale == true){
             font-size: nth($heading,2);
         } @else {
             @include rem("font-size", nth($heading,2));
