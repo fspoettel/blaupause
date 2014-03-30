@@ -33,6 +33,7 @@
     "stratos": "https://github.com/toddmotto/stratos.git#~1.4.0",
     "Function.prototype.bind": "polyfill/Function.prototype.bind",
     "eventie": "desandro/eventie#~1.0.5",
-    "doc-ready": "desandro/doc-ready#~1.0.2"
+    "doc-ready": "desandro/doc-ready#~1.0.2",
+    "fundament": "~0.0.3"
   }
 }

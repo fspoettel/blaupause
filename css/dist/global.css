@@ -392,9 +392,9 @@ th {
   padding-left: 24px;
   padding-left: 1.5rem;
   vertical-align: top;
-  width: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
   letter-spacing: normal;
   word-spacing: normal; }
 

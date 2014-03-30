@@ -1,0 +1,98 @@
+
+// * Fundament Core
+// * ---------------------
+// * Contains the core scss and variables.
+// @contents:
+// @  1. Class-type
+// @  2. Name-space
+// @  3. Core SCSS
+// * ---------------------
+
+// * 1. Set the class-type
+// * This sets the class-type either to normal or silent classes. (Based on fundament(settings,silent-classes))
+// * ---------------------
+
+$fundament--class-type: unquote(".");
+
+@if (fundament(settings, silent-classes) == true){
+    $fundament--class-type: unquote("%")!global;
+}
+
+@if($test == "true") {
+    $fundament--class-type: unquote(".");
+}
+
+// * 1. Set the namespace
+// * This sets the namespace for grid-classes and modifiers to fundament(settings, namespace)
+// * e.g. if set to "grid", the classes will be `grid`, `grid__item`, `grid--modifier`, `grid__item--modifier`
+// * ---------------------
+
+$fundament--namespace: fundament(settings, namespace);
+
+// * Core SCSS
+// * Styles for grid parent and items
+// * ---------------------
+
+// * Grid Parent
+// * [1]. Use the new flex-box where possible (IE10+, Moz. 28+, Chrome 20+, Safari 7+, Opera 12.1+, Android 4.4+)
+// * [2]. Makes the grid usable on lists
+// * [3]. Remove all existing spacing from grid
+// * [4]. Add a negative margin to negate first items padding (aligns grid)
+// * **** !If you want to center a grid-parent with margin: auto, use `--full` to achieve symmetric centering!
+// * [5]. Firefox < 28 doesn't implement flex-flow correctly (...), fall back to `inline-block`.
+// * [6] & [7]. Fix white-space on fallback-grid.
+// * ---------------------
+
+#{$fundament--class-type}#{$fundament--namespace} {
+    display: -webkit-flex;                       //* [1] */
+    display: -ms-flexbox;                        //* [1] */
+    display: flex;                               //* [1] */
+    -webkit-flex-flow: row wrap;                 //* [1] */
+    -ms-flex-flow: row wrap;                     //* [1] */
+    flex-flow: row wrap;                         //* [1] */
+    list-style:none;                             //* [2] */
+    margin:0;                                    //* [3] */
+    padding:0;                                   //* [3] */
+    @include rem("margin-left", -(fundament(settings, gutter)));
+    //* [5] */
+    @supports not(flex-wrap: wrap) { display: block; }
+
+    //* [6] */
+    @if(fundament(legacy,markup-fix) != true) {
+        letter-spacing: fundament(legacy, letter-spacing);
+    }
+}
+
+// * [7] Opera < 12.1 Hack (may be removed soon) */
+
+@if (fundament(legacy,use-markup-fix) != true) {
+    .opera:-o-prefocus,
+    #{$fundament--class-type}#{$fundament--namespace} {
+        word-spacing: fundament(legacy, word-spacing);
+    }
+}
+
+// * Grid Items
+// * [1]. Stack items next to each other
+// * [2]. Space items apart
+// * [3]. Default alignment of __items is top
+// * [4]. Use new box-model on all grid items
+// * [4]. If mobile first, fill the container by default
+// * [5]. Reinstate letter-spacing on fallback-grid
+// * ---------------------
+
+#{$fundament--class-type}#{$fundament--namespace}__item {
+    display: inline-block;                             //* [1] */
+    @include rem("padding-left", (fundament(settings, gutter)));
+    vertical-align: top;                               //* [3] */
+    -webkit-box-sizing: border-box;                    //* [4] */
+       -moz-box-sizing: border-box;                    //* [4] */
+            box-sizing: border-box;                    //* [4] */
+    @if(fundament(settings, mobile-first) == true) { //* [5] */
+        width: 100%;
+    }
+    @if(fundament(legacy, use-markup-fix) != true) { //* [6] */
+        letter-spacing:normal;
+        word-spacing:normal;
+    }
+}

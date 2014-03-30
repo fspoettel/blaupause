@@ -1,0 +1,101 @@
+
+// * Fundament Grid System
+// * ---------------------
+// * A flexbox-first, inline-block-fallback, semantic and customizable scss grid system.
+// @requires: SASS 3.3.*
+// * ---------------------
+
+$fundament: (
+    settings: (
+        // * Select a namespace for the main-class / item-class
+        namespace:      "grid",
+        // * If true, all breakpoints in "breakpoints" will be included with widths
+        responsive:     true,
+        // * If true, __item will extend to fill of the parent by default
+        mobile-first:   true,
+        // * If true, the grid will output extendable silent classes
+        silent-classes: true,
+        // * Gutter
+        gutter:         24
+    ),
+    // * Breakpoint widths. If `(settings,responsive)`is true, each of these will have an own grid-system
+    breakpoints: (
+        "palm":           bp(palm),
+        "lap":            bp(lap),
+        "lap-up":         bp(lap-up),
+        "desk":           bp(desk),
+        "high":           bp(high)
+    ),
+    // * Push classes
+    push:(
+        // * If true, generic push-classes will be generated
+        use-push:         true,
+        // * If true, push-classes for each breakpoint will be created
+        responsive:       true
+    ),
+    // * Pull classes
+    pull: (
+        // * If true, a generic pull-class will be generated
+        use-pull:         true,
+        // * If true, pull-classes for each breakpoint will be created
+        responsive:       true
+    ),
+    // * Settings for the fallback-grid
+    legacy:(
+        // * Set to true if you intend to fix the white-space behaviour in markup
+        use-markup-fix: false,
+        // * With some fonts, the amount of letter-spacing needs to be adjusted to work
+        letter-spacing: -.31em,
+        word-spacing:   -.43em
+    ),
+    // * Grid modifiers
+    modifiers:(
+        // * If true, --modifiers will be included
+        use-modifiers:  true,
+        // * Include --full (grid w/o margins/paddings)
+        full:           true,
+        // * include --rev (reversed source-order)
+        rev:            true,
+        // * include --center (horizontally centered grid)
+        center:         true,
+        // * include --right (right aligned grif)
+        right:          true,
+        // * include --wide (grid w/ wider margins)
+        wide:           true,
+        // * include --narrow (grid w/ narrower margins)
+        narrow:         true,
+        // * include --bottom (vertically-aligned-to-bottom grid)
+        bottom:         true,
+        // * include --middle (vertically-center grid)
+        middle:         true
+
+    ),
+    // * Grid widths
+    widths: (
+        halves:         true,
+        thirds:         true,
+        quarters:       true,
+        fifths:         true,
+        sixths:         true,
+        eighths:        true,
+        tenths:         true,
+        twelfths:       true
+    ),
+    // * Visibility helpers
+    visibility: (
+        show:           true, // * will generate --show && __item--show classes for each breakpoint
+        hide:           true  // * will generate --hide && __item--hide classes for each breakpoint
+    )
+);
+
+// * Import grid functionality
+
+@import "fundament/functions";
+@import "fundament/core";
+@import "fundament/modifiers";
+@import "fundament/widths";
+
+@include fundament-init();
+
+
+

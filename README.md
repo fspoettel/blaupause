@@ -12,7 +12,7 @@ This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-
 **(S)CSS**:
 
  - [normalize.css](https://github.com/necolas/normalize.css) (3.0.1)
- - [csswizardry-grids (fork)](https://github.com/felics/csswizardry-grids) (#boilerplate-branch)
+ - [fundament](https://github.com/felics/fundament)
 
  **Polyfills**:
 

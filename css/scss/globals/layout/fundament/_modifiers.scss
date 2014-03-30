@@ -1,0 +1,139 @@
+
+// * Fundament Modifiers
+// * ---------------------
+// * These modifiers can be applied to the grid and __items.
+// * To apply a modifier, use --modifier on parent and --modifier__item on child.
+// * The separation of --modifier and __item--modifier prevents bullshit selectors in output.
+// @contains:
+// @  1. --full
+// @  2. --rev
+// @  3. --center
+// @  4. --right
+// @  5. --bottom
+// @  6. --middle
+// @  7. --wide
+// @  8. --narrow
+// * ---------------------
+
+@if(fundament(modifiers, use-modifiers) == true) {
+
+    // * --full
+    // * Full-width grid without any margins & padding.
+    // * ---------------------
+
+    @if(fundament(modifiers, full) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--full {
+            margin-left: 0;
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--full__item {
+            padding-left: 0;
+        }
+    }
+
+    // * --rev
+    // * Reversed source-order. (!The fallback grid will only not work on 100%-items, flexbox does. !)
+    // * ---------------------
+
+    @if(fundament(modifiers, rev) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--rev {
+            direction:rtl;
+            -webkit-flex-flow: wrap-reverse row;
+            -ms-flex-flow: wrap-reverse row;
+            flex-flow: wrap-reverse row;
+            text-align:left;
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--rev__item {
+            direction:ltr;
+            text-align:left;
+        }
+    }
+
+    // * --center
+    // * Center the grid if items don't add up to 100%
+    // * ---------------------
+
+    @if(fundament(modifiers, center) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--center {
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            text-align:center;
+
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--center__item {
+            text-align:left;
+        }
+    }
+
+    // * --right
+    // * Align the grid to the right if items don't add up to 100%
+    // * ---------------------
+
+    @if(fundament(modifiers, right) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--right {
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            text-align:right;
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--right__item {
+            text-align:left;
+        }
+    }
+
+    // * --bottom
+    // * Vertically align items of a row to the bottom.
+    // * ---------------------
+
+    @if(fundament(modifiers, bottom) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--bottom {
+            -webkit-align-items: flex-end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--bottom__item {
+            vertical-align:bottom;
+        }
+    }
+
+    // * --middle
+    // * Vertically center items of a row.
+    // * ---------------------
+
+    @if(fundament(modifiers, middle) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--middle {
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--middle__item {
+            vertical-align:middle;
+        }
+    }
+
+    // * --wide
+    // * Wider margins
+    // * ---------------------
+
+    @if(fundament(modifiers, wide) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--wide {
+            @include rem("margin-left", -(fundament(settings, gutter)) * 2);
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--wide__item {
+            @include rem("padding-left", (fundament(settings, gutter) * 2));
+        }
+    }
+
+    // * --narrow
+    // * Narrower margins.
+    // * ---------------------
+
+    @if(fundament(modifiers, narrow) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--narrow {
+            @include rem("margin-left", -(fundament(settings, gutter)) / 2);
+        }
+        #{$fundament--class-type}#{$fundament--namespace}--narrow__item {
+            @include rem("padding-left", (fundament(settings, gutter)) / 2);
+        }
+    }
+}

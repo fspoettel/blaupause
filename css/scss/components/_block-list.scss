@@ -13,13 +13,13 @@
 // * ---------------------
 
 .block-list {
-    @extend #{$grid--class-type}grid;
-    @extend #{$grid--class-type}grid--full;
+    @extend #{$fundament--class-type}#{$fundament--namespace};
+    @extend #{$fundament--class-type}#{$fundament--namespace}--full;
     margin-bottom: 0;
     border-top: brand(border-width) solid palette(border);
     li {
-        @extend #{$grid--class-type}grid__item;
-        @extend #{$grid--class-type}grid--full__item;
+        @extend #{$fundament--class-type}#{$fundament--namespace}__item;
+        @extend #{$fundament--class-type}#{$fundament--namespace}--full__item;
         padding: rhythm(base)+em inherit;
         border-bottom: brand(border-width) solid palette(border);
     }
