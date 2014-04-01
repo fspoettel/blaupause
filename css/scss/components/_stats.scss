@@ -1,0 +1,63 @@
+
+// * Stats
+// * ---------------------
+// * A pattern to show key metrics.
+// *
+// @usage:
+// @
+// * ---------------------
+
+@if (blaupause(components, use-components) == true and blaupause(components, stats) == true) {
+
+    .stats {
+        display: inline-block;
+        margin-left: -(sizing(base) / 2 +em);
+        > li {
+            display: inline-block;
+            margin-left: (sizing(base) / 2 +em);
+            text-align: center;
+            span {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        // * Children
+
+        &__title {
+            font-weight: 700;
+        }
+
+        // * Modifiers
+
+        // * --bordered
+        // * Draws a border between stat-items
+        // * ---------------------
+
+        &--bordered {
+            > li {
+                border-left: brand(border-width) solid palette(border);
+                &:first-child {
+                    border-left: 0;
+                }
+            }
+        }
+
+        // * --left
+        // * Aligns inside of stat-items to the left. If used with border, a margin-left will be added to the inside-items
+        // * ---------------------
+
+        &--left {
+            > li {
+                text-align: left;
+            }
+            &.stats--bordered {
+                span {
+                    padding-left: (sizing(base) / 2 +em);
+                }
+            }
+        }
+
+    }
+
+}
