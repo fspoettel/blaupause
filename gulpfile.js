@@ -93,7 +93,7 @@ gulp.task("sass", function () {
     .pipe(plumber({errorHandler: function(){console.log("Exiting")}}))
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
-    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
+    .pipe(prefix("last 1 version", "Explorer >=10"))
     .pipe(gulp.dest("css/dist"))
     .pipe(cssmin())
     .pipe(rename("global.min.css"))
@@ -117,7 +117,7 @@ gulp.task("debug-sass", function () {
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
     .pipe(gulp.dest("css/dist/debug/unprefixed"))
-    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
+    .pipe(prefix("last 1 version", "Explorer >=10"))
     .pipe(gulp.dest("css/dist/debug/prefixed"))
     .pipe(cssmin())
     .pipe(rename("global.min.css"))
@@ -137,7 +137,7 @@ gulp.task("test-sass", function () {
     .pipe(plumber({errorHandler: function(){console.log("Exiting")}}))
     .pipe(sass({noCache:true}))
     .pipe(rename("global.css"))
-    .pipe(prefix("last 1 version", "Explorer >=10 Chrome >=30 iOS >=7 Safari >=6.1 Firefox >= 24 Opera >=12.1 Android >=4.4"))
+    .pipe(prefix("last 1 version", "Explorer >=10"))
     .pipe(rename("global.css"))
     .pipe(gulp.dest("test/css"));
 });
