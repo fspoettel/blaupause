@@ -15,7 +15,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^0.4.1",
     "gulp-plumber": "~0.5.6",
-    "gulp-jshint": "^1.5.1",
+    "gulp-jshint": "^1.5.2",
     "gulp-util": "~2.2.14",
     "gulp-livereload": "^1.2.0"
   }

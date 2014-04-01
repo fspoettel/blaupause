@@ -10,64 +10,64 @@ $test: false;
 
 // * Base units
 
-@import "globals/var/base";
+@import "config/base";
 
-// * Get the mixins first -the config may depend on them -> folder: globals/mixins
+// * Get the mixins first -the config may depend on them -> folder: global/mixins
 
-@import "globals/mixins/absolutely-center-child";
-@import "globals/mixins/breakpoints";
-@import "globals/mixins/clearfix";
-@import "globals/mixins/columns";
-@import "globals/mixins/colorfunctions";
-@import "globals/mixins/delay";
-@import "globals/mixins/easing";
-@import "globals/mixins/font-face";
-@import "globals/mixins/font-stacks";
-@import "globals/mixins/modular-scale";
-@import "globals/mixins/rem";
+@import "global/mixins/absolutely-center-child";
+@import "global/mixins/breakpoints";
+@import "global/mixins/clearfix";
+@import "global/mixins/columns";
+@import "global/mixins/colorfunctions";
+@import "global/mixins/delay";
+@import "global/mixins/easing";
+@import "global/mixins/font-face";
+@import "global/mixins/font-stacks";
+@import "global/mixins/modular-scale";
+@import "global/mixins/rem";
 
-// * Global variable cache. Colors first. -> folder: globals/config
+// * Global variable cache. Colors first. -> folder: /config
 
-@import "globals/var/type";
-@import "globals/var/units";
-@import "globals/var/colors";
-@import "globals/var/brand";
-@import "globals/var/mediaqueries";
+@import "config/type";
+@import "config/units";
+@import "config/colors";
+@import "config/brand";
+@import "config/mediaqueries";
 
 // * Reset (normalize.css 3.0.0 && border-box-model)
 
-@import "globals/reset";
+@import "global/reset";
 
 // * Layout files -> folder: layout
 // * The grid is based on my fork of csswizardry-grids
 
-@import "globals/layout/fundament";
+@import "global/layout/fundament";
 
-// * Typography -> folder: globals/typography
+// * Typography -> folder: global/typography
 
-@import "globals/typography/code";
-@import "globals/typography/fontface";
-@import "globals/typography/headings";
-@import "globals/typography/links";
-@import "globals/typography/lists";
-@import "globals/typography/main";
-@import "globals/typography/media";
-@import "globals/typography/quotes";
-@import "globals/typography/selections";
+@import "global/typography/code";
+@import "global/typography/fontface";
+@import "global/typography/headings";
+@import "global/typography/links";
+@import "global/typography/lists";
+@import "global/typography/main";
+@import "global/typography/media";
+@import "global/typography/quotes";
+@import "global/typography/selections";
 
-// * UI abstractions -> folder: globals/elements
+// * UI abstractions -> folder: global/elements
 
-@import "globals/elements/animations";
-@import "globals/elements/brand";
-@import "globals/elements/buttons";
-@import "globals/elements/forms";
-@import "globals/elements/icons";
-@import "globals/elements/tables";
+@import "global/elements/animations";
+@import "global/elements/brand";
+@import "global/elements/buttons";
+@import "global/elements/forms";
+@import "global/elements/icons";
+@import "global/elements/tables";
 
-// * Global stylesheets -> folder: globals
+// * Global stylesheets -> folder: global
 
-@import "globals/shame";
-@import "globals/styles";
+@import "global/shame";
+@import "global/styles";
 
 // * Components -> folder: components
 
