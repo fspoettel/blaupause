@@ -12,23 +12,26 @@
 // * </ul>
 // * ---------------------
 
-.block-list {
-    @extend #{$fundament--class-type}#{$fundament--namespace};
-    @extend #{$fundament--class-type}#{$fundament--namespace}--full;
-    margin-bottom: 0;
-    border-top: brand(border-width) solid palette(border);
-    li {
-        @extend #{$fundament--class-type}#{$fundament--namespace}__item;
-        @extend #{$fundament--class-type}#{$fundament--namespace}--full__item;
-        padding: rhythm(base)+em inherit;
-        border-bottom: brand(border-width) solid palette(border);
-    }
-    ul {
-        margin-top: (rhythm(base) / 2 +em);
-    }
-    &__link {
-        display: block;
-        padding: rhythm(base)+em 0;
-        margin: -(rhythm(base)+em) 0;
+@if (blaupause(components, use-components) == true and (blaupause(components, block-list) == true or blaupause(components, pricing-list) == true)) {
+    .block-list {
+        @extend #{$fundament--class-type}#{$fundament--namespace};
+        @extend #{$fundament--class-type}#{$fundament--namespace}--full;
+        margin-bottom: 0;
+        border-top: brand(border-width) solid palette(border);
+        li {
+            @extend #{$fundament--class-type}#{$fundament--namespace}__item;
+            @extend #{$fundament--class-type}#{$fundament--namespace}--full__item;
+            padding: rhythm(base)+em inherit;
+            border-bottom: brand(border-width) solid palette(border);
+        }
+        ul {
+            margin-top: (rhythm(base) / 2 +em);
+        }
+        &__link {
+            display: block;
+            padding: rhythm(base)+em 0;
+            margin: -(rhythm(base)+em) 0;
+        }
     }
 }
+

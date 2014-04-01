@@ -6,7 +6,32 @@
 
 // * Test-build flag
 
-$test: false;
+
+// * Build config
+
+$blaupause: (
+    components: (
+        use-components:    true,
+        block-list:        true,
+        blocks:            true,
+        fixed-backgrounds: true,
+        image-grid:        true,
+        media-element:     true,
+        nav:               true,
+        pricing-list:      true,
+        split:             true,
+        stats:             true,
+        text-columns:      true
+    ),
+    test:(
+        boolean: false
+    )
+);
+
+@function blaupause($group, $option) {
+    @return map-get(map-get($blaupause, $group), $option);
+}
+
 
 // * Base units
 
@@ -79,6 +104,7 @@ $test: false;
 @import "components/nav";
 @import "components/pricing-table";
 @import "components/split";
+@import "components/stats";
 @import "components/text-columns";
 
 // * Local stylesheets (pages, modules)

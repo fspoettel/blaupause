@@ -16,94 +16,99 @@ $nav: (
     @return map-get($nav, $val);
 }
 
-// * Core
-// * Stack items next to each other and space them apart. Make links fill the nav-items.
-// * ---------------------
+@if (blaupause(components, use-components) == true and blaupause(components, nav) == true) {
 
-.nav {
-    list-style: none;
-    > li {
-        display: inline-block;
-        margin-right: (sizing(base) / 2 +em);
-        > a {
-            display: block;
-            padding: (sizing(base) / 2 +em);
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    }
 
-    // * Placement modifiers
+    // * Core
+    // * Stack items next to each other and space them apart. Make links fill the nav-items.
     // * ---------------------
 
-    &--center {
-        text-align: center;
-    }
-    &--right {
-        text-align: right;
-    }
-
-    // * Vertical navigation
-    // * ---------------------
-
-    &--stacked,
-    &--blocked {
+    .nav {
+        list-style: none;
         > li {
-            margin-bottom: (sizing(base) / 2 +em);
-            margin-right: 0;
-            > a {
-                display: inline-block;
-            }
-        }
-    }
-
-    &--stacked {
-        > li {
-            display: list-item;
-        }
-    }
-
-    &--block {
-        display: block;
-        > li {
-            display: block;
+            display: inline-block;
+            margin-right: (sizing(base) / 2 +em);
             > a {
                 display: block;
+                padding: (sizing(base) / 2 +em);
+            }
+            &:last-child {
+                margin-right: 0;
             }
         }
+
+        // * Placement modifiers
+        // * ---------------------
+
+        &--center {
+            text-align: center;
+        }
+        &--right {
+            text-align: right;
+        }
+
+        // * Vertical navigation
+        // * ---------------------
+
+        &--stacked,
+        &--blocked {
+            > li {
+                margin-bottom: (sizing(base) / 2 +em);
+                margin-right: 0;
+                > a {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &--stacked {
+            > li {
+                display: list-item;
+            }
+        }
+
+        &--block {
+            display: block;
+            > li {
+                display: block;
+                > a {
+                    display: block;
+                }
+            }
+        }
+
+        // * Navigation Bar
+        // * Evenly distribute items along the x-axis.
+        // * ---------------------
+
+        &--bar {
+            display: table;
+            width: 100%;
+            > li {
+                display: table-cell;
+                text-align: center;
+                > a {
+                    display: block;
+                }
+            }
+        }
+
     }
 
-    // * Navigation Bar
-    // * Evenly distribute items along the x-axis.
+
+    // * Flexbox enhancements
     // * ---------------------
 
-    &--bar {
-        display: table;
-        width: 100%;
-        > li {
-            display: table-cell;
-            text-align: center;
-            > a {
-                display: block;
+    .flexbox .nav {
+        &--bar {
+            display: flex;
+            > li {
+                flex-grow: 1;
+                margin: 0;
+                text-align: center;
             }
         }
     }
 
-}
-
-
-// * Flexbox enhancements
-// * ---------------------
-
-.flexbox .nav {
-    &--bar {
-        display: flex;
-        > li {
-            flex-grow: 1;
-            margin: 0;
-            text-align: center;
-        }
-    }
 }
 

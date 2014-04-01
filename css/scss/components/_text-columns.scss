@@ -11,21 +11,25 @@
 // * </figure>
 // * ---------------------
 
-%columns {
-    margin-bottom: sizing(base)+em;
-}
+@if (blaupause(components, use-components) == true and blaupause(components, text-columns) == true) {
 
-.columns {
-    &--halfs {
-        @extend %columns;
-        @include columns(2);
+    %columns {
+        margin-bottom: sizing(base)+em;
     }
-    &--thirds {
-        @extend %columns;
-        @include columns(3);
+
+    .columns {
+        &--halfs {
+            @extend %columns;
+            @include columns(2);
+        }
+        &--thirds {
+            @extend %columns;
+            @include columns(3);
+        }
+        &--quarters {
+            @extend %columns;
+            @include columns(4, (sizing(base) / 2 +em));
+        }
     }
-    &--quarters {
-        @extend %columns;
-        @include columns(4, (sizing(base) / 2 +em));
-    }
+
 }

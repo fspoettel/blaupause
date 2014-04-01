@@ -18,6 +18,10 @@ $fundament--class-type: unquote(".");
     $fundament--class-type: unquote("%")!global;
 }
 
+@if(blaupause(test, boolean) == true){
+    $fundament--class-type: unquote(".")!global;
+}
+
 // * $fundament--namespace
 // * This sets the namespace for grid-classes and modifiers to `fundament(settings, namespace)`
 // * e.g. if set to "grid", the classes will be `grid`, `grid__item`, `grid--modifier`, `grid__item--modifier`

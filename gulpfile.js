@@ -40,7 +40,7 @@ var jsSrcPath     = [
     jsWatchPath   = "js/app/**",
 // * .scss
     sassSrcPath   = "css/scss/app.scss",
-    sassWatchPath = "css/scss/**  /*.scss",
+    sassWatchPath = "css/scss/**/*.scss",
 // * img
     imgSrcPath    = "img/src/**",
     imgDestPath   = "img/dist",

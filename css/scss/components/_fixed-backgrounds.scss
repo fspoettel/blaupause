@@ -25,41 +25,44 @@ $fixed: (
     @return map-get($fixed, $val);
 }
 
-// * Hero styles
+@if (blaupause(components, use-components) == true and blaupause(components, fixed-backgrounds) == true) {
 
-.fixed {
-    text-align: center;
-    &__layer {
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        top: 0px;
-        position: fixed;
-        transform: translateZ(0);
-        pointer-events: none;
-        z-index: -1;
-    }
-    &__inner {
-        @include center-child(".fixed__content");
-        width: 100%;
-        margin: 0;
-        padding: (fixed(height) / 2 +em) 0;
-        background: rgba(0,0,0,.6);
-    }
-    &__content {
-        width: 100%;
-        margin: 0 !important;
-        color: fixed(color);
-        z-index: 3;
-    }
-}
+    // * Hero styles
 
-// * Flex-box enhancements
-// * ---------------------
+    .fixed {
+        text-align: center;
+        &__layer {
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            top: 0px;
+            position: fixed;
+            transform: translateZ(0);
+            pointer-events: none;
+            z-index: -1;
+        }
+        &__inner {
+            @include center-child(".fixed__content");
+            width: 100%;
+            margin: 0;
+            padding: (fixed(height) / 2 +em) 0;
+            background: rgba(0,0,0,.6);
+        }
+        &__content {
+            width: 100%;
+            margin: 0 !important;
+            color: fixed(color);
+            z-index: 3;
+        }
+    }
 
-.flexbox .fixed {
-    &__inner {
-        @include center-child(".fixed__content", "flex");
+    // * Flex-box enhancements
+    // * ---------------------
+
+    .flexbox .fixed {
+        &__inner {
+            @include center-child(".fixed__content", "flex");
+        }
     }
 }
 

@@ -18,13 +18,16 @@ $blocks: (
     @return map-get($blocks, $val);
 }
 
-.blocked {
-    display: block;
-    padding: rhythm(base)+em;
-    background: blocks(background);
-    color: blocks(color);
-}
+@if (blaupause(components, use-components) == true and (blaupause(components, blocks) == true)(blaupause(components, block-list) == true or blaupause(components, pricing-list) == true)) {
 
-.blocked--small {
-    padding: (rhythm(base) / 2 +em);
+    .blocked {
+        display: block;
+        padding: rhythm(base)+em;
+        background: blocks(background);
+        color: blocks(color);
+    }
+
+    .blocked--small {
+        padding: (rhythm(base) / 2 +em);
+    }
 }

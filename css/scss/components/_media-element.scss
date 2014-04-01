@@ -14,62 +14,68 @@
 // * </figure>
 // * ---------------------
 
-// * Core
 
-.media {
-    display: block;
-    @include cf();
+@if (blaupause(components, use-components) == true and blaupause(components, media-element) == true) {
 
-    // * Elements
+    // * Core
 
-    > img {
-        float: left;
-        margin-right: rhythm(base)+em;
-    }
-    &__caption,
-    > figcaption {
-        overflow: hidden;
-    }
+    .media {
+        display: block;
+        @include cf();
 
-    // * Modifiers
+        // * Elements
 
-    &--rev {
         > img {
-            float: right;
-            margin-left: rhythm(base)+em;
-            margin-right: 0;
+            float: left;
+            margin-right: rhythm(base)+em;
         }
+        &__caption,
+        > figcaption {
+            overflow: hidden;
+        }
+
+        // * Modifiers
+
+        &--rev {
+            > img {
+                float: right;
+                margin-left: rhythm(base)+em;
+                margin-right: 0;
+            }
+        }
+
+    }
+
+
+    // * Flex-box enhancements
+    // * ---------------------
+
+    .flexbox .media {
+        display: flex;
+        align-items: flex-start;
+
+        // * Elements
+
+        &__caption,
+        > figcaption {
+            flex: 1;
+        }
+
+        // * Modifiers
+        // * NEW: media--center
+
+        &--center {
+            align-items: center;
+        }
+
+        &--rev {
+            > img {
+                order: 1;
+                margin: 0 0 0 rhythm(base)+em;
+            }
+        }
+
     }
 
 }
 
-
-// * Flex-box enhancements
-// * ---------------------
-
-.flexbox .media {
-    display: flex;
-    align-items: flex-start;
-
-    // * Elements
-
-    &__caption,
-    > figcaption {
-        flex: 1;
-    }
-
-    // * Modifiers
-    // * NEW: media--center
-
-    &--center {
-        align-items: center;
-    }
-
-    &--rev {
-        > img {
-            order: 1;
-            margin: 0 0 0 rhythm(base)+em;
-        }
-    }
-
-}

@@ -18,29 +18,32 @@
 // * </footer>
 // * ---------------------
 
-.pricing {
-    text-align: center;
-    header {
-        @extend .blocked;
-    }
-    &__list,
-    ul {
-        @extend .block-list;
-        border-top: 0;
-        li {
-            border-left: brand(border-width) solid palette(border);
-            border-right: brand(border-width) solid palette(border);
-            padding-left: sizing(base)+em;
-            padding-right: sizing(base)+em;
-        }
-    }
+@if (blaupause(components, use-components) == true and blaupause(components, pricing-list) == true) {
 
-    &--round {
+    .pricing {
+        text-align: center;
         header {
-            border-radius: brand(border-radius) brand(border-radius) 0 0;
+            @extend .blocked;
         }
-        li:last-child {
-            border-radius: 0 0 brand(border-radius) brand(border-radius);
+        &__list,
+        ul {
+            @extend .block-list;
+            border-top: 0;
+            li {
+                border-left: brand(border-width) solid palette(border);
+                border-right: brand(border-width) solid palette(border);
+                padding-left: sizing(base)+em;
+                padding-right: sizing(base)+em;
+            }
+        }
+
+        &--round {
+            header {
+                border-radius: brand(border-radius) brand(border-radius) 0 0;
+            }
+            li:last-child {
+                border-radius: 0 0 brand(border-radius) brand(border-radius);
+            }
         }
     }
 
