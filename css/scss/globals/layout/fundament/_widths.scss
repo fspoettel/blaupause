@@ -19,17 +19,18 @@
     #{$fundament--class-type}#{$prefix}#{$mq}one-whole              { #{$property}: 100%; }
 
     // * Halves
-    @if(fundament(widths,halves) == true) {
+    @if(fundament(widths, halves) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-half           { #{$property}: 50%; }
     }
+
     // * Thirds
-    @if(fundament(widths,thirds) == true) {
+    @if(fundament(widths, thirds) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-third          { #{$property}: 33.333%; }
         #{$fundament--class-type}#{$prefix}#{$mq}two-thirds         { #{$property}: 66.666%; }
     }
 
     // * Quarters
-    @if(fundament(widths,quarters) == true) {
+    @if(fundament(widths, quarters) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-quarter        { #{$property}: 25%; }
         @if(fundament(widths, halves) == true) {
             #{$fundament--class-type}#{$prefix}#{$mq}two-quarters   { @extend #{$fundament--class-type}#{$prefix}#{$mq}one-half }
@@ -40,7 +41,7 @@
     }
 
     // * Fifths
-    @if(fundament(widths,fifths) == true) {
+    @if(fundament(widths, fifths) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-fifth          { #{$property}: 20%; }
         #{$fundament--class-type}#{$prefix}#{$mq}two-fifths         { #{$property}: 40%; }
         #{$fundament--class-type}#{$prefix}#{$mq}three-fifths       { #{$property}: 60%; }
@@ -48,7 +49,7 @@
     }
 
     // * Sixths
-    @if(fundament(widths,sixths) == true) {
+    @if(fundament(widths, sixths) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-sixth           { #{$property}: 16.666%; }
         @if(fundament(widths, thirds) == true) {
             #{$fundament--class-type}#{$prefix}#{$mq}two-sixths      { @extend #{$fundament--class-type}#{$prefix}#{$mq}one-third }
@@ -69,7 +70,7 @@
     }
 
     // * Eights
-    @if(fundament(widths,eighths) == true) {
+    @if(fundament(widths, eighths) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-eighth          { #{$property}: 12.5%; }
         @if(fundament(widths, quarter) == true) {
             #{$fundament--class-type}#{$prefix}#{$mq}two-eighths     { @extend #{$fundament--class-type}#{$prefix}#{$mq}one-quarter }
@@ -92,7 +93,7 @@
     }
 
     // * Tenths
-    @if(fundament(widths,tenths) == true) {
+    @if(fundament(widths, tenths) == true) {
         #{$fundament--class-type}#{$prefix}#{$mq}one-tenth           { #{$property}: 10%; }
         @if(fundament(widths, fifths) == true) {
             #{$fundament--class-type}#{$prefix}#{$mq}two-tenths      { @extend #{$fundament--class-type}#{$prefix}#{$mq}one-fifth }

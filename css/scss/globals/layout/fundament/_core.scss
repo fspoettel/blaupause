@@ -8,8 +8,8 @@
 // @  3. Core SCSS
 // * ---------------------
 
-// * 1. Set the class-type
-// * This sets the class-type either to normal or silent classes. (Based on fundament(settings,silent-classes))
+// * $fundament--class-type
+// * This sets the class-type either to normal or silent classes. (Based on `fundament(settings, silent-classes)`)
 // * ---------------------
 
 $fundament--class-type: unquote(".");
@@ -18,29 +18,43 @@ $fundament--class-type: unquote(".");
     $fundament--class-type: unquote("%")!global;
 }
 
-@if($test == true) {
-    $fundament--class-type: unquote(".");
-}
-
-// * 1. Set the namespace
-// * This sets the namespace for grid-classes and modifiers to fundament(settings, namespace)
+// * $fundament--namespace
+// * This sets the namespace for grid-classes and modifiers to `fundament(settings, namespace)`
 // * e.g. if set to "grid", the classes will be `grid`, `grid__item`, `grid--modifier`, `grid__item--modifier`
 // * ---------------------
 
 $fundament--namespace: fundament(settings, namespace);
 
-// * Core SCSS
-// * Styles for grid parent and items
+// * mixin legacy-support($element: "parent"|"child")
+// * Provides legacy support for elements.
+// * [1] & [2]. Fix white-space on fallback-grid.
+// * [2]. Declare a font-family that the letter-spacing fix is sure to work on all known evironments.
+// *      See: https://github.com/yui/pure/issues/41
+// @type: mixin
+// @exports: legacy-support($element: "parent"|"child")
 // * ---------------------
+
+@mixin legacy-support($element) {
+    @if($element == "parent") {
+        letter-spacing: -.31em; //* [1]. */
+        font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; //* [2] */
+    } @elseif ($element == "child") {
+        letter-spacing: normal;
+        word-spacing: normal;
+        @if (fundament(legacy, custom-font) != false) {
+            font-family: unquote(fundament(legacy, grid-item-font));//* [2] */
+        }
+    }
+}
 
 // * Grid Parent
 // * [1]. Use the new flex-box where possible (IE10+, Moz. 28+, Chrome 20+, Safari 7+, Opera 12.1+, Android 4.4+)
 // * [2]. Makes the grid usable on lists
 // * [3]. Remove all existing spacing from grid
 // * [4]. Add a negative margin to negate first items padding (aligns grid)
-// * **** !If you want to center a grid-parent with margin: auto, use `--full` to achieve symmetric centering!
+// *      !If you want to center a grid-parent with margin: auto, use `--full` to achieve symmetric centering!
 // * [5]. Firefox < 28 doesn't implement flex-flow correctly (...), fall back to `inline-block`.
-// * [6] & [7]. Fix white-space on fallback-grid.
+// * [6]. Include the fallback-grid if `fundament(legacy, use-fallback) is true
 // * ---------------------
 
 #{$fundament--class-type}#{$fundament--namespace} {
@@ -50,25 +64,28 @@ $fundament--namespace: fundament(settings, namespace);
     -webkit-flex-flow: row wrap;                 //* [1] */
     -ms-flex-flow: row wrap;                     //* [1] */
     flex-flow: row wrap;                         //* [1] */
-    list-style:none;                             //* [2] */
-    margin:0;                                    //* [3] */
-    padding:0;                                   //* [3] */
-    @include rem("margin-left", -(fundament(settings, gutter)));
+    list-style: none;                            //* [2] */
+    margin: 0;                                   //* [3] */
+    padding: 0;                                  //* [3] */
+    @include rem("margin-left", -(fundament(settings, gutter))); //* [4] */
     //* [5] */
-    @supports not(flex-wrap: wrap) { display: block; }
-
+    @supports not(flex-wrap: wrap) {
+        @include legacy-support("parent");
+    }
     //* [6] */
-    @if(fundament(legacy,markup-fix) != true) {
-        letter-spacing: fundament(legacy, letter-spacing);
+    @if(fundament(legacy, use-fallback) == true) {
+        @if(fundament(legacy, markup-fix) != true) {
+            @include legacy-support("parent");
+        }
     }
 }
 
 // * [7] Opera < 12.1 Hack (may be removed soon) */
 
-@if (fundament(legacy,use-markup-fix) != true) {
+@if (fundament(legacy, use-fallback) == true and fundament(legacy, use-markup-fix) != true) {
     .opera:-o-prefocus,
     #{$fundament--class-type}#{$fundament--namespace} {
-        word-spacing: fundament(legacy, word-spacing);
+        word-spacing: -.43em;
     }
 }
 
@@ -77,22 +94,24 @@ $fundament--namespace: fundament(settings, namespace);
 // * [2]. Space items apart
 // * [3]. Default alignment of __items is top
 // * [4]. Use new box-model on all grid items
-// * [4]. If mobile first, fill the container by default
-// * [5]. Reinstate letter-spacing on fallback-grid
+// * [5]. If mobile first, fill the container by default
+// * [6]. Reinstate letter-spacing on fallback-grid
 // * ---------------------
 
 #{$fundament--class-type}#{$fundament--namespace}__item {
     display: inline-block;                             //* [1] */
-    @include rem("padding-left", (fundament(settings, gutter)));
+    @include rem("padding-left", (fundament(settings, gutter)));         //* [2] */
     vertical-align: top;                               //* [3] */
     -webkit-box-sizing: border-box;                    //* [4] */
        -moz-box-sizing: border-box;                    //* [4] */
             box-sizing: border-box;                    //* [4] */
-    @if(fundament(settings, mobile-first) == true) { //* [5] */
+    @if(fundament(settings, mobile-first) == true) {   //* [5] */
         width: 100%;
     }
-    @if(fundament(legacy, use-markup-fix) != true) { //* [6] */
-        letter-spacing:normal;
-        word-spacing:normal;
+    @supports not(flex-wrap: wrap) {
+        @include legacy-support("child");
+    }
+    @if(fundament(legacy, use-fallback) == true and fundament(legacy, use-markup-fix) != true) {
+            @include legacy-support("child");
     }
 }

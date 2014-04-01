@@ -117,10 +117,10 @@
 
     @if(fundament(modifiers, wide) == true) {
         #{$fundament--class-type}#{$fundament--namespace}--wide {
-            @include rem("margin-left", -(fundament(settings, gutter)) * 2);
+            @include rem("margin-left", -(fundament(settings, gutter) * 2)); //* [4] */
         }
         #{$fundament--class-type}#{$fundament--namespace}--wide__item {
-            @include rem("padding-left", (fundament(settings, gutter) * 2));
+            @include rem("padding-left", (fundament(settings, gutter) * 2)); //* [4] */
         }
     }
 
@@ -130,10 +130,10 @@
 
     @if(fundament(modifiers, narrow) == true) {
         #{$fundament--class-type}#{$fundament--namespace}--narrow {
-            @include rem("margin-left", -(fundament(settings, gutter)) / 2);
+            @include rem("margin-left", -(fundament(settings, gutter) / 2)); //* [4] */
         }
         #{$fundament--class-type}#{$fundament--namespace}--narrow__item {
-            @include rem("padding-left", (fundament(settings, gutter)) / 2);
+            @include rem("padding-left", (fundament(settings, gutter) / 2)); //* [4] */
         }
     }
 }

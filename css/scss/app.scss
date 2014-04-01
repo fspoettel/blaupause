@@ -1,0 +1,86 @@
+
+// *    Build
+// * ---------------------
+// * Build file, handle with care.
+// * ---------------------
+
+// * Test-build flag
+
+$test: false;
+
+// * Base units
+
+@import "globals/var/base";
+
+// * Get the mixins first -the config may depend on them -> folder: globals/mixins
+
+@import "globals/mixins/absolutely-center-child";
+@import "globals/mixins/breakpoints";
+@import "globals/mixins/clearfix";
+@import "globals/mixins/columns";
+@import "globals/mixins/colorfunctions";
+@import "globals/mixins/delay";
+@import "globals/mixins/easing";
+@import "globals/mixins/font-face";
+@import "globals/mixins/font-stacks";
+@import "globals/mixins/modular-scale";
+@import "globals/mixins/rem";
+
+// * Global variable cache. Colors first. -> folder: globals/config
+
+@import "globals/var/type";
+@import "globals/var/units";
+@import "globals/var/colors";
+@import "globals/var/brand";
+@import "globals/var/mediaqueries";
+
+// * Reset (normalize.css 3.0.0 && border-box-model)
+
+@import "globals/reset";
+
+// * Layout files -> folder: layout
+// * The grid is based on my fork of csswizardry-grids
+
+@import "globals/layout/fundament";
+
+// * Typography -> folder: globals/typography
+
+@import "globals/typography/code";
+@import "globals/typography/fontface";
+@import "globals/typography/headings";
+@import "globals/typography/links";
+@import "globals/typography/lists";
+@import "globals/typography/main";
+@import "globals/typography/media";
+@import "globals/typography/quotes";
+@import "globals/typography/selections";
+
+// * UI abstractions -> folder: globals/elements
+
+@import "globals/elements/animations";
+@import "globals/elements/brand";
+@import "globals/elements/buttons";
+@import "globals/elements/forms";
+@import "globals/elements/icons";
+@import "globals/elements/tables";
+
+// * Global stylesheets -> folder: globals
+
+@import "globals/shame";
+@import "globals/styles";
+
+// * Components -> folder: components
+
+@import "components/block-list";
+@import "components/blocks";
+@import "components/fixed-backgrounds";
+@import "components/image-grid";
+@import "components/media-element";
+@import "components/nav";
+@import "components/pricing-table";
+@import "components/split";
+@import "components/text-columns";
+
+// * Local stylesheets (pages, modules)
+
+@import "locals/styles";

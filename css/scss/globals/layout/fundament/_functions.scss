@@ -14,7 +14,12 @@
 // * ---------------------
 
 @function fundament($group, $setting) {
-    @return map-get(map-get($fundament, $group), $setting);
+    @if($group and $setting) {
+        @return map-get(map-get($fundament, $group), $setting);
+    } @else {
+        @warn "Setting #{$setting} does not exist under #{$group}!";
+        @return false;
+    }
 }
 
 // * Init function that handles build
@@ -65,15 +70,25 @@
 // * ---------------------
 
 @mixin fundament-responsive($value:"width", $prefix:""){
+
     // * Get all breakpoints
     $fundament--breakpoints: map-get($fundament, breakpoints);
+    // * Test-boolean
+    $breakpoint--ok: false;
 
     // * Build a mq for each breakpoint and include prefixed-widths for this
     @each $breakpoint in $fundament--breakpoints {
+
         $name: #{nth($breakpoint, 1)};
         $declaration: nth($breakpoint, 2);
-        @media only screen and #{$declaration} {
-            @include fundament-widths($value, $prefix, '#{$name}--');
+
+        @if ($name and type-of($declaration) == "string"){
+            $breakpoint--ok: true;
+            @media only screen and #{$declaration} {
+                @include fundament-widths($value, $prefix, '#{$name}--');
+            }
+        } @else {
+            @warn "Your breakpoint #{$name} is not alright.";
         }
     }
 }

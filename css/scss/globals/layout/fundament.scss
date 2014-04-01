@@ -1,54 +1,72 @@
 
 // * Fundament Grid System
 // * ---------------------
-// * A flexbox-first, inline-block-fallback, semantic and customizable scss grid system.
-// @requires: SASS 3.3.*
+// * A flexbox-first, semantic and customizable scss grid system with a robust inline-block fallback.
+// * For documentation, see: https://github.com/felics/fundament/wiki
 // * ---------------------
 
 $fundament: (
+
+    // * Core Settings
+
     settings: (
-        // * Select a namespace for the main-class / item-class
+        // * Select a namespace for the grid, item-class and modifiers
         namespace:      "grid",
-        // * If true, all breakpoints in "breakpoints" will be included with widths
+        // * If true, all breakpoints in "breakpoints" will be included with corresponding media-queries
         responsive:     true,
         // * If true, __item will extend to fill of the parent by default
         mobile-first:   true,
         // * If true, the grid will output extendable silent classes
         silent-classes: true,
         // * Gutter
-        gutter:         24
+        gutter:         rhythm(base, number)
     ),
-    // * Breakpoint widths. If `(settings,responsive)`is true, each of these will have an own grid-system
+
+    // * Breakpoint widths. If `fundament(settings, responsive)`is true, each of these will have an own grid-system.
+    // * If fundament(push, responsive)` or fundament(pull, responsive)` is true, each of these will have push / pull classes avaiable
+
     breakpoints: (
-        "palm":           bp(palm),
-        "lap":            bp(lap),
-        "lap-up":         bp(lap-up),
-        "desk":           bp(desk),
-        "high":           bp(high)
+        palm:           bp(palm),
+        lap:            bp(lap),
+        lap-up:         bp(lap-up),
+        desk:           bp(desk),
+        high:           bp(high)
     ),
+
     // * Push classes
+
     push:(
         // * If true, generic push-classes will be generated
         use-push:         true,
         // * If true, push-classes for each breakpoint will be created
         responsive:       true
     ),
+
     // * Pull classes
+
     pull: (
         // * If true, a generic pull-class will be generated
         use-pull:         true,
         // * If true, pull-classes for each breakpoint will be created
         responsive:       true
     ),
+
     // * Settings for the fallback-grid
+
     legacy:(
-        // * Set to true if you intend to fix the white-space behaviour in markup
-        use-markup-fix: false,
-        // * With some fonts, the amount of letter-spacing needs to be adjusted to work
-        letter-spacing: -.31em,
-        word-spacing:   -.43em
+        // * Do you want to use the fallback `inline-block`-grid? (FF<28 gets it anyways due to flex-box bugs)
+        use-fallback:     true,
+        // * Set to true if you intend to fix the white-space behaviour in markup. If false, the `letter-spacing`fix will be used
+        use-markup-fix:   false,
+        // * The letter-spacing fix is designed to work with Arial or similar fonts, so you have to redeclare your font-stack
+        // * on individual grid items. This gives you a default way to handle it. See: https://github.com/yui/pure/blob/master/src/grids/css/grids-core.css
+        // ! Has to be wrapped in single-quotes
+        grid-item-font:  type(font, primary)
     ),
+
     // * Grid modifiers
+    // * You can toggle all modifiers or each of them here. If set to false, the modifier will not be avaiable.
+
     modifiers:(
         // * If true, --modifiers will be included
         use-modifiers:  true,
@@ -70,7 +88,9 @@ $fundament: (
         middle:         true
 
     ),
+
     // * Grid widths
+
     widths: (
         halves:         true,
         thirds:         true,
@@ -81,7 +101,9 @@ $fundament: (
         tenths:         true,
         twelfths:       true
     ),
+
     // * Visibility helpers
+
     visibility: (
         show:           true, // * will generate --show && __item--show classes for each breakpoint
         hide:           true  // * will generate --hide && __item--hide classes for each breakpoint
@@ -94,6 +116,8 @@ $fundament: (
 @import "fundament/core";
 @import "fundament/modifiers";
 @import "fundament/widths";
+
+// * Init grid
 
 @include fundament-init();
 

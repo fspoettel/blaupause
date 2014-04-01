@@ -25,7 +25,6 @@
     "1579671": "https://gist.github.com/1579671.git",
     "html5shiv": "~3.7.0",
     "jquery": "~2.1.0",
-    "csswizardry-grids": "https://github.com/felics/csswizardry-grids.git#boilerplate",
     "modular-scale": "~2.0.4",
     "normalize.css": "~3.0.1",
     "respond": "~1.4.2",
@@ -34,6 +33,6 @@
     "Function.prototype.bind": "polyfill/Function.prototype.bind",
     "eventie": "desandro/eventie#~1.0.5",
     "doc-ready": "desandro/doc-ready#~1.0.2",
-    "fundament": "~0.0.3"
+    "fundament": "blaupause"
   }
 }

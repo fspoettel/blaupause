@@ -371,11 +371,13 @@ th {
   padding: 0;
   margin-left: -24px;
   margin-left: -1.5rem;
-  letter-spacing: -0.31em; }
+  letter-spacing: -.31em;
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; }
   @supports not (flex-wrap: wrap) {
     .grid, .block-list, .pricing__list,
     .pricing ul, .image-grid {
-      display: block; } }
+      letter-spacing: -.31em;
+      font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; } }
 
 .opera:-o-prefocus,
 .grid,
@@ -383,7 +385,7 @@ th {
 .pricing__list,
 .pricing ul,
 .image-grid {
-  word-spacing: -0.43em; }
+  word-spacing: -.43em; }
 
 .grid__item, .block-list li, .pricing__list li,
 .pricing ul li, .image-grid__item,
@@ -396,7 +398,15 @@ th {
   box-sizing: border-box;
   width: 100%;
   letter-spacing: normal;
-  word-spacing: normal; }
+  word-spacing: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @supports not (flex-wrap: wrap) {
+    .grid__item, .block-list li, .pricing__list li,
+    .pricing ul li, .image-grid__item,
+    .image-grid > figure {
+      letter-spacing: normal;
+      word-spacing: normal;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
 
 .grid--full, .block-list, .pricing__list,
 .pricing ul {
