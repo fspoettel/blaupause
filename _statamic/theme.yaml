@@ -20,6 +20,11 @@ show_comments: true
 disqus_account: test
 typekit_id:
 
+# Technical
+
+use_jquery: false
+use_modernirzr: true
+
 # Global text snippets
 
 no_results_text: "Keine Ergebnisse."

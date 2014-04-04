@@ -1,7 +1,9 @@
 
 {{#  Scripts #}}
 
-{{# Load jQuery from Google CDN, fall back to local copy. #}}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src="{{ theme:js src="lib/jquery/jquery-1.11.0.min" }}"><\/script>")</script>
+{{ if use_jquery }}
+    {{# Load jQuery from Google CDN, fall back to local copy. #}}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write("<script src="{{ theme:js src="lib/jquery/jquery-1.11.0.min" }}"><\/script>")</script>
+{{ endif }}
 <script src="{{ theme:js src="dist/global.min" }}"></script>
