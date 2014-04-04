@@ -185,31 +185,24 @@ gulp.task('testWatch', function () {
 // * ---------------------
 
 // * Default task
-
 gulp.task("default", ["scripts", "sass"]);
 
 // * Debug task
-
 gulp.task("debug", ["debug-sass", "jshint"]);
 
 // * Hint task
-
 gulp.task("hint", ["scripts", "jshint"]);
 
 // * Image task
-
 gulp.task("images",["imgTask"]);
 
 // * Rebuild tests
-
 gulp.task("test", ["scripts", "test-sass"]);
 
 // * Test watch
-
 gulp.task("test-watch", ["scripts", "test-sass", "testWatch"]);
 
 // * Watch
-
 gulp.task("watch", ["default", "watchTask"]);
 
 

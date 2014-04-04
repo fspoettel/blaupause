@@ -173,18 +173,18 @@
     // * ---------------------
 
     @if($prefix == "") {
+        @if(fundament(visibility, hide) == true) {
+            #{$fundament--class-type}#{$mq}#{$fundament--namespace}--hide,
+            #{$fundament--class-type}#{$mq}#{$fundament--namespace}__item--hide {
+                display: none;
+            }
+        }
         @if(fundament(visibility, show) == true) {
             #{$fundament--class-type}#{$mq}#{$fundament--namespace}--show {
                 display: block;
             }
             #{$fundament--class-type}#{$mq}#{$fundament--namespace}__item--show {
                 display: inline-block;
-            }
-        }
-        @if(fundament(visibility, hide) == true) {
-            #{$fundament--class-type}#{$mq}#{$fundament--namespace}--hide,
-            #{$fundament--class-type}#{$mq}#{$fundament--namespace}__item--hide {
-                display: none;
             }
         }
     }

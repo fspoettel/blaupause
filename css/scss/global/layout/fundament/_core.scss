@@ -46,7 +46,7 @@ $fundament--namespace: fundament(settings, namespace);
         letter-spacing: normal;
         word-spacing: normal;
         @if (fundament(legacy, custom-font) != false) {
-            font-family: unquote(fundament(legacy, grid-item-font));//* [2] */
+            font-family: unquote(fundament(legacy, grid-item-font)); //* [2] */
         }
     }
 }

@@ -13,6 +13,8 @@
 // @  6. --middle
 // @  7. --wide
 // @  8. --narrow
+// @  9. --space-around (flex-only)
+// @ 10. --space-between (flex-only)
 // * ---------------------
 
 @if(fundament(modifiers, use-modifiers) == true) {
@@ -36,15 +38,15 @@
 
     @if(fundament(modifiers, rev) == true) {
         #{$fundament--class-type}#{$fundament--namespace}--rev {
-            direction:rtl;
+            direction: rtl;
             -webkit-flex-flow: wrap-reverse row;
             -ms-flex-flow: wrap-reverse row;
             flex-flow: wrap-reverse row;
-            text-align:left;
+            text-align: left;
         }
         #{$fundament--class-type}#{$fundament--namespace}--rev__item {
-            direction:ltr;
-            text-align:left;
+            direction: ltr;
+            text-align: left;
         }
     }
 
@@ -57,11 +59,11 @@
             -webkit-justify-content: center;
             -ms-flex-pack: center;
             justify-content: center;
-            text-align:center;
+            text-align: center;
 
         }
         #{$fundament--class-type}#{$fundament--namespace}--center__item {
-            text-align:left;
+            text-align: left;
         }
     }
 
@@ -74,10 +76,10 @@
             -webkit-justify-content: flex-end;
             -ms-flex-pack: end;
             justify-content: flex-end;
-            text-align:right;
+            text-align: right;
         }
         #{$fundament--class-type}#{$fundament--namespace}--right__item {
-            text-align:left;
+            text-align: left;
         }
     }
 
@@ -92,7 +94,7 @@
             align-items: flex-end;
         }
         #{$fundament--class-type}#{$fundament--namespace}--bottom__item {
-            vertical-align:bottom;
+            vertical-align: bottom;
         }
     }
 
@@ -107,7 +109,7 @@
             align-items: center;
         }
         #{$fundament--class-type}#{$fundament--namespace}--middle__item {
-            vertical-align:middle;
+            vertical-align :middle;
         }
     }
 
@@ -136,4 +138,29 @@
             @include rem("padding-left", (fundament(settings, gutter) / 2)); //* [4] */
         }
     }
+
+    // * --space-around
+    // * Align items by dynamic margins around (flexbox only)
+    // * ---------------------
+
+    @if(fundament(modifiers, space-around) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--space-around {
+            -webkit-justify-content: space-around;
+                -ms-justify-content: space-around;
+                    justify-content: space-around;
+        }
+    }
+
+    // * --space-between
+    // * Align items by dynamic margins between them (flexbox only)
+    // * ---------------------
+
+    @if(fundament(modifiers, space-between) == true) {
+        #{$fundament--class-type}#{$fundament--namespace}--space-between {
+            -webkit-justify-content: space-between;
+                -ms-justify-content: space-between;
+                    justify-content: space-between;
+        }
+    }
+
 }

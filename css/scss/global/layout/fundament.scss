@@ -1,9 +1,10 @@
 
-// * Fundament Grid System
+/* Fundament Grid System
 // * ---------------------
 // * A flexbox-first, semantic and customizable scss grid system with a robust inline-block fallback.
 // * For documentation, see: https://github.com/felics/fundament/wiki
-// * ---------------------
+// * MIT LICENSE (c) 2014 Felix Spöttel
+// * ---------------------*/
 
 $fundament: (
 
@@ -85,7 +86,11 @@ $fundament: (
         // * include --bottom (vertically-aligned-to-bottom grid)
         bottom:         true,
         // * include --middle (vertically-center grid)
-        middle:         true
+        middle:         true,
+        // * include --space-around (flex-only)
+        space-around:   true,
+        // * include --space-between (flex-only)
+        space-between:  true
 
     ),
 
