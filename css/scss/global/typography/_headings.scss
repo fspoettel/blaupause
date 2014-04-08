@@ -32,13 +32,24 @@ h6 {
 // * Class names can be used if hierarchy is different from size
 // * ---------------------
 
+@mixin heading-font-size($value) {
+    @if($type--use-modular-scale == true){
+        font-size: $value;
+    } @else {
+        @include rem("font-size", $value);
+    }
+}
+
 @each $heading in $scale {
-    #{nth($heading,1)},
-    .#{nth($heading,1)}{
-        @if($type--use-modular-scale == true){
-            font-size: nth($heading,2);
-        } @else {
-            @include rem("font-size", nth($heading,2));
+
+    @if(nth($heading,1) != mega and nth($heading,1) != giga and nth($heading,1) != ultra) {
+        #{nth($heading,1)},
+        .#{nth($heading,1)}{
+            @include heading-font-size(nth($heading,2));
+        }
+    } @else {
+        .#{nth($heading,1)}{
+            @include heading-font-size(nth($heading,2));
         }
     }
 }

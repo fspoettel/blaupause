@@ -60,11 +60,6 @@ $blaupause: (
 
 @import "global/reset";
 
-// * Layout files -> folder: layout
-// * The grid is based on my fork of csswizardry-grids
-
-@import "global/layout/fundament";
-
 // * Typography -> folder: global/typography
 
 @import "global/typography/code";
@@ -83,6 +78,7 @@ $blaupause: (
 @import "global/elements/brand";
 @import "global/elements/buttons";
 @import "global/elements/forms";
+@import "global/elements/fundament";
 @import "global/elements/icons";
 @import "global/elements/tables";
 

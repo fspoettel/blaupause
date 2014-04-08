@@ -12,4 +12,7 @@
     &--round {
         border-radius: brand(border-radius);
     }
+    &--bordered {
+        border: brand(border-width) brand(border-style) palette(border);
+    }
 }

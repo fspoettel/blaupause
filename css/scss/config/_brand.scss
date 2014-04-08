@@ -1,13 +1,14 @@
 
 // *    Brand
 // * ---------------------
-// * A map containing brand-styles.
+// * A map containing brand-styles. can be used directly in you CSS, e.g.: border-radius: brand(border-radius).
 // @exports brand(value);
 // * ---------------------
 
 $brand: (
     border-radius:      (sizing(base) / 4 +em),
-    border-width:        1px,
+    border-style:        solid,
+    border-width:       (sizing(base) / 8 +em),
     transition-duration: 0.3s,
     transition-style:    ease(cubic)
 );

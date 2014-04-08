@@ -1,8 +1,8 @@
 
 // *    Colors
 // * ---------------------
-// * Project colors.
-// @exports color(name,hue);
+// * Project colors. Can be used like this: color: palette(type, dark).
+// @exports palette(name,hue);
 // * ---------------------
 
 $color: (
