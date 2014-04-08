@@ -21,7 +21,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "1579671": "https://gist.github.com/1579671.git",
     "html5shiv": "~3.7.0",
     "jquery": "~2.1.0",

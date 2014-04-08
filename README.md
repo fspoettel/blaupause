@@ -2,11 +2,10 @@ Blaupause
 ===========
 
 ![Dev](https://david-dm.org/felics/blaupause.png)
-![License](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png)
 
 ## About
 
-This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-boilerplate, a Gulp build-process and an optional [Statamic](www.statamic.com) twist and some vanilla JS-helpers. It aims to provide a flexible, UI-less core to get web-projects running quickly. The grid used is based on my [fork](https://github.com/felics/csswizardry-grids/tree/boilerplate) of [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids) (which introduces a flex-box enhancement for browsers that support it). The SCSS-recipes are best practices found around the internet, most notably in [inuit.css](https://github.com/csswizardry/inuit.css), coded and simplified in the style of the boilerplate. I added flex-box options for items where they make sense and either simplify or enhance the output. These are triggered with Modernizr at the moment.
+This is my (early alpha) boilerplate for web-projects. It contains a small SCSS-boilerplate, a Gulp build-process and an optional [Statamic](www.statamic.com) twist and some vanilla JS-helpers. It aims to provide a flexible, UI-less core to get web-projects up and running quickly. The grid used – [Fundament](https://github.com/felics/fundament) – is flexbox-first with an `inline-block fallback`. The SCSS-recipes are best practices found around the internet, most notably in [inuit.css](https://github.com/csswizardry/inuit.css), coded and simplified in the style of the boilerplate. I added flex-box options for items where they make sense and either simplify or enhance the output. These are triggered with Modernizr.
 
 ## Dependencies:
 
@@ -100,7 +99,7 @@ If you need to debug, you can run `gulp debug`. This will spawn a `debug` direct
 
 #### css/scss
 
-The scss is divided in three main categories: *globals, locals & recipes*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from *inuit.css'* great implementations).
+The scss is divided in three main categories: *globals, locals & components*. Globals contain shared styles. The locals-folder is meant for page or module-specific styles. Recipes provide minimalistic implementations of common layout / UI patterns (some of them adapted from *inuit.css'* great implementations).
 
 The *globals*-folder is grouped in several sub-folders:
 
@@ -115,10 +114,6 @@ The *globals*-folder is grouped in several sub-folders:
  - `/mixins`
 
    Stores mixins.
-
- - `/layouts`
-
-   Stores the grid and other layout-abstractions.
 
  - `/elements`
 
