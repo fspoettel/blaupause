@@ -20,7 +20,7 @@ module.exports = {
         "js/app/globals/doc-ready.js",
         "js/app/globals/**/*.js",
         "js/app/modules/**/*.js",
-        "js/app/main.js"
+        "js/app/app.js"
     ],
     jsWatch: "js/app/**",
     jsDest: "js/dist",

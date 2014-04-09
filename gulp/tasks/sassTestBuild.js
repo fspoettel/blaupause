@@ -14,7 +14,7 @@ var gulp    = require("gulp"),
 // * Paths
 
 var sassSrc = config.sassSrc,
-    sassDest = config.sassDest,
+    sassDest = config.sassTestDest,
     sassName = config.fileName + ".css",
     sassMinName = config.fileName + ".min.css";
 // * Function
