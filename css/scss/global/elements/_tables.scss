@@ -50,16 +50,16 @@ thead {
     &--bordered {
         th,
         td {
-            border: brand(border-width) solid palette(border);
+            border: brand(border-width)+em brand(border-style) palette(border);
             &:empty {
                 border: none;
             }
         }
         thead tr:last-child th {
-            border-bottom-width: brand(border-width);
+            border-bottom-width: brand(border-width)+em;
         }
         tbody tr th:last-of-type {
-            border-right-width: brand(border-width);
+            border-right-width: brand(border-width)+em;
         }
     }
 

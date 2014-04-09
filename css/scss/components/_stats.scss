@@ -36,7 +36,7 @@
 
         &--bordered {
             > li {
-                border-left: brand(border-width) solid palette(border);
+                border-left: brand(border-width)+em brand(border-style) palette(border);
                 &:first-child {
                     border-left: 0;
                 }

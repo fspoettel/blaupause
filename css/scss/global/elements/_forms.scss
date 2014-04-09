@@ -42,7 +42,7 @@ textarea {
 
 fieldset {
     padding: (sizing(base) / 2 +em) (sizing(base) / 2 +em);
-    border: brand(border-width) solid palette(border);
+    border: brand(border-width)+em brand(border-style) palette(border);
 }
 
 // * Text inputs

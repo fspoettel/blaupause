@@ -6,9 +6,9 @@
 // * ---------------------
 
 $brand: (
-    border-radius:      (sizing(base) / 4 +em),
+    border-radius:      (sizing(base) / 4),
     border-style:        solid,
-    border-width:       (sizing(base) / 8 +em),
+    border-width:       (sizing(base) / 8),
     transition-duration: 0.3s,
     transition-style:    ease(cubic)
 );

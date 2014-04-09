@@ -10,9 +10,9 @@
 
 %brand {
     &--round {
-        border-radius: brand(border-radius);
+        border-radius: brand(border-radius)+em;
     }
     &--bordered {
-        border: brand(border-width) brand(border-style) palette(border);
+        border: brand(border-width)+em brand(border-style) palette(border);
     }
 }

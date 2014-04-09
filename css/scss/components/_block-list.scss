@@ -17,12 +17,12 @@
         @extend #{$fundament--class-type}#{$fundament--namespace};
         @extend #{$fundament--class-type}#{$fundament--namespace}--full;
         margin-bottom: 0;
-        border-top: brand(border-width) solid palette(border);
+        border-top: brand(border-width)+em brand(border-style) palette(border);
         li {
             @extend #{$fundament--class-type}#{$fundament--namespace}__item;
             @extend #{$fundament--class-type}#{$fundament--namespace}--full__item;
             padding: rhythm(base)+em inherit;
-            border-bottom: brand(border-width) solid palette(border);
+            border-bottom: brand(border-width)+em brand(border-style) palette(border);
         }
         ul {
             margin-top: (rhythm(base) / 2 +em);

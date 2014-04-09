@@ -30,8 +30,8 @@
             @extend .block-list;
             border-top: 0;
             li {
-                border-left: brand(border-width) solid palette(border);
-                border-right: brand(border-width) solid palette(border);
+                border-left: brand(border-width)+em brand(border-style) palette(border);
+                border-right: brand(border-width)+em brand(border-style) palette(border);
                 padding-left: sizing(base)+em;
                 padding-right: sizing(base)+em;
             }
@@ -39,10 +39,10 @@
 
         &--round {
             header {
-                border-radius: brand(border-radius) brand(border-radius) 0 0;
+                border-radius: brand(border-radius)+em brand(border-radius)+em 0 0;
             }
             li:last-child {
-                border-radius: 0 0 brand(border-radius) brand(border-radius);
+                border-radius: 0 0 brand(border-radius)+em brand(border-radius)+em;
             }
         }
     }

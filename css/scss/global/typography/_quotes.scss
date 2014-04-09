@@ -6,7 +6,7 @@
 
 blockquote {
     padding-left: (sizing(type) / 2 +em);
-    border-left: (sizing(type) / 2 +em) solid palette(primary);
+    border-left: (sizing(type) / 2 +em) brand(border-style) palette(primary);
 }
 
 #{type(base,content-namespace)} blockquote p {
