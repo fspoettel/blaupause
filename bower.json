@@ -1,17 +1,12 @@
 {
   "name": "blaupause",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "homepage": "https://github.com/felics/blaupause",
   "authors": [
     "felics <fspoettel@gmail.com>"
   ],
-  "main": "css/build.scss",
-  "keywords": [
-    "scss",
-    "js",
-    "boilerplate",
-    "statamic"
-  ],
+  "description": "Personal Front End-Boilerplate",
+  "main": "gulpfile.js",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -21,18 +16,8 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "1579671": "https://gist.github.com/1579671.git",
-    "html5shiv": "~3.7.0",
-    "jquery": "~2.1.0",
-    "modular-scale": "~2.0.4",
-    "normalize.css": "~3.0.1",
-    "respond": "~1.4.2",
-    "apollo": "https://github.com/toddmotto/apollo.git#~1.3.0",
-    "stratos": "https://github.com/toddmotto/stratos.git#~1.4.0",
-    "Function.prototype.bind": "polyfill/Function.prototype.bind",
-    "eventie": "desandro/eventie#~1.0.5",
-    "doc-ready": "desandro/doc-ready#~1.0.2",
-    "fundament": "blaupause"
+  "dependencies": {
+    "html5-boilerplate": "~4.3.0",
+    "normalize.css": "~3.0.2"
   }
 }
