@@ -1,0 +1,22 @@
+<div class="widget  mitgliederbereich_widget">
+    <a href="mitgliederbereich">
+    	<h4 class="gamma">Mitgliederbereich</h4>
+    </a>
+    {{ if is_admin }}
+      <a href="{{ _site_root }}admin.php/pages" class="btn"> Adminbereich</a>
+    {{ /if }}
+    <ul>
+     	{{ taxonomy:listing folder="mitgliederbereich" type="categories" sort_by="name" sort_dir="asc" }}
+          {{ if no_results }}
+          {{ else }}
+       		<li>
+       			<a href="{{ url }}">{{ name }} </a>
+       		</li>
+          {{ /if }}
+      	{{ /taxonomy:listing }}
+    </ul>
+</div>
+<div class="mailchimp  widget">
+  <h4 class="gamma">Mailingliste</h4>
+  {{ gopher:simple }}
+</div>

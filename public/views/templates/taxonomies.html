@@ -1,0 +1,52 @@
+<body class="blog  categories">
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+    <section role="main">
+        <div class="archiv__listing  content">
+            {{ if logged_in }}
+                {{ if taxonomy_slug }}
+                    <header>
+                        <h1 class="alpha">Kategorie: <em>{{ taxonomy_name|ucfirst|deslugify }}</em></h1>
+                    </header>
+                    <hr>
+                    {{ entries:listing folder="mitgliederbereich" limit="5" taxonomy="true" }}
+                        <article>
+                            <header class="title">
+                                <time datetime="{{ date format="Y-m-d" }}"> <span>{{ date format="d.m.Y" }}</span></time>
+                                <h1 class="alpha"><a class="blog_entry_title" href="{{ url }}" title="{{ title }}"> {{ title }} </a></h1>
+                            </header>
+                            {{ if title_image }}
+                                <img src="{{ transform src="{ title_image }" quality="85" action="smart" width="800" height="400" }}" alt="{{ title|urlencode }}" alt="{{ url }}" />
+                            {{ /if }}
+                            {{ content_description }}
+                            <p><a href="{{ url }}">Zu dem Artikel{{ if document_grid }}&nbsp;&amp;&nbsp;den Materialien{{ /if }} ...</a></p>
+                            {{ if categories }}
+                                <p class="entry-meta"> Kategorie(n): {{ categories_url_list }}.</p>
+                            {{ /if }}
+                        </article>
+                        <hr>
+                    {{ /entries:listing }}
+
+                 {{ entries:pagination folder="mitgliederbereich" taxonomy="true" limit="5"}}
+                     <div class="pagination">
+                         {{ if previous_page }}
+                             <a class="gamma" href="{{ previous_page }}">Vorherige Seite</a>
+                         {{ /if }}
+                         {{ if next_page }}
+                             <a class="gamma" href="{{ next_page }}">Nächste Seite </a>
+                         {{ /if }}
+                     </div>
+                 {{ /entries:pagination }}
+                {{ /if }}
+
+                {{ else }}
+                Bitte loggen Sie sich ein, um die Inhalte sehen zu können.
+            {{ /if }}
+        </div>
+        {{ theme:partial src="sidebar" }}
+    </section>
+    {{ theme:partial src="footer" }}
+    {{ theme:partial src="scripts" }}
+    <!--Custom js for special pages goes here -->

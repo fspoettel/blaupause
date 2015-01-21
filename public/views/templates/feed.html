@@ -1,0 +1,28 @@
+<channel>
+
+    <title><![CDATA[ German Crown Club ]]></title>
+    <link>{{ _site_url }}</link>
+    <description>{{ _site_name }}</description>
+    <dc:language>{{ site_language }}</dc:language>
+    <dc:creator>joachim.spoettel@flemming-frankfurt.de</dc:creator>
+    <dc:rights>Copyright {{ current_date format='Y' }}</dc:rights>
+    <dc:date>{{ current_date format="c" }}</dc:date>
+    <admin:generatorAgent rdf:resource="http://statamic.com/" />
+
+    {{ entries:listing folder="blog|galerie|mitgliederbereich|partner" limit="50" }}
+    <item>
+        <title><![CDATA[{{ title }}]]></title>
+        <link>{{ permalink }}</link>
+        <guid>{{ permalink }}</guid>
+        <description><![CDATA[
+        {{ if context == "partnerbeitrag" }}
+        <p><b>Partnerbeitrag in Kooperation mit <a href="http://www.dental-online-college.com/">Dental Online College</a></b></p>
+        {{ /if }}
+        {{ content_description }} -
+        <p><a href="{{ permalink }}">Weiterlesen{{ if context == "partnerbeitrag" or context == "mitgliederbereich" }} im Mitgliederbereich{{ /if }}"</a></p>
+        ]]></description>
+        <dc:subject><![CDATA[{{ categories_list }}]]></dc:subject>
+        <dc:date>{{ datestamp format="c" }}</dc:date>
+    </item>
+    {{ /entries:listing }}
+</channel>

@@ -1,0 +1,35 @@
+{{ if !logged_in }}
+    <h4 class="gamma">Login</h4>
+    {{ member:login_form return="{ current_url }" allow_request_return="true" }}
+    {{ if error }}
+        <p class="error">Fehler: Login falsch. Bitte <a href="#login">versuchen Sie es erneut.</a></p>
+    {{ /if }}
+    <ul class="formfields">
+            <li>
+                <label for="username">Username</label>
+                <div class="text-input">
+                    <input type="text" name="username" value="{{ old_values:username }}" id="username">
+                </div>
+            </li>
+            <li>
+                <div class="text-input">
+                    <label for="password">Passwort</label>
+                    <input type="password" name="password" value="" id="password">
+                </div>
+            </li>
+            <li>
+                <input tabindex="3" type="submit" value="Log in">
+            </li>
+        </ul>
+        <div class="signup textleft">
+            <p><a href="kontakt">Mitglied werden</a>
+            <p><a href="kontakt">Passwort vergessen</a>
+        </div>
+    {{ /member:login_form }}
+{{ else }}
+    <h4 class="gamma">Konto</h4>
+    <div class="logged_out">
+        <p><a class="btn_secondary" href="/mitgliederbereich/konto">Verwalten</a></p>
+        <p><a  href="{{ member:logout_url }}">Logout</a></p>
+    </div>
+{{ /if }}

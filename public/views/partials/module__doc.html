@@ -1,0 +1,17 @@
+<div class="doc_container">
+{{ entries:listing folder="codes" }}
+    {{ vouchers }}
+            {{ if user == username }}
+                <div class="doc_voucher">
+                    <h4>Ihr DOC Code</h4>
+                    <div class="doc_code">{{ code }}</div>
+                    <div class="doc_date">
+                        {{ zeitraum }}
+                            <time datetime="{{ start }}">[{{ start format="d.m.Y" }}</time> - <time datetime="{{ end }}">{{ end format="d.m.Y" }}]</time>
+                        {{ /zeitraum }}
+                    </div>
+                </div>
+            {{ /if }}
+    {{ /vouchers }}
+{{ /entries:listing }}
+</div>

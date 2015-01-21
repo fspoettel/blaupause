@@ -1,0 +1,52 @@
+<body class="post  post--mitglieder">
+        <div id="login" class="login login--dropdown text-left">
+        {{ theme:partial src="module__login" }}
+        <div class="btn  login-close">Schließen</div>
+    </div>
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+        <section role="main">
+            <div class="content">
+                    <article>
+                    {{ if logged_in }}
+                        <h1 class="entrytitle  alpha">{{ title }}</h1>
+                        {{ if title_image and !document_grid }}
+                            <img class="entry_title_image" src="{{ title_image }}" alt="{{ title }}" />
+                        {{ /if }}
+                        {{ if document_grid }}
+                            {{ document_grid limit="200" }}
+                                {{ if title_image }}
+                                    <a href="{{ pdf }}"><img class="entry_title_image" src="{{ title_image }}" alt="{{ title }}" /></a>
+                                {{ /if }}
+                                {{ if pdf }}
+                                <object data="{{ pdf }}#view=Fit" type="application/pdf" width="100%" height="100%">
+                                    <p>Ihr Browser unterstützt keine PDF-Einbettung. Bitte downloaden Sie das PDF mit untenstehendem Link.</p>
+                                </object>
+                                <p><a class="eventlink" href="{{ pdf }}" title="Download PDF" rel="nofollow">Download PDF<!--[if IE]<i>&nbsp;Right click and save as.</i></p><![endif]--></a></p>
+                                {{ /if }}
+                            {{ /document_grid }}
+                        {{ /if }}
+                        {{ if post_referenz }}
+                          {{ post_referenz }}
+                                <div class="eventlink"><a href="{{ name }}">Dazugehöriges Event #{{ index }}</a></div>
+                          {{ /post_referenz }}
+                        {{ /if }}
+                        {{ content }}
+                        {{ if categories }}
+                            <div class="entry-meta"> Kategorie: {{ categories_url_list }}.</div>
+                        {{ /if }}
+                        <footer>
+                            {{ disqus:comments account="{ disqus_account }" }}
+                        </footer>
+                    {{ else }}
+                            <p> Bitte loggen Sie sich ein, um die Seite sehen zu können</p>
+                    {{ /if }}
+                </article>
+            </div>
+        </section>
+    {{ theme:partial src="footer"}}
+    {{ theme:partial src="scripts"}}
+    <!--Custom js for special pages goes here -->
+

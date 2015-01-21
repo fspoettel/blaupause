@@ -1,0 +1,16 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+description: German Crown Club ist ein Netzwerk und Club f&uuml;r Zahn&auml;rzte und Zahnindustrie von Flemming Dental Frankfurt. 
+siteauthor: Felix Spoettel
+site_language: de
+# Commentsnoyes
+show_comments:yes
+disqus_account:germancrownclub
+# external
+# Global text snippets
+no_results_text: "Keine Ergebnisse."

@@ -8,26 +8,26 @@
 ehthumbs.db
 Thumbs.db
 
-# Statamic files #
-######################
-_cache/*
-!_cache/index.html
-_logs/*
-!_logs/index.html
-
-# Statamic copyrighted #
-######################
-
-_app/*
-admin/*
-
-#  Node modules #
-######################
-
+# Node modules #
+################
 node_modules/*
 bower_components/*
 
-#  Sublime projects #
-######################
-
+# Sublime projects #
+####################
 *sublime*
+
+# Caches #
+##########
+.sass-cache
+
+# Logs #
+########
+logs
+*.log
+
+# Runtime data #
+################
+pids
+*.pid
+*.seed

@@ -1,0 +1,87 @@
+<body class="blog  mitgliederbereich">
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+    <section role="main">
+    <div class="archiv__listing  content">
+            <header>
+                {{ if logged_in }}
+                <h1 class="beta">
+                {{ member:profile }}
+                Willkommen zur&uuml;ck,
+                {{ if gender == "männlich" }}
+                Hr.
+                {{ elseif gender == "weiblich" }}
+                Fr.
+                {{ else }}
+                    {{ if !(is_doctor === "Dr." or is_doctor === "Prof. Dr." or is_doctor === "Dr. Dr.") }}
+                    {{ first_name }}
+                    {{ /if }}
+                {{ /if }}
+                {{ if is_doctor === "Dr." }}
+                    Dr.
+                {{ elseif is_doctor === "Dr. Dr." }}
+                    Dr. Dr.
+                {{ elseif is_doctor === "Prof. Dr." }}
+                    Prof. Dr.
+                {{ /if }}
+                {{ last_name }}.
+                {{ /member:profile }}
+                </h1>
+                {{ else }}
+                <h1 class="alpha">Mitgliederbereich</h1>
+                {{ /if }}
+            </header>
+            <hr>
+            {{ if logged_in }}
+                {{ entries:listing folder="mitgliederbereich|partner" limit="5" }}
+                    {{if no_results }}
+                        <hr>
+                    {{ else }}
+                        <article {{ if context == "partnerbeitrag" }}class="partner"{{ /if }}>
+                            <header class="archiv__title">
+                                <time datetime="{{ date format="Y-m-d" }}"> <span>{{ date format="d.m.Y" }}</span></time>
+                                <h1><a class="blog_entry_title" href="{{ url }}"> {{ title }} </a></h1>
+                            </header>
+                            {{ if context == "partnerbeitrag" }}
+                                <p class="doc"><i>Partnerbeitrag</i> in Kooperation mit <a href="http://dental-online-college.com">Dental Online College</a></p>
+                            {{ /if }}
+                            {{if title_image }}
+                                <a href=" {{ url }}">
+                                    <img src="{{ transform src="{ title_image }" quality="85" action="smart" width="800" height="400" }}" alt="{{ title|urlencode }}" />
+                            {{ /if }}
+                            {{ if post_referenz }}
+                              {{ post_referenz }}
+                                    <div class="eventlink"><a href="{{ name }}">Dazugehöriges Event #{{ index }}</a></div>
+                              {{ /post_referenz }}
+                            {{ /if }}
+                            <p>{{ content_description }}</p>
+                            <p><a href="{{ url }}">Zu dem Artikel{{ if document_grid }} &nbsp;&amp;&nbsp;den Materialien {{ /if }} ...</a></p>
+                            {{ if categories }}
+                                <footer class="entry-meta"><i> Kategorien: {{ categories_url_list }}.</i></footer>
+                            {{ /if }}
+                        </article>
+                    <hr>
+                    {{ /if }}
+                {{ /entries:listing }}
+                {{ entries:pagination folder="mitgliederbereich" limit="5"}}
+                    <div class="pagination">
+                        {{ if previous_page }}
+                            <a class="gamma  btn" href="{{ previous_page }}">Vorherige Seite</a>
+                        {{ /if }}
+                        {{ if next_page }}
+                            <a class="gamma  btn" href="{{ next_page }}">Nächste Seite </a>
+                        {{ /if }}
+                    </div>
+                {{ /entries:pagination }}
+            {{ else }}
+                <p> Bitte loggen Sie sich ein, um die Seite sehen zu können.</p>
+            {{ /if }}
+        </div>
+        {{ theme:partial src="sidebar" }}
+    </section>
+    {{theme:partial src="footer"}}
+    {{ theme:partial src="scripts"}}
+    <!--Custom js for special pages goes here -->
+
