@@ -1,0 +1,29 @@
+<body>
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+        <div class="grid_wrapper">
+            <section role="main">
+                <div class="content">
+                    <article>
+                        <h1>{{title}}</h1>
+                        {{ content }}
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li>
+                                <a href="{{ homepage }}"{{ if !segment_1 }} class="current"{{ /if }}>Home</a>
+                            </li>
+                            {{ nav from="/" exclude="werte|impressum|slider" include_entries="yes" max_depth="1" }}
+                            <li>
+                                <a href="{{ url }}" {{if is_current }} class="current" {{ /if }}>{{ title }}</a>
+                            </li>
+                            {{ /nav }}
+                        </ul>
+                    </article>
+                </div>
+        </section>
+    </div>
+    {{ theme:partial src="footer" }}
+    {{ theme:partial src="scripts" }}
+    <!--Custom js for special pages goes here -->

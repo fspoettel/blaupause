@@ -1,0 +1,18 @@
+
+{{ entries:listing folder="events" show_past="no" show_future="yes" sort_by="date" sort_dir="asc" }}
+        <div class="widget  calendar">
+            {{ if no_results }}
+                <p><i>Keine anstehenden Veranstaltungen</i></p>
+            {{ else }}
+                <a href="{{ url }}" class="calendar__date">
+                    <div class="calendar__day">{{ date format="d" }}</div>
+                    <div class="calendar__month">{{ date format="m/Y" }}</div>
+                </a>
+            <div class="calendar__content">
+                <h3 class="delta"><a href="{{ url }}">{{ title }}</a></h3>
+                <p> {{ content_description }} <a href="{{ url }}">Mehr...</a>
+            </div>
+            {{ /if }}
+    </div>
+{{ /entries:listing }}
+

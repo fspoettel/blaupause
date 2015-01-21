@@ -1,0 +1,33 @@
+<body class="post">
+    <div id="login" class="login login--dropdown">
+        {{ theme:partial src="module__login" }}
+        <div class="btn  login-close">Schließen</div>
+    </div>
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+    <section role="main">
+        <div class="content">
+            <article>
+                <h1 class="post__title  alpha">{{ title }}</h1>
+                {{ if title_image }}
+                        <img class="post__title-image" src="{{ title_image }}" alt="{{ title}}" />
+                {{ /if }}
+                {{ if post_referenz }}
+                  {{ post_referenz }}
+                        <div class="eventlink"><a href="{{ name }}">Dazugehöriges Event #{{ index }}</a></div>
+                  {{ /post_referenz }}
+                {{ /if }}
+                {{ content }}
+                {{ if categories }}
+                    <footer class="entry-meta"> Kategorie: {{ categories_url_list }}.</footer>
+                {{ /if }}
+                <footer>
+                    {{ disqus:comments account="{ disqus_account }" }}
+                </footer>
+            </article>
+        </div>
+    </section>
+    {{ theme:partial src="footer"}}
+    {{ theme:partial src="scripts"}}

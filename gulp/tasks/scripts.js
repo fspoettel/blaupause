@@ -1,29 +1,31 @@
+/**
+ * scripts.js
+ * @name - "scripts"
+ * @task - Compiles & uglifies AMD modules
+ */
 
-// *    Scripts Task
-// * ---------------------
+var gulp        = require("gulp"),
+    webpack     = require("gulp-webpack"),
+    uglify      = require("gulp-uglify"),
+    rename      = require("gulp-rename"),
+    browserSync = require("browser-sync"),
+    reload      = browserSync.reload,
+    size        = require("gulp-size"),
+    config      = require("../config").scripts;
 
-// * Dependencies
-
-var gulp   = require("gulp"),
-    config = require("../config"),
-    concat = require("gulp-concat"),
-    uglify = require("gulp-uglify"),
-    rename = require("gulp-rename");
-
-// * Paths
-
-var jsSrc = config.jsSrc,
-    jsDest = config.jsDest,
-    jsName = config.fileName + ".js",
-    jsMinName = config.fileName + ".min.js";
-
-// * Function
-
-module.exports = function(){
-  gulp.src(jsSrc)
-    .pipe(concat(jsName))
-    .pipe(gulp.dest(jsDest))
+gulp.task("scripts", function(){
+  return gulp.src(config.entry)
+    .pipe(webpack())
+    .pipe(rename({
+      basename: config.name,
+      extname: ".js"
+    }))
+    .pipe(gulp.dest(config.dest))
     .pipe(uglify())
-    .pipe(rename(jsMinName))
-    .pipe(gulp.dest(jsDest));
-};
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest(config.dest))
+    .pipe(reload({stream:true}))
+    .pipe(size({
+        title: "js:"
+    }))
+});

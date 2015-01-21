@@ -1,33 +1,49 @@
+/**
+ * config.js
+ * @exports {object} - Configuration
+ */
 
-// *    Gulp Config
-// * ---------------------
-// * Paths & file-names used in gulp build process
-// * ---------------------
+var dest = "./public",
+    src  = "./client";
+
 
 module.exports = {
 
-    fileName: "global",
+  browserSync: {
+    server: {
+      /** Serve the build folder. Use "proxy" to reload existing servers */
+      baseDir: dest
+    }
+  },
 
-    sassSrc: "css/scss/app.scss",
-    sassDest: "css/dist",
-    sassDebugDest: "css/dist/debug",
-    sassTestDest: "test/css",
-    sassWatch: "css/scss/**/*.scss",
+  styles: {
+    entry: src + "/styles/app.scss",
+    src: src + "/styles/**/*.{sass,scss}",
+    dest: dest + "/css",
+    name: "app"
+  },
 
-    jsSrc: [
-        "js/app/globals/polyfills/**/*.js",
-        "js/app/globals/eventie.js",
-        "js/app/globals/doc-ready.js",
-        "js/app/globals/**/*.js",
-        "js/app/modules/**/*.js",
-        "js/app/app.js"
-    ],
-    jsWatch: "js/app/**",
-    jsDest: "js/dist",
+  scripts: {
+    entry: src + "/scripts/*.js",
+    src: src + "/scripts/**/*.js",
+    dest: dest + "/js",
+    name: "app"
+  },
 
-    imgSrc: "img/src/**",
-    imgDest:"img/dist",
+  views: {
+    /** Extensions based on h5bp & Statamic */
+    index: src + "/*.{html,yaml,txt,md,xml,png,ico}",
+    src: src + "/views/**/*",
+    dest: dest,
+    /** Statamic-mode copies the files from "views" into the root of "dest" */
+    statamic: false
+  },
 
-    lrWatch: ["css/dist/global.css", "test/css/**.css", "**/**/*.html", "js/dist/global.js"]
+  mocha: {
+    specs: "./test/*.js"
+  },
+
+  /** Needed for clean task */
+  dest: dest
 
 };

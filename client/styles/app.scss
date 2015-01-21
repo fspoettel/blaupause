@@ -1,0 +1,11 @@
+/**
+ * app.scss
+ *
+ * [Directories:]
+ * /modules - use for global modules such as mixins, grids or buttons. A module should be a s reusable as possible-
+ *            "Fundament"-modules are managed via config file + module folder
+ * /partials - use for app-specific styles such as layouts and branding
+ * /vendor - use for dependency styles
+ */
+
+@import "./app/modules/normalize";

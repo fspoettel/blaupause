@@ -1,0 +1,83 @@
+<body class="contact  post">
+    <div id="login" class="login login--dropdown text-left">
+        {{ theme:partial src="module__login" }}
+        <div class="btn  login-close">Schließen</div>
+    </div>
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+    <section role="main">
+        <div class="content">
+                <article>
+                    <h1>{{title}}</h1>
+                    {{ email_form subject="German Crown Kontakt" from="hallo@germancrownclub.de" to="hi@felics.me" required="name" }}
+                        {{ if !success }}
+                        {{ content }}
+                        {{ /if }}
+                        {{ if error}}
+                            <p class="error">
+                                <h1>Error</h1>
+                                <ul>
+                                    {{ errors }}
+                                        <li>{{error}}</li>
+                                    {{ /errors }}
+                                </ul>
+                            </p>
+                        {{ /if }}
+                        {{ if success }}
+                            <p class="success">Vielen Dank! ihre Nachricht wurde erfolgreich versandt. Sie erhalten in Kürze eine Antwort.</p>
+                            <p>Vielen Dank!</p>
+                            {{ else }}
+                                <ul class="formfields contactform">
+                                    <li>
+                                        <label for="name">Name</label>
+                                        <div class="input-wrap text-input">
+                                            <input type="text" name="name" id="name" placeholder="Ihr Name" {{ if logged_in }} {{ member:profile }}
+ value="{{ first_name }} {{ last_name }}" {{ /member:profile }} {{ /if }}>
+                                        </div>
+                                    </li>
+                                     <li>
+                                       <label for="from">Email</label>
+                                           <div class="input-wrap text-input">
+                                               <input type="email" name="from" id="from" placeholder="Email, unter der wir Sie erreichen können" {{ if logged_in }} {{ member:profile }}
+ value="{{ email }}" {{ /member:profile }} {{ /if }}>
+                                           </div>
+                                    </li>
+                                     <li>
+                                        <label for="mitteilung">Nachricht</label>
+                                            <div class="input-wrap text-input">
+                                               <textarea id="mitteilung" name="mitteilung" placeholder="Ihre Nachricht" tabindex="3"></textarea>
+                                            </div>
+                                    </li>
+                                    <li>
+                                        <label for="grund">Grund der Nachricht</label>
+                                        <div class="input-wrap text-input">
+                                            <select id="grund" name="grund" tabindex="4">
+                                            {{if !logged_in}}
+                                                <option value="Ich möchte Mitglied werden">Ich möchte Mitglied werden</option>
+                                                <option value="Ich habe mein Passwort vergessen">Ich habe mein Passwort vergessen</option>
+                                            {{ /if }}
+                                                <option value="Frage zu Events/Inhalten">Ich habe eine Frage zu Events/Inhalten</option>
+                                                <option value="Technisches Problem">Ich habe ein technisches Problem</option>
+                                                <option value="Etwas Anderes"> Etwas Anderes</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <input type="submit" tabindex="8">
+                                        </div>
+                                    </li>
+                                </ul>
+                        {{ /if }}
+                    {{ /email_form }}
+                </article>
+            </div>
+    </section>
+    {{theme:partial src="footer"}}
+    {{ theme:partial src="scripts"}}
+    <!--Custom js for special pages goes here -->
+
+
+

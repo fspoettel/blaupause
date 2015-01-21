@@ -1,0 +1,85 @@
+<body class="events">
+    <header role="banner">
+        {{ theme:partial src="header" }}
+        {{ theme:partial src="nav" }}
+    </header>
+    <section role="main">
+        <div class="content  archiv__listing">
+            <header>
+                <h1 class="alpha">Events</h1>
+            </header>
+            <div class="events__listing  js-tabs">
+                <header class="js-tabs__menu">
+                </header>
+                <h2 class="beta  js-tabs__mobile">Anstehende Events</h2>
+                <div class="js-tabs__item" data-name="Anstehend">
+                    {{ entries:listing folder="events" show_past="no" show_future="yes" sort_by="date" sort_dir="dsc" }}
+                    <article>
+                        {{ if no_results }}
+                            <p class="events--none"><i>Keine anstehenden Events</i></p>
+                        {{ else }}
+                            {{ if title_image }}
+                                    <a class="events__image"  href="{{ url }}">
+                                        <img src="{{ transform src="{ title_image }" width="500" height="300" quality="90" action="smart" }}" alt="{{ caption }}" />
+                                    </a>
+                                    <div class="events__content">
+                            {{ else }}
+                                    <div class="events__no-image">
+                            {{ /if }}
+                                <h1 ><a href="{{ url }}">{{ title }}</a></h1>
+                                    <div>
+                                        {{ date format="d.m.Y" }}
+                                            {{ if  eventtime }}
+                                                : {{ eventtime format="H:i" }}
+                                            {{ /if }}
+                                            {{ if  eventenddate }}
+                                                - {{ eventenddate format="d.m.Y" }}
+                                            {{ /if }}
+                                    </div> <!--datestamp -->
+                                    <p>{{ content_description }}</p>
+                            </div>
+                        {{ /if }}
+                    </article>
+                    <hr>
+                    {{ /entries:listing }}
+                </div>
+                <h2 class="beta  js-tabs__mobile">Vergangene Events</h2>
+                <div class="js-tabs__item" data-name="Vergangen">
+                    {{ entries:listing folder="events" show_past="yes" show_future="no" sort_by="date" sort_dir="desc" }}
+                    <article>
+                        {{ if no_results }}
+                            <p class="event--none"><i>Keine anstehenden Events</i></p>
+                        {{ else }}
+                            {{ if title_image }}
+                                    <a class="events__image"  href="{{ url }}">
+                                        <img src="{{ transform src="{ title_image }" width="800" height="500" quality="90" action="smart" }}" alt="{{ caption }}" />
+                                    </a>
+                                    <div class="events__content">
+                            {{ else }}
+                                    <div class="events__no-image">
+                            {{ /if }}
+                                <h1 ><a href="{{ url }}">{{ title }}</a></h1>
+                                    <div>
+                                        {{ date format="d.m.Y" }}
+                                            {{ if  eventtime }}
+                                                : {{ eventtime format="H:i" }}
+                                            {{ /if }}
+                                            {{ if  eventenddate }}
+                                                - {{ eventenddate format="d.m.Y" }}
+                                            {{ /if }}
+                                    </div> <!--datestamp -->
+                                    <p>{{ content_description }}</p>
+                            </div>
+                        {{ /if }}
+                    </article>
+                    <hr>
+                    {{ /entries:listing }}
+                </div>
+
+            </div>
+        </div>
+        {{ theme:partial src="sidebar" }}
+    </section>
+    {{ theme:partial src="footer" }}
+    {{ theme:partial src="scripts" }}
+
