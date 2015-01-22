@@ -2,6 +2,7 @@
  * nodemon.js
  * @name - "nodemon"
  * @task - Set up live-reloading via browserSync
+ * Nodemon task inspired by https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs © Hafiz Ismail
  */
 
 
@@ -15,7 +16,7 @@ gulp.task("nodemon", function (cb) {
     var called = false;
     return nodemon({
       script: config.file,
-      watch: ["app.js"]
+      watch: [config.file]
     })
     .on("start", function() {
       /** Make sure starting callback is only triggered once */
