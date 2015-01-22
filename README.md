@@ -30,14 +30,29 @@ Default configuration. Running `gulp` will run the Express-server in `./app.js` 
 
  1. Set `server.runServer` in `./gulp/config.js` to **false** and `views.root` to **true**.
  2. Set `dest`  in `./gulp/config.js` to `./`
+ 3. Add _theme-data to `views`
 
 This does two things: Prevents the express-server from running and tells the build-process to move the folders in `client/views`as well as the `css`& `js`-folder into the root of your `/yourtheme`-directory.
 
 ### Static Pages:
 
  1. Set `views.root` to **true**.
- 2. (Move index.html into `views` if you prefer)
+ 2. (Move index.html/robots.txt into `views` if you prefer)
 
 Folders and files in `client/views` get copied directly into the root directory of the destination.
 
+## Available Tasks:
+
+ - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
+ - `gulp build` - Only rebuilds project
+ - `gulp mocha` - Runs mocha test
+ - `gulp hint` - Runs jshint
+ - `gulp clean` - Cleans destination folder. Can clean only if "views.root" is false
+ - `gulp styles` - Builds styles
+ - `gulp scripts` - Builds scripts
+ - `gulp views` - Builds views
+
+### Adding tasks:
+
+You can add tasks by creating a .js-file in `./gulp/tasks` that contain a task and a reference to `gulp` anf the `gulp`-modules you want to use.
 
