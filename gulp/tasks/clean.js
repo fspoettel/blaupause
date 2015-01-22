@@ -10,7 +10,7 @@ var gulp   = require("gulp"),
 
 gulp.task("clean", function(){
   del([
-    config.dest
+    config.server.dest
   ])
 });
 

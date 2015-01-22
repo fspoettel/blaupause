@@ -4,17 +4,28 @@
  */
 
 var dest = "./public",
-    src  = "./client";
+    src  = "./client",
+    port = 3000;
 
 
 module.exports = {
 
-  browserSync: {
-    server: {
-      /** Serve the build folder. Use "proxy" to reload existing servers */
-      baseDir: dest
-    }
+  server: {
+    /** Disable if you don't want to run an Express-server (e.g. use MAMP) */
+    runServer: true,
+    /** Needed for clean task & server */
+    dest: dest,
+    port: port,
+    file: "app.js",
+    /** Needed for BrowserSync to work properly with server restarts */
+    reloadDelay: 500
   },
+
+  browserSync: {
+      /** Use "proxy" to reload existing servers */
+      proxy: "localhost:" + port,
+      port: 4000
+    },
 
   styles: {
     entry: src + "/styles/app.scss",
@@ -35,15 +46,12 @@ module.exports = {
     index: src + "/*.{html,yaml,txt,md,xml,png,ico}",
     src: src + "/views/**/*",
     dest: dest,
-    /** Statamic-mode copies the files from "views" into the root of "dest" */
-    statamic: false
+    /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic and static pages with folders */
+    root: false
   },
 
   mocha: {
     specs: "./test/*.js"
-  },
-
-  /** Needed for clean task */
-  dest: dest
+  }
 
 };
