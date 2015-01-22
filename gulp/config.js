@@ -49,7 +49,12 @@ module.exports = {
     src: [src + "/views/**/*", src + "/views/*"],
     dest: dest,
     /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic and static pages with folders */
-    root: true
+    root: false
+  },
+
+  images: {
+    src: src + "/images/*",
+    dest: dest + "/img"
   },
 
   mocha: {
