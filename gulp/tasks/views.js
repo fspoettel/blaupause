@@ -5,7 +5,6 @@
  */
 
 var gulp   = require("gulp"),
-    del    = require("del"),
     config = require("../config").views;
 
 gulp.task('views', function() {
@@ -17,9 +16,6 @@ gulp.task('views', function() {
   if(config.root){
     gulp.src(config.src)
       .pipe(gulp.dest(config.dest));
-      /*del([
-        config.dest + "/views"
-      ])*/
   } else {
     gulp.src(config.src,{ base: './client/' })
       .pipe(gulp.dest(config.dest));
