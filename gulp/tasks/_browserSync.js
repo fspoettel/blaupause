@@ -1,7 +1,8 @@
 /**
- * browserSync.js
+ * _browserSync.js
  * @name - "browserSync"
  * @task - Set up live-reloading via browserSync
+ * @private
  */
 
 

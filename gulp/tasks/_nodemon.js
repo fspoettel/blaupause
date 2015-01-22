@@ -1,7 +1,8 @@
 /**
- * nodemon.js
+ * _nodemon.js
  * @name - "nodemon"
  * @task - Set up live-reloading via browserSync
+ * @private
  * Nodemon task inspired by https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs © Hafiz Ismail
  */
 

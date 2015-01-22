@@ -42,8 +42,7 @@ module.exports = {
   },
 
   views: {
-    /** Extensions based on h5bp & Statamic */
-    index: src + "/*.{html,yaml,txt,md,xml,png,ico}",
+    index: src + "/*.*",
     src: src + "/views/**/*",
     dest: dest,
     /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic and static pages with folders */
