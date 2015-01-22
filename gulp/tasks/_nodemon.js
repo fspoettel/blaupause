@@ -7,17 +7,17 @@
  */
 
 
-var gulp   = require("gulp"),
-    nodemon = require("gulp-nodemon"),
+var gulp        = require("gulp"),
+    nodemon     = require("gulp-nodemon"),
     browserSync = require("browser-sync"),
-    config = require("../config").server;
+    config      = require("../config").server;
 
 gulp.task("nodemon", function (cb) {
   if(config.runServer){
     var called = false;
     return nodemon({
       script: config.file,
-      watch: [config.file]
+      watch: [config.watch]
     })
     .on("start", function() {
       /** Make sure starting callback is only triggered once */

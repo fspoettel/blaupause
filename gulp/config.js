@@ -17,6 +17,8 @@ module.exports = {
     dest: dest,
     port: port,
     file: "app.js",
+    /** Tell nodemon which directories/files to watch */
+    watch: ["app.js"],
     /** Needed for BrowserSync to work properly with server restarts */
     reloadDelay: 500
   },
@@ -24,29 +26,30 @@ module.exports = {
   browserSync: {
       /** Use "proxy" to reload existing servers */
       proxy: "localhost:" + port,
+      /** Port for browserSync-proxy */
       port: 4000
     },
 
   styles: {
     entry: src + "/styles/app.scss",
-    src: src + "/styles/**/*.{sass,scss}",
+    watch: [src + "/styles/**/*.{sass,scss}"],
     dest: dest + "/css",
     name: "app"
   },
 
   scripts: {
-    entry: src + "/scripts/*.js",
-    src: src + "/scripts/**/*.js",
+    entry: src + "/scripts/app.js",
+    watch: [src + "/scripts/**/*.js"],
     dest: dest + "/js",
     name: "app"
   },
 
   views: {
     index: src + "/*.*",
-    src: src + "/views/**/*",
+    src: [src + "/views/**/*", src + "/views/*"],
     dest: dest,
     /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic and static pages with folders */
-    root: false
+    root: true
   },
 
   mocha: {
