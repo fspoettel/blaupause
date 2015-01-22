@@ -9,26 +9,11 @@ var gulp   = require("gulp"),
     config = require("../config");
 
 gulp.task("clean", function(){
-  del([
-    config.dest
-  ])
-});
-
-gulp.task("clean:styles", function(){
+  if(!config.views.root){
     del([
-      config.styles.dest
+      config.server.dest
     ])
-});
-
-gulp.task("clean:scripts", function(){
-  del([
-    config.scripts.dest
-  ])
-});
-
-gulp.task("clean:views", function(){
-    del([
-      config.views.dest + "/views",
-      config.views.dest + "/*.{html,md,yaml,txt,xml,png,ico}"
-    ])
+  } else {
+    console.log("Root-mode. Please clean manually.")
+  }
 });

@@ -6,6 +6,4 @@
 
 var gulp = require("gulp");
 
-gulp.task("default", ["styles", "scripts", "views", "watch"]);
-
-gulp.task("start", ["styles", "scripts", "views", "watch"]);
+gulp.task("default", ["build", "watch"]);
