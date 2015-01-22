@@ -12,7 +12,7 @@ gulp.task('views', function() {
   gulp.src(config.index)
     .pipe(gulp.dest(config.dest));
 
-  /** Statamic-mode copies the files from "views" into the root of "dest" */
+  /** Root-mode copies the files from "views" into the root of "dest" */
   if(config.root){
     gulp.src(config.src)
       .pipe(gulp.dest(config.dest));
