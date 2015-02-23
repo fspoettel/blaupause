@@ -1,9 +1,9 @@
 {
   "name": "blaupause",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "homepage": "https://github.com/felics/blaupause",
   "authors": [
-    "felics <fspoettel@gmail.com>"
+    "felics <hi@felics.me>"
   ],
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",

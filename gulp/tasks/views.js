@@ -16,7 +16,9 @@ gulp.task('views', function() {
   if(config.root){
     gulp.src(config.src)
       .pipe(gulp.dest(config.dest));
-  } else {
+  }
+  /** If not operating in root-mode, copy the whole "views"-folder to dest */
+  else {
     gulp.src(config.src,{ base: './client/' })
       .pipe(gulp.dest(config.dest));
   }

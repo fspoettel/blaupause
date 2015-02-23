@@ -1,5 +1,5 @@
 /**
- * app.js
+ * server.js
  * @task - Launches an express-server. By default, serves the directory specified in `gulp/config`. Called from 'gulp'
  */
 
