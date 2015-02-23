@@ -10,6 +10,7 @@ var gulp        = require("gulp"),
     rename      = require("gulp-rename"),
     size        = require("gulp-size"),
     config      = require("../config").scripts;
+    reload             = require("browser-sync").reload,
 
 gulp.task("scripts", function(){
   return gulp.src(config.entry)
@@ -25,4 +26,5 @@ gulp.task("scripts", function(){
     .pipe(size({
         title: "js:"
     }))
+    .pipe(reload({stream:true}));
 });
