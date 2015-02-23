@@ -11,10 +11,11 @@
 
 ## What's in the box...
 
- - [BrowserSync](browsersync.io)
+ - [BrowserSync](http://www.browsersync.io/)
  - [SASS](http://sass-lang.com/) with [Autoprefixer](https://github.com/postcss/autoprefixer) & Minification
- - [Webpack](webpack.github.io) - CommonJS / AMD-support
- - [jshint](http://jshint.com/), [mocha](mochajs.org) and [chai](chaijs.com)
+ - [Webpack](http://webpack.github.io) - CommonJS / AMD / JSX-support
+ - [EditorConfig](http://editorconfig.org/)
+ - [jshint](http://jshint.com/), [mocha](http://mochajs.org) and [chai](http://chaijs.com)
  - Configurable [Express](http://expressjs.com/)-server with automatic restarts
  - Compatible with static pages / single-page-apps / [Statamic](http://statamic.com)
 
