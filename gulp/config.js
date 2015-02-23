@@ -48,7 +48,7 @@ module.exports = {
     index: src + "/*.*",
     src: [src + "/views/**/*", src + "/views/*"],
     dest: dest,
-    /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic and static pages with folders */
+    /** Root-mode copies the files from "views" into the root of "dest". Use for Statamic with dest:"./" and static pages with folders */
     root: false
   },
 

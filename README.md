@@ -47,7 +47,7 @@ Folders and files in `client/views` get copied directly into the root directory 
  - `gulp build` - Only rebuilds project
  - `gulp mocha` - Runs mocha test
  - `gulp hint` - Runs jshint
- - `gulp clean` - Cleans destination folder. Can clean only if "views.root" is false
+ - `gulp clean` - Cleans destination folder. Can clean views only if "views.root" is false
  - `gulp styles` - Builds styles
  - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images
