@@ -28,7 +28,7 @@ Default configuration. Running `gulp` will run the Express-server in `./app.js` 
 
 *[Assuming you run this from `/_themes/yourtheme`]*
 
- 1. Set `server.runServer` in `./gulp/config.js` to **false** and `views.root` to **true**.
+ 1. Set `server.run` in `./gulp/config.js` to **false** and `views.root` to **true**.
  2. Set `dest`  in `./gulp/config.js` to `./`
  3. Add _theme-data to `views`
 

@@ -12,13 +12,13 @@ module.exports = {
 
   server: {
     /** Disable if you don't want to run an Express-server (e.g. use MAMP) */
-    runServer: true,
+    run: true,
     /** Needed for clean task & server */
     dest: dest,
     port: port,
-    file: "app.js",
+    file: "server.js",
     /** Tell nodemon which directories/files to watch */
-    watch: ["app.js"],
+    watch: ["server.js"],
     /** Needed for BrowserSync to work properly with server restarts */
     reloadDelay: 500
   },
@@ -31,15 +31,15 @@ module.exports = {
     },
 
   styles: {
-    entry: src + "/styles/app.scss",
-    watch: [src + "/styles/**/*.{sass,scss}"],
+    entry: src + "/scss/app.scss",
+    watch: [src + "/scss/**/*.{sass,scss}"],
     dest: dest + "/css",
     name: "app"
   },
 
   scripts: {
-    entry: src + "/scripts/app.js",
-    watch: [src + "/scripts/**/*.js"],
+    entry: src + "/js/app.js",
+    watch: [src + "/js/**/*.{js,jsx}"],
     dest: dest + "/js",
     name: "app"
   },
@@ -53,7 +53,7 @@ module.exports = {
   },
 
   images: {
-    src: src + "/images/*",
+    src: src + "/img/*",
     dest: dest + "/img"
   },
 

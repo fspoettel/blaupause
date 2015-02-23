@@ -13,7 +13,7 @@ var gulp        = require("gulp"),
     config      = require("../config").server;
 
 gulp.task("nodemon", function (cb) {
-  if(config.runServer){
+  if(config.run){
     var called = false;
     return nodemon({
       script: config.file,

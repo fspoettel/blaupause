@@ -13,8 +13,8 @@ gulp.task("watch", ["browserSync"], function(){
 
   gulp.watch([config.scripts.watch, config.scripts.entry], ["scripts", "reload"]);
 
-  gulp.watch([config.views.src, config.views.index], ["views", "reload"]);
+  gulp.watch([config.views.src, config.views.index], ["views", "reloadStatic"]);
 
-  gulp.watch([config.images.src], ["images", "reload"]);
+  gulp.watch([config.images.src], ["images", "reloadStatic"]);
 
 });
