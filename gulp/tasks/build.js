@@ -6,4 +6,4 @@
 
 var gulp = require("gulp");
 
-gulp.task("build", ["clean", "styles", "scripts", "views", "images"]);
+gulp.task("build", ["styles", "scripts", "views", "images", "modernizr"]);

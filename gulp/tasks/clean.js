@@ -14,8 +14,8 @@ gulp.task("clean", function(){
       config.server.dest
     ])
   } else {
-
       del([
+        config.modernizr.dest,
         config.styles.dest,
         config.scripts.dest,
         config.images.dest

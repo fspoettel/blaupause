@@ -53,6 +53,7 @@ Folders and files in `client/views` get copied directly into the root directory 
  - `gulp styles` - Builds styles
  - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images
+ - `gulp modernizr` - Build a custom Modernizr (Add tests in './gulp/config.js')
  - `gulp views` - Builds views
 
 ### Adding tasks:
