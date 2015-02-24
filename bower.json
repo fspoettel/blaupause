@@ -15,7 +15,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "html5-boilerplate": "~4.3.0",
+    "html5-boilerplate": "~5.0.0",
     "normalize.css": "~3.0.2"
   }
 }
