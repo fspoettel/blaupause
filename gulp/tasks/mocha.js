@@ -4,8 +4,8 @@
  * @task - Run Mocha test-suite
  */
 
-var gulp  = require("gulp"),
-    mocha = require("gulp-mocha"),
+var gulp   = require("gulp"),
+    mocha  = require("gulp-mocha"),
     config = require("../config").mocha;
 
 gulp.task("mocha", function () {

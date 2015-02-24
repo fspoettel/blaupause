@@ -59,6 +59,21 @@ module.exports = {
 
   mocha: {
     specs: "./test/*.js"
+  },
+
+  modernizr: {
+    dest: dest + "/js/vendor",
+    entry: src + "/js/app.js",
+    settings: {
+      options : [
+          "setClasses",
+          "addTest",
+          "html5printshiv",
+          "testProp",
+          "fnBind"
+      ],
+      tests: []
+    }
   }
 
 };
