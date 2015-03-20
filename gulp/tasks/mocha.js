@@ -13,5 +13,5 @@ gulp.task("mocha", function () {
     .pipe(mocha({ reporter: "nyan" }))
     .on("error", function (err) {
       console.log(err.message);
-    })
+    });
 });

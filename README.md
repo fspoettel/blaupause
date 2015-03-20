@@ -17,31 +17,7 @@
  - [EditorConfig](http://editorconfig.org/)
  - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Modernizr](http://modernizr.com/)
  - [jshint](http://jshint.com/), [mocha](http://mochajs.org) and [chai](http://chaijs.com)
- - Configurable [Express](http://expressjs.com/)-server with automatic restarts
- - Compatible with static pages / single-page-apps / [Statamic](http://statamic.com)
-
-## Setup for use-cases
-
-### Node.js / SPA with views:
-
-Default configuration. Running `gulp` will run the Express-server in `./app.js` and serve from `./public`.
-
-### Statamic:
-
-*[Assuming you run this from `/_themes/yourtheme`]*
-
- 1. Set `server.run` in `./gulp/config.js` to **false** and `views.root` to **true**.
- 2. Set `dest`  in `./gulp/config.js` to `./`
- 3. Add _theme-data to `views`
-
-This does two things: Prevents the express-server from running and tells the build-process to move the folders in `client/views`as well as the `css`& `js`-folder into the root of your `/yourtheme`-directory.
-
-### Static Pages:
-
- 1. Set `views.root` to **true**.
- 2. (Move index.html/robots.txt into `views` if you prefer)
-
-Folders and files in `client/views` get copied directly into the root directory of the destination.
+ - (Optional) [Express](http://expressjs.com/)-server with automatic restarts
 
 ## Available Tasks:
 
@@ -54,9 +30,8 @@ Folders and files in `client/views` get copied directly into the root directory 
  - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images
  - `gulp modernizr` - Build a custom Modernizr (Add tests in './gulp/config.js')
- - `gulp views` - Builds views
+ - `gulp views` - Copies static files in "src" to dest
 
 ### Adding tasks:
 
 You can add tasks by creating a .js-file in `./gulp/tasks` that contain a task and a reference to `gulp` anf the `gulp`-modules you want to use.
-

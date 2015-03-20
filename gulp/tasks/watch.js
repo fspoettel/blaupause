@@ -19,7 +19,7 @@ gulp.task("watch", ["build", "nodemon"], function(){
 
   gulp.watch([config.scripts.watch, config.scripts.entry], ["scripts"]);
 
-  gulp.watch([config.views.src, config.views.index], ["views", "reloadStatic"]);
+  gulp.watch([config.views.index], ["views", "reloadStatic"]);
 
   gulp.watch([config.images.src], ["images", "reloadStatic"]);
 
