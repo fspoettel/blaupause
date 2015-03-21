@@ -15,15 +15,14 @@ var gulp         = require("gulp"),
     config       = require("../config").styles;
 
 gulp.task("styles", function(){
-  return scss(config.entry, {
+  return scss(config.dir, {
       sourcemap: false
+    })
+    .on('error', function (err) {
+      console.error('Error!', err.message);
     })
     .pipe(autoprefixer({
       browsers: ["last 2 versions", "ie >= 10", "Android >= 4.0"]
-    }))
-    .pipe(rename({
-      basename: config.name,
-      extname: ".css"
     }))
     .pipe(gulp.dest(config.dest))
     .pipe(cssmin())
@@ -31,6 +30,7 @@ gulp.task("styles", function(){
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}))
     .pipe(size({
-        title: "css:"
+        showFiles: true,
+        title: "CSS:"
     }))
 });

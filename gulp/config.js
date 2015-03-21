@@ -60,10 +60,9 @@ module.exports = {
   },
 
   styles: {
-    entry: src + "/scss/app.scss",
+    dir: src + "/scss/",
     watch: [src + "/scss/**/*.{sass,scss}"],
-    dest: dest + "/css",
-    name: "app"
+    dest: dest + "/css"
   },
 
   views: {
