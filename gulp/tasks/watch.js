@@ -17,7 +17,7 @@ gulp.task("watch", ["build", "nodemon"], function(){
   /** Watch file changes & trigger rebuilds / reloads */
   gulp.watch([config.styles.watch, config.styles.entry], ["styles"]);
 
-  gulp.watch([config.scripts.watch, config.scripts.entry], ["scripts"]);
+  gulp.watch([config.scripts.watch, config.scripts.bundles], ["scripts"]);
 
   gulp.watch([config.views.index], ["views", "reloadStatic"]);
 

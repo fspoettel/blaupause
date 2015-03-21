@@ -28,7 +28,6 @@ module.exports = {
 
   modernizr: {
     dest: dest + "/js/vendor",
-    entry: src + "/js/app.js",
     settings: {
       options : [
           "setClasses",
@@ -42,10 +41,9 @@ module.exports = {
   },
 
   scripts: {
-    entry: src + "/js/app.js",
+    bundles: [src + "/js/app.js", src + "/js/page.js"],
     watch: [src + "/js/**/*.{js,jsx}"],
-    dest: dest + "/js",
-    name: "app"
+    dest: dest + "/js"
   },
 
   server: {

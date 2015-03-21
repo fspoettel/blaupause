@@ -13,7 +13,7 @@ var gulp      = require("gulp"),
 
 gulp.task("modernizr", function() {
 
-  gulp.src(config.scripts.entry)
+  gulp.src(config.scripts.bundles)
     .pipe(modernizr(config.modernizr.settings))
     .pipe(gulp.dest(config.modernizr.dest))
     .pipe(uglify())
