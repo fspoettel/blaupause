@@ -13,7 +13,7 @@
 
  - [BrowserSync](http://www.browsersync.io/)
  - [SASS](http://sass-lang.com/) with [Autoprefixer](https://github.com/postcss/autoprefixer) & Minification
- - [Webpack](http://webpack.github.io) - CommonJS / AMD / JSX-support
+ - [Webpack](http://webpack.github.io) - ES6/ AMD / JSX-support
  - [EditorConfig](http://editorconfig.org/)
  - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Modernizr](http://modernizr.com/)
  - [jshint](http://jshint.com/), [mocha](http://mochajs.org) and [chai](http://chaijs.com)
