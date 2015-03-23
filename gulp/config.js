@@ -4,7 +4,7 @@
  */
 
 var dest = "./public",
-    src  = "./client",
+    src  = "./src",
     port = 3000;
 
 
@@ -23,7 +23,7 @@ module.exports = {
   },
 
   mocha: {
-    specs: "./test/*.js"
+    specs: "./__test__/*.js"
   },
 
   modernizr: {
