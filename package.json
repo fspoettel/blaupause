@@ -6,7 +6,7 @@
   "devDependencies": {
     "babel-core": "^4.7.16",
     "babel-loader": "^4.2.0",
-    "browser-sync": "^2.2.3",
+    "browser-sync": "^2.4.0",
     "chai": "^2.1.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
