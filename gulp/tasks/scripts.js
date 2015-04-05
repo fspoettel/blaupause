@@ -20,7 +20,7 @@ gulp.task("scripts", function(){
       cache: true,
       module: {
         loaders: [
-          { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ["jsx-loader", "babel-loader"]}
+          { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ["babel-loader"]}
         ]
       }
     }))

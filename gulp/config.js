@@ -41,7 +41,7 @@ module.exports = {
   },
 
   scripts: {
-    bundles: [src + "/js/app.js", src + "/js/page.js"],
+    bundles: [src + "/js/app.js"],
     watch: [src + "/js/**/*.{js,jsx}"],
     dest: dest + "/js"
   },
