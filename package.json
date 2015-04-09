@@ -4,9 +4,9 @@
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "devDependencies": {
-    "babel-core": "^5.0.8",
+    "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
-    "browser-sync": "^2.5.2",
+    "browser-sync": "^2.5.3",
     "chai": "^2.2.0",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
