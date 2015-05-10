@@ -60,7 +60,7 @@ module.exports = {
   },
 
   styles: {
-    dir: src + "/scss/",
+    src: src + "/scss/*.{sass,scss}",
     watch: [src + "/scss/**/*.{sass,scss}"],
     dest: dest + "/css"
   },
