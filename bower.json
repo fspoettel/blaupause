@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "html5-boilerplate": "~5.0.0",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.3"
   }
 }
