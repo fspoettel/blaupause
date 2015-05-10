@@ -4,7 +4,7 @@
  */
 
 var dest = "./public",
-    src  = "./src",
+    src  = "./_src",
     port = 3000;
 
 
