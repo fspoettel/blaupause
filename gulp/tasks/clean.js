@@ -1,6 +1,6 @@
 /**
  * clean.js
- * @name - "clean[:scripts, :styles, :views]"
+ * @name - "clean"
  * @task -  Cleans generated files
  */
 
