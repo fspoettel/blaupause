@@ -4,11 +4,11 @@
  * @task - Optimizes images
  */
 
-var gulp     = require("gulp"),
-    imagemin = require("gulp-imagemin"),
-    config   = require("../config").images;
+var gulp     = require("gulp");
+var imagemin = require("gulp-imagemin");
+var config   = require("../config").images;
 
-gulp.task("images", function(){
+gulp.task("images", function() {
   return gulp.src(config.src)
     .pipe(imagemin({
       progressive: true

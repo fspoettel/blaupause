@@ -4,14 +4,14 @@
  * @task - Run Mocha test-suite
  */
 
-var gulp   = require("gulp"),
-    mocha  = require("gulp-mocha"),
-    config = require("../config").mocha;
+var gulp   = require("gulp");
+var mocha  = require("gulp-mocha");
+var config = require("../config").mocha;
 
-gulp.task("mocha", function () {
+gulp.task("mocha", function() {
   return gulp.src(config.specs, {read: false})
     .pipe(mocha({ reporter: "nyan" }))
-    .on("error", function (err) {
+    .on("error", function(err) {
       console.log(err.message);
     });
 });

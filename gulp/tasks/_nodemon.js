@@ -6,14 +6,14 @@
  * Nodemon task inspired by https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs © Hafiz Ismail
  */
 
-var browserSync = require("browser-sync"),
-    gulp        = require("gulp"),
-    nodemon     = require("gulp-nodemon"),
-    config      = require("../config").server;
+var browserSync = require("browser-sync");
+var gulp        = require("gulp");
+var nodemon     = require("gulp-nodemon");
+var config      = require("../config").server;
 
-gulp.task("nodemon", function (cb) {
+gulp.task("nodemon", function(cb) {
 
-  if(config.run){
+  if (config.run) {
     var called = false;
     return nodemon({
       script: config.file,
@@ -24,6 +24,7 @@ gulp.task("nodemon", function (cb) {
       if (!called) {
         cb();
       }
+
       called = true;
     })
     .on("restart", function() {

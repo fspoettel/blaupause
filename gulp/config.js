@@ -3,18 +3,17 @@
  * @exports {object} - Configuration
  */
 
-var dest = "./public",
-    src  = "./_src",
-    port = 3000;
-
+var dest = "./public";
+var src  = "./_src";
+var port = 3000;
 
 module.exports = {
 
   browserSync: {
-      /** Use "proxy" to reload existing servers */
-      proxy: "localhost:" + port,
-      /** Port for browserSync-proxy */
-      port: 4000
+    /** Use "proxy" to reload existing servers */
+    proxy: "localhost:" + port,
+    /** Port for browserSync-proxy */
+    port: 4000
   },
 
   images: {
@@ -29,7 +28,7 @@ module.exports = {
   modernizr: {
     dest: dest + "/js/vendor",
     settings: {
-      options : [
+      options: [
           "setClasses",
           "addTest",
           "html5printshiv",

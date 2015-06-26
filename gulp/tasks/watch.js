@@ -4,12 +4,12 @@
  * @task - Triggers recompiles & live-reloads
  */
 
-var gulp        = require("gulp"),
-    browserSync = require("browser-sync"),
-    config      = require("../config");
+var gulp        = require("gulp");
+var browserSync = require("browser-sync");
+var config      = require("../config");
 
 /** Execute build process / start Node-Server before initiating watch-tasks */
-gulp.task("watch", ["build", "nodemon"], function(){
+gulp.task("watch", ["build", "nodemon"], function() {
 
   /** Init BrowserSync Process */
   browserSync.init(config.browserSync);
