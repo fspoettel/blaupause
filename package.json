@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -8,7 +8,6 @@
     "babel-loader": "^5.2.2",
     "browser-sync": "^2.7.12",
     "chai": "^3.0.0",
-    "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-imagemin": "^2.3.0",
@@ -32,6 +31,14 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/felics/blaupause/issues"
+  },
+  "jscsConfig": {
+    "preset": "airbnb",
+    "validateQuoteMarks": {
+      "mark": "\"",
+      "escape": true
+    },
+    "esnext": true
   },
   "homepage": "https://github.com/felics/blaupause",
   "dependencies": {
