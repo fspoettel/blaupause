@@ -4,14 +4,15 @@
  */
 
 var dest = "./public";
-var src  = "./_src";
+var hostname = "localhost";
 var port = 3000;
+var src  = "./_src";
 
 module.exports = {
 
   browserSync: {
     /** Use "proxy" to reload existing servers */
-    proxy: "localhost:" + port,
+    proxy: hostname + ":" + port,
     /** Port for browserSync-proxy */
     port: 4000
   },
@@ -40,7 +41,7 @@ module.exports = {
   },
 
   scripts: {
-    bundles: [src + "/js/app.js"],
+    bundles: [src + "/js/*.js"],
     watch: [src + "/js/**/*.{js,jsx}"],
     dest: dest + "/js"
   },
