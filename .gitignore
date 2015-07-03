@@ -13,6 +13,10 @@ Thumbs.db
 node_modules/*
 bower_components/*
 
+# Build folder #
+################
+public/*
+
 # Sublime projects #
 ####################
 *sublime*
