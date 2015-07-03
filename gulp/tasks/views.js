@@ -5,6 +5,7 @@
  */
 
 var gulp   = require("gulp");
+
 var config = require("../config").views;
 
 gulp.task("views", function() {

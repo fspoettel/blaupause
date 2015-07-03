@@ -11,6 +11,7 @@ var rename  = require("gulp-rename");
 var size    = require("gulp-size");
 var named   = require("vinyl-named");
 var reload  = require("browser-sync").reload;
+
 var config  = require("../config").scripts;
 
 gulp.task("scripts", function() {

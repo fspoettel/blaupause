@@ -12,6 +12,7 @@ var cssmin       = require("gulp-minify-css");
 var browserSync  = require("browser-sync");
 var reload       = browserSync.reload;
 var size         = require("gulp-size");
+
 var config       = require("../config").styles;
 
 gulp.task("styles", function() {

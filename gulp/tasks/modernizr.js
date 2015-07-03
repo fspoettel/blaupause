@@ -8,6 +8,7 @@ var gulp      = require("gulp");
 var uglify    = require("gulp-uglify");
 var rename    = require("gulp-rename");
 var modernizr = require("gulp-modernizr");
+
 var config    = require("../config");
 
 gulp.task("modernizr", function() {
