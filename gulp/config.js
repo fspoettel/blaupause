@@ -24,10 +24,6 @@ module.exports = {
     dest: dest + "/img"
   },
 
-  mocha: {
-    specs: "./__test__/*.js"
-  },
-
   modernizr: {
     dest: dest + "/js/vendor",
     settings: {
