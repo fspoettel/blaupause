@@ -3,10 +3,12 @@
  * @exports {object} - Configuration
  */
 
-var dest = "./public";
-var hostname = "localhost";
-var port = 3000;
-var src  = "./_src";
+"use strict";
+
+const dest = "./public";
+const hostname = "localhost";
+const port = 3000;
+const src  = "./_src";
 
 module.exports = {
 
@@ -20,10 +22,6 @@ module.exports = {
   images: {
     src: src + "/img/*",
     dest: dest + "/img"
-  },
-
-  mocha: {
-    specs: "./__test__/*.js"
   },
 
   modernizr: {

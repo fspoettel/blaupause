@@ -5,8 +5,10 @@
  * @private
  */
 
-var browserSync = require("browser-sync");
-var gulp        = require("gulp");
+"use strict";
+
+const browserSync = require("browser-sync");
+const gulp        = require("gulp");
 
 gulp.task("reloadStatic", function() {
   browserSync.reload();

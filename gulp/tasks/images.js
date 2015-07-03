@@ -4,10 +4,12 @@
  * @task - Optimizes images
  */
 
-var gulp     = require("gulp");
-var imagemin = require("gulp-imagemin");
+"use strict";
 
-var config   = require("../config").images;
+const gulp     = require("gulp");
+const imagemin = require("gulp-imagemin");
+
+const config   = require("../config").images;
 
 gulp.task("images", function() {
   return gulp.src(config.src)
