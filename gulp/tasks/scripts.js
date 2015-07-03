@@ -19,6 +19,7 @@ gulp.task("scripts", function() {
     .pipe(named())
     .pipe(webpack({
       cache: true,
+      devtool: "#source-map",
       module: {
         loaders: [
           { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ["babel-loader"]}
