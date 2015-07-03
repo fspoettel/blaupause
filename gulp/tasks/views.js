@@ -4,9 +4,11 @@
  * @task - Copies views to destination
  */
 
-var gulp   = require("gulp");
+"use strict";
 
-var config = require("../config").views;
+const gulp   = require("gulp");
+
+const config = require("../config").views;
 
 gulp.task("views", function() {
 

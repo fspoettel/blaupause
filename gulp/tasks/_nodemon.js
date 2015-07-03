@@ -6,16 +6,18 @@
  * Nodemon task inspired by https://github.com/sogko/gulp-recipes/tree/master/browser-sync-nodemon-expressjs © Hafiz Ismail
  */
 
-var browserSync = require("browser-sync");
-var gulp        = require("gulp");
-var nodemon     = require("gulp-nodemon");
+"use strict";
 
-var config      = require("../config").server;
+const browserSync = require("browser-sync");
+const gulp        = require("gulp");
+const nodemon     = require("gulp-nodemon");
+
+const config      = require("../config").server;
 
 gulp.task("nodemon", function(cb) {
 
   if (config.run) {
-    var called = false;
+    let called = false;
     return nodemon({
       script: config.file,
       watch: [config.watch]

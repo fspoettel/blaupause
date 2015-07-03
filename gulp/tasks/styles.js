@@ -4,16 +4,18 @@
  * @task - Compiles, prefixes & minfies SCSS-files
  */
 
-var autoprefixer = require("gulp-autoprefixer");
-var browserSync  = require("browser-sync");
-var cssmin       = require("gulp-minify-css");
-var gulp         = require("gulp");
-var reload       = browserSync.reload;
-var sass         = require("gulp-sass");
-var size         = require("gulp-size");
-var sourcemaps   = require("gulp-sourcemaps");
+"use strict";
 
-var config       = require("../config").styles;
+const autoprefixer = require("gulp-autoprefixer");
+const browserSync  = require("browser-sync");
+const cssmin       = require("gulp-minify-css");
+const gulp         = require("gulp");
+const reload       = browserSync.reload;
+const sass         = require("gulp-sass");
+const size         = require("gulp-size");
+const sourcemaps   = require("gulp-sourcemaps");
+
+const config       = require("../config").styles;
 
 gulp.task("styles", function() {
   gulp.src(config.src)

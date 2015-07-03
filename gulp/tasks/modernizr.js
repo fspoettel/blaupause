@@ -4,11 +4,13 @@
  * @task - Compiles a custom Modernizr-build
  */
 
-var gulp      = require("gulp");
-var modernizr = require("gulp-modernizr");
-var uglify    = require("gulp-uglify");
+"use strict";
 
-var config    = require("../config");
+const gulp      = require("gulp");
+const modernizr = require("gulp-modernizr");
+const uglify    = require("gulp-uglify");
+
+const config    = require("../config");
 
 gulp.task("modernizr", function() {
 

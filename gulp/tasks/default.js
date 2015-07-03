@@ -4,6 +4,8 @@
  * @task - Default compile task
  */
 
-var gulp = require("gulp");
+"use strict";
+
+const gulp = require("gulp");
 
 gulp.task("default", ["watch"]);

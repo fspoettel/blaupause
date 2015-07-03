@@ -4,15 +4,17 @@
  * @task - Compiles & uglifies AMD modules
  */
 
-var gulp    = require("gulp");
-var named   = require("vinyl-named");
-var reload  = require("browser-sync").reload;
-var size    = require("gulp-size");
-var uglify  = require("gulp-uglify");
-var webpack = require("webpack-stream");
-var pack    = require("webpack"); // Reference for plugins
+"use strict";
 
-var config  = require("../config").scripts;
+const gulp    = require("gulp");
+const named   = require("vinyl-named");
+const reload  = require("browser-sync").reload;
+const size    = require("gulp-size");
+const uglify  = require("gulp-uglify");
+const webpack = require("webpack-stream");
+const pack    = require("webpack"); // Reference for plugins
+
+const config  = require("../config").scripts;
 
 gulp.task("scripts", function() {
   return gulp.src(config.bundles)
