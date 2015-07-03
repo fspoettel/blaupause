@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": true,
   "ignore": [
-    "**/.*",
+    "**/.gitignore",
     "node_modules",
     "bower_components"
   ],
