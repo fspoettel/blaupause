@@ -13,8 +13,8 @@
 
  - [BrowserSync](http://www.browsersync.io/)
  - [SASS](http://sass-lang.com/) with [Autoprefixer](https://github.com/postcss/autoprefixer) & Minification
- - [Webpack](http://webpack.github.io) - ES6/ AMD / JSX-support & easy bundling
- - [EditorConfig](http://editorconfig.org/)
+ - [Webpack](http://webpack.github.io) & [Babel](babeljs.io) - ES6 / JSX-support & easy bundling
+ - [EditorConfig](http://editorconfig.org/) & [JSCS](http://jscs.info/overview.html)
  - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Modernizr](http://modernizr.com/)
  - (Optional) [Express](http://expressjs.com/)-server with automatic restarts
  - Sourcemaps for JS & CSS files
