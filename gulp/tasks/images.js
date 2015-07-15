@@ -1,17 +1,17 @@
 /**
  * images.js
- * @name - 'images'
+ * @name - "images"
  * @task - Optimizes images
  */
 
-'use strict';
+"use strict";
 
-const gulp     = require('gulp');
-const imagemin = require('gulp-imagemin');
+const gulp     = require("gulp");
+const imagemin = require("gulp-imagemin");
 
-const config   = require('../config').images;
+const config   = require("../config").images;
 
-gulp.task('images', function() {
+gulp.task("images", function() {
   return gulp.src(config.src)
     .pipe(imagemin({
       progressive: true

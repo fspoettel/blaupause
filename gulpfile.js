@@ -1,10 +1,10 @@
 /**
  * gulpfile.js
- * @task - loads all tasks from './gulp/tasks'
+ * @task - loads all tasks from "./gulp/tasks"
  */
 
-'use strict';
+"use strict";
 
-const requireDir = require('require-dir');
+const requireDir = require("require-dir");
 
-requireDir('./gulp/tasks', { recurse: true });
+requireDir("./gulp/tasks", { recurse: true });
