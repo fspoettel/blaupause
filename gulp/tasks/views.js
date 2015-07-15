@@ -1,16 +1,16 @@
 /**
  * views.js
- * @name - 'views'
+ * @name - "views"
  * @task - Copies views to destination
  */
 
-'use strict';
+"use strict";
 
-const gulp   = require('gulp');
+const gulp   = require("gulp");
 
-const config = require('../config').views;
+const config = require("../config").views;
 
-gulp.task('views', function() {
+gulp.task("views", function() {
 
   gulp.src(config.index)
     .pipe(gulp.dest(config.dest));

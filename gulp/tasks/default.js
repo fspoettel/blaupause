@@ -1,11 +1,11 @@
 /**
  * default.js
- * @name - '[default, start]'
+ * @name - "[default, start]"
  * @task - Default compile task
  */
 
-'use strict';
+"use strict";
 
-const gulp = require('gulp');
+const gulp = require("gulp");
 
-gulp.task('default', ['watch']);
+gulp.task("default", ["watch"]);
