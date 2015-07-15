@@ -23,7 +23,7 @@
 
  - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
  - `gulp build` - Only rebuilds project
- - `gulp clean` - Cleans destination folder. Can clean views only if "views.root" is false
+ - `gulp clean` - Cleans destination folder
  - `gulp styles` - Builds styles
  - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images

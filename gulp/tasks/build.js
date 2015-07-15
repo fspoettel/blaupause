@@ -6,6 +6,9 @@
 
 "use strict";
 
-const gulp = require("gulp");
+const gulp        = require("gulp");
+const runSequence = require("run-sequence");
 
-gulp.task("build", ["styles", "scripts", "views", "images", "modernizr"]);
+gulp.task("build", function(cb) {
+  runSequence("clean", ["scripts", "styles", "modernizr", "images", "views"], cb);
+});
