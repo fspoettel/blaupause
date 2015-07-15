@@ -1,14 +1,29 @@
 /**
  * bundle.scss
- *
- * [Directories:]
- * /settings - use for config and global vars
- * /tools - utility mixins & abstract helpers
- * /base - use for styles for global tags (normalize, type)
- * /elements - global, singular objects, shared across individual components
- * /objects - global objects, shared across individual components. Can bundle elements
- * /components - UI components / templates
- * /vendor - use for dependency styles
+ * BEM Architecture based on: http://docssa.info/
  */
 
-@import './app/base/normalize';
+ /*!
+ ========== INIT
+ */
+
+ // css reset (normalize) and third party scss required for the project
+@import 'vendor/sanitize';
+
+/*!
+========== BASE
+*/
+// variables, fonts, mixins, helpers... common styles used across the entire site
+@import 'base/__base';
+
+/*!
+========== COMPONENTS
+*/
+// reusable abstract components
+@import 'components/__components';
+
+/*!
+========== SPECIFICS
+*/
+// more specific declarations, built on a per page/module basis
+@import 'specifics/__specifics';
