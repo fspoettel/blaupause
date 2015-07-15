@@ -1,14 +1,14 @@
 /**
  * build.js
- * @name - "build"
- * @task - Rebuild without watching. Gets called in "default"
+ * @name - 'build'
+ * @task - Rebuild without watching. Gets called in 'default'
  */
 
-"use strict";
+'use strict';
 
-const gulp        = require("gulp");
-const runSequence = require("run-sequence");
+const gulp        = require('gulp');
+const runSequence = require('run-sequence');
 
-gulp.task("build", function(cb) {
-  runSequence("clean", ["scripts", "styles", "modernizr", "images", "views"], cb);
+gulp.task('build', function(cb) {
+  runSequence('clean', ['scripts', 'styles', 'modernizr', 'images', 'views'], cb);
 });

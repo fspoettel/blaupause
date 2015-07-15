@@ -3,11 +3,11 @@
  * @task - Launches an express-server. By default, serves the directory specified in `gulp/config`. Called from 'gulp'
  */
 
-"use strict";
+'use strict';
 
-const express = require("express");
+const express = require('express');
 const app     = express();
-const config  = require("./gulp/config").server;
+const config  = require('./gulp/config').server;
 
 app.use(express.static(config.dest));
 
