@@ -18,6 +18,7 @@
  - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Modernizr](http://modernizr.com/)
  - (Optional) [Express](http://expressjs.com/)-server with automatic restarts
  - Sourcemaps for JS & CSS files
+ - Production-flags for builds
 
 ## Available Tasks:
 
@@ -29,6 +30,10 @@
  - `gulp images` - Optimize images
  - `gulp modernizr` - Build a custom Modernizr (Add tests in './gulp/config.js')
  - `gulp views` - Copies static files in "\_src" to dest. For more elaborate view-tasks (templating / nested folder / SSG), modify the task
+
+## Production Flag:
+
+You can generate a production-ready build (no SourceMaps, NODE_ENV = "production" for JS builds, minified/ulgified code) via passing `--production` to any gulp task.
 
 ### Adding tasks:
 
