@@ -1,18 +1,18 @@
 /**
  * modernizr.js
- * @name - "modernizr"
+ * @name - 'modernizr'
  * @task - Compiles a custom Modernizr-build
  */
 
-"use strict";
+'use strict';
 
-const gulp      = require("gulp");
-const modernizr = require("gulp-modernizr");
-const uglify    = require("gulp-uglify");
+const gulp      = require('gulp');
+const modernizr = require('gulp-modernizr');
+const uglify    = require('gulp-uglify');
 
-const config    = require("../config");
+const config    = require('../config');
 
-gulp.task("modernizr", function() {
+gulp.task('modernizr', function() {
 
   gulp.src(config.scripts.bundles)
     .pipe(modernizr(config.modernizr.settings))
