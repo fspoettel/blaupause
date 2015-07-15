@@ -38,11 +38,7 @@
   },
   "jscsConfig": {
     "preset": "airbnb",
-    "validateQuoteMarks": {
-      "mark": "\"",
-      "escape": true
-    },
-    "esnext": true
+    "esprima": "esprima-fb"
   },
   "homepage": "https://github.com/felics/blaupause",
   "dependencies": {
