@@ -4,8 +4,15 @@
 
 ## Installation
 
- 1. `git clone https://github.com/felics/blaupause myApp`
- 2. `cd myApp`
+ 1. `git clone https://github.com/felics/blaupause project`
+ 2. `cd project`
+ 3. `npm install`
+ 4. `gulp`
+
+or
+
+ 1. `cd project`
+ 2. `bower install felics/blaupause`
  3. `npm install`
  4. `gulp`
 
@@ -33,8 +40,8 @@
 
 ## Production Flag:
 
-You can generate a production-ready build (no Sourcemaps, `NODE_ENV = "production"` for JS builds, minified/ulgified code) via passing `--production` to any gulp task.
+You can generate a production-ready build (no sourcemaps, `NODE_ENV = "production"` for JS builds, minified/ulgified code) via passing `--production` to any gulp task.
 
 ## Adding tasks:
 
-You can add tasks by creating a .js-file in `./gulp/tasks` that contain a task and a reference to `gulp` anf the `gulp`-modules you want to use.
+You can add tasks by creating a .js-file in `./gulp/tasks` that contain a task and a reference to `gulp` and the `gulp`-modules you want to use. You can then add it to the run-sequence in "build".

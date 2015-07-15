@@ -18,29 +18,31 @@ gulp.task('nodemon', function(cb) {
 
   if (config.run) {
     let called = false;
+
     return nodemon({
       script: config.file,
       watch: [config.watch]
     })
     .on('start', function() {
-      /** Make sure starting callback is only triggered once */
-      if (!called) {
-        cb();
-      }
+
+      if (!called) { cb(); }
 
       called = true;
+
     })
     .on('restart', function() {
-      /** reload connected browsers after a slight delay */
+
       setTimeout(function() {
         browserSync.reload({
           stream: false
         });
       }, config.reloadDelay);
+
     });
+
   }
   else {
-    /** Signalize task is done when no server is setup */
     cb();
   }
+
 });

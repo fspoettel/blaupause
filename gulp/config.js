@@ -5,10 +5,10 @@
 
 'use strict';
 
-const dest = './public';
+const dest     = './public';
 const hostname = 'localhost';
-const port = 3000;
-const src  = './_src';
+const port     = 3000;
+const src      = './_src';
 
 module.exports = {
 
