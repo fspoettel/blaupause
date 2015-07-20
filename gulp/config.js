@@ -41,7 +41,10 @@ module.exports = {
   scripts: {
     bundles: [src + '/js/*.js'],
     watch: [src + '/js/**/*.{js,jsx}'],
-    dest: dest + '/js'
+    dest: dest + '/js',
+    externals: {
+      jquery: 'jQuery'
+    }
   },
 
   server: {

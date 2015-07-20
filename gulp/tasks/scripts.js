@@ -46,6 +46,7 @@ gulp.task('scripts', function() {
           { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']}
         ]
       },
+      externals: config.externals,
       plugins: pluginArray
     }))
     .pipe(gulp.dest(config.dest))
