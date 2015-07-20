@@ -36,10 +36,6 @@
   "bugs": {
     "url": "https://github.com/felics/blaupause/issues"
   },
-  "jscsConfig": {
-    "preset": "airbnb",
-    "esprima": "esprima-fb"
-  },
   "homepage": "https://github.com/felics/blaupause",
   "dependencies": {
     "express": "^4.13.1"

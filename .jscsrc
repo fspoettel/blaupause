@@ -1,0 +1,5 @@
+{
+  "preset": "airbnb",
+  "fileExtensions": [".js", ".jsx", "jscs"],
+  "esprima": "esprima-fb"
+}
