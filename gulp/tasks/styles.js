@@ -24,7 +24,7 @@ gulp.task('styles', function() {
     .pipe(gulpif(!argv.production, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0']
+      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0'],
     }))
     .pipe(gulpif(argv.production, cssmin()))
     .pipe(gulpif(!argv.production, sourcemaps.write('./maps')))
@@ -32,6 +32,6 @@ gulp.task('styles', function() {
     .pipe(reload({stream:true}))
     .pipe(size({
       showFiles: true,
-      title: 'CSS:'
-    }))
+      title: 'CSS:',
+    }));
 });

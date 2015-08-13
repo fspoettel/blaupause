@@ -16,12 +16,12 @@ module.exports = {
     /** Use 'proxy' to reload existing servers */
     proxy: hostname + ':' + port,
     /** Port for browserSync-proxy */
-    port: 4000
+    port: 4000,
   },
 
   images: {
     src: src + '/img/*',
-    dest: dest + '/img'
+    dest: dest + '/img',
   },
 
   modernizr: {
@@ -32,10 +32,10 @@ module.exports = {
           'addTest',
           'html5printshiv',
           'testProp',
-          'fnBind'
+          'fnBind',
       ],
-      tests: []
-    }
+      tests: [],
+    },
   },
 
   scripts: {
@@ -43,8 +43,8 @@ module.exports = {
     watch: [src + '/js/**/*.{js,jsx}'],
     dest: dest + '/js',
     externals: {
-      jquery: 'jQuery'
-    }
+      jquery: 'jQuery',
+    },
   },
 
   server: {
@@ -57,18 +57,18 @@ module.exports = {
     /** Tell nodemon which directories/files to watch */
     watch: ['server.js'],
     /** Needed for BrowserSync to work properly with server restarts */
-    reloadDelay: 500
+    reloadDelay: 500,
   },
 
   styles: {
     src: src + '/scss/*.{sass,scss}',
     watch: [src + '/scss/**/*.{sass,scss}'],
-    dest: dest + '/css'
+    dest: dest + '/css',
   },
 
   views: {
     index: src + '/*.*',
-    dest: dest
-  }
+    dest: dest,
+  },
 
 };

@@ -21,16 +21,16 @@ let pluginArray = [new pack.optimize.DedupePlugin()];
 
 if (argv.production) {
 
-  pluginArray.push (new pack.DefinePlugin({
+  pluginArray.push(new pack.DefinePlugin({
     'process.env': {
-      NODE_ENV: JSON.stringify('production')
-    }
+      NODE_ENV: JSON.stringify('production'),
+    },
   }));
 
-  pluginArray.push (new pack.optimize.UglifyJsPlugin({
+  pluginArray.push(new pack.optimize.UglifyJsPlugin({
     compress: {
-      warnings: false
-    }
+      warnings: false,
+    },
   }));
 
 }
@@ -43,16 +43,16 @@ gulp.task('scripts', function() {
       devtool: !argv.production ? '#source-map' : false,
       module: {
         loaders: [
-          { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']}
-        ]
+          { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']},
+        ],
       },
       externals: config.externals,
-      plugins: pluginArray
+      plugins: pluginArray,
     }))
     .pipe(gulp.dest(config.dest))
     .pipe(size({
       title: 'JS:',
-      showFiles: true
+      showFiles: true,
     }))
     .pipe(reload({stream:true}));
 });

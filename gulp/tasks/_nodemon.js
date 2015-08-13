@@ -21,7 +21,7 @@ gulp.task('nodemon', function(cb) {
 
     return nodemon({
       script: config.file,
-      watch: [config.watch]
+      watch: [config.watch],
     })
     .on('start', function() {
 
@@ -34,14 +34,13 @@ gulp.task('nodemon', function(cb) {
 
       setTimeout(function() {
         browserSync.reload({
-          stream: false
+          stream: false,
         });
       }, config.reloadDelay);
 
     });
 
-  }
-  else {
+  } else {
     cb();
   }
 
