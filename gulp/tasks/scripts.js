@@ -12,14 +12,14 @@ const named   = require('vinyl-named');
 const pack    = require('webpack'); // Reference for plugins
 const reload  = require('browser-sync').reload;
 const size    = require('gulp-size');
-const uglify  = require('gulp-uglify');
 const webpack = require('webpack-stream');
 
 const config  = require('../config').scripts;
+const isProduction =  (argv.production || argv.p);
 
 let pluginArray = [new pack.optimize.DedupePlugin()];
 
-if (argv.production) {
+if (isProduction) {
 
   pluginArray.push(new pack.DefinePlugin({
     'process.env': {
@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
     .pipe(named())
     .pipe(webpack({
       cache: true,
-      devtool: !argv.production ? '#source-map' : false,
+      devtool: !isProduction ? '#source-map' : false,
       module: {
         loaders: [
           { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']},

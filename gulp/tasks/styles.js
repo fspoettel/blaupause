@@ -18,16 +18,17 @@ const size         = require('gulp-size');
 const sourcemaps   = require('gulp-sourcemaps');
 
 const config       = require('../config').styles;
+const isProduction = (argv.production || argv.p);
 
 gulp.task('styles', function() {
   gulp.src(config.src)
-    .pipe(gulpif(!argv.production, sourcemaps.init()))
+    .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0'],
     }))
-    .pipe(gulpif(argv.production, cssmin()))
-    .pipe(gulpif(!argv.production, sourcemaps.write('./maps')))
+    .pipe(gulpif(isProduction, cssmin()))
+    .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}))
     .pipe(size({
