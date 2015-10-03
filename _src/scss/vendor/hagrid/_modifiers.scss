@@ -1,0 +1,175 @@
+
+//////////////////////////////
+// Modifiers
+///////////////////////////////
+
+@mixin grid-modifiers($modifiers...) {
+
+    $gutter: hagrid-gutter-get(default);
+    $is-y: false;
+    $is-wrap: false;
+    $is-not-spacing: true;
+
+    @each $modifier in $modifiers {
+        // * Check for modifiers that collide with defaults
+        @if $modifier == bottom or $modifier == top or $modifier == middle {
+            $is-y: true;
+        }
+        @elseif $modifier == flip {
+            $is-wrap: true;
+        }
+        @elseif hagrid-gutter-exists($modifier) {
+            $is-not-spacing: false;
+        }
+
+        @include grid-modifier($modifier);
+
+    }
+
+    @if $is-y == false {
+        align-items: flex-start;
+    }
+
+    @if $is-wrap == false {
+        flex-wrap: wrap;
+    }
+
+    @if $is-not-spacing == true {
+        margin: {
+            left: -$gutter;
+        };
+    }
+
+    #{$hagrid-item-selector} {
+        @if $is-not-spacing == true {
+            padding: {
+                left: $gutter;
+            };
+        }
+        @if $is-y == false and $hagrid-fallback {
+            vertical-align: top;
+        }
+    }
+}
+
+@mixin grid-modifier($modifier) {
+
+    // x-Axis Alignment
+    //////////////////////////////
+
+    @if $modifier == right {
+        justify-content: flex-end;
+
+        @if $hagrid-fallback {
+            text-align: right;
+            #{$hagrid-item-selector} {
+                text-align: left;
+            }
+        }
+    }
+    @elseif $modifier == center {
+        justify-content: center;
+
+        @if $hagrid-fallback {
+            text-align: center;
+            #{$hagrid-item-selector} {
+                text-align: left;
+            }
+        }
+    }
+
+    // * y-Axis Alignment
+    //////////////////////////////
+
+    @elseif $modifier == bottom {
+        align-items: flex-end;
+
+        @if $hagrid-fallback {
+            #{$hagrid-item-selector} {
+                vertical-align: bottom;
+            }
+        }
+
+    }
+    @elseif $modifier == middle {
+        align-items: center;
+
+        @if $hagrid-fallback {
+            #{$hagrid-item-selector} {
+                vertical-align: middle;
+            }
+        }
+
+    }
+
+    // Flex Alignment
+    ///////////////////////////////
+
+    @elseif $modifier == space-around {
+        justify-content: space-around;
+
+        @if $hagrid-fallback and $hagrid-fallback-warnings {
+            @warn "Modifier #{$modifier} won't work on fallback-grid!"
+        }
+    }
+    @elseif $modifier == space-between {
+        justify-content: space-between;
+
+        @if $hagrid-fallback and $hagrid-fallback-warnings {
+            @warn "Modifier #{$modifier} won't work on fallback-grid!"
+        }
+    }
+
+    // Direction
+    ///////////////////////////////
+
+    @elseif $modifier == rev {
+
+        @if $hagrid-fallback {
+            direction: rtl;
+            #{$hagrid-item-selector} {
+                direction: ltr;
+                text-align: left;
+            }
+        } @else {
+            flex-direction: row-reverse;
+        }
+
+    }
+
+    @elseif $modifier == flip {
+        flex-wrap: wrap-reverse;
+        // * Workaround for IE rendering diff, see: https://github.com/felics/hagrid/issues/13
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            align-items: flex-end;
+        }
+
+        @if $hagrid-fallback and $hagrid-fallback-warnings {
+            @warn "Modifier #{$modifier} won't work on fallback-grid!"
+        }
+    }
+    @else {
+
+        // Gutter Modifiers
+        ///////////////////////////////
+
+        @if hagrid-gutter-exists($modifier) {
+            $gutter: hagrid-gutter-get($modifier);
+
+            margin: {
+                left: -$gutter;
+            };
+
+            #{$hagrid-item-selector} {
+                padding: {
+                    left: $gutter;
+                };
+            }
+
+        }
+        @else {
+            @error "Modifier #{ $modifier } does not exist.";
+        }
+
+    }
+}

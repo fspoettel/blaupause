@@ -1,0 +1,208 @@
+
+///////////////////////////////
+// Functions
+///////////////////////////////
+
+
+// DRY Mixins @ atimport/toolkit
+//////////////////////////////
+
+$hagrid-placeholders: ();
+
+// Placeholder Get/Set
+//////////////////////////////
+
+@function hagrid-placeholder-get($id) {
+    @return map-get($hagrid-placeholders, $id);
+}
+
+@function hagrid-placeholder-set($id) {
+    $unique-id: unique-id();
+    $hagrid-placeholders: map-merge($hagrid-placeholders, ($id: $unique-id)) !global;
+    @return $unique-id;
+}
+
+// Generate Placeholder Class and Extend
+//////////////////////////////
+
+@mixin dynamic-extend($id) {
+    $placeholder-id: hagrid-placeholder-get($id);
+
+    @if $placeholder-id == null {
+        $placeholder-id: hagrid-placeholder-set($id);
+        @at-root %#{$placeholder-id} {
+            @content;
+        }
+    }
+    @extend %#{$placeholder-id};
+}
+
+// Static Mixin Helper
+//////////////////////////////
+
+@mixin mixin-dryer($id, $extend: $hagrid-dry-mixins) {
+    @if $extend == true {
+        @include dynamic-extend($id) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+// Main Parser
+//////////////////////////////
+
+@mixin grid-calc($prop, $widths...) {
+
+    $arg-length: length($widths);
+
+    @if $arg-length == 0 {
+
+        // * If no params are passed, default to mobile-first
+        @if $prop == width {
+            #{$prop}: 100%;
+        }
+        @else {
+            @error "You need to pass at least one statement to push/pull"
+        }
+    }
+    @else {
+
+        $width-detected: false;
+
+        @each $width in $widths {
+            // * If a general width is passed in, use it
+            @if type-of($width) == number or $width == auto {
+                #{$prop}: calculate-width($width);
+                $width-detected: true;
+            }
+            // * If false is passed, assign no width
+            @elseif $width == false {
+                $width-detected: true;
+            }
+            // * Handle responsive args
+            @else {
+
+                // * "md 2/3"-synthax
+                $key: nth($width, 1);
+                $value: nth($width, 2);
+
+                // * Cater for "2/3 md"-synthax
+                @if type-of($key) == number {
+                    $value: nth($width, 1);
+                    $key: nth($width, 2);
+                }
+
+                // * Cater for specific breakpoints
+
+                $bp: parse-breakpoint($key);
+
+                @if $bp != false {
+                    @include bp(#{$key}) {
+                        #{$prop}: calculate-width($value);
+                    }
+                }
+                @else {
+                    @warn "You are trying to assign a width to an unknown, unquoted breakpoint: #{$key}"
+                }
+            }
+        }
+
+        // * If only responsive params are passed, default to mobile-first
+        @if $width-detected == false and $prop == width {
+            #{$prop}: 100%;
+        }
+    }
+}
+
+// Calculate Width (Fraction => Percentage)
+//////////////////////////////
+
+@function calculate-width($value) {
+    @if $value == auto or unit($value) != "" {
+        @return $value;
+    } @else {
+        @return ($value * 100 * 1%);
+    }
+}
+
+// Gutter Modifier Functions
+//////////////////////////////
+
+@function hagrid-gutter-exists($id) {
+    @return map-has-key($hagrid-gutters, $id);
+}
+
+@function hagrid-gutter-get($id) {
+    @return map-get($hagrid-gutters, $id);
+}
+
+// Breakpoint Validity Checker
+// Validated a breakpoint and returns itstype "ref" or "quoted" or false
+//////////////////////////////
+
+@function parse-breakpoint($key, $get-map: true) {
+    @if map-has-key($hagrid-breakpoints, $key) {
+        @if $get-map == false {
+            @return $key;
+        } @else {
+            @return map-get($hagrid-breakpoints, $key);
+        }
+    }
+    @elseif is-mq($key) {
+        @return $key;
+    }
+    @else {
+        @return false;
+    }
+}
+
+@function is-mq($string) {
+    @if str-starts-with($string, unquote("(")) and str-end-with($string, unquote(")")    ) {
+        @return true;
+    }
+    @else {
+        @return false;
+    }
+}
+
+@function str-starts-with($string, $needle) {
+  @if type-of($string) != "string" {
+    @warn "`str-starts-with` function expecting a string for $string; #{type-of($string)} given.";
+    @return false;
+  }
+
+  @if type-of($needle) != "string" {
+    @warn "`str-starts-with` function expecting a string for $needle; #{type-of($needle)} given.";
+    @return false;
+  }
+
+  @return str-slice($string, 1, str-length($needle)) == $needle;
+}
+
+@function str-ends-with($string, $needle) {
+  @if type-of($string) != "string" {
+    @warn "`str-starts-with` function expecting a string for $string; #{type-of($string)} given.";
+    @return false;
+  }
+
+  @if type-of($needle) != "string" {
+    @warn "`str-starts-with` function expecting a string for $needle; #{type-of($needle)} given.";
+    @return false;
+  }
+
+  @return str-slice($string, -1 * str-length($needle)) == $needle;
+}
+
+// Shorthands
+//////////////////////////////
+
+@mixin g($modifiers...) {
+    @include grid($modifiers...);
+}
+
+@mixin i($widths...) {
+    @include item($widths...);
+}
