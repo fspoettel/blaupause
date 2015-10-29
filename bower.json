@@ -15,10 +15,8 @@
     "bower_components"
   ],
   "devDependencies": {
+    "hagrid": "~2.0.0",
     "html5-boilerplate": "~5.2.0",
-    "sanitize-css": "1.1.0"
-  },
-  "dependencies": {
-    "hagrid": "~2.0.0"
+    "sanitize-css": "~3.0.0"
   }
 }
