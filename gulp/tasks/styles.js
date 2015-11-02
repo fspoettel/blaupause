@@ -31,8 +31,9 @@ gulp.task('styles', function() {
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}))
-    .pipe(size({
+    .pipe(gulpif(isProduction, size({
+      gzip: true,
       showFiles: true,
       title: 'CSS:',
-    }));
+    })));
 });

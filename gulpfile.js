@@ -6,13 +6,13 @@
 'use strict';
 
 const argv       = require('yargs').argv;
-const chalk      = require('chalk');
+const gutil      = require('gulp-util');
 const requireDir = require('require-dir');
 
 const isProduction =  (argv.production || argv.p);
 
 if (isProduction) {
-  console.log(chalk.bold.bgGreen('Production Mode'));
+  gutil.log(gutil.colors.bold.bgGreen('Production Mode'));
 }
 
 requireDir('./gulp/tasks', { recurse: true });

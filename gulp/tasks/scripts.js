@@ -8,6 +8,7 @@
 
 const argv   = require('yargs').argv;
 const gulp    = require('gulp');
+const gulpif  = require('gulp-if');
 const named   = require('vinyl-named');
 const pack    = require('webpack'); // Reference for plugins
 const reload  = require('browser-sync').reload;
@@ -49,11 +50,13 @@ gulp.task('scripts', function() {
       },
       plugins: pluginArray,
       presets: ['es2015', 'react'],
+      quiet: true,
     }))
     .pipe(gulp.dest(config.dest))
-    .pipe(size({
-      title: 'JS:',
+    .pipe(gulpif(isProduction, size({
+      gzip: true,
       showFiles: true,
-    }))
+      title: 'JS:',
+    })))
     .pipe(reload({stream:true}));
 });
