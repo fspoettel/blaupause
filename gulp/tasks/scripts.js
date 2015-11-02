@@ -41,13 +41,14 @@ gulp.task('scripts', function() {
     .pipe(webpack({
       cache: true,
       devtool: !isProduction ? '#source-map' : false,
+      externals: config.externals,
       module: {
         loaders: [
           { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']},
         ],
       },
-      externals: config.externals,
       plugins: pluginArray,
+      presets: ['es2015', 'react'],
     }))
     .pipe(gulp.dest(config.dest))
     .pipe(size({
