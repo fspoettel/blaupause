@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "devDependencies": {
