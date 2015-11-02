@@ -13,6 +13,7 @@ or
 
  1. `cd project`
  2. `bower install felics/blaupause`
+ 3. Copy to project root
  3. `npm install`
  4. `gulp`
 
@@ -21,22 +22,23 @@ or
  - [BrowserSync](http://www.browsersync.io/)
  - [SASS](http://sass-lang.com/) with [Autoprefixer](https://github.com/postcss/autoprefixer) & Minification
  - [Webpack](http://webpack.github.io) & [Babel](babeljs.io) - ES6 / JSX-support & easy bundling
- - [EditorConfig](http://editorconfig.org/) & [JSCS](http://jscs.info/overview.html)
- - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Modernizr](http://modernizr.com/)
+ - [EditorConfig](http://editorconfig.org/) & [JSCS Config](http://jscs.info/overview.html)
+ - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Customizable Modernizr](http://modernizr.com/)
  - (Optional) [Express](http://expressjs.com/)-server with automatic restarts
  - Sourcemaps for JS & CSS files
- - Production-flags for builds
+ - Production-flag for builds
+ - SASS file-structure based on [DoCSSa](http://docssa.info) with some useful mixins & [Sanitize.css](https://github.com/10up/sanitize.css)
 
 ## Available Tasks:
 
  - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
- - `gulp build` - Only rebuilds project
+ - `gulp build` - (Re-)Builds project
  - `gulp clean` - Cleans destination folder
  - `gulp styles` - Builds styles
  - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images
  - `gulp modernizr` - Build a custom Modernizr (Add tests in './gulp/config.js')
- - `gulp views` - Copies static files in "\_src" to dest. For more elaborate view-tasks (templating / nested folder / SSG), modify the task
+ - `gulp views` - Copies static files in "\_src" to dest. For more elaborate view-tasks (templating / nested folder / Static Site Generators), modify the task
 
 ## Production Flag:
 

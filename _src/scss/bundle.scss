@@ -1,30 +1,28 @@
-/**
- * bundle.scss
- * BEM Architecture based on: http://docssa.info/
- */
 
- /*!
- ========== INIT
- */
+//////////////////////////////
+// BUNDLE
+// * BEM & File Architecture based on: http://docssa.info/
+//////////////////////////////
 
- // css reset (normalize) and third party scss required for the project
-@import 'vendor/sanitize';
-@import 'vendor/hagrid';
+// BASE
+// * variables, fonts, mixins, helpers... common styles used across the entire site
+//////////////////////////////
 
-/*!
-========== BASE
-*/
-// variables, fonts, mixins, helpers... common styles used across the entire site
-@import 'base/__base';
+@import "vendor/sanitize";
+@import "base/__base";
 
-/*!
-========== COMPONENTS
-*/
-// reusable abstract components
-@import 'components/__components';
+// COMPONENTS
+// * reusable abstract components
+//////////////////////////////
 
-/*!
-========== SPECIFICS
-*/
-// more specific declarations, built on a per page/module basis
-@import 'specifics/__specifics';
+@import "components/__components";
+
+// SPECIFICS
+// * more specific declarations, built on a per page/module basis
+//////////////////////////////
+
+@import "specifics/__specifics";
+
+// VENDOR
+// * third-party SCSS
+//////////////////////////////
