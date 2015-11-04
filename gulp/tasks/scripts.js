@@ -45,11 +45,17 @@ gulp.task('scripts', function() {
       externals: config.externals,
       module: {
         loaders: [
-          { test: /\.(js|jsx)$/, exclude: [/node_modules/, /bower_components/], loaders: ['babel-loader']},
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel',
+            query: {
+              presets: ['es2015', 'react'],
+            },
+          },
         ],
       },
       plugins: pluginArray,
-      presets: ['es2015', 'react'],
       quiet: true,
     }))
     .pipe(gulp.dest(config.dest))
