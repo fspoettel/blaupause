@@ -1,14 +1,12 @@
 
-///////////////////////////////
-// Core
-///////////////////////////////
+//////////////////////////////
+// CORE
+//////////////////////////////
 
 // Static Content
 // 1. https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
 ///////////////////////////////
 
-// * Only carries properties that are not overwritten in modifiers. Rest is added
-// * in @grid-modifiers via conditionals
 @mixin grid-static {
     @include mixin-dryer("grid") {
         display: flex;
@@ -52,9 +50,7 @@
 ///////////////////////////////
 
 @mixin grid($modifiers...) {
-
     @include grid-static;
-
     @include grid-modifiers($modifiers...);
 }
 
@@ -62,27 +58,20 @@
 ///////////////////////////////
 
 @mixin item($widths...) {
-
     @include item-static;
-
     @include grid-calc(width, $widths...);
 }
-
 
 // Push / Pull
 ///////////////////////////////
 
 @mixin pull($widths...) {
-
     @include push-pull-static;
-
     @include grid-calc(right, $widths...);
 }
 
 @mixin push($widths...) {
-
     @include push-pull-static;
-
     @include grid-calc(left, $widths...);
 }
 
@@ -99,7 +88,7 @@
     }
 
     @if $hagrid-fallback and $hagrid-fallback-warnings {
-        @warn "Stretch won't work on fallback-grid!"
+        @warn "Stretch won't work on fallback-grid!";
     }
 }
 
@@ -109,7 +98,6 @@
 @mixin bp($breakpoints...) {
 
     @each $breakpoint in $breakpoints {
-
         $bp: parse-breakpoint($breakpoint);
 
         @if $bp != false {

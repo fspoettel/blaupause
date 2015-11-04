@@ -56,14 +56,12 @@ $hagrid-fallback-fontfix: true;
 // * If you are using the fontfix (recommended), reset your typeface here
 $hagrid-fallback-font: sans-serif;
 
-
 // * Internal
 //////////////////////////////
 
 // * When set to true, hagrid will extend shared properties among grids and grid-items
 // * When set to false (default), the output will be better traceable but slightly larger (gzip will eat this up)
 $hagrid-dry-mixins: false;
-
 
 // Imports
 //////////////////////////////

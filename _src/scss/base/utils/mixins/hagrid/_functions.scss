@@ -1,6 +1,6 @@
 
 ///////////////////////////////
-// Functions
+// FUNCTIONS
 ///////////////////////////////
 
 
@@ -19,6 +19,7 @@ $hagrid-placeholders: ();
 @function hagrid-placeholder-set($id) {
     $unique-id: unique-id();
     $hagrid-placeholders: map-merge($hagrid-placeholders, ($id: $unique-id)) !global;
+
     @return $unique-id;
 }
 
@@ -30,10 +31,12 @@ $hagrid-placeholders: ();
 
     @if $placeholder-id == null {
         $placeholder-id: hagrid-placeholder-set($id);
+
         @at-root %#{$placeholder-id} {
             @content;
         }
     }
+
     @extend %#{$placeholder-id};
 }
 
@@ -55,24 +58,25 @@ $hagrid-placeholders: ();
 //////////////////////////////
 
 @mixin grid-calc($prop, $widths...) {
-
     $arg-length: length($widths);
 
     @if $arg-length == 0 {
-
         // * If no params are passed, default to mobile-first
         @if $prop == width {
             #{$prop}: 100%;
         }
         @else {
-            @error "You need to pass at least one statement to push/pull"
+            @error "You need to pass at least one statement to push/pull";
         }
     }
     @else {
-
         $width-detected: false;
 
-        @each $width in $widths {
+
+        @for $i from 1 through length($widths) {
+
+            $width: nth($widths,$i);
+
             // * If a general width is passed in, use it
             @if type-of($width) == number or $width == auto {
                 #{$prop}: calculate-width($width);
@@ -84,7 +88,6 @@ $hagrid-placeholders: ();
             }
             // * Handle responsive args
             @else {
-
                 // * "md 2/3"-synthax
                 $key: nth($width, 1);
                 $value: nth($width, 2);
@@ -96,7 +99,6 @@ $hagrid-placeholders: ();
                 }
 
                 // * Cater for specific breakpoints
-
                 $bp: parse-breakpoint($key);
 
                 @if $bp != false {
@@ -105,7 +107,7 @@ $hagrid-placeholders: ();
                     }
                 }
                 @else {
-                    @warn "You are trying to assign a width to an unknown, unquoted breakpoint: #{$key}"
+                    @warn "You are trying to assign a width to an unknown, unquoted breakpoint: #{$key}";
                 }
             }
         }
@@ -123,7 +125,8 @@ $hagrid-placeholders: ();
 @function calculate-width($value) {
     @if $value == auto or unit($value) != "" {
         @return $value;
-    } @else {
+    }
+    @else {
         @return ($value * 100 * 1%);
     }
 }
@@ -147,7 +150,8 @@ $hagrid-placeholders: ();
     @if map-has-key($hagrid-breakpoints, $key) {
         @if $get-map == false {
             @return $key;
-        } @else {
+        }
+        @else {
             @return map-get($hagrid-breakpoints, $key);
         }
     }
@@ -160,7 +164,7 @@ $hagrid-placeholders: ();
 }
 
 @function is-mq($string) {
-    @if str-starts-with($string, unquote("(")) and str-end-with($string, unquote(")")    ) {
+    @if str-starts-with($string, unquote("(")) and str-end-with($string, unquote(")")) {
         @return true;
     }
     @else {

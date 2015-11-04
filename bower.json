@@ -18,7 +18,7 @@
     "html5-boilerplate": "~5.2.0"
   },
   "dependencies": {
-    "hagrid": "~2.0.0",
+    "hagrid": "~2.0.1",
     "modular-scale": "~2.1.1",
     "sanitize-css": "~3.0.0"
   }
