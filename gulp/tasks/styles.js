@@ -24,9 +24,7 @@ gulp.task('styles', function() {
   gulp.src(config.src)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0'],
-    }))
+    .pipe(autoprefixer(config.autoprefixer))
     .pipe(gulpif(isProduction, cssmin()))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.dest))

@@ -13,8 +13,6 @@ const config   = require('../config').images;
 
 gulp.task('images', function() {
   return gulp.src(config.src)
-    .pipe(imagemin({
-      progressive: true,
-    }))
+    .pipe(imagemin(config.settings))
     .pipe(gulp.dest(config.dest));
 });

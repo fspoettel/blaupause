@@ -13,15 +13,18 @@ const src      = './_src';
 module.exports = {
 
   browserSync: {
-    /** Use 'proxy' to reload existing servers */
-    proxy: hostname + ':' + port,
     /** Port for browserSync-proxy */
     port: 4000,
+    /** Use 'proxy' to reload existing servers */
+    proxy: hostname + ':' + port,
   },
 
   images: {
-    src: src + '/img/*',
     dest: dest + '/img',
+    settings: {
+      progressive: true,
+    },
+    src: src + '/img/*',
   },
 
   modernizr: {
@@ -40,11 +43,11 @@ module.exports = {
 
   scripts: {
     bundles: [src + '/js/*.js'],
-    watch: [src + '/js/**/*.{js,jsx}'],
     dest: dest + '/js',
     externals: {
       jquery: 'jQuery',
     },
+    watch: [src + '/js/**/*.{js,jsx}'],
   },
 
   server: {
@@ -52,23 +55,25 @@ module.exports = {
     run: true,
     /** Needed for clean task & server */
     dest: dest,
-    port: port,
     file: 'server.js',
-    /** Tell nodemon which directories/files to watch */
-    watch: ['server.js'],
+    port: port,
     /** Needed for BrowserSync to work properly with server restarts */
     reloadDelay: 500,
+    /** Tell nodemon which directories/files to watch */
+    watch: ['server.js'],
   },
 
   styles: {
+    autoprefixer: {
+      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0'],
+    },
+    dest: dest + '/css',
     src: src + '/scss/*.{sass,scss}',
     watch: [src + '/scss/**/*.{sass,scss}'],
-    dest: dest + '/css',
   },
 
   views: {
-    index: src + '/*.*',
     dest: dest,
+    index: src + '/*.*',
   },
-
 };
