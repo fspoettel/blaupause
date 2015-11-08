@@ -16,6 +16,9 @@ bower_components/*
 # Build folder #
 ################
 public/*
+js/*
+css/*
+img/*
 
 # Sublime projects #
 ####################
