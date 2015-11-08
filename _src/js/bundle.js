@@ -1,4 +1,4 @@
 /**
  * bundle.js
- * Entry-point for webpack - require your app from here!
+ * Entry-point for webpack - import your app from here!
  */
