@@ -106,7 +106,7 @@
             }
         }
         @else {
-            @warn "You are trying to call @bp with an unknown, unquoted breakpoint: #{$bp}";
+            @warn "You are trying to call @bp with an unknown, unquoted breakpoint: #{$breakpoint}";
         }
     }
 }
