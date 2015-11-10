@@ -3,8 +3,9 @@
 // UTILS
 //////////////////////////////
 
-@import "functions/color";
-@import "functions/modular-scale";
-@import "mixins/clearfix";
-@import "mixins/hagrid";
-@import "mixins/visuallyhidden";
+@import "functions/_color";
+@import "functions/_modular-scale";
+
+@import "mixins/_clearfix";
+@import "mixins/_hagrid";
+@import "mixins/_webfont";
