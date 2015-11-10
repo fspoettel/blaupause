@@ -5,10 +5,10 @@
 //////////////////////////////
 
 // BASE
-// * variables, fonts, mixins, helpers... common styles used across the entire site
+// * reset, variables, fonts, mixins, helpers... common styles used across the entire site
 //////////////////////////////
 
-@import "vendor/sanitize";
+@import "vendor/_sanitize";
 @import "base/__base";
 
 // COMPONENTS
@@ -26,3 +26,6 @@
 // VENDOR
 // * third-party SCSS
 //////////////////////////////
+
+//hagrid v2.0.1: base/utils/mixins
+//modular-scale v2.1.1: base/utils/modular-scale
