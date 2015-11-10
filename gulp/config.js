@@ -19,6 +19,11 @@ module.exports = {
     proxy: hostname + ':' + port,
   },
 
+  fonts: {
+    src: src + '/fonts/**/*.{ttf,woff,woff2}',
+    dest: dest + '/css/fonts',
+  },
+
   images: {
     dest: dest + '/img',
     settings: {

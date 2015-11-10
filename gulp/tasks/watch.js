@@ -18,12 +18,15 @@ gulp.task('watch', ['build', 'nodemon'], function() {
   browserSync.init(config.browserSync);
 
   /** Watch file changes & trigger rebuilds / reloads */
-  gulp.watch([config.styles.watch, config.styles.src], ['styles']);
+
+  gulp.watch([config.images.src], ['images', 'reloadStatic']);
+
+  gulp.watch([config.fonts.src], ['fonts', 'reloadStatic']);
 
   gulp.watch([config.scripts.watch, config.scripts.bundles], ['scripts']);
 
-  gulp.watch([config.views.index], ['views', 'reloadStatic']);
+  gulp.watch([config.styles.watch, config.styles.src], ['styles']);
 
-  gulp.watch([config.images.src], ['images', 'reloadStatic']);
+  gulp.watch([config.views.index], ['views', 'reloadStatic']);
 
 });
