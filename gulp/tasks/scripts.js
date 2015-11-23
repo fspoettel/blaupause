@@ -6,22 +6,20 @@
 
 'use strict';
 
-const argv   = require('yargs').argv;
-const gulp    = require('gulp');
-const gulpif  = require('gulp-if');
-const named   = require('vinyl-named');
-const pack    = require('webpack'); // Reference for plugins
-const reload  = require('browser-sync').reload;
-const size    = require('gulp-size');
+const argv = require('yargs').boolean('p').argv;
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const named = require('vinyl-named');
+const pack = require('webpack'); // Reference for plugins
+const reload = require('browser-sync').reload;
+const size = require('gulp-size');
 const webpack = require('webpack-stream');
+const config = require('../config').scripts;
 
-const config  = require('../config').scripts;
-const isProduction =  (argv.production || argv.p);
-
-let pluginArray = [new pack.optimize.DedupePlugin()];
+const isProduction = argv.p;
+const pluginArray = [new pack.optimize.DedupePlugin()];
 
 if (isProduction) {
-
   pluginArray.push(new pack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('production'),
@@ -33,10 +31,9 @@ if (isProduction) {
       warnings: false,
     },
   }));
-
 }
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function buildScripts() {
   return gulp.src(config.bundles)
     .pipe(named())
     .pipe(webpack({
@@ -56,7 +53,7 @@ gulp.task('scripts', function() {
         ],
       },
       plugins: pluginArray,
-      quiet: true,
+      quiet: isProduction,
     }))
     .pipe(gulp.dest(config.dest))
     .pipe(gulpif(isProduction, size({
@@ -64,5 +61,5 @@ gulp.task('scripts', function() {
       showFiles: true,
       title: 'JS:',
     })))
-    .pipe(reload({stream:true}));
+    .pipe(reload({ stream: true }));
 });

@@ -6,21 +6,21 @@
 
 'use strict';
 
-const argv         = require('yargs').argv;
+const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('gulp-autoprefixer');
-const browserSync  = require('browser-sync');
-const cssmin       = require('gulp-minify-css');
-const gulp         = require('gulp');
-const gulpif       = require('gulp-if');
-const reload       = browserSync.reload;
-const sass         = require('gulp-sass');
-const size         = require('gulp-size');
-const sourcemaps   = require('gulp-sourcemaps');
+const browserSync = require('browser-sync');
+const cssmin = require('gulp-minify-css');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const reload = browserSync.reload;
+const sass = require('gulp-sass');
+const size = require('gulp-size');
+const sourcemaps = require('gulp-sourcemaps');
 
-const config       = require('../config').styles;
-const isProduction = (argv.production || argv.p);
+const config = require('../config').styles;
+const isProduction = argv.p;
 
-gulp.task('styles', function() {
+gulp.task('styles', function buildStyles() {
   gulp.src(config.src)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
@@ -28,7 +28,7 @@ gulp.task('styles', function() {
     .pipe(gulpif(isProduction, cssmin()))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.dest))
-    .pipe(reload({stream:true}))
+    .pipe(reload({ stream: true }))
     .pipe(gulpif(isProduction, size({
       gzip: true,
       showFiles: true,

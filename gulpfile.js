@@ -5,11 +5,11 @@
 
 'use strict';
 
-const argv       = require('yargs').argv;
-const gutil      = require('gulp-util');
+const argv = require('yargs').boolean('p').argv;
+const gutil = require('gulp-util');
 const requireDir = require('require-dir');
 
-const isProduction =  (argv.production || argv.p);
+const isProduction = argv.p;
 
 if (isProduction) {
   gutil.log(gutil.colors.bold.bgGreen('Production Mode'));
