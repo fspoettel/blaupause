@@ -5,10 +5,10 @@
 
 'use strict';
 
-const dest     = './public';
+const dest = './public';
 const hostname = 'localhost';
-const port     = 3000;
-const src      = './_src';
+const port = 3000;
+const src = './_src';
 
 module.exports = {
 
@@ -36,11 +36,11 @@ module.exports = {
     dest: dest + '/js/vendor',
     settings: {
       options: [
-          'setClasses',
-          'addTest',
-          'html5printshiv',
-          'testProp',
-          'fnBind',
+        'setClasses',
+        'addTest',
+        'html5printshiv',
+        'testProp',
+        'fnBind',
       ],
       tests: [],
     },

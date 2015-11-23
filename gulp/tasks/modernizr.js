@@ -6,14 +6,12 @@
 
 'use strict';
 
-const gulp      = require('gulp');
+const gulp = require('gulp');
 const modernizr = require('gulp-modernizr');
-const uglify    = require('gulp-uglify');
+const uglify = require('gulp-uglify');
+const config = require('../config');
 
-const config    = require('../config');
-
-gulp.task('modernizr', function() {
-
+gulp.task('modernizr', function buildModernizr() {
   gulp.src(config.scripts.bundles)
     .pipe(modernizr(config.modernizr.settings))
     .pipe(uglify())

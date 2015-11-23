@@ -6,8 +6,8 @@
 'use strict';
 
 const express = require('express');
-const app     = express();
-const config  = require('./gulp/config').server;
+const app = express();
+const config = require('./gulp/config').server;
 
 app.use(express.static(config.dest));
 

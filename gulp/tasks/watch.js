@@ -7,18 +7,15 @@
 'use strict';
 
 const browserSync = require('browser-sync');
-const gulp        = require('gulp');
-
-const config      = require('../config');
+const gulp = require('gulp');
+const config = require('../config');
 
 /** Execute build process / start Node-Server before initiating watch-tasks */
-gulp.task('watch', ['build', 'nodemon'], function() {
-
+gulp.task('watch', ['build', 'nodemon'], function watch() {
   /** Init BrowserSync Process */
   browserSync.init(config.browserSync);
 
   /** Watch file changes & trigger rebuilds / reloads */
-
   gulp.watch([config.images.src], ['images', 'reloadStatic']);
 
   gulp.watch([config.fonts.src], ['fonts', 'reloadStatic']);
@@ -28,5 +25,4 @@ gulp.task('watch', ['build', 'nodemon'], function() {
   gulp.watch([config.styles.watch, config.styles.src], ['styles']);
 
   gulp.watch([config.views.index], ['views', 'reloadStatic']);
-
 });

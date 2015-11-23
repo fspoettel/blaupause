@@ -9,13 +9,11 @@
 'use strict';
 
 const browserSync = require('browser-sync');
-const gulp        = require('gulp');
-const nodemon     = require('gulp-nodemon');
+const gulp = require('gulp');
+const nodemon = require('gulp-nodemon');
+const config = require('../config').server;
 
-const config      = require('../config').server;
-
-gulp.task('nodemon', function(cb) {
-
+gulp.task('nodemon', function startNodemon(cb) {
   if (config.run) {
     let called = false;
 
@@ -23,25 +21,20 @@ gulp.task('nodemon', function(cb) {
       script: config.file,
       watch: [config.watch],
     })
-    .on('start', function() {
 
+    .on('start', function onStart() {
       if (!called) { cb(); }
-
       called = true;
-
     })
-    .on('restart', function() {
 
-      setTimeout(function() {
+    .on('restart', function onRestart() {
+      setTimeout(function reloadBS() {
         browserSync.reload({
           stream: false,
         });
       }, config.reloadDelay);
-
     });
-
-  } else {
-    cb();
   }
 
+  cb();
 });

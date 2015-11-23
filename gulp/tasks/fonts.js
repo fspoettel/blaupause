@@ -7,11 +7,9 @@
 'use strict';
 
 const gulp = require('gulp');
-const size = require('gulp-size');
-
 const config = require('../config').fonts;
 
-gulp.task('fonts', function() {
+gulp.task('fonts', function copyFonts() {
   return gulp.src(config.src)
     .pipe(gulp.dest(config.dest));
 });

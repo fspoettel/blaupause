@@ -1,5 +1,0 @@
-{
-  "preset": "airbnb",
-  "fileExtensions": [".js", ".jsx", "jscs"],
-  "esnext": true
-}

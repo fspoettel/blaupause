@@ -6,10 +6,10 @@
 
 'use strict';
 
-const gulp        = require('gulp');
+const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-gulp.task('build', function(cb) {
+gulp.task('build', function build(cb) {
   runSequence(
     'clean', // Needs to complete first
     ['fonts', 'images', 'modernizr', 'scripts', 'styles', 'views'], // Build step
