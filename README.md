@@ -43,7 +43,7 @@ or
 
 ## Production Flag:
 
-You can generate a production-ready build (no sourcemaps, `NODE_ENV = "production"` for JS builds, minified/ulgified code) via passing or `-p` to any gulp task.
+You can generate a production-ready build (no sourcemaps, `NODE_ENV = "production"` for JS builds, minified/ulgified code) via passing `-p` to any gulp task.
 
 ## Adding tasks:
 
