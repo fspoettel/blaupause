@@ -39,6 +39,8 @@
   },
   "homepage": "https://github.com/felics/blaupause",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "hagrid": "^2.0.3",
+    "sanitize.css": "^3.0.0"
   }
 }
