@@ -35,10 +35,11 @@ or
  - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
  - `gulp build` - (Re-)Builds project
  - `gulp clean` - Cleans destination folder
- - `gulp styles` - Builds styles
- - `gulp scripts` - Builds scripts
  - `gulp images` - Optimize images
  - `gulp modernizr` - Build a custom Modernizr (Add tests in './gulp/config.js')
+ - `gulp styles` - Builds styles
+ - `gulp scripts` - Builds scripts
+ - `gulp svg` - Optimizes svgs and creates a symbol-sprite
  - `gulp views` - Copies static files in "\_src" to dest. For more elaborate view-tasks (templating / nested folder / Static Site Generators), modify the task
 
 ## Production Flag:
