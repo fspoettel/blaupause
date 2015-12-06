@@ -12,7 +12,7 @@ const runSequence = require('run-sequence');
 gulp.task('build', (cb) => {
   runSequence(
     'clean', // Needs to complete first
-    ['fonts', 'images', 'modernizr', 'scripts', 'styles', 'views'], // Build step
+    ['fonts', 'images', 'modernizr', 'scripts', 'styles', 'svg', 'views'], // Build step
     cb
   );
 });

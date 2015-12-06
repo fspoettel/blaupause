@@ -77,6 +77,11 @@ module.exports = {
     watch: [src + '/scss/**/*.{sass,scss}'],
   },
 
+  svg: {
+    src: src + '/img/svg/**/*.svg',
+    dest: dest + '/img/svg'
+  },
+
   views: {
     dest: dest,
     index: src + '/*.*',
