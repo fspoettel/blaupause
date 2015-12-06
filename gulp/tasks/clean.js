@@ -10,8 +10,8 @@ const del = require('del');
 const gulp = require('gulp');
 const config = require('../config').server;
 
-gulp.task('clean', function clean(cb) {
-  del([config.dest]).then(function cleanCallback() {
+gulp.task('clean', (cb) => {
+  del([config.dest]).then(() => {
     cb();
   });
 });

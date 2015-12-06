@@ -13,7 +13,7 @@ const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const config = require('../config').server;
 
-gulp.task('nodemon', function startNodemon(cb) {
+gulp.task('nodemon', (cb) => {
   if (config.run) {
     let called = false;
 
@@ -22,13 +22,13 @@ gulp.task('nodemon', function startNodemon(cb) {
       watch: [config.watch],
     })
 
-    .on('start', function onStart() {
+    .on('start', () => {
       if (!called) { cb(); }
       called = true;
     })
 
-    .on('restart', function onRestart() {
-      setTimeout(function reloadBS() {
+    .on('restart', () => {
+      setTimeout(() => {
         browserSync.reload({
           stream: false,
         });

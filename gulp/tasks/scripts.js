@@ -33,7 +33,7 @@ if (isProduction) {
   }));
 }
 
-gulp.task('scripts', function buildScripts() {
+gulp.task('scripts', () => {
   return gulp.src(config.bundles)
     .pipe(named())
     .pipe(webpack({

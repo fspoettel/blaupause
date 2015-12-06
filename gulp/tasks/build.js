@@ -9,7 +9,7 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-gulp.task('build', function build(cb) {
+gulp.task('build', (cb) => {
   runSequence(
     'clean', // Needs to complete first
     ['fonts', 'images', 'modernizr', 'scripts', 'styles', 'views'], // Build step

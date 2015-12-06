@@ -20,7 +20,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const config = require('../config').styles;
 const isProduction = argv.p;
 
-gulp.task('styles', function buildStyles() {
+gulp.task('styles', () => {
   gulp.src(config.src)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))

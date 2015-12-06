@@ -11,7 +11,7 @@ const gulp = require('gulp');
 const config = require('../config');
 
 /** Execute build process / start Node-Server before initiating watch-tasks */
-gulp.task('watch', ['build', 'nodemon'], function watch() {
+gulp.task('watch', ['build', 'nodemon'], () => {
   /** Init BrowserSync Process */
   browserSync.init(config.browserSync);
 
