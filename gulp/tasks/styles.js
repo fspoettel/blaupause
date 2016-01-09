@@ -9,7 +9,7 @@
 const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync');
-const cssmin = require('gulp-minify-css');
+const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const reload = browserSync.reload;
@@ -25,7 +25,7 @@ gulp.task('styles', () => {
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer(config.autoprefixer))
-    .pipe(gulpif(isProduction, cssmin()))
+    .pipe(gulpif(isProduction, cssnano()))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({ stream: true }))

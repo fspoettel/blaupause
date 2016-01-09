@@ -13,10 +13,11 @@ const src = './_src';
 module.exports = {
 
   browserSync: {
+    notify: false,
     /** Port for browserSync-proxy */
     port: 4000,
     /** Use 'proxy' to reload existing servers */
-    proxy: hostname + ':' + port,
+    proxy: hostname + ':' + port
   },
 
   fonts: {
