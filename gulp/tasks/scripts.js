@@ -11,22 +11,42 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const named = require('vinyl-named');
 const pack = require('webpack'); // Reference for plugins
+const plumber = require('gulp-plumber');
 const reload = require('browser-sync').reload;
 const size = require('gulp-size');
 const webpack = require('webpack-stream');
 const config = require('../config').scripts;
 
 const isProduction = argv.p;
-const pluginArray = [new pack.optimize.DedupePlugin()];
+
+const webpackConfig = {
+  cache: true,
+  devtool: !isProduction ? 'source-map' : false,
+  externals: config.externals,
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015'],
+        },
+      },
+    ],
+  },
+  plugins: [new pack.optimize.DedupePlugin()],
+  quiet: isProduction,
+};
 
 if (isProduction) {
-  pluginArray.push(new pack.DefinePlugin({
+  webpackConfig.plugins.push(new pack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('production'),
     },
   }));
 
-  pluginArray.push(new pack.optimize.UglifyJsPlugin({
+  webpackConfig.plugins.push(new pack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false,
     },
@@ -35,26 +55,9 @@ if (isProduction) {
 
 gulp.task('scripts', () => {
   return gulp.src(config.bundles)
+    .pipe(plumber())
     .pipe(named())
-    .pipe(webpack({
-      cache: true,
-      devtool: !isProduction ? '#source-map' : false,
-      externals: config.externals,
-      module: {
-        loaders: [
-          {
-            test: /\.(js|jsx)$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: 'babel',
-            query: {
-              presets: ['es2015', 'react'],
-            },
-          },
-        ],
-      },
-      plugins: pluginArray,
-      quiet: isProduction,
-    }))
+    .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(config.dest))
     .pipe(gulpif(isProduction, size({
       gzip: true,
