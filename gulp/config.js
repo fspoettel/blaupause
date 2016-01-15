@@ -60,9 +60,9 @@ module.exports = {
     /** Disable if you don't want to run an Express-server (e.g. use MAMP) */
     run: true,
     /** Needed for clean task & server */
-    dest: dest,
+    dest,
     file: 'server.js',
-    port: port,
+    port,
     /** Needed for BrowserSync to work properly with server restarts */
     reloadDelay: 500,
     /** Tell nodemon which directories/files to watch */
@@ -84,7 +84,7 @@ module.exports = {
   },
 
   views: {
-    dest: dest,
+    dest,
     index: src + '/*.*',
   },
 };

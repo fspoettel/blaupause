@@ -9,8 +9,5 @@ insert_final_newline = true
 indent_style = space
 trim_trailing_whitespace = true
 
-[*.{js,json,jsx,yaml}]
+[*.{css,html,js,json,jsx,scss,yaml}]
 indent_size = 2
-
-[*.{scss,css,html}]
-indent_size = 4
