@@ -71,7 +71,7 @@ module.exports = {
 
   styles: {
     autoprefixer: {
-      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.0'],
+      browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.4'],
     },
     dest: dest + '/css',
     src: src + '/scss/*.{sass,scss}',
