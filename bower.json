@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "homepage": "https://github.com/felics/blaupause",
   "authors": [
     "felics <hi@felics.me>"
@@ -15,9 +15,6 @@
     "bower_components"
   ],
   "devDependencies": {
-    "html5-boilerplate": "~5.2.0"
-  },
-  "dependencies": {
-    "modular-scale": "~2.1.1"
+    "html5-boilerplate": "~5.3.0"
   }
 }

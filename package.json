@@ -1,13 +1,13 @@
 {
   "name": "blaupause",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "devDependencies": {
-    "babel-core": "^6.4.0",
+    "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
-    "browser-sync": "^2.11.0",
+    "browser-sync": "^2.11.1",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -20,14 +20,14 @@
     "gulp-sass": "^2.1.1",
     "gulp-size": "^2.0.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-svg-sprite": "^1.2.18",
+    "gulp-svg-sprite": "^1.2.19",
     "gulp-uglify": "^1.5.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "vinyl-named": "^1.1.0",
-    "webpack": "^1.12.10",
+    "webpack": "^1.12.11",
     "webpack-stream": "^3.1.0",
-    "yargs": "^3.31.0"
+    "yargs": "^3.32.0"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,9 @@
   },
   "homepage": "https://github.com/felics/blaupause",
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "^4.13.4",
     "hagrid": "^2.0.3",
+    "modularscale-sass": "^2.1.1",
     "sanitize.css": "^3.0.0"
   }
 }
