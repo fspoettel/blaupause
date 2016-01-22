@@ -1,31 +1,31 @@
 
 //////////////////////////////
 // BUNDLE
-// * BEM & File Architecture based on: http://docssa.info/
 //////////////////////////////
 
-// BASE
-// * reset, variables, fonts, mixins, helpers... common styles used across the entire site
+// LIB
+// * config, function & mixins shared across the page
+// * code in lib should not output anything by itself
 //////////////////////////////
-
-@import "vendor/_sanitize";
-@import "base/__base";
+@import "lib/__index";
 
 // COMPONENTS
-// * reusable abstract components
+// * reusable abstract components. should be written as mixins that can be tied to a selector
+// * components should not output anything by itself
 //////////////////////////////
+@import "components/__index";
 
-@import "components/__components";
+// BASE
+// * reset, webfont-imports & common styles used across the entire site
+//////////////////////////////
+@import "base/__index";
 
 // SPECIFICS
-// * more specific declarations, built on a per page/module basis
+// * more specific declarations, on a per page / module basis
 //////////////////////////////
-
-@import "specifics/__specifics";
+@import "specifics/__index";
 
 // VENDOR
-// * third-party SCSS
+// * third-party SCSS that can change upstream
 //////////////////////////////
-
-//hagrid v2.0.2: base/utils/mixins
-//modular-scale v2.1.1: base/utils/functions
+@import "vendor/__index";
