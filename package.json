@@ -24,6 +24,8 @@
     "gulp-uglify": "^1.5.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
+    "stylelint": "^4.2.0",
+    "stylelint-config-standard": "^3.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^1.12.11",
     "webpack-stream": "^3.1.0",
