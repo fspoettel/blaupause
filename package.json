@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -27,7 +27,7 @@
     "stylelint": "^4.2.0",
     "stylelint-config-standard": "^3.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^1.12.11",
+    "webpack": "^1.12.12",
     "webpack-stream": "^3.1.0",
     "yargs": "^3.32.0"
   },
