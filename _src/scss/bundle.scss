@@ -7,25 +7,19 @@
 // * config, function & mixins shared across the page
 // * code in lib should not output anything by itself
 //////////////////////////////
-@import "lib/__index";
-
-// COMPONENTS
-// * reusable abstract components. should be written as mixins that can be tied to a selector
-// * components should not output anything by itself
-//////////////////////////////
-@import "components/__index";
+@import "./_lib/__index";
 
 // BASE
 // * reset, webfont-imports & common styles used across the entire site
 //////////////////////////////
-@import "base/__index";
+@import "./base/__index";
 
-// SPECIFICS
-// * more specific declarations, on a per page / module basis
+// COMPONENTS
+// * application-specific components
 //////////////////////////////
-@import "specifics/__index";
+@import "./components/__index";
 
 // VENDOR
 // * third-party SCSS that can change upstream
 //////////////////////////////
-@import "vendor/__index";
+@import "./vendor/__index";
