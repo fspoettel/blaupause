@@ -1,0 +1,104 @@
+
+////
+/// Core
+/// MIT-License © 2016
+/// @author Felix Spöttel
+/// @access public
+/// @group API
+////
+
+/// Print grid-styles and properties of applied modifiers
+/// @param {List} $modifiers - List of modifiers to apply to grid
+/// @output Outputs grid core styles and properties of the applied modifiers
+
+@mixin grid($modifiers...) {
+  display: flex;
+  flex: initial;
+  list-style: none;
+
+  @include grid-modifiers($modifiers...);
+}
+
+/// Print item core-styles and widths for each breakpoint specified
+/// @param {List} $widths - List of breakpoint / width-pairs
+/// @output Outputs item core-styles and widths for each breakpoint specified
+
+@mixin item($widths...) {
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  @include grid-calc(width, $widths...);
+}
+
+/// Push a grid-item to the left
+/// @param {List} $widths - List of breakpoint / width-pairs
+/// @output Outputs widths specified in the push directive
+
+@mixin push($widths...) {
+  position: relative;
+
+  @include grid-calc(left, $widths...);
+}
+
+/// Pull a grid-item to the right
+/// @param {List} $widths - List of breakpoint / width-pairs
+/// @output Outputs widths specified in the pull directive
+
+@mixin pull($widths...) {
+  position: relative;
+
+  @include grid-calc(right, $widths...);
+}
+
+/// Make a grid-items' children fill the avaiable height
+/// @param {String} $el
+/// @output Outputs stretch-properties for the container and its children
+
+@mixin stretch($el: "> *") {
+  display: flex;
+  align-self: stretch;
+  flex-flow: row wrap;
+
+  #{$el} {
+    flex: 1 1 100%;
+  }
+}
+
+/// Assign properties to a breakpoint or a list of breakpoints
+/// @content Styles applied to the media-query
+/// @param {List} $breakpoints
+/// @output Outputs mediaqueries and @content belonging to them
+
+@mixin bp($breakpoints...) {
+  @each $breakpoint in $breakpoints {
+    $bp: parse-breakpoint($breakpoint);
+
+    @if $bp != false {
+      @media only screen and #{$bp} {
+        @content;
+      }
+    }
+
+    @else {
+      @warn "You are trying to call @bp with an unknown, unquoted breakpoint: #{$breakpoint}";
+    }
+  }
+}
+
+/// Shorthand for grid-mixin
+/// @alias grid
+/// @param {List} $modifiers
+/// @output grid- and modifier-styles
+
+@mixin g($modifiers...) {
+  @include grid($modifiers...);
+}
+
+/// Shorthand for item-mixin
+/// @alias item
+/// @param {List} $widths
+/// @output calculated item-widths
+
+@mixin i($widths...) {
+  @include item($widths...);
+}
