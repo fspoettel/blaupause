@@ -85,6 +85,6 @@ module.exports = {
 
   views: {
     dest,
-    index: `${src}/*`
+    index: `${src}/*.*`
   }
 };
