@@ -26,7 +26,7 @@ module.exports = {
   },
 
   images: {
-    src: `${src}/img/*`,
+    src: `${src}/img/*{.jpg,.jpeg,.png,.gif}`,
     dest: `${dest}/img`,
     settings: {
       progressive: true

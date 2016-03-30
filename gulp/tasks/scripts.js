@@ -53,16 +53,15 @@ if (isProduction) {
   }));
 }
 
-gulp.task('scripts', () => {
-  return gulp.src(config.bundles)
-    .pipe(plumber())
-    .pipe(named())
-    .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(config.dest))
-    .pipe(gulpif(isProduction, size({
-      gzip: true,
-      showFiles: true,
-      title: 'JS:',
-    })))
-    .pipe(reload({ stream: true }));
-});
+gulp.task('scripts', () => gulp.src(config.bundles)
+  .pipe(plumber())
+  .pipe(named())
+  .pipe(webpack(webpackConfig))
+  .pipe(gulp.dest(config.dest))
+  .pipe(gulpif(isProduction, size({
+    gzip: true,
+    showFiles: true,
+    title: 'JS:',
+  })))
+  .pipe(reload({ stream: true }))
+);

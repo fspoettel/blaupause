@@ -9,7 +9,6 @@
 const gulp = require('gulp');
 const config = require('../config').views;
 
-gulp.task('views', () => {
-  gulp.src(config.index)
-    .pipe(gulp.dest(config.dest));
-});
+gulp.task('views', () => gulp.src(config.index)
+  .pipe(gulp.dest(config.dest))
+);

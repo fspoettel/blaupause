@@ -27,17 +27,16 @@ if (isProduction) {
   processors.push(cssnano());
 }
 
-gulp.task('styles', () => {
-  gulp.src(config.src)
-    .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(processors))
-    .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
-    .pipe(gulp.dest(config.dest))
-    .pipe(reload({ stream: true }))
-    .pipe(gulpif(isProduction, size({
-      gzip: true,
-      showFiles: true,
-      title: 'CSS:',
-    })));
-});
+gulp.task('styles', () => gulp.src(config.src)
+  .pipe(gulpif(!isProduction, sourcemaps.init()))
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss(processors))
+  .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
+  .pipe(gulp.dest(config.dest))
+  .pipe(reload({ stream: true }))
+  .pipe(gulpif(isProduction, size({
+    gzip: true,
+    showFiles: true,
+    title: 'CSS:',
+  })))
+);
