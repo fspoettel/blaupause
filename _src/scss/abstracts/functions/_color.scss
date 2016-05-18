@@ -1,0 +1,24 @@
+
+////
+/// Colors
+/// MIT-License © 2016
+/// @author Felix Spöttel
+////
+
+/// Add percentage of white to a color
+/// @param {Color} $color - The color to tint
+/// @param {Number} $percent - The percentage of white to mix the color with
+/// @param {Color} $tintC [#fff] - The color to mix $color with
+/// @return {color}
+@function tint($color, $percent, $tintC: #fff) {
+  @return mix($tintC, $color, $percent);
+}
+
+/// Add percentage of black to a color
+/// @param {Color} $color - The color to shade
+/// @param {Number} $percent - The percentage of black to mix the color with
+/// @param {Color} $tintC [#000] - The color to mix $color with
+/// @return {color}
+@function shade($color, $percent, $shadeC: #000) {
+  @return mix($shadeC, $color, $percent);
+}

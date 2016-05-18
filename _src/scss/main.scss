@@ -1,0 +1,55 @@
+
+////
+/// Bundle
+/// MIT-License © 2016
+/// @author Felix Spöttel
+////
+
+// 1. Abstracts
+// The `abstracts`-folder gathers SASS tools and helpers used across the project.
+// Every global variable, function, mixin and placeholder should be put in here.
+
+@import
+  "abstracts/variables",
+  "abstracts/functions/color",
+  "abstracts/mixins/clearfix",
+  "abstracts/mixins/webfont";
+
+// 2. Vendors
+// The `vendors`-folder contains code from external libraries.
+// If you have to overwrite sections of a vendor-file, consider adding an
+// `overwrites`-folder to avoid editing vendor-code directly.
+@import
+  "vendors/hagrid",
+  "vendors/modular-scale",
+  "vendors/sanitize";
+
+// 3. Base
+// The `base/`-folder holds the boilerplate code for the project.
+// It contains a reset and animations-file as well as global typographic rules
+
+@import
+  "base/animations",
+  "base/base",
+  "base/typography";
+
+// 4. Modules
+// Modules are singular, composable abstractions. Your app should mostly be
+// composed of modules.
+
+@import
+  "modules/button";
+
+// 5. Partials
+// Partials are used to lay out your site.
+
+@import
+  "partials/header",
+  "partials/footer";
+
+// 6. Routes
+// The `routes`-folder contains page-specific styles that can't be fit into
+// modules or partials.
+
+@import
+  "routes/home";

@@ -1,0 +1,37 @@
+
+////
+/// Webfont
+/// MIT-License © 2016
+/// @author Felix Spöttel
+////
+
+/// If you need to support Android 4.3- and IE8-, set this to true
+/// @type {Boolean}
+$webfont-ttf: false;
+
+/// Constructs a valid @font-face declaration
+/// @param {String} $name - Reference to the Webfont. Use this in your CSS
+/// @param {String} $filename - Name of the font-file (without extension)
+/// @param {Number} $weight [400] - Desired numeric font-weight
+/// @param {String} $style [normal] - Desired font-style
+/// @output Font-Face declarations for a given webfont
+@mixin webfont($name, $filename, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+
+    @if $webfont-ttf == true {
+      src:
+        url("fonts/#{$filename}.woff2") format("woff2"),
+        url("fonts/#{$filename}.woff") format("woff"),
+        url("fonts/#{$filename}.ttf") format("ttf");
+    }
+
+    @else {
+      src:
+        url("fonts/#{$filename}.woff2") format("woff2"),
+        url("fonts/#{$filename}.woff") format("woff");
+    }
+  }
+}

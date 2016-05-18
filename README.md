@@ -19,7 +19,7 @@
  - [Express](http://expressjs.com/)-server with automatic restarts
  - Sourcemaps for JS & CSS files
  - Production-flag for builds
- - (Optional) SASS file-structure with some useful mixins & [Sanitize.css](https://github.com/10up/sanitize.css)
+ - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) & [Sanitize.css](https://github.com/10up/sanitize.css)
  - (Branch) [Statamic](http://statamic.com)-specific branch with a build-process tailored to developing themes
 
 ## Available Tasks:

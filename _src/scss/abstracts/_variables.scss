@@ -1,0 +1,50 @@
+
+////
+/// Variables
+/// MIT-License © 2016
+/// @author Felix Spöttel
+/// @group Config
+////
+
+/// Regular font family
+/// @type {List}
+$text-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+/// Copy text color
+/// @type {Color}
+$color-text: #232323 !default;
+
+/// Brand color
+/// /// @type {Color}
+$color-brand: #f13c00 !default;
+
+/// Gutters, used by `mixins/_hagrid`.
+/// @property {Number}
+/// @see {mixin} bp
+$layout-gutters:
+  (
+    default: 1.5rem,
+    full: 0,
+    narrow: 0.5rem,
+    wide: 3rem
+  ) !default;
+
+/// Breakpoints, used by `mixins/_hagrid`. Breakpoints can be used via Hagrid's @bp-mixin.
+/// @property {String}
+$layout-breakpoints:
+  (
+    sm: "(min-width: 35.5em)",
+    md: "(min-width: 48em)",
+    lg: "(min-width: 64em)",
+    xl: "(min-width: 80em)"
+  ) !default;
+
+// Set defaults via sanitize.css
+
+/// Root color
+/// @type {Color}
+$root-color: $color-text;
+
+/// Root font-family
+/// @type {List}
+$root-font-family: $text-font-stack;
