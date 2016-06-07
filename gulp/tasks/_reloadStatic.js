@@ -5,8 +5,6 @@
  * @private
  */
 
-'use strict';
-
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const gutil = require('gulp-util');

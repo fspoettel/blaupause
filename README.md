@@ -1,4 +1,4 @@
-# blaupause
+# blaupause ![Build Status](https://travis-ci.org/fspoettel/blaupause.svg?branch=master)
 
 > Build process & application architecture for web projects
 

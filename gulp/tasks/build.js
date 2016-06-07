@@ -4,8 +4,6 @@
  * @task - Rebuild without watching. Gets called in 'default'
  */
 
-'use strict';
-
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 

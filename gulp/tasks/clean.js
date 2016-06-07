@@ -4,8 +4,6 @@
  * @task - Remove build folder
  */
 
-'use strict';
-
 const del = require('del');
 const gulp = require('gulp');
 const config = require('../config').server;

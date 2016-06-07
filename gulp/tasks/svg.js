@@ -1,17 +1,27 @@
+/**
+ * svg.js
+ * @name - 'svg'
+ * @task - Generates a svg.symbol.sprite
+ */
 
 const gulp = require('gulp');
+const streamSize = require('./util/streamsize');
 const svgSprite = require('gulp-svg-sprite');
 const config = require('../config').svg;
 
-gulp.task('svg', () => gulp.src(config.src)
-  .pipe(svgSprite({
-    transform: ['svgo'],
-    mode: {
-      symbol: {
-        dest: '.',
-        sprite: 'sprite.symbol.svg'
-      },
+const svgSpriteConfig = {
+  transform: ['svgo'],
+  mode: {
+    symbol: {
+      dest: '.',
+      sprite: 'sprite.symbol.svg',
     },
-  }))
-  .pipe(gulp.dest(config.dest))
+  },
+};
+
+gulp.task('svg', () =>
+  gulp.src(config.src)
+    .pipe(svgSprite(svgSpriteConfig))
+    .pipe(streamSize('SVG'))
+    .pipe(gulp.dest(config.dest))
 );

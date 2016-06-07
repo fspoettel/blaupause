@@ -1,7 +1,3 @@
 {
-  "extends": "airbnb-base",
-  "rules": {
-    "comma-dangle": 0,
-    "strict": 0
-  }
+  "extends": "airbnb-base"
 }

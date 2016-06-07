@@ -4,8 +4,6 @@
  * @task - Compiles a custom Modernizr-build
  */
 
-'use strict';
-
 const gulp = require('gulp');
 const modernizr = require('gulp-modernizr');
 const uglify = require('gulp-uglify');
