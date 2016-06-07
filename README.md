@@ -11,16 +11,18 @@
 
 ## What's in the box...
 
+ - [Webpack](http://webpack.github.io) + [Babel](babeljs.io)
+ - [SASS](http://sass-lang.com/) + [Autoprefixer](https://github.com/postcss/autoprefixer)
+ - [EditorConfig](http://editorconfig.org/) + [Eslint](http://jscs.info/overview.html) + [Stylelint](http://stylelint.io/)
+ - [Customizable Modernizr](http://modernizr.com/)
  - [BrowserSync](http://www.browsersync.io/)
- - [SASS](http://sass-lang.com/) with [Autoprefixer](https://github.com/postcss/autoprefixer) & Minification & [Stylelint](http://stylelint.io/)
- - [Webpack](http://webpack.github.io) & [Babel](babeljs.io) - ES6 / JSX-support & easy bundling
- - [EditorConfig](http://editorconfig.org/) & [Eslint Config](http://jscs.info/overview.html)
- - [HTML5 Boilerplate](https://html5boilerplate.com/) + [Customizable Modernizr](http://modernizr.com/)
- - [Express](http://expressjs.com/)-server with automatic restarts
- - Sourcemaps for JS & CSS files
- - Production-flag for builds
- - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) & [Sanitize.css](https://github.com/10up/sanitize.css)
- - (Branch) [Statamic](http://statamic.com)-specific branch with a build-process tailored to developing themes
+ - Autorestarting [Koa](http://koajs.com/)-server
+ - Sourcemaps for .js and .scss
+ - Production-flag for smaller builds
+ - [Travis](https://travis-ci.org) Configuration
+ - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) + [Sanitize.css](https://github.com/10up/sanitize.css)
+ - HTML-Skelethon based on [HTML5 Boilerplate](https://html5boilerplate.com/)
+ - :arrow_forward: [Statamic](http://statamic.com)-specific branch with a build-process tailored to developing themes
 
 ## Available Tasks:
 
@@ -36,7 +38,7 @@
 
 ## Production Flag:
 
-You can generate a production-ready build (no sourcemaps, `NODE_ENV = "production"` for JS builds, minified/ulgified code) via passing `-p` to any gulp task.
+You can generate a production-ready build (no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code) by passing `-p` to any gulp task.
 
 ## Adding tasks:
 
