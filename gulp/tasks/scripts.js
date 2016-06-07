@@ -4,8 +4,6 @@
  * @task - Compiles & uglifies AMD modules
  */
 
-'use strict';
-
 const argv = require('yargs').boolean('p').argv;
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
@@ -13,7 +11,7 @@ const named = require('vinyl-named');
 const pack = require('webpack'); // Reference for plugins
 const plumber = require('gulp-plumber');
 const reload = require('browser-sync').reload;
-const size = require('gulp-size');
+const streamSize = require('./util/streamsize');
 const webpack = require('webpack-stream');
 const config = require('../config').scripts;
 
@@ -58,10 +56,6 @@ gulp.task('scripts', () => gulp.src(config.bundles)
   .pipe(named())
   .pipe(webpack(webpackConfig))
   .pipe(gulp.dest(config.dest))
-  .pipe(gulpif(isProduction, size({
-    gzip: true,
-    showFiles: true,
-    title: 'JS:',
-  })))
+  .pipe(gulpif(isProduction, streamSize('JS')))
   .pipe(reload({ stream: true }))
 );

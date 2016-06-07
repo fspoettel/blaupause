@@ -4,8 +4,6 @@
  * @task - Triggers recompiles & live-reloads
  */
 
-'use strict';
-
 const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const config = require('../config');
