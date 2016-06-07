@@ -1,14 +1,14 @@
 /**
  * server.js
- * @task - Launches an express-server. By default, serves the directory specified in `gulp/config`. Called from 'gulp'
+ * @task - Launches a koa-server.
+ * By default, serves the directory specified in `gulp/config`. Called from 'gulp'
  */
 
-'use strict';
-
-const express = require('express');
-const app = express();
+const koa = require('koa');
+const app = koa();
+const serve = require('koa-static');
 const config = require('./gulp/config').server;
 
-app.use(express.static(config.dest));
+app.use(serve(config.dest));
 
-const server = app.listen(process.env.PORT || config.port);
+app.listen(process.env.PORT || config.port);
