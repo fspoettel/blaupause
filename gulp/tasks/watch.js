@@ -15,15 +15,12 @@ gulp.task('watch', ['build', 'nodemon'], () => {
 
   /** Watch file changes & trigger rebuilds / reloads */
 
-  gulp.watch([config.fonts.src], ['fonts', 'reloadStatic']);
-
-  gulp.watch([config.images.src], ['images', 'reloadStatic']);
+  config.copy.bundles.forEach((bundle) =>
+    gulp.watch(bundle.src, ['copy', 'reload'])
+  );
 
   gulp.watch([config.scripts.watch, config.scripts.bundles], ['scripts']);
 
   gulp.watch([config.styles.watch, config.styles.src], ['styles']);
-
-  gulp.watch([config.svg.src], ['svg', 'reloadStatic']);
-
-  gulp.watch([config.views.index], ['views', 'reloadStatic']);
+  gulp.watch([config.svg.src], ['svg', 'reload']);
 });

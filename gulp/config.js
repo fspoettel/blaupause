@@ -2,7 +2,6 @@
  * config.js
  * @exports {object} - Configuration
  */
-
 const dest = './public';
 const hostname = 'localhost';
 const port = 3000;
@@ -18,9 +17,17 @@ module.exports = {
     proxy: `${hostname}:${port}`,
   },
 
-  fonts: {
-    src: `${src}/fonts/*.{ttf,woff,woff2}`,
-    dest: `${dest}/css/fonts`,
+  copy: {
+    bundles: [
+      {
+        src: `${src}/fonts/*.{ttf,woff,woff2}`,
+        dest: `${dest}/css/fonts`,
+      },
+      {
+        src: `${src}/*.*`,
+        dest,
+      },
+    ],
   },
 
   images: {
@@ -79,10 +86,5 @@ module.exports = {
   svg: {
     src: `${src}/img/svg/**/*.svg`,
     dest: `${dest}/img/svg`,
-  },
-
-  views: {
-    dest,
-    index: `${src}/*.*`,
   },
 };
