@@ -2,9 +2,6 @@
  * gulpfile.js
  * @task - loads all tasks from './gulp/tasks'
  */
-
-'use strict';
-
 const argv = require('yargs').boolean('p').argv;
 const gutil = require('gulp-util');
 const requireDir = require('require-dir');
