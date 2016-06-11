@@ -3,7 +3,6 @@
  * @name - 'scripts'
  * @task - Compiles & uglifies AMD modules
  */
-
 const argv = require('yargs').boolean('p').argv;
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
@@ -13,8 +12,8 @@ const plumber = require('gulp-plumber');
 const reload = require('browser-sync').reload;
 const streamSize = require('./util/streamsize');
 const webpack = require('webpack-stream');
-const config = require('../config').scripts;
 
+const config = require('../config').scripts;
 const isProduction = argv.p;
 
 const webpackConfig = {
@@ -51,11 +50,12 @@ if (isProduction) {
   }));
 }
 
-gulp.task('scripts', () => gulp.src(config.bundles)
-  .pipe(plumber())
-  .pipe(named())
-  .pipe(webpack(webpackConfig))
-  .pipe(gulp.dest(config.dest))
-  .pipe(gulpif(isProduction, streamSize('JS')))
-  .pipe(reload({ stream: true }))
+gulp.task('scripts', () =>
+  gulp.src(config.bundles)
+    .pipe(plumber())
+    .pipe(named())
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(config.dest))
+    .pipe(gulpif(isProduction, streamSize('JS')))
+    .pipe(reload({ stream: true }))
 );
