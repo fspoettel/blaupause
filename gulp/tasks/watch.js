@@ -16,11 +16,11 @@ gulp.task('watch', ['build', 'nodemon'], () => {
   /** Watch file changes & trigger rebuilds / reloads */
 
   config.copy.bundles.forEach((bundle) =>
-    gulp.watch(bundle.src, ['copy', 'reload'])
+    gulp.watch(bundle.sourcePath, ['copy', 'reload'])
   );
 
-  gulp.watch([config.images.src], ['images', 'reload']);
+  gulp.watch([config.images.sourcePath], ['images', 'reload']);
   gulp.watch([config.scripts.watch, config.scripts.bundles], ['scripts']);
-  gulp.watch([config.styles.watch, config.styles.src], ['styles']);
-  gulp.watch([config.svg.src], ['svg', 'reload']);
+  gulp.watch([config.styles.watch, config.styles.sourcePath], ['styles']);
+  gulp.watch([config.svg.sourcePath], ['svg', 'reload']);
 });

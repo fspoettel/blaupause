@@ -23,15 +23,15 @@ $webfont-ttf: false;
 
     @if $webfont-ttf == true {
       src:
-        url("fonts/#{$filename}.woff2") format("woff2"),
-        url("fonts/#{$filename}.woff") format("woff"),
-        url("fonts/#{$filename}.ttf") format("ttf");
+        url("webfonts/#{$filename}.woff2") format("woff2"),
+        url("webfonts/#{$filename}.woff") format("woff"),
+        url("webfonts/#{$filename}.ttf") format("ttf");
     }
 
     @else {
       src:
-        url("fonts/#{$filename}.woff2") format("woff2"),
-        url("fonts/#{$filename}.woff") format("woff");
+        url("webfonts/#{$filename}.woff2") format("woff2"),
+        url("webfonts/#{$filename}.woff") format("woff");
     }
   }
 }

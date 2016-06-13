@@ -25,12 +25,12 @@ if (isProduction) {
 }
 
 gulp.task('styles', () =>
-  gulp.src(config.src)
+  gulp.src(config.sourcePath)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
-    .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.destinationPath))
     .pipe(reload({ stream: true }))
     .pipe(gulpif(isProduction, streamSize('CSS')))
 );

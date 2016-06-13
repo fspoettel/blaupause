@@ -13,5 +13,5 @@ gulp.task('modernizr', () =>
   gulp.src(config.scripts.bundles)
     .pipe(modernizr(config.modernizr.settings))
     .pipe(uglify())
-    .pipe(gulp.dest(config.modernizr.dest))
+    .pipe(gulp.dest(config.modernizr.destinationPath))
 );

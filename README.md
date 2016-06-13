@@ -1,4 +1,4 @@
-# blaupause ![Build Status](https://travis-ci.org/fspoettel/blaupause.svg?branch=master)
+# blaupause ![Travis](https://img.shields.io/travis/felics/blaupause.svg?maxAge=2592000?style=flat-square)
 
 > Build process & application architecture for web projects
 
@@ -34,7 +34,7 @@
  - `gulp styles` - Builds styles
  - `gulp scripts` - Builds scripts
  - `gulp svg` - Optimizes svgs and creates a symbol-sprite
- - `gulp views` - Copies static files in "\_src" to dest. For more elaborate view-tasks (templating / nested folder / Static Site Generators), modify the task
+ - `gulp views` - Copies static files in "\source" to dest. For more elaborate view-tasks (templating / nested folder / Static Site Generators), modify the task
 
 ## Production Flag:
 

@@ -9,7 +9,7 @@ const imagemin = require('gulp-imagemin');
 const config = require('../config').images;
 
 gulp.task('images', () =>
-  gulp.src(config.src)
+  gulp.src(config.sourcePath)
     .pipe(imagemin(config.settings))
-    .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.destinationPath))
 );
