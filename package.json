@@ -40,8 +40,8 @@
     "url": "https://github.com/felics/blaupause.git"
   },
   "scripts": {
-    "lint-scripts": "eslint _src/js gulp ./*.js",
-    "lint-styles": "stylelint -s scss _src/scss/**/*.scss",
+    "lint-scripts": "eslint source/js gulp ./*.js",
+    "lint-styles": "stylelint -s scss source/scss/**/*.scss",
     "lint": "npm run lint-styles; npm run lint-scripts",
     "test": "echo add some tests"
   },

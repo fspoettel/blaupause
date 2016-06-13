@@ -1,4 +1,4 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "_src/scss/vendors/**"
+  "ignoreFiles": "source/scss/vendors/**"
 }

@@ -9,5 +9,5 @@ const serve = require('koa-static');
 
 const config = require('./gulp/config').server;
 
-app.use(serve(config.dest));
+app.use(serve(config.destinationPath));
 app.listen(process.env.PORT || config.port);

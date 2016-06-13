@@ -24,7 +24,7 @@ const webpackConfig = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'babel',
         query: {
           presets: ['es2015'],
@@ -55,7 +55,7 @@ gulp.task('scripts', () =>
     .pipe(plumber())
     .pipe(named())
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.destinationPath))
     .pipe(gulpif(isProduction, streamSize('JS')))
     .pipe(reload({ stream: true }))
 );

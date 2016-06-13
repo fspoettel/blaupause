@@ -9,7 +9,7 @@ const config = require('../config').copy;
 
 gulp.task('copy', () =>
   config.bundles.forEach((source) =>
-    gulp.src(source.src)
-      .pipe(gulp.dest(source.dest))
+    gulp.src(source.sourcePath)
+      .pipe(gulp.dest(source.destinationPath))
   )
 );

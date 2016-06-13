@@ -9,4 +9,4 @@ const gulp = require('gulp');
 const config = require('../config').server;
 
 gulp.task('clean', () =>
-  del([config.dest]));
+  del([config.destinationPath]));

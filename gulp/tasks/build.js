@@ -8,8 +8,8 @@ const runSequence = require('run-sequence');
 
 gulp.task('build', (done) => {
   runSequence(
-    'clean', // Needs to complete first
-    ['copy', 'images', 'modernizr', 'scripts', 'styles', 'svg'], // Build step
+    'clean',
+    ['copy', 'images', 'modernizr', 'scripts', 'styles', 'svg'],
     done
   );
 });

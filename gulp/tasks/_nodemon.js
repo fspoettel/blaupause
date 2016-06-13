@@ -23,12 +23,10 @@ gulp.task('nodemon', (done) => {
     script: config.file,
     watch: [config.watch],
   })
-
   .on('start', () => {
     if (!called) { done(); }
     called = true;
   })
-
   .on('restart', () => {
     setTimeout(() => {
       browserSync.reload({
