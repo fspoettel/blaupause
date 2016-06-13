@@ -1,4 +1,4 @@
-# blaupause ![Travis](https://img.shields.io/travis/felics/blaupause.svg?maxAge=2592000?style=flat-square)
+# blaupause ![Travis](https://travis-ci.org/fspoettel/blaupause.svg?branch=master)
 
 > Build process & application architecture for web projects
 
