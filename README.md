@@ -20,7 +20,7 @@
  - Sourcemaps for .js and .scss
  - Production-flag for smaller builds
  - [Travis](https://travis-ci.org) Configuration
- - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) + [Sanitize.css](https://github.com/10up/sanitize.css)
+ - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) + [Sanitize.css](https://github.com/10up/sanitize.css) with a couple of useful mixins
  - HTML-Skelethon based on [HTML5 Boilerplate](https://html5boilerplate.com/)
  - :arrow_forward: [Statamic](http://statamic.com)-specific branch with a build-process tailored to developing themes
 

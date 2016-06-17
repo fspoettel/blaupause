@@ -19,6 +19,7 @@
 // If you have to overwrite sections of a vendor-file, consider adding an
 // `overwrites`-folder to avoid editing vendor-code directly.
 @import
+  "vendors/family",
   "vendors/hagrid",
   "vendors/modular-scale",
   "vendors/sanitize";
