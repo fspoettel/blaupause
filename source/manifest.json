@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "name": "",
+  "description": "",
+  "short_name": "",
+  "icons": [],
+  "scope": "/",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "aliceblue",
+  "background_color": "red"
+}
