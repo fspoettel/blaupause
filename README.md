@@ -1,4 +1,4 @@
-# blaupause ![Travis](https://travis-ci.org/fspoettel/blaupause.svg?branch=master)
+# blaupause ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg?maxAge=2592000?style=flat-square)
 
 > Build process & application architecture for web projects
 
@@ -13,7 +13,7 @@
 
  - [Webpack](http://webpack.github.io) + [Babel](babeljs.io)
  - [SASS](http://sass-lang.com/) + [Autoprefixer](https://github.com/postcss/autoprefixer)
- - [EditorConfig](http://editorconfig.org/) + [Eslint](http://jscs.info/overview.html) + [Stylelint](http://stylelint.io/)
+ - [EditorConfig](http://editorconfig.org/) + [ESLint](http://eslint.org/) + [Stylelint](http://stylelint.io/)
  - [Customizable Modernizr](http://modernizr.com/)
  - [BrowserSync](http://www.browsersync.io/)
  - Autorestarting [Koa](http://koajs.com/)-server
