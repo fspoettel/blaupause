@@ -1,0 +1,64 @@
+
+////
+/// Variables
+/// MIT-License © 2016
+/// @author Felix Spöttel
+/// @group Config
+////
+
+/// Regular font family
+/// @type {List}
+$text-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+/// Text Line Height
+/// @type {Number}
+$text-line-height: 1.5;
+
+/// Background color
+/// @type {Color}
+$color-background: #fff !default;
+
+/// Copy text color
+/// @type {Color}
+$color-text: #232323 !default;
+
+/// Brand color
+/// @type {Color}
+$color-brand: #2271ff !default;
+
+/// Gutters, used by `mixins/_hagrid`.
+/// @property {Number}
+/// @see {mixin} bp
+$layout-gutters:
+  (
+    default: 1.5rem,
+    full: 0,
+    narrow: 0.5rem,
+    wide: 3rem
+  ) !default;
+
+/// Breakpoints, used by `mixins/_hagrid`. Breakpoints can be used via Hagrid's @bp-mixin.
+/// @property {String}
+$layout-breakpoints:
+  (
+    sm: "(min-width: 35.5em)",
+    md: "(min-width: 48em)",
+    lg: "(min-width: 64em)",
+    xl: "(min-width: 80em)"
+  ) !default;
+
+/// Webfont Path Prefix
+/// @type {String}
+$path-webfonts: "webfonts/" !default;
+
+/// Image Path Prefix
+/// @type {String}
+$path-images: "../images/" !default;
+
+/// Overwrite Hagrid Breakpoints
+/// @type {List}
+$hagrid-breakpoints: $layout-breakpoints;
+
+/// Overwrite Hagrid Gutters
+/// @type {List}
+$hagrid-gutters: $layout-gutters;

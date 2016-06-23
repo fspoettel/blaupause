@@ -12,4 +12,4 @@ if (isProduction) {
   gutil.log(gutil.colors.bold.bgGreen('Production Mode'));
 }
 
-requireDir('./gulp/tasks', { recurse: true });
+requireDir('./internals/gulp');
