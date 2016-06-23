@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "1.9.3",
+  "version": "1.10.0",
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "author": "Felix Spöttel",
