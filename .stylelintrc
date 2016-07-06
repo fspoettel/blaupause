@@ -1,4 +1,7 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "app/styles/vendors/**"
+  "ignoreFiles": "app/styles/vendors/**",
+  "rules": {
+    "at-rule-no-unknown": null
+  }
 }
