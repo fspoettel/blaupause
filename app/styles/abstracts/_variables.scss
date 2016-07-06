@@ -29,23 +29,21 @@ $color-brand: #2271ff !default;
 /// Gutters, used by `mixins/_hagrid`.
 /// @property {Number}
 /// @see {mixin} bp
-$layout-gutters:
-  (
-    default: 1.5rem,
-    full: 0,
-    narrow: 0.5rem,
-    wide: 3rem
-  ) !default;
+$layout-gutters: (
+  default: 1.5rem,
+  full: 0,
+  narrow: 0.5rem,
+  wide: 3rem
+) !default;
 
 /// Breakpoints, used by `mixins/_hagrid`. Breakpoints can be used via Hagrid's @bp-mixin.
 /// @property {String}
-$layout-breakpoints:
-  (
-    sm: "(min-width: 35.5em)",
-    md: "(min-width: 48em)",
-    lg: "(min-width: 64em)",
-    xl: "(min-width: 80em)"
-  ) !default;
+$layout-breakpoints: (
+  sm: "(min-width: 35.5em)",
+  md: "(min-width: 48em)",
+  lg: "(min-width: 64em)",
+  xl: "(min-width: 80em)"
+) !default;
 
 /// Webfont Path Prefix
 /// @type {String}

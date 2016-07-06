@@ -60,7 +60,7 @@
   },
   "scripts": {
     "lint-scripts": "eslint app/scripts gulp ./*.js",
-    "lint-styles": "stylelint -s scss app/styles/**/*.scss",
+    "lint-styles": "stylelint --syntax scss app/styles/**/*.scss",
     "lint": "npm run lint-styles; npm run lint-scripts",
     "test": "ava"
   },
