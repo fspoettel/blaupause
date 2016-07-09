@@ -2,9 +2,6 @@
   "name": "blaupause",
   "version": "1.10.1",
   "homepage": "https://github.com/felics/blaupause",
-  "authors": [
-    "felics <hi@felics.me>"
-  ],
   "description": "Personal Front End-Boilerplate",
   "main": "gulpfile.js",
   "license": "MIT",
