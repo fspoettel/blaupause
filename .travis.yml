@@ -1,6 +1,10 @@
+---
 language: node_js
 node_js:
-  - "6"
+  - "stable"
 before_script:
   - npm run lint-scripts
   - npm run lint-styles
+cache:
+  directories:
+    - node_modules
