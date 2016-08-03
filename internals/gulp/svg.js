@@ -19,7 +19,7 @@ const svgSpriteConfig = {
   },
 };
 
-gulp.task('svg', () =>
+gulp.task('svg:build', () =>
   gulp.src(config.sourcePath)
     .pipe(svgSprite(svgSpriteConfig))
     .pipe(streamSize('SVG'))

@@ -9,7 +9,7 @@ const uglify = require('gulp-uglify');
 
 const config = require('../config');
 
-gulp.task('modernizr', () =>
+gulp.task('modernizr:build', () =>
   gulp.src(config.scripts.bundles)
     .pipe(modernizr(config.modernizr.settings))
     .pipe(uglify())
