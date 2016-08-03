@@ -1,0 +1,10 @@
+---
+baseurl: "http://blaupause/"
+title: "Blaupause"
+enableRobotsTXT: "true"
+googleAnalytics: "UA-XXXXXX"
+languageCode: "en-us"
+metaDataFormat: "yaml"
+params:
+  AuthorName: "Felix Spöttel"
+---

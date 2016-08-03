@@ -6,9 +6,9 @@
 const argv = require('yargs').boolean('p').argv;
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
+const gutil = require('gulp-util');
 const named = require('vinyl-named');
 const pack = require('webpack'); // Reference for plugins
-const plumber = require('gulp-plumber');
 const reload = require('browser-sync').reload;
 const streamSize = require('./util/streamsize');
 const webpack = require('webpack-stream');
@@ -47,11 +47,14 @@ if (isProduction) {
   }));
 }
 
-gulp.task('scripts', () =>
+gulp.task('scripts:build', () =>
   gulp.src(config.bundles)
-    .pipe(plumber())
     .pipe(named())
     .pipe(webpack(webpackConfig))
+    .on('error', function logError(error) {
+      gutil.log(gutil.colors.red(error.message));
+      this.emit('end');
+    })
     .pipe(gulp.dest(config.destinationPath))
     .pipe(gulpif(isProduction, streamSize('JS')))
     .pipe(reload({ stream: true }))

@@ -24,7 +24,7 @@ if (isProduction) {
   processors.push(cssnano());
 }
 
-gulp.task('styles', () =>
+gulp.task('styles:build', () =>
   gulp.src(config.sourcePath)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
