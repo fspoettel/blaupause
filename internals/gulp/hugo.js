@@ -8,8 +8,8 @@ const exec = require('child-process-promise').exec;
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const path = require('path');
-
 const config = require('../config').hugo;
+
 const isProduction = argv.p;
 const dest = path.join(process.cwd(), config.destinationPath);
 const src = path.join(process.cwd(), config.sourcePath);

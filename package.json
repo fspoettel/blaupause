@@ -57,7 +57,7 @@
     "yargs": "^4.8.1"
   },
   "scripts": {
-    "lint-scripts": "eslint src/scripts gulp ./*.js",
+    "lint-scripts": "eslint src/scripts internals/gulp ./*.js",
     "lint-styles": "stylelint --syntax scss src/styles/**/*.scss",
     "lint": "npm run lint-styles; npm run lint-scripts",
     "test": "ava"

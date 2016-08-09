@@ -6,7 +6,6 @@
 const gulp = require('gulp');
 const streamSize = require('./util/streamsize');
 const svgSprite = require('gulp-svg-sprite');
-
 const config = require('../config').svg;
 
 const svgSpriteConfig = {

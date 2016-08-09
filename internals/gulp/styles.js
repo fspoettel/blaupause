@@ -10,12 +10,12 @@ const cssnano = require('cssnano');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const postcss = require('gulp-postcss');
-const reload = browserSync.reload;
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const streamSize = require('./util/streamsize');
-
 const config = require('../config').styles;
+
+const reload = browserSync.reload;
 const isProduction = argv.p;
 
 const processors = [autoprefixer(config.autoprefixer)];

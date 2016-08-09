@@ -12,8 +12,8 @@ const pack = require('webpack'); // Reference for plugins
 const reload = require('browser-sync').reload;
 const streamSize = require('./util/streamsize');
 const webpack = require('webpack-stream');
-
 const config = require('../config').scripts;
+
 const isProduction = argv.p;
 
 const webpackConfig = {

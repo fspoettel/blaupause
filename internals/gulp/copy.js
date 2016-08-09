@@ -4,7 +4,6 @@
  * @task - Generic copy task
  */
 const gulp = require('gulp');
-
 const config = require('../config').copy;
 
 gulp.task('copy:build', () => {
