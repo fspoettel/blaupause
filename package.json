@@ -46,6 +46,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "jsdom": "^9.4.1",
+    "lodash.iselement": "^4.1.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
     "stylelint": "^7.1.0",

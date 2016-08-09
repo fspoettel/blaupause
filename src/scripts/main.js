@@ -6,7 +6,9 @@
 import { ready, info } from './utils';
 
 function onReady(e) {
-  info(`${e.type}`);
+  info(`Event: ${e.type}`, `Datestamp: ${this.date}`);
 }
 
-ready(onReady, {});
+ready(onReady, {
+  date: new Date(),
+});
