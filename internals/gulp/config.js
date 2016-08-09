@@ -1,6 +1,6 @@
 /**
  * config.js
- * @exports {object} - Configuration
+ * @exports {object} - Configuration for Gulp Tasks
  */
 
 const destinationPath = 'public';
@@ -51,6 +51,7 @@ const images = {
 const modernizr = {
   destinationPath: `${assetPath}/scripts/vendor`,
   // Customizr Settings
+  fileName: 'modernizr-custom.js',
   settings: {
     options: [
       'setClasses',
@@ -83,7 +84,7 @@ const styles = {
 
 const svg = {
   sourcePath: `${sourcePath}/images/**/*.svg`,
-  destinationPath: `${assetPath}/images`,
+  destinationPath: `${assetPath}/svg`,
 };
 
 module.exports = {

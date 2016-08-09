@@ -1,16 +1,13 @@
-/**
- * scripts.js
- * @name - 'scripts'
- * @task - Compiles & uglifies AMD modules
- */
+
 const argv = require('yargs').boolean('p').argv;
 const browserSync = require('../config').browserSync;
+const del = require('del');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const named = require('vinyl-named');
 const pack = require('webpack'); // Reference for plugins
-const streamSize = require('./util/streamsize');
+const streamSize = require('../util/streamsize');
 const webpack = require('webpack-stream');
 const config = require('../config').scripts;
 
@@ -47,6 +44,10 @@ if (isProduction) {
   }));
 }
 
+/**
+ * @name - scripts:build
+ * @task - Builds javascript with Webpack
+ */
 gulp.task('scripts:build', () =>
   gulp.src(config.bundles)
     .pipe(named())
@@ -59,3 +60,14 @@ gulp.task('scripts:build', () =>
     .pipe(gulpif(isProduction, streamSize('JS')))
     .pipe(browserSync.stream({ match: '**/*.js' }))
 );
+
+/**
+ * @name - scripts:clean
+ * @task - Removes the javascript build directory
+ */
+gulp.task('scripts:clean', () =>
+  del([
+    `${config.destinationPath}/**`,
+    `!${config.destinationPath}`,
+    `!${config.destinationPath}/vendor/**`,
+  ]));
