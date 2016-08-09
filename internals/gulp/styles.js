@@ -5,7 +5,7 @@
  */
 const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('autoprefixer');
-const browserSync = require('browser-sync');
+const browserSync = require('../config').browserSync;
 const cssnano = require('cssnano');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
@@ -15,7 +15,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const streamSize = require('./util/streamsize');
 const config = require('../config').styles;
 
-const reload = browserSync.reload;
 const isProduction = argv.p;
 
 const processors = [autoprefixer(config.autoprefixer)];
@@ -31,6 +30,6 @@ gulp.task('styles:build', () =>
     .pipe(postcss(processors))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulp.dest(config.destinationPath))
-    .pipe(reload({ stream: true }))
     .pipe(gulpif(isProduction, streamSize('CSS')))
+    .pipe(browserSync.stream({ match: '**/*.css' }))
 );

@@ -3,13 +3,13 @@
  * @name - 'watch'
  * @task - Triggers recompiles & live-reloads
  */
-const browserSync = require('browser-sync');
+const browserSync = require('../config').browserSync;
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const config = require('../config');
 
 gulp.task('watch', ['build'], () => {
-  browserSync.init(config.browserSync);
+  browserSync.init(config.browserSyncConfig);
 
   config.copy.bundles.forEach(bundle => {
     gulp.watch(bundle.sourcePath, () => { runSequence('copy:build', 'reload'); });

@@ -4,12 +4,12 @@
  * @task - Compiles & uglifies AMD modules
  */
 const argv = require('yargs').boolean('p').argv;
+const browserSync = require('../config').browserSync;
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const named = require('vinyl-named');
 const pack = require('webpack'); // Reference for plugins
-const reload = require('browser-sync').reload;
 const streamSize = require('./util/streamsize');
 const webpack = require('webpack-stream');
 const config = require('../config').scripts;
@@ -57,5 +57,5 @@ gulp.task('scripts:build', () =>
     })
     .pipe(gulp.dest(config.destinationPath))
     .pipe(gulpif(isProduction, streamSize('JS')))
-    .pipe(reload({ stream: true }))
+    .pipe(browserSync.stream({ match: '**/*.js' }))
 );

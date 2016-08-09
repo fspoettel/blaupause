@@ -2,15 +2,20 @@
  * config.js
  * @exports {object} - Configuration
  */
+
 const destinationPath = 'public';
 const assetPath = `${destinationPath}/static`;
 const sourcePath = 'src';
 
 const port = 4000;
 
-const browserSync = {
+const browserSync = require('browser-sync').create();
+
+const browserSyncConfig = {
+  files: false,
   notify: false,
   port,
+  reloadOnRestart: true,
   server: destinationPath,
 };
 
@@ -83,6 +88,7 @@ const svg = {
 
 module.exports = {
   browserSync,
+  browserSyncConfig,
   copy,
   destinationPath,
   hugo,

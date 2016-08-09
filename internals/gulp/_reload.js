@@ -4,7 +4,7 @@
  * @task - Helper function for reloading the server with changes to html/img
  * @private
  */
-const browserSync = require('browser-sync');
+const browserSync = require('../config').browserSync;
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 
