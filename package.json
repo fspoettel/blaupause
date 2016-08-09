@@ -29,7 +29,6 @@
     "babel-preset-stage-1": "^6.13.0",
     "babel-register": "^6.11.6",
     "browser-sync": "^2.14.0",
-    "child-process-promise": "^2.0.3",
     "cssnano": "^3.7.3",
     "del": "^2.2.1",
     "eslint": "^3.2.2",

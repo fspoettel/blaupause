@@ -4,7 +4,7 @@
  * @task - Compile the content & templates
  */
 const argv = require('yargs').boolean('p').argv;
-const exec = require('child-process-promise').exec;
+const exec = require('child_process').exec;
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const path = require('path');
@@ -17,11 +17,10 @@ const src = path.join(process.cwd(), config.sourcePath);
 const devOpts = !isProduction ? `--buildDrafts=true --baseUrl="http://localhost:${config.port}/"` : '';
 const command = `hugo --config=hugo/config.yaml -s ${src} -d ${dest} ${devOpts}`;
 
-gulp.task('hugo:build', () =>
-  exec(command, { encoding: 'utf-8' })
-    .then(output => {
-      gutil.log(gutil.colors.yellow(output.stdout));
-    }, error => {
-      gutil.log(gutil.colors.yellow(error.stdout));
-    })
+gulp.task('hugo:build', (cb) =>
+  exec(command, (err, stdout, stderr) => {
+    gutil.log(gutil.colors.yellow(stdout));
+    gutil.log(gutil.colors.red(stderr));
+    cb(err);
+  })
 );
