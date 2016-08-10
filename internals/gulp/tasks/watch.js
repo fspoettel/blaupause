@@ -1,39 +1,39 @@
 
-const browserSync = require('../config').browserSync;
+const browserSync = require('../config').browserSync.instance;
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
-const config = require('../config');
+const cfg = require('../config');
 
 /**
  * @name - 'watch'
  * @task - Inits browserSync and binds change listeners
  */
 gulp.task('watch', ['build'], () => {
-  browserSync.init(config.browserSyncConfig);
+  browserSync.init(cfg.browserSync.options);
 
   const watch = (...args) => gulp.watch(...args);
 
-  config.copy.bundles.forEach(bundle => {
+  cfg.copy.bundles.forEach(bundle => {
     watch(bundle.sourcePath, () => { runSequence('copy:build', 'reload'); });
   });
 
   watch(
-    [config.hugo.watch], () => runSequence('hugo:build', 'reload')
+    [cfg.hugo.watch], () => runSequence('hugo:build', 'reload')
   );
 
   watch(
-    [config.images.sourcePath], () => runSequence('images:clean', 'images:build', 'reload')
+    [cfg.images.sourcePath], () => runSequence('images:clean', 'images:build', 'reload')
   );
 
   watch(
-    [config.scripts.watch, config.scripts.bundles], () => runSequence('scripts:clean', 'scripts:build')
+    [cfg.scripts.watch, cfg.scripts.bundles], () => runSequence('scripts:clean', 'scripts:build')
   );
 
   watch(
-    [config.styles.watch, config.styles.sourcePath], () => runSequence('styles:clean', 'styles:build')
+    [cfg.styles.watch, cfg.styles.sourcePath], () => runSequence('styles:clean', 'styles:build')
   );
 
   watch(
-    [config.svg.sourcePath], () => runSequence('svg:clean', 'svg:build', 'reload')
+    [cfg.svg.sourcePath], () => runSequence('svg:clean', 'svg:build', 'reload')
   );
 });

@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const del = require('del');
 const streamSize = require('../util/streamsize');
 const svgSprite = require('gulp-svg-sprite');
-const config = require('../config').svg;
+const cfg = require('../config').svg;
 
 const svgSpriteConfig = {
   transform: ['svgo'],
@@ -20,10 +20,10 @@ const svgSpriteConfig = {
  * @task - Builds & optimizes a SVG sprite from a source folder of SVG files
  */
 gulp.task('svg:build', () =>
-  gulp.src(config.sourcePath)
+  gulp.src(cfg.sourcePath)
     .pipe(svgSprite(svgSpriteConfig))
     .pipe(streamSize('SVG'))
-    .pipe(gulp.dest(config.destinationPath))
+    .pipe(gulp.dest(cfg.destinationPath))
 );
 
 /**
@@ -31,4 +31,4 @@ gulp.task('svg:build', () =>
  * @task - Removes the svg build directory
  */
 gulp.task('svg:clean', () =>
-  del([config.destinationPath]));
+  del([cfg.destinationPath]));

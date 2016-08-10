@@ -3,20 +3,24 @@
  * @exports {object} - Configuration for Gulp Tasks
  */
 
+const bs = require('browser-sync').create();
+
 const destinationPath = 'public';
 const assetPath = `${destinationPath}/static`;
 const sourcePath = 'src';
 
-const port = 4000;
+const host = 'localhost';
+const port = process.env.PORT || 3000;
 
-const browserSync = require('browser-sync').create();
-
-const browserSyncConfig = {
-  files: false,
-  notify: false,
-  port,
-  reloadOnRestart: true,
-  server: destinationPath,
+const browserSync = {
+  instance: bs,
+  options: {
+    files: false,
+    host,
+    notify: false,
+    port,
+    server: destinationPath,
+  },
 };
 
 const copy = {
@@ -33,10 +37,11 @@ const copy = {
 };
 
 const hugo = {
+  host: `http://${host}`,
   sourcePath: 'hugo',
   destinationPath,
   port,
-  watch: ['hugo/**/*.{html,md,yaml}', 'hugo/*.yaml'],
+  watch: ['hugo/**/*.{html,md,yaml}'],
 };
 
 const images = {
@@ -89,12 +94,12 @@ const svg = {
 
 module.exports = {
   browserSync,
-  browserSyncConfig,
   copy,
   destinationPath,
   hugo,
   images,
   modernizr,
+  port,
   scripts,
   styles,
   svg,

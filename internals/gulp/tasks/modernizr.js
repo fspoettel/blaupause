@@ -3,7 +3,7 @@ const del = require('del');
 const gulp = require('gulp');
 const modernizr = require('gulp-modernizr');
 const uglify = require('gulp-uglify');
-const config = require('../config');
+const cfg = require('../config');
 
 /**
  * modernizr:build
@@ -11,10 +11,10 @@ const config = require('../config');
  * @task - Builds a custom Modernizr
  */
 gulp.task('modernizr:build', () =>
-  gulp.src(config.scripts.bundles)
-    .pipe(modernizr(config.modernizr.fileName, config.modernizr.settings))
+  gulp.src(cfg.scripts.bundles)
+    .pipe(modernizr(cfg.modernizr.fileName, cfg.modernizr.settings))
     .pipe(uglify())
-    .pipe(gulp.dest(config.modernizr.destinationPath))
+    .pipe(gulp.dest(cfg.modernizr.destinationPath))
 );
 
 /**
@@ -22,4 +22,4 @@ gulp.task('modernizr:build', () =>
  * @task Clean the custom Modernizr build
  */
 gulp.task('modernizr:clean', () =>
-  del([`${config.modernizr.destinationPath}/${config.modernizr.fileName}`]));
+  del([`${cfg.modernizr.destinationPath}/${cfg.modernizr.fileName}`]));
