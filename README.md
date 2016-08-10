@@ -43,7 +43,7 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
 
 \* Due to the structure of this repository, Hugo themes are not supported.
 
-## Available Tasks:
+## Available Tasks
 
  - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
  - `gulp build` - (Re-)Builds project
@@ -61,10 +61,53 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
  - `gulp svg:build` - Optimizes SVGs and creates a symbol-sprite
  - `gulp svg:clean` - Clean symbol-sprite
 
-## Production Flag:
+## Production Flag
 
 You can generate a production-ready build (no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code) by passing `-p` to any gulp task.
 
-## Adding tasks:
+## Adding tasks
 
 You can add tasks by creating a `.js`-file in `.internals/gulp/tasks` that contain a task, a reference to `gulp` and the `gulp`-modules you want to use. You can then add it to the run-sequence in `build`.
+
+## Recipes
+
+These recipes show how to do common tasks with Blaupause.
+
+### Adding jQuery with a fallback
+
+``` bash
+# Install jquery from npm
+npm install --save jquery
+```
+
+``` js
+// ./internals/gulp/config.js
+
+const scripts = {
+  // Allows you to import jQuery in your js files without adding it to your webpack bundle
+  externals: {
+    jquery: 'jQuery'
+  },
+};
+
+// Copy the latest jQuery from node_modules to static/scripts/vendor
+const copy = [
+  {
+    sourcePath: './node_modules/jquery/dist/jquery.min.js',
+    destinationPath: `${assetPath}/scripts/vendor`,
+  },
+];
+```
+
+``` html
+<!-- hugo/layouts/partial/html_foot.html -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ .Site.BaseURL }}static/scripts/vendor/jquery.min.js"><\/script>')</script>
+```
+
+``` js
+// Use it in your bundle
+import $ from 'jquery';
+
+$(body).addClass('done');
+```
