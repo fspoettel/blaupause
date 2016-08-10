@@ -17,9 +17,11 @@ const decorateMsg = (msg, decorator = '📐') => `${decorator} ${msg}`;
  * @param {string} msg - The message to log.
  * @param {string} decorator - Console message decorator.
  */
-const message = (method, ...args) => {
+const message = (method, ...messages) => {
   if (!!console && !!console[method]) {
-    console[method](decorateMsg(...args));
+    messages.forEach(msg => {
+      console[method](decorateMsg(msg));
+    });
   }
 };
 
@@ -28,25 +30,25 @@ const message = (method, ...args) => {
  * @param {string} msg - The message to log.
  * @param {string} decorator - Console message decorator.
  */
-export const error = (...args) => message('error', ...args);
+export const error = (...messages) => message('error', ...messages);
 
 /**
  * Info wrapper
  * @param {string} msg - The message to log.
  * @param {string} decorator - Console message decorator.
  */
-export const info = (...args) => message('info', ...args);
+export const info = (...messages) => message('info', ...messages);
 
 /**
  * Log wrapper
  * @param {string} msg - The message to log.
  * @param {string} decorator - Console message decorator.
  */
-export const log = (...args) => message('log', ...args);
+export const log = (...messages) => message('log', ...messages);
 
 /**
  * Warn wrapper
  * @param {string} msg - The message to log.
  * @param {string} decorator - Console message decorator.
  */
-export const warn = (...args) => message('warn', ...args);
+export const warn = (...messages) => message('warn', ...messages);

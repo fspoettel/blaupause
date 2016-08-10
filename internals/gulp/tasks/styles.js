@@ -1,36 +1,43 @@
-/**
- * styles.js
- * @name - 'styles'
- * @task - Compiles, prefixes & minfies SCSS-files
- */
+
 const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('autoprefixer');
-const browserSync = require('browser-sync');
+const browserSync = require('../config').browserSync.instance;
 const cssnano = require('cssnano');
+const del = require('del');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const postcss = require('gulp-postcss');
-const reload = browserSync.reload;
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const streamSize = require('./util/streamsize');
+const streamSize = require('../util/streamsize');
+const cfg = require('../config').styles;
 
-const config = require('../config').styles;
 const isProduction = argv.p;
 
-const processors = [autoprefixer(config.autoprefixer)];
+const processors = [autoprefixer(cfg.autoprefixer)];
 
 if (isProduction) {
   processors.push(cssnano());
 }
 
+/**
+ * @name - styles:build
+ * @task - Compiles, prefixes & minfies SCSS-files
+ */
 gulp.task('styles:build', () =>
-  gulp.src(config.sourcePath)
+  gulp.src(cfg.sourcePath)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
-    .pipe(gulp.dest(config.destinationPath))
-    .pipe(reload({ stream: true }))
     .pipe(gulpif(isProduction, streamSize('CSS')))
+    .pipe(gulp.dest(cfg.destinationPath))
+    .pipe(browserSync.stream({ match: '**/*.css' }))
 );
+
+/**
+ * @name - styles:clean
+ * @task - Removes the css build directory
+ */
+gulp.task('styles:clean', () =>
+  del([`${cfg.destinationPath}/**`]));

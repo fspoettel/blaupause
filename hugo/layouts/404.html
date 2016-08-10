@@ -1,10 +1,8 @@
-{{ partial "header.html" . }}
-<body>
-
+{{ partial "html_head.html" . }}
   <main>
-    <h1>404</h1>
+    {{ partial "header.html" . }}
+    <section>Whoops!</section>
+    {{ partial "footer.html" . }}
   </main>
 
-  {{ partial "footer.html" . }}
-</body>
-</html>
+{{ partial "html_foot.html" . }}

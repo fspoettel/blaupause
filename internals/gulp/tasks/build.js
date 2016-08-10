@@ -1,14 +1,13 @@
-/**
- * build.js
- * @name - 'build'
- * @task - Rebuild without watching. Gets called in 'default'
- */
+
 const del = require('del');
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
-
 const destinationPath = require('../config').destinationPath;
 
+/**
+ * @name build
+ * @task Build the project
+ */
 gulp.task('build', done => {
   runSequence(
     'build:clean',
@@ -17,5 +16,9 @@ gulp.task('build', done => {
   );
 });
 
+/**
+ * @name build:clean
+ * @task Clean the build directory
+ */
 gulp.task('build:clean', () =>
   del([destinationPath]));

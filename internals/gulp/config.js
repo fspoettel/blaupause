@@ -1,17 +1,26 @@
 /**
  * config.js
- * @exports {object} - Configuration
+ * @exports {object} - Configuration for Gulp Tasks
  */
+
+const bs = require('browser-sync').create();
+
 const destinationPath = 'public';
 const assetPath = `${destinationPath}/static`;
 const sourcePath = 'src';
 
-const port = 4000;
+const host = 'localhost';
+const port = process.env.PORT || 3000;
 
 const browserSync = {
-  notify: false,
-  port,
-  server: destinationPath,
+  instance: bs,
+  options: {
+    files: false,
+    host,
+    notify: false,
+    port,
+    server: destinationPath,
+  },
 };
 
 const copy = {
@@ -28,10 +37,11 @@ const copy = {
 };
 
 const hugo = {
+  host: `http://${host}`,
   sourcePath: 'hugo',
   destinationPath,
   port,
-  watch: ['hugo/**/*.{html,md,yaml}', 'hugo/*.yaml'],
+  watch: ['hugo/**/*.{html,md,yaml}'],
 };
 
 const images = {
@@ -46,6 +56,7 @@ const images = {
 const modernizr = {
   destinationPath: `${assetPath}/scripts/vendor`,
   // Customizr Settings
+  fileName: 'modernizr-custom.js',
   settings: {
     options: [
       'setClasses',
@@ -78,7 +89,7 @@ const styles = {
 
 const svg = {
   sourcePath: `${sourcePath}/images/**/*.svg`,
-  destinationPath: `${assetPath}/images`,
+  destinationPath: `${assetPath}/svg`,
 };
 
 module.exports = {
@@ -88,6 +99,7 @@ module.exports = {
   hugo,
   images,
   modernizr,
+  port,
   scripts,
   styles,
   svg,
