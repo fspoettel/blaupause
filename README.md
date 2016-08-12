@@ -61,9 +61,9 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
  - `gulp svg:build` - Optimizes SVGs and creates a symbol-sprite
  - `gulp svg:clean` - Clean symbol-sprite
 
-## Production Flag
+## Production Builds
 
-You can generate a production-ready build (no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code) by passing `-p` to any gulp task.
+You can generate a production-ready build ("real" BaseURL, no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code) by passing `-p` to any build task.
 
 ## Adding tasks
 
