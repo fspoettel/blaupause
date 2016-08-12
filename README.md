@@ -112,7 +112,7 @@ const copy = [
 ``` html
 <!-- hugo/layouts/partial/html_foot.html -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ .Site.BaseURL }}static/scripts/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="{{ "static/scripts/vendor/jquery.min.js" | relURL }}"><\/script>')</script>
 ```
 
 ``` js
