@@ -1,0 +1,9 @@
+{{/* Usage:
+   * {{ partial "image/svg" (dict "id" "arrow-left" "class" "custom") }}
+   */}}
+
+{{ $svgPrefix := "static/svg/sprite.symbol.svg#" | relURL }}
+
+<svg class="{{ if (isset . "class") }}{{ .class }}{{ end }}">
+  <use xlink:href="{{ $svgPrefix }}{{ .id }}" />
+</svg>
