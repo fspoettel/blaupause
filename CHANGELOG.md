@@ -1,10 +1,22 @@
 # Change Log
 All notable changes to this project will be documented in this file.
+## [2.0.3] - 2016-08-12
+### Added
+- Added minimal default templates
+- Added `image/svg`-partial
+
+### Fixed
+- Fixed `$text-font-stack` not applying
+- Fixed running above webroot
+
+### Changed
+- Improved production build documentation
 
 ## [2.0.2] - 2016-08-10
 ### Added
-- Add a changelog
-- Add jQuery recipe to readme
+- Added a changelog
+- Added jQuery recipe to readme
+
 ### Fixed
 - Fix potential double slashes after host by enforcing trailing slashes in Hugo
 
