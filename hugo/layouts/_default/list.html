@@ -1,0 +1,12 @@
+{{ partial "html_head.html" . }}
+  <main>
+    {{ partial "header.html" . }}
+
+    {{ range .Data.Pages }}
+      {{ .Title }}
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+  </main>
+
+{{ partial "html_foot.html" . }}
