@@ -7,14 +7,14 @@
 
   <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Description }}">
-  <link rel="author" href="{{ .Site.BaseURL }}static/humans.txt" />
+  <link rel="author" href="{{ "static/humans.txt" | relURL }}" />
   <link rel="canonical" href="{{ .Permalink }}">
 
-  <link rel="manifest" href="{{ .Site.BaseURL }}static/manifest.json">
+  <link rel="manifest" href="{{ "static/manifest.json" | relURL }}">
   <meta name="application-name" content="{{ .Title }}">
-  <link rel="icon" sizes="512x512" href="{{ .Site.BaseURL }}static/images/icon.png">
+  <link rel="icon" sizes="512x512" href="{{ "static/images/icon.png" | relURL }}">
 
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}static/styles/main.css">
-  <script src="{{ .Site.BaseURL }}static/scripts/vendor/modernizr-custom.js"></script>
+  <link rel="stylesheet" href="{{ "static/styles/main.css" | relURL }}">
+  <script src="{{ "static/scripts/vendor/modernizr-custom.js" | relURL }}"></script>
 </head>
 <body>
