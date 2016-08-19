@@ -37,11 +37,11 @@ const copy = {
 };
 
 const hugo = {
-  host: `http://${host}`,
-  sourcePath: 'hugo',
+  devHost: `http://${host}`,
   destinationPath,
+  sourcePath: 'hugo',
   port,
-  watch: ['hugo/**/*.{html,md,yaml}'],
+  watch: ['hugo/**/*.{md,yaml}', `${sourcePath}/layouts/**/*.html`],
 };
 
 const images = {
