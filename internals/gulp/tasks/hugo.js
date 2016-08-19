@@ -10,7 +10,7 @@ const isProduction = argv.p;
 const dest = path.join(process.cwd(), cfg.destinationPath);
 const src = path.join(process.cwd(), cfg.sourcePath);
 
-const devOpts = !isProduction ? `--buildDrafts=true --baseUrl="${cfg.host}:${cfg.port}/"` : '';
+const devOpts = !isProduction ? `--buildDrafts=true --baseUrl="${cfg.devHost}:${cfg.port}/"` : '';
 const command = `hugo --config=hugo/config.yaml -s ${src} -d ${dest} ${devOpts}`;
 
 /**

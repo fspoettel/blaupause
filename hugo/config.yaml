@@ -4,6 +4,7 @@ title: "Blaupause"
 enableRobotsTXT: "true"
 googleAnalytics: "UA-XXXXXX"
 languageCode: "en-us"
+layoutdir: '../src/layouts'
 metaDataFormat: "yaml"
 params:
   AuthorName: "Felix Spöttel"
