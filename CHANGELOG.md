@@ -1,5 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
+
+## [2.1.0] 2016-08-19
+### Changed
+- Moved `./hugo/layouts` to `./src/layouts` to better divide content and display
+- Renamed `hugo.host` to `hugo.devHost` in `./internals/gulp/config`
+-  Modernizr is loaded async
+
 ## [2.0.3] - 2016-08-12
 ### Added
 - Added minimal default templates
