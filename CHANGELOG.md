@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] 2016-08-31
+### Changed
+- Remove .html-endings from partials
+
 ## [2.1.0] 2016-08-19
 ### Changed
 - Moved `./hugo/layouts` to `./src/layouts` to better divide content and display
