@@ -1,7 +1,8 @@
-{{ partial "html_head.html" . }}
+{{ partial "html_head" . }}
   <main>
-    {{ partial "header.html" . }}
-    {{ partial "footer.html" . }}
+    {{ partial "header" . }}
+    {{ partial "image/svg" (dict "icon" "yolo") }}
+    {{ partial "footer" . }}
   </main>
 
-{{ partial "html_foot.html" . }}
+{{ partial "html_foot" . }}
