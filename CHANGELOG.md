@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] 2016-09-10
+### Improved
+- Improved templates
+- Improved `gh-pages` styling
+- Improved docs
+
+### Fixed
+- Fixed linting not triggering broken builds
+
 ## [2.2.0] 2016-09-10
 ### Added
 - Added automatic travis `gh-pages` builds
