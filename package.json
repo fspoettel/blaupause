@@ -60,7 +60,6 @@
     "lint-scripts": "eslint src/scripts internals/gulp ./*.js",
     "lint-styles": "stylelint --syntax scss src/styles/**/*.scss",
     "lint": "npm run lint-styles; npm run lint-scripts",
-    "pretest": "npm run lint",
     "test": "ava"
   },
   "ava": {

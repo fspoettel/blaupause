@@ -1,12 +1,7 @@
 {{ partial "html_head" . }}
   <main>
     {{ partial "header" . }}
-
-    {{ range .Data.Pages }}
-      {{ .Title }}
-    {{ end }}
-
+    {{ range .Data.Pages }}{{ .Title }}{{ end }}
     {{ partial "footer" . }}
   </main>
-
 {{ partial "html_foot" . }}
