@@ -1,8 +1,13 @@
-language: node_js
-node_js:
-- stable
+language: go
+install:
+- nvm install stable
+- nvm use stable
+- npm install
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then go get -v github.com/spf13/hugo; fi
+script:
+- npm run test
 after_success:
-- "bash ./internals/scripts/deploy.sh"
+- bash ./internals/scripts/deploy.sh
 cache:
   directories:
   - node_modules
