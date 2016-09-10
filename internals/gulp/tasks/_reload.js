@@ -1,4 +1,3 @@
-
 const browserSync = require('../config').browserSync.instance;
 const gulp = require('gulp');
 const gutil = require('gulp-util');

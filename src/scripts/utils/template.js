@@ -1,5 +1,7 @@
 /**
- * Template Utility Functions
+ * Template utils
+ * Note that these functions use `innerHTML` internally which comes with some security gotchas.
+ * See: https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#Security_considerations
  * @module utils/template
  */
 import { warn } from '../utils';
@@ -13,7 +15,7 @@ const supportsTemplate = () => {
   const support = 'content' in doc.createElement('template');
 
   if (!support) {
-    warn("Browser doesn't support <template>. This won't work for <td>, <tr>, <pre>, <select>");
+    warn("Browser doesn't support <template>. Templates won't work for <td>, <tr>, <pre> and <select>!");
   }
 
   return support;

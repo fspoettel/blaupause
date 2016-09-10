@@ -1,9 +1,8 @@
+/* eslint-disable no-console */
 /**
- * Console Utils
+ * Console utils
  * @module utils/console
  */
-
-/* eslint-disable no-console */
 
 /**
  * Decorate a message

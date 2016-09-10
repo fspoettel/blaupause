@@ -14,6 +14,7 @@ const port = process.env.PORT || 3000;
 
 const browserSync = {
   instance: bs,
+  // browsersync settings
   options: {
     files: false,
     host,
@@ -24,6 +25,7 @@ const browserSync = {
 };
 
 const copy = {
+  // each bundle is an object consisting of source-glob and destination-path
   bundles: [
     {
       sourcePath: `${sourcePath}/webfonts/*.{ttf,woff,woff2}`,
@@ -47,7 +49,7 @@ const hugo = {
 const images = {
   sourcePath: `${sourcePath}/images/**/*.{jpg,jpeg,png,gif}`,
   destinationPath: `${assetPath}/images`,
-  // Imagemin-Settings
+  // imagemin settings
   settings: {
     progressive: true,
   },
@@ -55,7 +57,7 @@ const images = {
 
 const modernizr = {
   destinationPath: `${assetPath}/scripts/vendor`,
-  // Customizr Settings
+  // customizr settings
   fileName: 'modernizr-custom.js',
   settings: {
     options: [
@@ -70,6 +72,7 @@ const modernizr = {
 };
 
 const scripts = {
+  // to configure webpack, see `tasks/scripts`
   bundles: [`${sourcePath}/scripts/*.js`],
   destinationPath: `${assetPath}/scripts`,
   watch: [`${sourcePath}/scripts/**/*.{js,jsx}`],
@@ -82,6 +85,7 @@ const styles = {
   sourcePath: `${sourcePath}/styles/*.{sass,scss}`,
   destinationPath: `${assetPath}/styles`,
   watch: [`${sourcePath}/styles/**/*.{sass,scss}`],
+  // autoprefixer settings
   autoprefixer: {
     browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.4'],
   },

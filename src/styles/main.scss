@@ -17,34 +17,39 @@
 // 2. Vendors
 // There is two ways to require vendor-files:
 // - The `vendors`-folder can contain code from external libraries.
-// - You can import directly from npm / bower by refeencing the approriate path
-// If you have to overwrite sections of a vendor-file, use an `overwrites`-folder
+// - You can import directly from npm / bower by referencing the approriate path
+// If you have to overwrite sections of a vendor-file, use a `vendor-extensions`-folder
 @import
+  // family.scss abstracts complex nth-child logic into mixins, see: https://github.com/LukyVj/family.scss
   "node_modules/family.scss/source/src/family",
+  // hagrid provides flexbox grid mixins, see: https://github.com/fspoettel/hagrid
   "node_modules/hagrid/scss/hagrid",
+  // modular-scale makes it easy to compose type-scales, see: https://github.com/modularscale/modularscale-sass
   "node_modules/modularscale-sass/stylesheets/modular-scale",
+  // sanitize.css is a css-foundation based on best practices, see: https://github.com/jonathantneal/sanitize.css
   "node_modules/sanitize.css/sanitize";
 
 // 3. Base
 // The `base`-folder holds the boilerplate code for the project.
-// It contains a reset and animations-file as well as global typographic rules
+// It typographic and global rules as well as animation-declarations
 @import
   "base/animations",
   "base/base",
   "base/typography";
 
-// 4. Modules
-// Modules are singular, composable abstractions. Your app should mostly be composed of them.
+// 4. Components
+// Components are singular, composable abstractions. Examples for a component are a button or a data-table.
+// Components do one thing and one thing only and should be re-usable.
 @import
-  "modules/button";
+  "components/button";
 
-// 5. Partials
-// Partials are used to lay out your site.
+// 5. Layout
+// Layouts contains styles to lay out the main parts of the page. Examples are header, navbars or forms.
 @import
-  "partials/header",
-  "partials/footer";
+  "layout/header",
+  "layout/footer";
 
-// 6. Routes
-// The `routes`-folder contains page-specific styles that can't be fit into modules or partials.
+// 6. Pages
+// The `pages`-folder contains page-specific styles that can't be fit into modules or partials.
 @import
-  "routes/home";
+  "pages/home";

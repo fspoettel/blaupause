@@ -1,8 +1,7 @@
 /**
- * Ready Utility
+ * Ready util
  * @module utils/ready
  */
-
 const doc = document;
 
 // Cache an event reference for deferred ready-handlers

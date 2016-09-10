@@ -1,4 +1,4 @@
-<!-- See README.md for usage info -->
+<!-- Takes a svg-symbol id and an optional class and outputs an svg-icon via `use`-->
 <svg {{ if .class }}class="{{ .class }}"{{ end }}>
   <use xlink:href="{{ "static/svg/sprite.symbol.svg#" | relURL }}{{ .id }}" />
 </svg>
