@@ -3,7 +3,7 @@
 set -o errexit -o nounset
 
 # Do nothing if the commit was not pushed to master
-if [ "$TRAVIS_PULL_REQUEST" != "false" ] || [ "$TRAVIS_BRANCH" != "master" ]
+if [ "$TRAVIS_PULL_REQUEST" != "false" ] || [ "$TRAVIS_BRANCH" != "docs" ]
 then
   echo "This commit was made inside a pull request or against the $TRAVIS_BRANCH and not the master! No deploy!"
   exit 0

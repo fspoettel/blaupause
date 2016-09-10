@@ -1,7 +1,8 @@
 {
-  "name": "blaupause",
-  "version": "2.2.1",
-  "description": "hugo + gulp + webpack + sass starter kit",
+  "name": "blaupause-docs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Documentation for Blaupause",
   "main": "gulpfile.js",
   "author": "Felix Spöttel",
   "license": "MIT",

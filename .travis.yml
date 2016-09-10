@@ -3,7 +3,7 @@ install:
 - nvm install stable
 - nvm use stable
 - npm install
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then go get -v github.com/spf13/hugo; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "docs" ]; then go get -v github.com/spf13/hugo; fi
 script:
 - npm run lint-styles
 - npm run lint-scripts
