@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "hugo + gulp + webpack + sass starter kit",
   "main": "gulpfile.js",
   "author": "Felix Spöttel",
