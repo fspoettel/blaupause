@@ -48,20 +48,20 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
 ## Available Tasks
 
 * `gulp`* Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
-* `gulp build`* (Re-)Builds project
-* `gulp build:clean`* Cleans destination folder
-* `gulp copy:build`* Copies arbitrary files to a destination
-* `gulp hugo:build`* Builds markup via Hugo
-* `gulp images:build`* Optimize images
-* `gulp images:clean`* Clean images
-* `gulp modernizr:build`* Build a custom Modernizr (Add feature-tests in `./gulp/config.js`)
-* `gulp modernizr:clean`* Clean custom Modernizr
-* `gulp styles:build`* Builds styles
-* `gulp styles:clean`* Clean styles
-* `gulp scripts:build`* Builds scripts
-* `gulp scripts:clean`* Clean scripts
-* `gulp svg:build`* Optimizes SVGs and creates a symbol-sprite
-* `gulp svg:clean`* Clean symbol-sprite
+* `gulp build` (Re-)Builds project
+* `gulp build:clean` Cleans destination folder
+* `gulp copy:build` Copies arbitrary files to a destination
+* `gulp hugo:build` Builds markup via Hugo
+* `gulp images:build` Optimize images
+* `gulp images:clean` Clean images
+* `gulp modernizr:build` Build a custom Modernizr (Add feature-tests in `./gulp/config.js`)
+* `gulp modernizr:clean` Clean custom Modernizr
+* `gulp styles:build` Builds styles
+* `gulp styles:clean` Clean styles
+* `gulp scripts:build` Builds scripts
+* `gulp scripts:clean` Clean scripts
+* `gulp svg:build` Optimizes SVGs and creates a symbol-sprite
+* `gulp svg:clean` Clean symbol-sprite
 
 ## Production Builds
 

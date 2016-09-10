@@ -14,7 +14,7 @@ git config --global user.email "travis-ci@localhost"
 git config --global user.name "Travis CI"
 
 # Rebuild docs with webpack
-gulp -p
+gulp build -p
 
 # Initialize an empty repository, fetch upstream and reset it
 rev=$(git rev-parse --short HEAD)
