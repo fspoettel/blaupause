@@ -6,70 +6,96 @@
 
 This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/) being installed on your machine. To initiate a new site, do:
 
- 1. `git clone https://github.com/felics/blaupause project`
- 2. `cd project`
- 3. `npm install`
- 4. `gulp`
+1. `git clone https://github.com/felics/blaupause project`
+2. `cd project`
+3. `npm install`
+4. `gulp`
 
 ## In the box
 
 ### Static Site Generator
 
- - [Hugo*](https://gohugo.io) with a basic [HTML5 Boilerplate](https://html5boilerplate.com/) layout
- - [BrowserSync](http://www.browsersync.io/)
+* [Hugo*](https://gohugo.io) with a basic [HTML5 Boilerplate](https://html5boilerplate.com/) layout
+* [BrowserSync](http://www.browsersync.io/)
+* (Documentation) Useful recipes for common tasks
 
 ### JS
 
- - [Webpack](http://webpack.github.io)
- - [Babel](babeljs.io)
- - [ESLint](http://eslint.org/)
- - [Ava with jsdom for unit tests](https://github.com/avajs/ava)
- - [Customizable Modernizr](http://modernizr.com/)
-
+* [Webpack](http://webpack.github.io)
+* [Babel](babeljs.io)
+* [ESLint](http://eslint.org/)
+* [Ava with jsdom for unit tests](https://github.com/avajs/ava)
+* [Customizable Modernizr](http://modernizr.com/)
 
 ### SCSS
 
- - [SASS](http://sass-lang.com/)
- - [Autoprefixer](https://github.com/postcss/autoprefixer)
- - [Stylelint](http://stylelint.io/)
- - (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) + [Sanitize.css](https://github.com/10up/sanitize.css) with a couple of useful mixins
+* [SASS](http://sass-lang.com/)
+* [Autoprefixer](https://github.com/postcss/autoprefixer)
+* [Stylelint](http://stylelint.io/)
+* (Optional) SASS boilerplate based on [SASS Guidelines](https://sass-guidelin.es/) + [Sanitize.css](https://github.com/10up/sanitize.css) with a couple of useful mixins
 
 ### And the rest
 
- - [Gulp](http://gulpjs.com/)-based builds
- - [Travis](https://travis-ci.org)-based tests
- - [EditorConfig](http://editorconfig.org/)
- - `Sourcemaps` in non-production mode
- - `Production`-flag for smaller builds
+* [Gulp](http://gulpjs.com/)-based builds
+* [Travis](https://travis-ci.org)-based tests
+* [EditorConfig](http://editorconfig.org/)
+* `Sourcemaps` in non-production mode
+* `Production`-flag for smaller builds
+* Example Travis `gh-pages` deployment
 
 \* Due to the structure of this repository, Hugo themes are not supported.
 
 ## Available Tasks
 
- - `gulp` - Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
- - `gulp build` - (Re-)Builds project
- - `gulp build:clean` - Cleans destination folder
- - `gulp copy:build` - Copies arbitrary files to a destination
- - `gulp hugo:build` - Builds markup via Hugo
- - `gulp images:build` - Optimize images
- - `gulp images:clean` - Clean images
- - `gulp modernizr:build` - Build a custom Modernizr (Add feature-tests in `./gulp/config.js`)
- - `gulp modernizr:clean` - Clean custom Modernizr
- - `gulp styles:build` - Builds styles
- - `gulp styles:clean` - Clean styles
- - `gulp scripts:build` - Builds scripts
- - `gulp scripts:clean` - Clean scripts
- - `gulp svg:build` - Optimizes SVGs and creates a symbol-sprite
- - `gulp svg:clean` - Clean symbol-sprite
+* `gulp`* Builds the project files, starts BrowserSync and server(if wanted) and watches for changes to project files.
+* `gulp build`* (Re-)Builds project
+* `gulp build:clean`* Cleans destination folder
+* `gulp copy:build`* Copies arbitrary files to a destination
+* `gulp hugo:build`* Builds markup via Hugo
+* `gulp images:build`* Optimize images
+* `gulp images:clean`* Clean images
+* `gulp modernizr:build`* Build a custom Modernizr (Add feature-tests in `./gulp/config.js`)
+* `gulp modernizr:clean`* Clean custom Modernizr
+* `gulp styles:build`* Builds styles
+* `gulp styles:clean`* Clean styles
+* `gulp scripts:build`* Builds scripts
+* `gulp scripts:clean`* Clean scripts
+* `gulp svg:build`* Optimizes SVGs and creates a symbol-sprite
+* `gulp svg:clean`* Clean symbol-sprite
 
 ## Production Builds
 
 You can generate a production-ready build ("real" BaseURL, no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code) by passing `-p` to any build task.
 
-## Adding tasks
+## Configuration
 
-You can add tasks by creating a `.js`-file in `.internals/gulp/tasks` that contain a task, a reference to `gulp` and the `gulp`-modules you want to use. You can then add it to the run-sequence in `build`.
+The build configuration is done in `./internals/gulp/config.js` and `./hugo/config.yaml`. A breakdown of the most important keys:
 
+``` yaml
+# ./hugo/config.yaml
+
+# The baseurl of the build artifact. Note that this is ignored in development mode
+baseurl: "http://fspoettel.github.io/blaupause/"
+
+# The rest of the file is a "normal" Hugo config. Check the hugo docs to see how it works if you are not familiar with it
+```
+
+``` js
+// ./gulp/config.js
+
+// The directory that will contain the built page
+const destinationPath = 'public';
+// The directory that will contain all assets (css, js, img)
+const assetPath = `${destinationPath}/static`;
+// The source path that contains sass, es6 etc
+const sourcePath = 'src';
+
+// Changes the port and address the development server will be run at. Also changes Hugo `baseurl` in dev-mode
+const host = 'localhost';
+const port = process.env.PORT || 3000;
+
+// The rest of the file contains task specific configuration that you may or may not want to change
+```
 ## Hugo
 
 The static site generation is done by [Hugo](https://gohugo.io). The content and configuration is organized in `./hugo` and the layouts can be found in `./src/layouts`. Make sure to adjust `layoutdir` in `./hugo/config.yaml` if you decide to change `sourcePath` in the gulp-config.
@@ -83,6 +109,11 @@ Reference a SVG-symbol from `/static/svg/sprite.symbol.svg` by ID. SVGs are gene
 ``` html
   <div class="icon">{{ partial "image/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
 ```
+
+## Adding tasks
+
+You can add tasks by creating a `.js`-file in `.internals/gulp/tasks` that contain a task, a reference to `gulp` and the `gulp`-modules you want to use. You can then add it to the run-sequence in `build`.
+
 
 ## Recipes
 
@@ -126,3 +157,10 @@ import $ from 'jquery';
 
 $(body).addClass('done');
 ```
+
+## Deploy
+
+The build product can be deployed practically anywhere since it is just a static html page. This repository serves as an example on how to deploy to `gh-pages`.
+
+* `./hugo/config.yaml{baseurl}` is set to the real path of the site
+* Travis is set up to automatically run `./internals/scripts/deploy.sh` after a succesful master-build. `deploy.sh` runs `gulp -p` and force-pushes the build-folder to the `gh-pages`-branch (for more information on how to set up Travis-deployment to `gh-pages`, check out [steveklabnik/automatically_update_github_pages_with_travis_example](https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example)).
