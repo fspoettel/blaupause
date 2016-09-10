@@ -8,4 +8,5 @@ layoutdir: '../src/layouts'
 metaDataFormat: "yaml"
 params:
   AuthorName: "Felix Spöttel"
+  AuthorLink: "https://github.com/fspoettel"
 ---

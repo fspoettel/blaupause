@@ -1,14 +1,8 @@
 /* TEAM */
-Developer:
-Site:
-Twitter:
-Location:
-
-/* THANKS */
-Name:
+Developer: Felix Spöttel
+Site: https://github.com/fspoettel
+Location: Berlin, Germany
 
 /* SITE */
-Last update:
-Standards:
-Components:
-Software:
+Last update: 09.2016
+Standards: HTML5, ES6, CSS3
