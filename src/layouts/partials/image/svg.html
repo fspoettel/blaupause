@@ -1,10 +1,4 @@
-{{/*
-   * Usage:
-   * {{ partial "image/svg" (dict "id" "arrow-left" "class" "custom") }}
-   */}}
-
-{{ $svgPrefix := "static/svg/sprite.symbol.svg#" | relURL }}
-
+<!-- See README.md for usage info -->
 <svg {{ if .class }}class="{{ .class }}"{{ end }}>
-  <use xlink:href="{{ $svgPrefix }}{{ .id }}" />
+  <use xlink:href="{{ "static/svg/sprite.symbol.svg#" | relURL }}{{ .id }}" />
 </svg>
