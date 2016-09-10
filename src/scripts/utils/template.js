@@ -36,10 +36,10 @@ const renderHtml = (html, nodeList = false) => {
  * @param {String} HTML representing a single element
  * @return {Element}
  */
-export const htmlToElement = (html) => renderHtml(html);
+export const htmlToElement = html => renderHtml(html);
 
 /**
  * @param {String} HTML representing any number of sibling elements
  * @return {NodeList}
  */
-export const htmlToElements = (html) => renderHtml(html, true);
+export const htmlToElements = html => renderHtml(html, true);

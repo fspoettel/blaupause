@@ -1,19 +1,9 @@
-language: go
-install:
-- nvm install stable
-- nvm use stable
-- npm install
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then go get -v github.com/spf13/hugo; fi
-script:
+language: node_js
+nodejs:
+- "stable"
+before_script:
 - npm run lint-styles
 - npm run lint-scripts
-- npm run test
-after_success:
-- bash ./internals/scripts/deploy.sh
 cache:
   directories:
   - node_modules
-env:
-  global:
-  - GITHUB_REPO="fspoettel/blaupause"
-  - secure: JG6l+nuqnVN2Hg36fQ6NpyWSa+fYhZpEbw+qSi4MD8X1Ymwgi0IMs+hjKTgSr/S0NbKA/U2MXpMIuJNKvZQUQ+5Q1iIMIyq816WGmNbyOOnPia3ek4dA+y2J3cmtmZ/U8y6Te3gRrm9TrW//D6M9OyYPJe1+5pauopvci4EcJvw=

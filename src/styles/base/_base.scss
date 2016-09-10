@@ -14,35 +14,3 @@ video {
   max-width: 100%;
   height: auto;
 }
-
-// Demo Styles
-.page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 1.5vh 3vw;
-  background-color: $color-brand;
-  color: $color-background;
-}
-
-.page-header {
-  display: flex;
-  flex: 1 0 auto;
-  align-items: center;
-  height: 100%;
-}
-
-.page-title {
-  font-size: 2.5rem;
-  line-height: 1;
-}
-
-.page-footer {
-  flex: 0 0 auto;
-  padding: 0.25rem;
-  background: $color-background;
-  color: $color-brand;
-  font-weight: 200;
-}
