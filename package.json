@@ -32,7 +32,7 @@
     "cssnano": "^3.7.4",
     "del": "^2.2.2",
     "eslint": "^3.5.0",
-    "eslint-config-airbnb-base": "^7.0.0",
+    "eslint-config-airbnb-base": "^7.1.0",
     "eslint-plugin-import": "^1.14.0",
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.1",
