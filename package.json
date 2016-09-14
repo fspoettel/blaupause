@@ -28,7 +28,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-1": "^6.13.0",
     "babel-register": "^6.14.0",
-    "browser-sync": "^2.15.0",
+    "browser-sync": "^2.16.0",
     "cssnano": "^3.7.4",
     "del": "^2.2.2",
     "eslint": "^3.5.0",
