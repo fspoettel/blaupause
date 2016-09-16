@@ -1,4 +1,3 @@
-
 const argv = require('yargs').boolean('p').argv;
 const browserSync = require('../config').browserSync.instance;
 const del = require('del');
@@ -11,6 +10,10 @@ const streamSize = require('../util/streamsize');
 const webpack = require('webpack-stream');
 const cfg = require('../config').scripts;
 
+/**
+ * @name - scripts:build
+ * @task - Builds javascript with Webpack
+ */
 const isProduction = argv.p;
 
 const webpackConfig = {
@@ -44,10 +47,6 @@ if (isProduction) {
   }));
 }
 
-/**
- * @name - scripts:build
- * @task - Builds javascript with Webpack
- */
 gulp.task('scripts:build', () =>
   gulp.src(cfg.bundles)
     .pipe(named())

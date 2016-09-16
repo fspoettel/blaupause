@@ -1,8 +1,7 @@
 /**
- * bundle.js
- * Entry-point for webpack - import your app from here!
+ * main.js
+ * Entrypoint for webpack
  */
-
 import { ready, info } from './utils';
 
 function onReady(e) {

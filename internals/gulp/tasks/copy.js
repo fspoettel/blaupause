@@ -1,4 +1,3 @@
-
 const gulp = require('gulp');
 const cfg = require('../config').copy;
 

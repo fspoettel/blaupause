@@ -5,6 +5,10 @@ const streamSize = require('../util/streamsize');
 const svgSprite = require('gulp-svg-sprite');
 const cfg = require('../config').svg;
 
+/**
+ * @name - svg:build
+ * @task - Builds & optimizes a SVG sprite from a source folder of SVG files
+ */
 const svgSpriteConfig = {
   transform: ['svgo'],
   mode: {
@@ -15,10 +19,6 @@ const svgSpriteConfig = {
   },
 };
 
-/**
- * @name - svg:build
- * @task - Builds & optimizes a SVG sprite from a source folder of SVG files
- */
 gulp.task('svg:build', () =>
   gulp.src(cfg.sourcePath)
     .pipe(svgSprite(svgSpriteConfig))

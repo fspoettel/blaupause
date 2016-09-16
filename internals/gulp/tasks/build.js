@@ -1,4 +1,3 @@
-
 const del = require('del');
 const gulp = require('gulp');
 const runSequence = require('run-sequence');

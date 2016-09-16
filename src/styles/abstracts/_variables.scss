@@ -10,15 +10,15 @@
 /// @type {List}
 $text-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 
-/// Text Line Height
+/// Text line-height
 /// @type {Number}
-$text-line-height: 1.5;
+$text-line-height: 1.5 !default;
 
 /// Background color
 /// @type {Color}
 $color-background: #fff !default;
 
-/// Copy text color
+/// Copy text-color
 /// @type {Color}
 $color-text: #232323 !default;
 
@@ -26,7 +26,7 @@ $color-text: #232323 !default;
 /// @type {Color}
 $color-brand: #2271ff !default;
 
-/// Gutters, used by `mixins/_hagrid`.
+/// Gutters for `hagrid`
 /// @property {Number}
 /// @see {mixin} bp
 $layout-gutters: (
@@ -36,7 +36,7 @@ $layout-gutters: (
   wide: 3rem
 ) !default;
 
-/// Breakpoints, used by `mixins/_hagrid`. Breakpoints can be used via Hagrid's @bp-mixin.
+/// Breakpoints for `hagrid`. Use via @bp(), see: https://github.com/fspoettel/hagrid
 /// @property {String}
 $layout-breakpoints: (
   sm: "(min-width: 35.5em)",
@@ -45,18 +45,18 @@ $layout-breakpoints: (
   xl: "(min-width: 80em)"
 ) !default;
 
-/// Webfont Path Prefix
+/// Webfont-path prefix
 /// @type {String}
 $path-webfonts: "webfonts/" !default;
 
-/// Image Path Prefix
+/// Image-path prefix
 /// @type {String}
 $path-images: "../images/" !default;
 
-/// Overwrite Hagrid Breakpoints
+/// Overwrite hagrid's breakpoints with $layout-breakpoints
 /// @type {List}
 $hagrid-breakpoints: $layout-breakpoints;
 
-/// Overwrite Hagrid Gutters
+/// Overwrite hagrid's gutters with $layout-gutters
 /// @type {List}
-$hagrid-gutters: $layout-gutters;
+$hagrid-gutters: $layout-gutters !default;

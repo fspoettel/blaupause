@@ -9,6 +9,6 @@
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "theme_color": "aliceblue",
-  "background_color": "red"
+  "theme_color": "",
+  "background_color": ""
 }
