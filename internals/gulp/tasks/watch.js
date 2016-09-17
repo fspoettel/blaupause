@@ -12,7 +12,7 @@ gulp.task('watch', ['build'], () => {
 
   const watch = (...args) => gulp.watch(...args);
 
-  cfg.copy.bundles.forEach(bundle => {
+  cfg.copy.bundles.forEach((bundle) => {
     watch(bundle.sourcePath, () => { runSequence('copy:build', 'reload'); });
   });
 

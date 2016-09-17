@@ -2,7 +2,7 @@ import test from 'ava';
 import ready from '../ready';
 
 // We can only test the behavior 'readyState !== loading'
-test('ready() should fire if readyState !== loading', t => {
+test('ready() should fire if readyState !== loading', (t) => {
   let val = false;
 
   function onReady() {
@@ -13,7 +13,7 @@ test('ready() should fire if readyState !== loading', t => {
   t.true(val);
 });
 
-test('ready() should accept a custom context', t => {
+test('ready() should accept a custom context', (t) => {
   let val = false;
 
   function onReady() {
