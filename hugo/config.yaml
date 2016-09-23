@@ -1,5 +1,5 @@
 ---
-baseurl: ""
+baseurl: "http://change-me.dev"
 title: "Blaupause"
 enableRobotsTXT: "true"
 languageCode: "en-us"

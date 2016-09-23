@@ -6,7 +6,7 @@ const doc = document;
 
 // Cache an event reference for deferred ready-handlers
 let cachedEvent;
-const cacheEvent = e => {
+const cacheEvent = (e) => {
   doc.removeEventListener('DOMContentLoaded', cacheEvent);
   cachedEvent = e;
 };
@@ -24,7 +24,7 @@ const ready = (cb, ctx) => {
   if (doc.readyState !== 'loading') {
     cb.call(context, cachedEvent);
   } else {
-    const onReady = e => {
+    const onReady = (e) => {
       doc.removeEventListener('DOMContentLoaded', onReady);
       cachedEvent = e;
       cb.call(context, e);

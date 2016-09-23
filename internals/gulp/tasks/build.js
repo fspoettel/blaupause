@@ -7,7 +7,7 @@ const destinationPath = require('../config').destinationPath;
  * @name build
  * @task Build the project
  */
-gulp.task('build', done => {
+gulp.task('build', (done) => {
   runSequence(
     'build:clean',
     ['copy:build', 'hugo:build', 'images:build', 'modernizr:build', 'scripts:build', 'styles:build', 'svg:build'],
