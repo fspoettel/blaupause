@@ -6,9 +6,22 @@
 /// @group Config
 ////
 
+/// System font stack, see: https://bitsofco.de/the-new-system-font-stack/
+/// @type {List}
+$system-font-stack:
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen-Sans,
+  Ubuntu,
+  Cantarell,
+  'Helvetica Neue',
+  sans-serif;
+
 /// Regular font family
 /// @type {List}
-$text-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$text-font-stack: $system-font-stack !default;
 
 /// Text line-height
 /// @type {Number}
