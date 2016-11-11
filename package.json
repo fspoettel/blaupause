@@ -31,7 +31,7 @@
     "browser-sync": "^2.17.0",
     "cssnano": "^3.7.6",
     "del": "^2.2.2",
-    "eslint": "^3.7.1",
+    "eslint": "^3.10.0",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^2.0.0",
     "gulp": "^3.9.1",
