@@ -43,7 +43,7 @@ const hugo = {
   destinationPath,
   sourcePath: 'hugo',
   port,
-  watch: ['hugo/**/*.{md,yaml}', `${sourcePath}/layouts/**/*.html`],
+  watch: ['hugo/**', `${sourcePath}/layouts/**/*.html`],
 };
 
 const images = {
