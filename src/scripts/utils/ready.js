@@ -21,7 +21,7 @@ doc.addEventListener('DOMContentLoaded', cacheEvent);
 const ready = (cb, ctx) => {
   const context = ctx || window;
 
-  if (doc.readyState !== 'loading') {
+  if (doc.readyState === 'complete') {
     cb.call(context, cachedEvent);
   } else {
     const onReady = (e) => {

@@ -6,7 +6,7 @@ const isNodeList = (nodes) => {
   const stringRepr = Object.prototype.toString.call(nodes);
 
   return typeof nodes === 'object' &&
-    /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
+    /^\[object (HTMLCollection|NodeList|Object)]$/.test(stringRepr) &&
     nodes.length !== undefined &&
     (nodes.length === 0 || isElement(nodes[0]));
 };
