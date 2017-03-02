@@ -17,7 +17,7 @@
     "family.scss": "^1.0.8",
     "hagrid": "^3.1.2",
     "modularscale-sass": "^2.1.1",
-    "sanitize.css": "^4.1.0"
+    "sanitize.css": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
