@@ -5,7 +5,7 @@ const destinationPath = require('../config').destinationPath;
 
 /**
  * @name build
- * @task Build the project
+ * @task builds the project
  */
 gulp.task('build', (done) => {
   runSequence(
@@ -17,7 +17,7 @@ gulp.task('build', (done) => {
 
 /**
  * @name build:clean
- * @task Clean the build directory
+ * @task cleans the build directory
  */
 gulp.task('build:clean', () =>
   del([destinationPath]));
