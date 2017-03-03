@@ -5,8 +5,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {{ $title := delimit (slice .Title ":" .Site.Title) " " }}
-
+  {{ $title := delimit (slice .Title "&middot;" .Site.Title) " " }}
   <title>{{ $title }}</title>
 
   <meta name="description" content="{{ .Description }}">
@@ -22,7 +21,9 @@
   {{ end }}
 
   <link rel="stylesheet" href="{{ "static/styles/main.css" | relURL }}">
+  {{ if .Site.Params.blaupause.useModernizr }}
   <script defer src="{{ "static/scripts/vendor/modernizr-custom.js" | relURL }}"></script>
+  {{ end }}
   <script defer src="{{ "static/scripts/main.js" | relURL }}"></script>
 </head>
 <body>
