@@ -3,7 +3,7 @@ const cfg = require('../config').copy;
 
 /**
  * @name copy:build
- * @task Copy multiple static assets to the build directory
+ * @task copies multiple static assets to the build directory
  */
 gulp.task('copy:build', () => {
   const tasks = cfg.bundles.map(bundle =>

@@ -1,7 +1,9 @@
 {{ partial "html_head" . }}
+<div class="page">
+  {{ partial "header" . }}
   <main>
-    {{ partial "header" . }}
     {{ range .Data.Pages }}{{ .Title }}{{ end }}
-    {{ partial "footer" . }}
   </main>
+  {{ partial "footer" . }}
+</div>
 {{ partial "html_foot" . }}

@@ -6,6 +6,7 @@ const doc = document;
 
 // Cache an event reference for deferred ready-handlers
 let cachedEvent;
+
 const cacheEvent = (e) => {
   doc.removeEventListener('DOMContentLoaded', cacheEvent);
   cachedEvent = e;

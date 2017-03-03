@@ -1,6 +1,5 @@
 const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('autoprefixer');
-const browserSync = require('../config').browserSync.instance;
 const cssnano = require('cssnano');
 const del = require('del');
 const gulp = require('gulp');
@@ -8,26 +7,40 @@ const gulpif = require('gulp-if');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const streamSize = require('../util/streamsize');
+const browserSync = require('../config').browserSync.instance;
 const cfg = require('../config').styles;
+const streamSize = require('../util/streamsize');
 
 /**
  * @name - styles:build
- * @task - Compiles, prefixes & minfies SCSS-files
+ * @task - compiles, prefixes & minfies SCSS-files
+ */
+
+/**
+ * Production Mode
+ * if set, the css output will be optimized
+ * @type {Boolean}
  */
 const isProduction = argv.p;
 
-const processors = [autoprefixer(cfg.autoprefixer)];
+/**
+ * Processors that will be passed to postcss
+ * @type {Array}
+ */
+const processors = [
+  autoprefixer(cfg.autoprefixer),
+];
 
-if (isProduction) {
-  processors.push(cssnano());
-}
+const productionProcessors = [
+  ...processors,
+  cssnano(),
+];
 
 gulp.task('styles:build', () =>
   gulp.src(cfg.sourcePath)
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(processors))
+    .pipe(postcss(isProduction ? productionProcessors : processors))
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulpif(isProduction, streamSize('CSS')))
     .pipe(gulp.dest(cfg.destinationPath))
@@ -36,7 +49,7 @@ gulp.task('styles:build', () =>
 
 /**
  * @name - styles:clean
- * @task - Removes the css build directory
+ * @task - removes the css build directory
  */
 gulp.task('styles:clean', () =>
   del([`${cfg.destinationPath}/**`]));

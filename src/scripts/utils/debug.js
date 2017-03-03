@@ -53,7 +53,7 @@ const log = (...messages) => message('log', ...messages);
 const warn = (...messages) => message('warn', ...messages);
 
 const debug = (mode, ...messages) => {
-  if (process.env.NODE_ENV === 'production') { return null; }
+  if (process.env.NODE_ENV === 'production') { return; }
 
   switch (mode) {
     case 'error':
@@ -69,8 +69,6 @@ const debug = (mode, ...messages) => {
       log(...messages);
       break;
   }
-
-  return true;
 };
 
 export default debug;
