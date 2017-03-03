@@ -1,5 +1,4 @@
 ---
-title: Home
-kind: 'home'
+title: Blaupause
 ---
-HomePage Content
+Some Content

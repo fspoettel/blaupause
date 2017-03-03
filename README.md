@@ -62,6 +62,13 @@ The build configuration is setup in `./internals/gulp/config.js` and `./hugo/con
 # The baseurl of the build artifact. Ignored in development mode
 baseurl: "http://fspoettel.github.io/blaupause/"
 
+# Params
+# Blaupause configuration can be found under the key `blaupause`
+params:
+  blaupause:
+    # Includes our custom modernizr built with gulp if set
+    useModernizr: false
+
 # The rest of the file is a "normal" Hugo config. Check the hugo docs to see how it works if you are not familiar with it
 ```
 
