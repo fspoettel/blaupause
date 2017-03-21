@@ -66,7 +66,7 @@ const copy = {
     },
     {
       sourcePath: `${sourcePath}/*.*`,
-      destinationPath,
+      destinationPath: assetPath,
     },
   ],
 };
