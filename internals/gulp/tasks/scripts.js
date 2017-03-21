@@ -59,7 +59,6 @@ gulp.task('scripts:build', () =>
     .pipe(named())
     .pipe(webpackStream(webpackConfig, webpack))
     .on('error', function logError(error) {
-      console.log('logging');
       gutil.log(gutil.colors.red(error.message));
       this.emit('end');
     })
