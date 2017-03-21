@@ -23,7 +23,7 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
 * [Webpack](http://webpack.github.io)
 * [Babel](babeljs.io)
 * [ESLint](http://eslint.org/)
-* [Unit tests via Ava & jsdom](https://github.com/avajs/ava)
+* [Unit tests via Jest](https://facebook.github.io/jest/)
 * [Customizable Modernizr](http://modernizr.com/)
 
 ### SCSS
@@ -124,7 +124,7 @@ Removes the `public`-folder (executed automatically on `gulp build`).
 
 #### `gulp copy:build`
 
-Copies a set of files files into the `public`-folder. By default, it will copy any stray files from the root directory of `src` to the root of `public`. The task can be extended with custom directives in the gulp config. Check out the `jQuery`-Recipe in the recipes section for a common use-case.
+Copies a set of files files into the `public`-folder. By default, it will copy any stray files from the root directory of `src` to the root of `public`. The task can be extended with custom directives in the gulp config. 
 
 #### `gulp hugo:build`
 
@@ -153,8 +153,6 @@ Removes the Modernizr build created by the `modernizr`-task.
 #### `gulp scripts:build`
 
 Transpiles and bundles `js`-files in `./src/scripts/*.js` via Webpack and Babel. Can be configured in the gulp config.
-
-> It is possible to specify `externals` here (see `jQuery` recipe for an example). You can further customize the Webpack config by editing  `./internals/gulp/tasks/scripts.js`.
 
 #### `gulp scripts:clean`
 
@@ -188,50 +186,6 @@ Reference a SVG-symbol from `/static/svg/sprite.symbol.svg#` by ID. SVGs are gen
 
 ``` html
   <div class="icon">{{ partial "image/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
-```
-
-## Recipes
-
-To keep the boilerplate as lean as possible, common tools such as jQuery have not been included in the base boilerplate as they are not needed for every use-case. The following recipes show how these tools can be integrated into the boilerplate efficiently.
-
-### Adding CDN jQuery with a fallback
-
-``` bash
-# Install jquery from npm
-npm install --save jquery
-```
-
-``` js
-// ./internals/gulp/config.js
-
-const scripts = {
-  // Allows you to import jQuery in your js files without adding it to your webpack bundle
-  externals: {
-    jquery: 'jQuery'
-  },
-};
-
-// Copy the latest jQuery from node_modules to static/scripts/vendor
-const copy = [
-  {
-    sourcePath: './node_modules/jquery/dist/jquery.min.js',
-    destinationPath: `${assetPath}/scripts/vendor`,
-  },
-];
-```
-
-``` html
-<!-- hugo/layouts/partial/html_foot.html -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ "static/scripts/vendor/jquery.min.js" | relURL }}"><\/script>')</script>
-<script src="{{ "static/scripts/main.js" | relURL }}"></script>
-```
-
-``` js
-// Use it in your bundle
-import $ from 'jquery';
-
-$(body).addClass('done');
 ```
 
 ## Adding tasks
