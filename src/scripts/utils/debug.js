@@ -18,9 +18,8 @@ const decorateMsg = (msg, decorator = '📐') => `${decorator} ${msg}`;
  */
 const message = (method, ...messages) => {
   if (!!console && !!console[method]) {
-    messages.forEach((msg) => {
-      console[method](decorateMsg(msg));
-    });
+    const [first, ...rest] = messages;
+    console[method](decorateMsg(first), ...rest);
   }
 };
 

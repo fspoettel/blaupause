@@ -47,7 +47,9 @@ const browserSync = {
     host,
     notify: false,
     port,
-    server: destinationPath,
+    server: {
+      baseDir: destinationPath,
+    },
   },
 };
 
@@ -66,7 +68,7 @@ const copy = {
     },
     {
       sourcePath: `${sourcePath}/*.*`,
-      destinationPath,
+      destinationPath: assetPath,
     },
   ],
 };
