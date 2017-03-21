@@ -47,7 +47,9 @@ const browserSync = {
     host,
     notify: false,
     port,
-    server: destinationPath,
+    server: {
+      baseDir: destinationPath,
+    },
   },
 };
 
