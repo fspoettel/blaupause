@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 global.document = require('jsdom').jsdom('<html><body></body></html>');
 
 global.window = document.defaultView;
