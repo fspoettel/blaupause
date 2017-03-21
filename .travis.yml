@@ -4,3 +4,7 @@ nodejs:
 cache:
   directories:
   - node_modules
+script:
+  - yarn test
+  - yarn lint-scripts
+  - yarn lint-styles

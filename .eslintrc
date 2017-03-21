@@ -13,6 +13,7 @@
       "ignoreComments": false
     }],
     "comma-dangle": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
+    "import/prefer-default-export": "off"
   }
 }
