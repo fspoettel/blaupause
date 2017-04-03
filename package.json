@@ -16,7 +16,7 @@
   "dependencies": {
     "family.scss": "^1.0.8",
     "hagrid": "^3.1.2",
-    "modularscale-sass": "^2.1.1",
+    "modularscale-sass": "^3.0.1",
     "sanitize.css": "^5.0.0"
   },
   "devDependencies": {
