@@ -83,7 +83,7 @@ const hugo = {
   destinationPath,
   sourcePath: 'hugo',
   port,
-  watch: ['hugo/content/**', 'hugo/data/**', 'hugo/config.yaml', `${sourcePath}/layouts/**/*.html`]
+  watch: ['hugo/content/**', 'hugo/data/**', 'hugo/config.yaml', 'hugo/layouts/**/*.html']
 };
 
 /**
