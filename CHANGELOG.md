@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [2.5.0] 2017-04-25
+
+- Fix Hugo v0.20.x by moving layouts to `hugo`
+
 # [2.4.1] 2017-04-10
 
 - Improve index page title
