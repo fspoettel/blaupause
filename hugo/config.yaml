@@ -13,7 +13,7 @@ paginate: 10
 archetypeDir: "archetypes"
 contentDir: "content"
 dataDir: "data"
-layoutDir: '../src/layouts'
+layoutDir: 'layouts'
 # Formats
 defaultExtension: "html"
 metaDataFormat: "yaml"
