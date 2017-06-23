@@ -43,6 +43,7 @@ const command = `hugo --config=hugo/config.yaml -s ${src} -d ${dest} ${devOpts}`
 
 gulp.task('hugo:build', done =>
   exec(command, (err, stdout) => {
+    if (err) { gutil.log(gutil.colors.red(err)); }
     gutil.log(gutil.colors.yellow(stdout));
     done();
   })
