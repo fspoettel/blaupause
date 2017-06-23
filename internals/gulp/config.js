@@ -148,7 +148,7 @@ const styles = {
   destinationPath: `${assetPath}/styles`,
   watch: [`${sourcePath}/styles/**/*.{sass,scss}`],
   autoprefixer: {
-    browsers: ['last 2 versions', 'ie >= 10', 'Android >= 4.4'],
+    browsers: ['last 2 versions'],
   },
 };
 
