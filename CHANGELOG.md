@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [2.5.1] 2017-06-23
+
+- Update dependencies
+- Remove Hagrid
+- Log Hugo errors
+- Update Autoprefixer preset
+
 # [2.5.0] 2017-04-25
 
 - Fix Hugo v0.20.x by moving layouts to `hugo`
