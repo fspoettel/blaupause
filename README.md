@@ -1,5 +1,7 @@
 # blaupause ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg?maxAge=2592000?style=flat-square)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fspoettel/blaupause.svg)](https://greenkeeper.io/)
+
 > Blaupause is a developer-friendly Hugo starter kit based around gulp-tasks. It comes es6-ready with several helpers for SVG, fonts and a basic structure for the html, scss and javascript. For a detailed listing of what is included, see "In the box".
 
 ## Installation
