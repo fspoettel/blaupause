@@ -13,6 +13,7 @@ gulp.task('build', (done) => {
     ['copy:build', 'hugo:build', 'images:build', 'modernizr:build', 'scripts:build', 'styles:build', 'svg:build'],
     'hash',
     'hash-replace',
+    'html-min',
     done
   );
 });
