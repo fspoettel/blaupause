@@ -13,12 +13,13 @@ const isProduction = argv.p;
 gulp.task('html-min', () => {
   if (isProduction) {
     return gulp.src([
-      `${cfg.destinationPath}/**/*.html`, 
+      `${cfg.destinationPath}/**/*.html`,
     ]).pipe(htmlmin({
-        minifyCSS: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }))
-      .pipe(gulp.dest(cfg.destinationPath))
+      minifyCSS: true,
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(cfg.destinationPath));
   }
+  return 0;
 });

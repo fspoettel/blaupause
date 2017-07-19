@@ -15,13 +15,14 @@ const manifest = gulp.src(`${cfg.assetPath}/rev-manifest.json`);
 gulp.task('hash-replace', () => {
   if (isProduction) {
     return gulp.src([
-      `${cfg.destinationPath}/**/*.html`, 
-      `${cfg.destinationPath}/**/*.xml`, 
-      `${cfg.destinationPath}/**/*.json`, 
-      `${cfg.destinationPath}/**/*.css`, 
+      `${cfg.destinationPath}/**/*.html`,
+      `${cfg.destinationPath}/**/*.xml`,
+      `${cfg.destinationPath}/**/*.json`,
+      `${cfg.destinationPath}/**/*.css`,
       `${cfg.destinationPath}/**/*.js`
     ])
-      .pipe(revReplace({manifest: manifest, replaceInExtensions: ['.js', '.css', '.html', '.xml', '.json']}))
-      .pipe(gulp.dest(cfg.destinationPath))
+      .pipe(revReplace({ manifest, replaceInExtensions: ['.js', '.css', '.html', '.xml', '.json'] }))
+      .pipe(gulp.dest(cfg.destinationPath));
   }
+  return 0;
 });

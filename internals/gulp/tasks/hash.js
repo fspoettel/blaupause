@@ -15,15 +15,16 @@ const isProduction = argv.p;
 gulp.task('hash', () => {
   if (isProduction) {
     return gulp.src([
-      `${cfg.styles.destinationPath}/**`, 
-      `${cfg.scripts.destinationPath}/**`, 
-      `${cfg.images.destinationPath}/**`, 
+      `${cfg.styles.destinationPath}/**`,
+      `${cfg.scripts.destinationPath}/**`,
+      `${cfg.images.destinationPath}/**`,
       `${cfg.svg.destinationPath}/**`
-    ], {base: path.join(process.cwd(), cfg.assetPath)})
+    ], { base: path.join(process.cwd(), cfg.assetPath) })
       .pipe(clean())
       .pipe(rev())
       .pipe(gulp.dest(cfg.assetPath))
       .pipe(rev.manifest())
-      .pipe(gulp.dest(cfg.assetPath))
+      .pipe(gulp.dest(cfg.assetPath));
   }
+  return 0;
 });

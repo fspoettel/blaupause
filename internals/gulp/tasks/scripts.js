@@ -45,10 +45,10 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
       },
       {
         test: /\.(js|jsx)$/,
