@@ -11,6 +11,7 @@ gulp.task('build', (done) => {
   runSequence(
     'build:clean',
     ['copy:build', 'hugo:build', 'images:build', 'modernizr:build', 'scripts:build', 'styles:build', 'svg:build'],
+    'html-hint',
     'hash',
     'hash-replace',
     'html-min',

@@ -37,6 +37,7 @@
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
