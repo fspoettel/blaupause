@@ -163,6 +163,7 @@ const svg = {
 };
 
 module.exports = {
+  assetPath,
   browserSync,
   copy,
   destinationPath,
