@@ -4,7 +4,6 @@ const cfg = require('../config');
 
 gulp.task('hash-replace', () => {
   const manifest = gulp.src(`${cfg.assetPath}/rev-manifest.json`);
-  
   return gulp.src([
     `${cfg.destinationPath}/**/*.html`,
     `${cfg.destinationPath}/**/*.xml`,
