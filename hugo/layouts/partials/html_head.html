@@ -10,7 +10,9 @@
 
   <meta name="description" content="{{ .Description }}">
   <link rel="author" href="{{ "static/humans.txt" | relURL }}" />
-  <link rel="canonical" href="{{ .Permalink }}">
+  {{ if .Permalink }} 
+    <link rel="canonical" href="{{ .Permalink }}">
+  {{ end }}
 
   <link rel="manifest" href="{{ "static/manifest.json" | relURL }}">
   <meta name="application-name" content="{{ $title }}">

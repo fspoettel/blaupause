@@ -33,7 +33,7 @@ gulp.task('watch', ['build'], () => {
     watch(bundle.sourcePath, () => { runSequence('copy:build', 'reload'); });
   });
 
-  watch([cfg.hugo.watch], () => runSequence('hugo:build', 'reload'));
+  watch([cfg.hugo.watch], () => runSequence('hugo:build', 'html-hint', 'reload'));
 
   watch([cfg.images.sourcePath], () => runSequence('images:clean', 'images:build', 'reload'));
 
