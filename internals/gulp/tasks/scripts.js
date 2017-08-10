@@ -15,11 +15,11 @@ const streamSize = require('../util/streamsize');
  * @task - builds javascript with Webpack
  */
 
- /**
-  * Production Mode
-  * if set, the js output will be optimized
-  * @type {Boolean}
-  */
+/**
+ * Production Mode
+ * if set, the js output will be optimized
+ * @type {Boolean}
+ */
 const isProduction = argv.p;
 
 const productionPlugins = [
