@@ -7,6 +7,7 @@
 
 /// Clearfix adapted from h5bp
 /// @output Clearfix rules
+
 @mixin clearfix {
   &::before,
   &::after {

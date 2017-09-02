@@ -39,25 +39,6 @@ $color-text: #232323 !default;
 /// @type {Color}
 $color-brand: #2271ff !default;
 
-/// Gutters for `hagrid`
-/// @property {Number}
-/// @see {mixin} bp
-$layout-gutters: (
-  default: 1.5rem,
-  full: 0,
-  narrow: 0.5rem,
-  wide: 3rem
-) !default;
-
-/// Breakpoints for `hagrid`. Use via @bp(), see: https://github.com/fspoettel/hagrid
-/// @property {String}
-$layout-breakpoints: (
-  sm: "(min-width: 35.5em)",
-  md: "(min-width: 48em)",
-  lg: "(min-width: 64em)",
-  xl: "(min-width: 80em)"
-) !default;
-
 /// Webfont-path prefix
 /// @type {String}
 $path-webfonts: "webfonts/" !default;
@@ -65,11 +46,3 @@ $path-webfonts: "webfonts/" !default;
 /// Image-path prefix
 /// @type {String}
 $path-images: "../images/" !default;
-
-/// Overwrite hagrid's breakpoints with $layout-breakpoints
-/// @type {List}
-$hagrid-breakpoints: $layout-breakpoints;
-
-/// Overwrite hagrid's gutters with $layout-gutters
-/// @type {List}
-$hagrid-gutters: $layout-gutters !default;
