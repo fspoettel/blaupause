@@ -7,8 +7,7 @@ const cfg = require('../config').copy;
  */
 gulp.task('copy:build', () => {
   const tasks = cfg.bundles.map(bundle =>
-    gulp.src(bundle.sourcePath).pipe(gulp.dest(bundle.destinationPath))
-  );
+    gulp.src(bundle.sourcePath).pipe(gulp.dest(bundle.destinationPath)));
 
   return Promise.all(tasks);
 });

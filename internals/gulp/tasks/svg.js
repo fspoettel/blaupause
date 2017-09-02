@@ -1,4 +1,3 @@
-
 const gulp = require('gulp');
 const del = require('del');
 const svgSprite = require('gulp-svg-sprite');
@@ -28,8 +27,7 @@ gulp.task('svg:build', () =>
   gulp.src(cfg.sourcePath)
     .pipe(svgSprite(svgSpriteConfig))
     .pipe(streamSize('SVG'))
-    .pipe(gulp.dest(cfg.destinationPath))
-);
+    .pipe(gulp.dest(cfg.destinationPath)));
 
 /**
  * @name - svg:clean
