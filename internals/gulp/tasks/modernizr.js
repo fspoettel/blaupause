@@ -13,8 +13,7 @@ gulp.task('modernizr:build', () =>
   gulp.src(cfg.scripts.bundles)
     .pipe(modernizr(cfg.modernizr.fileName, cfg.modernizr.settings))
     .pipe(uglify())
-    .pipe(gulp.dest(cfg.modernizr.destinationPath))
-);
+    .pipe(gulp.dest(cfg.modernizr.destinationPath)));
 
 /**
  * @name modernizr:clean

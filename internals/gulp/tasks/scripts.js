@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const argv = require('yargs').boolean('p').argv;
 const del = require('del');
 const gulp = require('gulp');
@@ -64,8 +65,7 @@ gulp.task('scripts:build', () =>
     })
     .pipe(gulp.dest(cfg.destinationPath))
     .pipe(gulpif(isProduction, streamSize('JS')))
-    .pipe(browserSync.stream({ match: '**/*.js' }))
-);
+    .pipe(browserSync.stream({ match: '**/*.js' })));
 
 /**
  * @name - scripts:clean

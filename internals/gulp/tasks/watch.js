@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const argv = require('yargs').boolean('p').argv;
 const browserSync = require('../config').browserSync.instance;
 const compress = require('compression');

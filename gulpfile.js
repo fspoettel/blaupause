@@ -1,7 +1,4 @@
-/**
- * gulpfile.js
- * @task - loads all tasks from `./internals/gulp/tasks/*`
- */
+/* eslint-disable prefer-destructuring */
 const argv = require('yargs').boolean('p').argv;
 const glob = require('glob');
 const gutil = require('gulp-util');

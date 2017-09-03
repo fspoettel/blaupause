@@ -10,8 +10,7 @@ const cfg = require('../config').images;
 gulp.task('images:build', () =>
   gulp.src(cfg.sourcePath)
     .pipe(imagemin(cfg.settings))
-    .pipe(gulp.dest(cfg.destinationPath))
-);
+    .pipe(gulp.dest(cfg.destinationPath)));
 
 /**
  * @name images:clean

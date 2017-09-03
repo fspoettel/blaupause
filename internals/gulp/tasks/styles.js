@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const argv = require('yargs').boolean('p').argv;
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -44,8 +45,7 @@ gulp.task('styles:build', () =>
     .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
     .pipe(gulpif(isProduction, streamSize('CSS')))
     .pipe(gulp.dest(cfg.destinationPath))
-    .pipe(browserSync.stream({ match: '**/*.css' }))
-);
+    .pipe(browserSync.stream({ match: '**/*.css' })));
 
 /**
  * @name - styles:clean

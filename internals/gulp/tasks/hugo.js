@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const argv = require('yargs').boolean('p').argv;
 const exec = require('child_process').exec;
 const gulp = require('gulp');
@@ -46,5 +47,4 @@ gulp.task('hugo:build', done =>
     if (err) { gutil.log(gutil.colors.red(err)); }
     gutil.log(gutil.colors.yellow(stdout));
     done();
-  })
-);
+  }));
