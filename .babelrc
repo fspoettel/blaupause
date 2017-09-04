@@ -1,9 +1,19 @@
 {
-  "presets": [[ "es2015", { "modules": false } ], "stage-1"],
+  "presets": [["env", {
+    "targets": {
+      "browsers": ["last 2 versions"],
+    },
+    "loose": true,
+    "modules": false,
+    "useBuiltIns": true
+  }]],
+  "plugins": ["transform-object-rest-spread", "transform-class-properties"],
   "env": {
+    "production": {
+      "plugins" : []
+    },
     "test": {
-      "compact": true,
-      "presets": ["es2015", "stage-1"]
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
 }

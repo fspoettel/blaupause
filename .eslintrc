@@ -1,19 +1,15 @@
 {
   "root": true,
   "env": {
-    "es6": true,
     "browser": true,
-    "jest": true,
-    "node": true
+    "jest": true
   },
   "extends": "airbnb-base",
-  "parser": "babel-eslint",
   "rules": {
     "max-len": [2, 120, 2, {
       "ignoreUrls": true,
       "ignoreComments": false
     }],
-    "comma-dangle": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
     "import/prefer-default-export": "off"
   }
