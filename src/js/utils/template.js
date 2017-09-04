@@ -23,7 +23,7 @@ const supportsTemplate = () => {
 
 /**
  * @param {String} HTML representing a single or multiple elements
- * @param {Boolean} Determines if the function outputs an element or a boolean
+ * @param {Boolean} Determines if the function outputs an element or a nodeList
  * @return {Element} || {NodeList}
  */
 const renderHtml = (html, nodeList = false) => {

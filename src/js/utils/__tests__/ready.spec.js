@@ -1,4 +1,4 @@
-import ready from '../ready';
+import { ready } from '../ready';
 
 describe('ready()', () => {
   it('fires if readyState !== loading', () => {

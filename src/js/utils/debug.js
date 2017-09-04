@@ -51,7 +51,7 @@ const log = (...messages) => message('log', ...messages);
  */
 const warn = (...messages) => message('warn', ...messages);
 
-const debug = (mode, ...messages) => {
+export const debug = (mode, ...messages) => {
   if (process.env.NODE_ENV === 'production') { return; }
 
   switch (mode) {
@@ -69,5 +69,3 @@ const debug = (mode, ...messages) => {
       break;
   }
 };
-
-export default debug;

@@ -19,7 +19,7 @@ doc.addEventListener('DOMContentLoaded', cacheEvent);
  * @param {function} cb - Callback function.
  * @param {object} ctx - Optional callback context.
  */
-const ready = (cb, ctx) => {
+export const ready = (cb, ctx) => {
   const context = ctx || window;
 
   if (doc.readyState === 'complete') {
@@ -34,5 +34,3 @@ const ready = (cb, ctx) => {
     doc.addEventListener('DOMContentLoaded', onReady);
   }
 };
-
-export default ready;

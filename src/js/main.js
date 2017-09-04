@@ -2,6 +2,7 @@
  * main.js
  * Entrypoint for webpack
  */
+import 'core-js';
 import { ready, debug } from './utils';
 
 function onReady(e) {
