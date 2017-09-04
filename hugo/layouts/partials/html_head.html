@@ -9,10 +9,9 @@
   <title>{{ $title }}</title>
 
   <meta name="description" content="{{ .Description }}">
-  <link rel="author" href="{{ "static/humans.txt" | relURL }}" />
   <link rel="canonical" href="{{ .Permalink }}">
 
-  <link rel="manifest" href="{{ "static/manifest.json" | relURL }}">
+  <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
   <meta name="application-name" content="{{ $title }}">
 
   {{ if .RSSLink }}
@@ -20,10 +19,7 @@
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ $title }}" />
   {{ end }}
 
-  <link rel="stylesheet" href="{{ "static/styles/main.css" | relURL }}">
-  {{ if .Site.Params.blaupause.useModernizr }}
-  <script defer src="{{ "static/scripts/vendor/modernizr-custom.js" | relURL }}"></script>
-  {{ end }}
-  <script defer src="{{ "static/scripts/main.js" | relURL }}"></script>
+  <link rel="stylesheet" href="{{ "static/css/main.css" | relURL }}">
+  <script defer src="{{ "static/js/main.bundle.js" | relURL }}"></script>
 </head>
 <body>
