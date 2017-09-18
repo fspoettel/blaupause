@@ -52,7 +52,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^3.5.3",
     "webpack-stream": "^4.0.0",
-    "yargs": "^8.0.2"
+    "yargs": "^9.0.1"
   },
   "scripts": {
     "lint-scripts": "eslint src/scripts internals gulpfile.js",
