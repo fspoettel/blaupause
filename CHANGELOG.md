@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.0.0] 2017-09-23
+
+- Move from gulp-based build process to npm scripts
+- Remove support for sass in favor of CSS with postcss
+- Remove copy task in favor of Hugo `/static` folder
+- Remove support for custom modernizr build
+- Update folder structure
+- Use Hugo static folder
+
 # [2.5.1] 2017-06-23
 
 - Update dependencies
