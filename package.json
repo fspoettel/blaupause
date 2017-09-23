@@ -56,7 +56,7 @@
     "hugo:watch": "yarn hugo:compile && chokidar 'hugo' -c 'yarn hugo:compile'",
     "js:compile": "webpack --config webpack.config.js",
     "js:build": "cross-env NODE_ENV=production yarn js:compile",
-    "js:watch": "yarn js:compile && chokidar 'src/js/**/*.js' -c 'yarn js:compile'",
+    "js:watch": "yarn js:compile",
     "js:lint": "eslint src/js",
     "svg:compile": "svg-sprite -s --ss sprite.symbol.svg --symbol-dest . -D public/static/svg -l info src/img/**/*.svg",
     "svg:build": "yarn svg:compile",
@@ -64,6 +64,7 @@
     "build:clean": "rimraf public",
     "build": "yarn build:clean && concurrently 'yarn css:build' 'yarn js:build' 'yarn hugo:build' 'yarn svg:build'",
     "start": "yarn build:clean && concurrently 'yarn css:watch' 'yarn js:watch' 'yarn hugo:watch' 'yarn svg:watch' 'yarn browser-sync'",
+    "start:prod": "cross-env NODE_ENV=production yarn start",
     "lint": "concurrently 'yarn css:lint' 'yarn js:lint'",
     "test": "jest"
   },

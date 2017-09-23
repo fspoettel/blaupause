@@ -17,7 +17,6 @@ module.exports = {
     'public/**/*.html',
     'public/static/**/*.{jpg,png,gif,svg}',
     'public/static/css/**/*.css',
-    'public/static/css/**/*.css',
     'public/static/js/**/*.js'
   ],
   "server": {

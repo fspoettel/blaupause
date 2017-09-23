@@ -74,11 +74,15 @@ Runs `build` and starts a BrowserSync instance. Whenever you change a source fil
 
 #### `npm run build`
 
-Builds all content and assets from `src` to `public`. Generates a production-ready build ("real" BaseURL, no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, uglified code)
+Builds all content and assets from `src` to `public`. Generates a production-ready build ("real" BaseURL, no drafts, no sourcemaps, `NODE_ENV = "production"` for JS builds, Autoprefixer, uglified code)
 
 #### `npm run build:clean`
 
 Removes the `public`-folder (executed automatically on `gulp build`).
+
+#### `npm run start:prod`
+
+Runs a server with production-ready code.
 
 ### `npm run lint`
 

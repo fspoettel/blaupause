@@ -33,14 +33,8 @@ module.exports = {
     ],
   },
   plugins: productionPlugins,
-  resolve: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src/js'),
-    ],
-    extensions: ['.js', '.json'],
-  },
-  devtool: isProd ? false : 'source-map',
+  devtool: isProd ? false : ' cheap-module-eval-source-map ',
   target: 'web',
   stats: 'normal',
+  watch: true,
 };
