@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Remove copy task in favor of Hugo `/static` folder
 - Remove support for custom modernizr build
 - Update folder structure
+- Update console wrapper
 - Use Hugo static folder
 
 # [2.5.1] 2017-06-23

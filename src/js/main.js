@@ -3,10 +3,11 @@
  * Entrypoint for webpack
  */
 import 'core-js';
-import { ready, debug } from './utils';
+import { ready } from './utils/ready';
+import { info } from './utils/debug';
 
 function onReady(e) {
-  debug('info', `Event: ${e.type}`, `Datestamp: ${this.date}`);
+  info(`Event: ${e.type}`, `Datestamp: ${this.date}`);
 }
 
 ready(onReady, {

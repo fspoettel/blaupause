@@ -4,7 +4,7 @@
  * See: https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#Security_considerations
  * @module utils/template
  */
-import { debug } from '../utils';
+import { warn } from './debug';
 
 const doc = document;
 
@@ -15,7 +15,7 @@ const supportsTemplate = () => {
   const support = 'content' in doc.createElement('template');
 
   if (!support) {
-    debug('warn', "Browser doesn't support <template>. Templates won't work for <td>, <tr>, <pre> and <select>!");
+    warn("Browser doesn't support <template>. Templates won't work for <td>, <tr>, <pre> and <select>!");
   }
 
   return support;
