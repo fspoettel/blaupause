@@ -1,0 +1,36 @@
+@import 'sanitize.css';
+
+:root {
+  --color-background: #2271ff;
+  --color-text: #fff;
+  --font-system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-system-ui);
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page header {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.page footer {
+  flex: 0 0 auto;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--color-text);
+  color: var(--color-background);
+}

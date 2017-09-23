@@ -1,4 +1,3 @@
 ---
-title: Index
+title: Blaupause
 ---
-Some Content

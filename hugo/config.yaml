@@ -17,10 +17,6 @@ layoutDir: "layouts"
 # Formats
 defaultExtension: "html"
 metaDataFormat: "yaml"
-# Params
-params:
-  blaupause:
-    useModernizr: false
 # DO NOT CHANGE BELOW THIS LINE
 # -----------------------------
 disableLiveReload: true
