@@ -17,8 +17,11 @@ if (optimizeBuild) {
   productionPlugins.push(
     new ModuleConcatenationPlugin(),
     new UglifyJsPlugin({
+      cache: true,
       parallel: true,
-      ecma: 8,
+      uglifyOptions: {
+        ecma: 8,
+      },
     }),
   );
 }

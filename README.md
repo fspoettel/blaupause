@@ -74,7 +74,7 @@ Runs `compile` and starts a BrowserSync instance. Whenever you change a source f
 
 Same as `npm:start`, with production-ready assets (CSS, JS, gzip in Browser-Sync).
 
-#### `npm build`
+#### `npm run build`
 
 Builds all content and assets from `src` to `public`. Generates a production-ready build:
 
@@ -88,7 +88,7 @@ Builds all content and assets from `src` to `public`. Generates a production-rea
 
 #### `npm run build:clean`
 
-Removes the `public`-folder (executed automatically when running `npm build` or `npm start`).
+Removes the `public`-folder (executed automatically when running `npm run build` or `npm start`).
 
 #### `npm run lint`
 
