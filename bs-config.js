@@ -12,6 +12,11 @@
  |
  |
  */
+
+const env = process.env.NODE_ENV;
+
+const isStaging = env === 'staging';
+
 module.exports = {
   "files": [
     'public/**/*.html',
@@ -19,13 +24,13 @@ module.exports = {
     'public/static/css/**/*.css',
     'public/static/js/**/*.js'
   ],
+  "injectChanges": true,
+  "middleware": isStaging ? [require('compression')()] : [],
+  "notify": false,
+  "open": false,
+  "port": 3000,
+  "reloadThrottle": 300,
   "server": {
     "baseDir": "public"
   },
-  "open": false,
-  "port": 3000,
-  "middleware": [require('compression')()],
-  "notify": false,
-  "injectChanges": true,
-  "reloadThrottle": 300
 };

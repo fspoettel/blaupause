@@ -1,20 +1,31 @@
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const {
+  EnvironmentPlugin,
   optimize: { ModuleConcatenationPlugin },
 } = require('webpack');
 
-const isProd = process.env.NODE_ENV;
+const env = process.env.NODE_ENV;
 
-const productionPlugins = isProd
-  ? [
+const isProd = env === 'production';
+const isStaging = env === 'staging';
+const optimizeBuild = isProd || isStaging;
+
+const productionPlugins = [];
+
+if (optimizeBuild) {
+  productionPlugins.push(
     new ModuleConcatenationPlugin(),
     new UglifyJsPlugin({
       parallel: true,
       ecma: 8,
     }),
-  ]
-  : [];
+  );
+}
+
+if (isProd) {
+  productionPlugins.push(new EnvironmentPlugin(['NODE_ENV']));
+}
 
 module.exports = {
   entry: './src/js/main.js',
@@ -33,8 +44,8 @@ module.exports = {
     ],
   },
   plugins: productionPlugins,
-  devtool: isProd ? false : ' cheap-module-eval-source-map ',
+  devtool: !optimizeBuild && ' cheap-module-eval-source-map ',
   target: 'web',
   stats: 'normal',
-  watch: true,
+  watch: !isProd,
 };
