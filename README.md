@@ -70,6 +70,10 @@ Resource tasks have a `compile`, `build` and `watch` task associated with them. 
 
 Runs `compile` and starts a BrowserSync instance. Whenever you change a source file, the BrowserSync instance will reload your connected browsers with the changes.
 
+#### `npm run start:staging`
+
+Same as `npm:start`, with production-ready assets (CSS, JS, gzip in Browser-Sync).
+
 #### `npm build`
 
 Builds all content and assets from `src` to `public`. Generates a production-ready build:
@@ -79,15 +83,12 @@ Builds all content and assets from `src` to `public`. Generates a production-rea
  - Source maps are omitted
  - JS & CSS is uglified, `NODE_ENV=production` is passed to the javascript build
  - Autoprefixer generates prefixes according to `browserlist`
- - A service-worker with offline pre-caching is generated
+ - A service worker with offline pre-caching is automatically generated
+ - Debug console statement called with `utils/debug` are stripped
 
 #### `npm run build:clean`
 
 Removes the `public`-folder (executed automatically when running `npm build` or `npm start`).
-
-#### `npm run start:staging`
-
-Runs a server with production-ready code.
 
 #### `npm run lint`
 
