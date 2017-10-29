@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.1.0] 2017-10-29
+
+- Add PWA service worker, automatic offline support for build-artifacts
+- Fix production variables not being exposed in JS builds
+- Improve staging environment
+- Remove dependency on yarn, go with npm instead
+
 # [3.0.0] 2017-09-23
 
 - Move from gulp-based build process to npm scripts

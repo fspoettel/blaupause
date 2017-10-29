@@ -1,6 +1,6 @@
 /*eslint-disable */
 module.exports = ctx => {
-  const isProduction = ctx.env === 'production';
+  const isProduction = ctx.env === 'production' || ctx.env === 'staging';
 
   return {
     map: isProduction ? false : {},

@@ -1,14 +1,14 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "name": "",
-  "description": "",
-  "short_name": "",
+  "name": "Blaupause",
+  "description": "A boilerplate",
+  "short_name": "Blaupause",
   "icons": [],
   "scope": "/",
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "theme_color": "",
-  "background_color": ""
+  "theme_color": "#2271ff",
+  "background_color": "#fff"
 }

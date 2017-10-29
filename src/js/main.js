@@ -3,10 +3,12 @@
  * Entrypoint for webpack
  */
 import 'core-js';
-import { ready } from './utils/ready';
+import ready from './utils/ready';
+import registerServiceWorker from './utils/serviceWorker';
 import { info } from './utils/debug';
 
 function onReady(e) {
+  registerServiceWorker();
   info(`Event: ${e.type}`, `Datestamp: ${this.date}`);
 }
 
