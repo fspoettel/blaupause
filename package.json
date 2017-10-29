@@ -1,6 +1,6 @@
 {
   "name": "blaupause",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "hugo + webpack + sass starter kit",
   "main": "package.json",
   "author": "Felix Spöttel",
