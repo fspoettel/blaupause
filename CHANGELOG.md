@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.2.0] 2017-11-04
+
+- Move partial `image/svg` to `media/svg`
+- Use `_default/baseof.html` in favour of partials
+
 # [3.1.0] 2017-10-29
 
 - Add PWA service worker, automatic offline support for build-artifacts

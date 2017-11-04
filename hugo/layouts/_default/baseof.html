@@ -23,3 +23,18 @@
   <script defer src="{{ "static/js/main.bundle.js" | relURL }}"></script>
 </head>
 <body>
+  <div class="page">
+    {{ block "header" . }}
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    {{ end }}
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    {{ block "footer" . }}
+    <footer>Made with &heart; in {{ now.Year }}</footer>
+    {{ end }}
+  </div>
+</body>
+</html>
