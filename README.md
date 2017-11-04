@@ -11,11 +11,11 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
 1. `git clone https://github.com/felics/blaupause project`
 2. `cd project`
 3. `npm install`
-4. `gulp`
+4. `npm start`
 
 ## In the box
 
-* [NPM scripts](http://gulpjs.com/) build process
+* NPM scripts build process
 * [BrowserSync](http://www.browsersync.io/) live-reloading environment
 * `Developer Mode` with `Sourcemaps` and debugging helpers
 * `Production Mode` for optimized builds
@@ -105,5 +105,5 @@ Runs jest unit tests
 Reference a SVG-symbol from `/static/svg/sprite.symbol.svg` by ID. The SVG build task will look for `.svg`-files in `src/img` and sub-directories. Usage:
 
 ``` html
-  <div class="icon">{{ partial "image/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
+  <div class="icon">{{ partial "media/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
 ```
