@@ -1,19 +1,16 @@
 {
-  "presets": [["env", {
-    "targets": {
-      "browsers": ["last 2 versions"],
-    },
+  "presets": [["@babel/env", {
     "loose": true,
     "modules": false,
-    "useBuiltIns": true
+    "useBuiltIns": "usage"
   }]],
-  "plugins": ["transform-object-rest-spread", "transform-class-properties"],
+  "plugins": ["@babel/proposal-object-rest-spread", "@babel/proposal-class-properties"],
   "env": {
     "production": {
       "plugins" : []
     },
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": ["@babel/transform-modules-commonjs"]
     }
   }
 }
