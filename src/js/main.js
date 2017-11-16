@@ -2,7 +2,6 @@
  * main.js
  * Entrypoint for webpack
  */
-import 'core-js';
 import ready from './utils/ready';
 import registerServiceWorker from './utils/serviceWorker';
 import { info } from './utils/debug';
