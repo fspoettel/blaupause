@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo:  fspoettel/blaupause
+  branch: master
+  base_url: # See: https://github.com/vencax/netlify-cms-github-oauth-provider
+publish_mode: editorial_workflow
+media_folder: "hugo/static/assets"
+public_folder: "/assets"
+collections:
+  -
+    name: "blog"
+    label: "Blog"
+    folder: "hugo/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
