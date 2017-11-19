@@ -9,9 +9,9 @@
 This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/) being installed on your machine. To initiate a new site, do:
 
 1. `git clone https://github.com/felics/blaupause project`
-2. `cd project`
-3. `npm install`
-4. `npm start`
+1. `cd project`
+1. `npm install`
+1. `npm start`
 
 ## In the box
 
@@ -47,7 +47,6 @@ This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/)
 
 * [editorConfig](http://editorconfig.org/)
 * [Travis](https://travis-ci.org) continuous integration
-* (Example) Automatic Travis deploy to Github Pages
 
 ## Tasks & Configuration
 
@@ -59,7 +58,7 @@ The build configuration is setup in `package.json` and `./hugo/config.yaml`.
 # ./hugo/config.yaml
 
 # The baseurl of the build artifact, only used in production. In development mode, localhost will be used
-baseurl: "http://fspoettel.github.io/blaupause/"
+baseurl: "https://blaupause.felics.me"
 ```
 
 ### Tasks & Task Configuration
@@ -78,13 +77,13 @@ Same as `npm:start`, with production-ready assets (CSS, JS, gzip in Browser-Sync
 
 Builds all content and assets from `src` to `public`. Generates a production-ready build:
 
- - The "production" baseUrl is applied by Hugo
- - Draft entries are not included
- - Source maps are omitted
- - JS & CSS is uglified, `NODE_ENV=production` is passed to the javascript build
- - Autoprefixer generates prefixes according to `browserlist`
- - A service worker with offline pre-caching is automatically generated
- - Debug console statement called with `utils/debug` are stripped
+* The "production" baseUrl is applied by Hugo
+* Draft entries are not included
+* Source maps are omitted
+* JS & CSS is uglified, `NODE_ENV=production` is passed to the javascript build
+* Autoprefixer generates prefixes according to `browserlist`
+* A service worker with offline pre-caching is automatically generated
+* Debug console statement called with `utils/debug` are stripped
 
 #### `npm run build:clean`
 
@@ -100,10 +99,64 @@ Runs jest unit tests
 
 ## Hugo Partials
 
-#### image/svg
+### image/svg
 
 Reference a SVG-symbol from `/static/svg/sprite.symbol.svg` by ID. The SVG build task will look for `.svg`-files in `src/img` and sub-directories. Usage:
 
 ``` html
   <div class="icon">{{ partial "media/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
+```
+
+## Deploying to Netlify
+
+Netlify is the easiest deploy option for blaupause. To get started, you have to:
+
+* Push your clone to your own GitHub repository.
+* [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
+
+Now Netlify will build and deploy your site whenever you push to git.
+
+You can also click this button:
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/fspoettel/blaupause)
+
+It is also possible to roll your own deploy with CircleCI and AWS as an alternative.
+
+## Adding Netlify CMS
+
+To add Netlify CMS, add the following files to the repo and configure according to the netlify-cms docs.
+
+### /hugo/static/admin/index.html
+
+``` html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+
+  <!-- Include the styles for the Netlify CMS UI, after your own styles -->
+  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.css" />
+
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.js"></script>
+</body>
+</html>
+```
+
+### /hugo/static/admin/config.yml
+
+``` yaml
+backend:
+  name: github # git-gateway if using Netlify Identity integration
+  repo:  fspoettel/blaupause
+  branch: master
+  base_url: # See https://github.com/vencax/netlify-cms-github-oauth-provider or remove if using Netlify Identity
+publish_mode: editorial_workflow
+media_folder: "hugo/static/assets"
+public_folder: "/assets"
+collections: # See netlify-cms docs
 ```
