@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.3.0] 2017-11-27
+
+- Add netlify deploys
+- Add netlifycms documentation
+- Add automatic Hugo installs
+- Upgrade to Babel@7
+- Add theme-color meta tag to baseof-template
+
 # [3.2.0] 2017-11-04
 
 - Move partial `image/svg` to `media/svg`
