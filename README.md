@@ -6,7 +6,7 @@
 
 ## Installation
 
-This project depends on [Hugo](https://gohugo.io) and [Node](http://nodejs.org/) being installed on your machine. To initiate a new site, do:
+This project depends on [Node](http://nodejs.org/) being installed on your machine. To initiate a new site, do:
 
 1. `git clone https://github.com/felics/blaupause project`
 1. `cd project`
