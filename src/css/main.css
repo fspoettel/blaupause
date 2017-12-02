@@ -1,7 +1,7 @@
 @import 'sanitize.css';
 
 :root {
-  --color-background: #2271ff;
+  --color-background: #222;
   --color-text: #fff;
   --font-system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
