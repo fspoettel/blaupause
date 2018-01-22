@@ -63,15 +63,15 @@ baseurl: "https://blaupause.felics.me"
 
 ### Tasks & Task Configuration
 
-Resource tasks have a `compile`, `build` and `watch` task associated with them. `compile` builds the source when developing, while `build` applies further optimizations for production builds via passing `NODE_ENV=production` to the task. `watch` starts a file-watcher and executes `compile` on changes, although you should not need to run these tasks by themselves (use the `npm start`) shortcut).
+Tasks are managed via [nps](https://github.com/kentcdodds/nps) and live in `package-scripts.js`.
 
 #### `npm start`
 
-Runs `compile` and starts a BrowserSync instance. Whenever you change a source file, the BrowserSync instance will reload your connected browsers with the changes.
+Compiles all assets and starts a BrowserSync instance. Whenever you change a source file, the BrowserSync instance will reload your connected browsers with the changes. Source-Maps are enabled in this environment.
 
 #### `npm run start:staging`
 
-Same as `npm:start`, with production-ready assets (CSS, JS, gzip in Browser-Sync).
+Same as `npm:start`, but with production-ready assets. No sourcemaps, resources are optimized and gzipped.
 
 #### `npm run build`
 
@@ -80,8 +80,7 @@ Builds all content and assets from `src` to `public`. Generates a production-rea
 * The "production" baseUrl is applied by Hugo
 * Draft entries are not included
 * Source maps are omitted
-* JS & CSS is uglified, `NODE_ENV=production` is passed to the javascript build
-* Autoprefixer generates prefixes according to `browserlist`
+* JS & CSS is minified, `NODE_ENV=production` is passed to the javascript build
 * A service worker with offline pre-caching is automatically generated
 * Debug console statement called with `utils/debug` are stripped
 

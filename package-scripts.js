@@ -45,7 +45,10 @@ module.exports = {
       build: privateTask('workbox generate:sw')
     },
     build: {
-      clean: privateTask('rimraf public'),
+      clean: publicTask(
+        'rimraf public',
+        'Removed the /public folder.'
+      ),
       default: publicTask(
         'nps build.clean && concurrently "nps css.build" "nps js.build" "nps hugo.build" "nps svg.build" && nps sw.build',
         'Builds a production version of all assets and a service worker.'
