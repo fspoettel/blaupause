@@ -6,7 +6,7 @@ module.exports = ctx => {
     map: isProduction ? false : {},
     plugins: {
       'postcss-import': { root: ctx.file.dirname },
-      'autoprefixer': isProduction && {},
+      'autoprefixer': {},
       'cssnano': isProduction && { preset: 'default' },
     },
   };
