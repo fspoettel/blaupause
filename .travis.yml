@@ -6,5 +6,4 @@ cache:
   - node_modules
 script:
   - npm test
-  - npm run css:lint
-  - npm run js:lint
+  - npm run lint
