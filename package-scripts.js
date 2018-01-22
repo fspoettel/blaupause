@@ -1,77 +1,103 @@
-/* eslint-disable */
+/* eslint-disable max-len */
+const { join } = require('path');
 
-const privateTask = script => ({
+const prod = str => `cross-env NODE_ENV=production ${str}`;
+
+const esc = str => `"${str}"`;
+
+const priv = script => ({
   hiddenFromHelp: true,
-  script
-})
+  script,
+});
 
-const publicTask = (script, description) => ({
+const pub = (script, description) => ({
   description,
-  script
-})
+  script,
+});
+
+const abs = to => join(__dirname, to);
+const rel = to => join(process.cwd(), to);
+
+const cssTasks = (src, dest) => {
+  const task = `postcss -d ${dest} ${esc(join(src, '*.css'))} -c ${abs('postcss.config.js')}`;
+
+  return {
+    build: priv(prod(task)),
+    lint: pub(
+      `stylelint ${esc(join(src, '**/*.css'))}`,
+      'Lints CSS with stylelint + stylelint-config-standard',
+    ),
+    watch: priv(`${task} -w`),
+  };
+};
+
+const hugoTasks = (src, dest) => {
+  const addr = 'http://localhost:3000';
+  const cfg = join(src, 'config.yml');
+
+  return {
+    compile: priv(`hugo --config=${cfg} -s ${esc(src)} -d ${esc(dest)} -b ${esc(addr)} -D`),
+    build: priv(`hugo --config=${cfg} -s hugo -d ${esc(dest)}`),
+    watch: priv(`nps hugo.compile && chokidar ${esc(src)} -c "nps hugo.compile"`),
+  };
+};
+
+const jsTasks = src => ({
+  compile: priv(`webpack --config ${esc(abs('webpack.config.js'))}`),
+  build: priv(prod('nps js.compile')),
+  watch: priv('nps js.compile'),
+  lint: pub(
+    `eslint ${esc(src)}`,
+    'Lints JS with eslint + eslint-config-airbnb',
+  ),
+});
+
+const svgTasks = (src, dest) => ({
+  compile: priv(`svg-sprite -s --ss sprite.symbol.svg --symbol-dest . -l info -D ${esc(dest)} ${esc(join(src, '**/*.svg'))}`),
+  build: priv('nps svg.compile'),
+  watch: priv(`nps svg.compile && chokidar ${esc(join(src, '**/*.svg'))} -c "nps svg.compile"`),
+});
+
+
+const relSrc = rel('src');
+const relDest = rel('public');
 
 module.exports = {
   scripts: {
-    browserSync: privateTask('browser-sync start --config bs-config.js'),
-    css: {
-      compile: privateTask('postcss -d public/static/css src/css/*.css'),
-      build: privateTask('cross-env NODE_ENV=production nps css.compile'),
-      lint: publicTask(
-        'stylelint src/**/*.css',
-        'Lints CSS with stylelint + stylelint-config-standard'
-      ),
-      watch: privateTask('nps css.compile && chokidar "src/css/**/*.css" -c "nps css.compile"'),
-    },
-    hugo: {
-      compile: privateTask('hugo --config=hugo/config.yml -s hugo -d ../public -b "http://localhost:3000" -D'),
-      build: privateTask('hugo --config=hugo/config.yml -s hugo -d ../public'),
-      watch: privateTask('nps hugo.compile && chokidar "hugo" -c "nps hugo.compile"')
-    },
-    js: {
-      compile: privateTask('webpack --config webpack.config.js'),
-      build: privateTask('cross-env NODE_ENV=production nps js.compile'),
-      watch: privateTask('nps js.compile'),
-      lint: publicTask(
-        'eslint "src/js"',
-        'Lints JS with eslint + eslint-config-airbnb'
-      )
-    },
-    svg: {
-      compile: privateTask('svg-sprite -s --ss sprite.symbol.svg --symbol-dest . -D public/static/svg -l info "src/img/**/*.svg"'),
-      build: privateTask('nps svg.compile'),
-      watch: privateTask('nps svg.compile && chokidar "src/img/**/*.svg" -c "nps svg.compile"')
-    },
-    sw: {
-      build: privateTask('workbox generate:sw')
-    },
+    browserSync: priv(`browser-sync start --config "${abs('bs-config.js')}"`),
+    sw: priv('workbox generate:sw'),
+    css: cssTasks(join(relSrc, 'css'), join(relDest, 'static/css')),
+    hugo: hugoTasks(rel('hugo'), relDest),
+    js: jsTasks(join(relSrc, 'js')),
+    svg: svgTasks(join(relSrc, 'img'), join(relDest, 'static/svg')),
     build: {
-      clean: publicTask(
-        'rimraf public',
-        'Removed the /public folder.'
+      clean: pub(
+        `rimraf ${relDest}`,
+        'Removes the build folder.',
       ),
-      default: publicTask(
-        'nps build.clean && concurrently "nps css.build" "nps js.build" "nps hugo.build" "nps svg.build" && nps sw.build',
-        'Builds a production version of all assets and a service worker.'
-      )
+      default: pub(
+        'nps build.clean && concurrently "nps css.build" "nps js.build" "nps hugo.build" "nps svg.build" && nps sw',
+        'Builds a production version of all assets and a service worker.',
+      ),
     },
     start: {
-      dev: privateTask('nps build.clean && concurrently "nps css.watch" "nps js.watch" "nps hugo.watch" "nps svg.watch" "nps browser-sync"'),
-      staging: publicTask(
+      dev: priv('nps build.clean && concurrently "nps css.watch" "nps js.watch" "nps hugo.watch" "nps svg.watch" "nps browser-sync"'),
+      staging: pub(
         'cross-env NODE_ENV=staging nps start.dev',
-        'Starts a dev-server with production versions of all assets (but no service-worker)'
-      )
+        'Starts a dev-server with production versions of all assets (but no service-worker)',
+      ),
     },
-    default: publicTask(
+    default: pub(
       'nps start.dev',
-      'Starts a development server with BrowserSync that auto-reloads + compiles all changes. Sourcemaps are enabled.'
+      'Starts a development server with BrowserSync that auto-reloads + compiles all changes. Sourcemaps are enabled.',
     ),
-    lint: publicTask(
+    lint: pub(
       'concurrently "nps css.lint" "nps js.lint"',
-      'Lints CSS & JS.'
+      'Lints CSS & JS.',
     ),
-    test: publicTask(
+    test: pub(
       'jest',
-      'Runs Jest unit tests for JS'
-    )
+      'Runs Jest unit tests for JS',
+    ),
   },
 };
