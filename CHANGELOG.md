@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.4.1] 2018-01-22
+
+- Move npm scripts to `package-script.js` via nps
+- Use autoprefixer in development builds
+- Update jest to latest major version
+
 # [3.3.0] 2017-11-27
 
 - Add netlify deploys
