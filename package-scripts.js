@@ -19,15 +19,20 @@ const abs = to => join(__dirname, to);
 const rel = to => join(process.cwd(), to);
 
 const cssTasks = (src, dest) => {
-  const task = `postcss -d ${dest} ${esc(join(src, '*.css'))} -c ${abs('postcss.config.js')}`;
+  const getTask = (isProd) => {
+    const plugins = 'autoprefixer postcss-import';
+    const prodPlugins = `${plugins} cssnano`;
+    return `postcss -d ${dest} ${esc(join(src, '*.css'))} -u ${isProd ? prodPlugins : plugins} ${isProd ? '--no-map' : ''}`;
+  };
 
   return {
-    build: priv(prod(task)),
+    compile: priv(getTask(false)),
+    build: priv(getTask(true)),
     lint: pub(
       `stylelint ${esc(join(src, '**/*.css'))}`,
       'Lints CSS with stylelint + stylelint-config-standard',
     ),
-    watch: priv(`${task} -w`),
+    watch: `nps css.compile && chokidar ${esc(join(src, '**/*.css'))} -c "nps css.compile"`,
   };
 };
 
