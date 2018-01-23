@@ -5,6 +5,8 @@ const prod = str => `cross-env NODE_ENV=production ${str}`;
 
 const esc = str => `"${str}"`;
 
+const watch = (task, dir) => `${task} && chokidar ${esc(dir)} -c ${esc(task)}`;
+
 const priv = script => ({
   hiddenFromHelp: true,
   script,
@@ -32,18 +34,18 @@ const cssTasks = (src, dest) => {
       `stylelint ${esc(join(src, '**/*.css'))}`,
       'Lints CSS with stylelint + stylelint-config-standard',
     ),
-    watch: `nps css.compile && chokidar ${esc(join(src, '**/*.css'))} -c "nps css.compile"`,
+    watch: priv(watch('nps css.compile', join(src, '**/*.css'))),
   };
 };
 
 const hugoTasks = (src, dest) => {
-  const addr = 'http://localhost:3000';
+  const localAddr = 'http://localhost:3000';
   const cfg = join(src, 'config.yml');
 
   return {
-    compile: priv(`hugo --config=${cfg} -s ${esc(src)} -d ${esc(dest)} -b ${esc(addr)} -D`),
+    compile: priv(`hugo --config=${cfg} -s ${esc(src)} -d ${esc(dest)} -b ${esc(localAddr)} -D`),
     build: priv(`hugo --config=${cfg} -s hugo -d ${esc(dest)}`),
-    watch: priv(`nps hugo.compile && chokidar ${esc(src)} -c "nps hugo.compile"`),
+    watch: priv(watch('nps hugo.compile', src)),
   };
 };
 
@@ -60,7 +62,7 @@ const jsTasks = src => ({
 const svgTasks = (src, dest) => ({
   compile: priv(`svg-sprite -s --ss sprite.symbol.svg --symbol-dest . -l info -D ${esc(dest)} ${esc(join(src, '**/*.svg'))}`),
   build: priv('nps svg.compile'),
-  watch: priv(`nps svg.compile && chokidar ${esc(join(src, '**/*.svg'))} -c "nps svg.compile"`),
+  watch: priv(watch('nps svg.compile', join(src, '**/*.svg'))),
 });
 
 
