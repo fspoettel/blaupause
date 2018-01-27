@@ -10,12 +10,12 @@ Thumbs.db
 
 # Node modules #
 ################
-node_modules/*
-bower_components/*
+node_modules
+bower_components
 
 # Build folder #
 ################
-public/*
+public
 
 # Sublime projects #
 ####################
