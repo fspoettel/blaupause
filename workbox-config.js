@@ -7,8 +7,4 @@ module.exports = {
   globIgnores: [
     '../workbox-cli-config.js',
   ],
-  runtimeCaching: [{
-    urlPattern: /\.html$/,
-    handler: 'networkFirst',
-  }],
 };
