@@ -72,7 +72,7 @@ const relDest = rel('public');
 module.exports = {
   scripts: {
     browserSync: priv(`browser-sync start --config "${abs('bs-config.js')}"`),
-    sw: priv('workbox generate:sw'),
+    sw: priv(`workbox generateSW ${abs('workbox-config.js')}`),
     css: cssTasks(join(relSrc, 'css'), join(relDest, 'static/css')),
     hugo: hugoTasks(rel('hugo'), relDest),
     js: jsTasks(join(relSrc, 'js')),
