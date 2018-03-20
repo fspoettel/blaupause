@@ -6,6 +6,7 @@ workbox.setConfig({
 });
 
 workbox.skipWaiting();
+workbox.clientsClaim();
 
 /*
  * Default handler for all other requests (html, json, xml)
