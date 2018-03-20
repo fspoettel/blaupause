@@ -8,7 +8,7 @@ const optimizeBuild = isProd || isStaging;
 
 module.exports = {
   entry: './src/js/main.js',
-  mode: isProd ? 'production' : 'development',
+  mode: optimizeBuild ? 'production' : 'development',
   output: {
     path: path.resolve(__dirname, 'public/static/js'),
     filename: '[name].bundle.js',

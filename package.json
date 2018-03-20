@@ -51,8 +51,10 @@
   },
   "scripts": {
     "build": "npm start build",
+    "build:clean": "npm run start build.clean",
     "lint": "npm start lint",
     "start": "nps",
+    "start:staging": "npm run start start.staging",
     "test": "npm start test"
   },
   "browserslist": [
