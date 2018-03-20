@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# [3.5.0] 2018-03-20
+
+- Use `networkFirst` offline strategy
+- Upgrade to webpack@4
+- Make `start:staging` and `build:clean` available as npm scripts
+- Internal: Ensure builds are working for PRs via Travis CI
+
 # [3.4.1] 2018-01-22
 
 - Move npm scripts to `package-script.js` via nps

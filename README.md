@@ -1,73 +1,58 @@
-# blaupause ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg)
+# blaupause
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/fspoettel/blaupause.svg)](https://greenkeeper.io/)
 
-> Blaupause is a developer-friendly Hugo starter kit based around npm scripts. It comes es6-ready with helpers for SVG and a basic structure for the html, css and javascript. For a detailed listing of what is included, see "In the box".
+> blaupause is a [hugo](https://gohugo.io) starter kit based on npm scripts, webpack and postcss. It helps with setting up a modern web development stack and adds offline support via a service worker.
+
+## In the box
+
+* [hugo](https://gohugo.io) with a layout boilerplate
+* build process managed via npm scripts
+* _Development Mode_: sourcemaps, [browserSync](http://www.browsersync.io/) live-reloading environment and debugging helpers
+* _Production Mode_: optimized builds, offline support via a service worker
+
+### JavaScript
+
+* [webpack@4](http://webpack.github.io)
+* [babel@7](babeljs.io) with `babel-env`
+* [eslint with airbnb config](http://eslint.org/)
+* [jest unit tests](https://facebook.github.io/jest/)
+
+### CSS
+
+* [autoprefixer](https://github.com/postcss/autoprefixer)
+* [pstcss-import](http://cssnext.io/)
+* [stylelint with standard config](http://stylelint.io/)
+* [sanitize.css](https://github.com/10up/sanitize.css)
+
+### Images/SVG
+
+* Automatic svg sprites via [svg-sprite](https://github.com/jkphl/svg-sprite)
+* Hugo partial to embed svg sprite
+
+### Dev Tools
+
+* [editorConfig](http://editorconfig.org/)
+* [travis](https://travis-ci.org)
 
 ## Installation
 
-This project depends on [Node](http://nodejs.org/) being installed on your machine. To initiate a new site, do:
+This project depends on [NodeJS](http://nodejs.org/) being installed on your machine. If the Hugo binary is not yet available on your `$PATH`, it will be installed during `npm install`.
+
+To initiate a new site, run:
 
 1. `git clone https://github.com/felics/blaupause project`
 1. `cd project`
 1. `npm install`
 1. `npm start`
 
-## In the box
+## Tasks & Task Configuration
 
-* NPM scripts build process
-* [BrowserSync](http://www.browsersync.io/) live-reloading environment
-* `Developer Mode` with `Sourcemaps` and debugging helpers
-* `Production Mode` for optimized builds
-* PWA-Support: Offline pre-caching service workers
-
-### JS
-
-* [Webpack](http://webpack.github.io)-builds
-* [Babel](babeljs.io) with `babel-env`
-* [ESLint](http://eslint.org/)
-* [Jest Unit Tests](https://facebook.github.io/jest/)
-
-### CSS
-
-* [Autoprefixer](https://github.com/postcss/autoprefixer)
-* [PostCSS-import](http://cssnext.io/)
-* [Stylelint](http://stylelint.io/)
-* [Sanitize.css](https://github.com/10up/sanitize.css)
-
-### Static Site Generator
-
-* [Hugo](https://gohugo.io) with a minimal `layout`-boilerplate
-
-### Images/SVG
-
-* [svg-sprite](https://github.com/jkphl/svg-sprite)
-
-### Dev Tools
-
-* [editorConfig](http://editorconfig.org/)
-* [Travis](https://travis-ci.org) continuous integration
-
-## Tasks & Configuration
-
-### Basic Configuration
-
-The build configuration is setup in `package.json` and `./hugo/config.yaml`.
-
-``` md
-# ./hugo/config.yaml
-
-# The baseurl of the build artifact, only used in production. In development mode, localhost will be used
-baseurl: "https://blaupause.felics.me"
-```
-
-### Tasks & Task Configuration
-
-Tasks are managed via [nps](https://github.com/kentcdodds/nps) and live in `package-scripts.js`.
+Tasks are managed via [nps](https://github.com/kentcdodds/nps) and live in `package-scripts.js`. The following tasks are exposed in `package.json`:
 
 #### `npm start`
 
-Compiles all assets and starts a BrowserSync instance. Whenever you change a source file, the BrowserSync instance will reload your connected browsers with the changes. Source-Maps are enabled in this environment.
+Compiles all assets and starts a development server. Whenever you change a source file, the BrowserSync instance will reload your connected browsers with the changes. Sourcemaps are enabled.
 
 #### `npm run start:staging`
 
@@ -77,11 +62,11 @@ Same as `npm:start`, but with production-ready assets. No sourcemaps, resources 
 
 Builds all content and assets from `src` to `public`. Generates a production-ready build:
 
-* The "production" baseUrl is applied by Hugo
+* The `production` baseUrl is applied by hugo
 * Draft entries are not included
 * Source maps are omitted
 * JS & CSS is minified, `NODE_ENV=production` is passed to the javascript build
-* A service worker with offline pre-caching is automatically generated
+* A service worker is added to the build
 * Debug console statement called with `utils/debug` are stripped
 
 #### `npm run build:clean`
@@ -105,6 +90,10 @@ Reference a SVG-symbol from `/static/svg/sprite.symbol.svg` by ID. The SVG build
 ``` html
   <div class="icon">{{ partial "media/svg" (dict "id" "the-icon" "class" "optional-class") }}</div>
 ```
+
+## Offline Support
+
+The service worker in `src` provides basic offline capabilities and follows a `networkFirst` strategy for static files and a `cacheFirst` strategy for google fonts and images. This means that visitors will always see the latest content and styles when a network connection is available. After the first visit, webfonts and images will be served from the cache and visited pages will work offline. The last cached version of the page will be served in the event that a user has no network connection. If you do not have dynamic content and changing static files, consider configuring workbox to use precaching. That way, your whole page will work offline once a single URL is visited.
 
 ## Deploying to Netlify
 
