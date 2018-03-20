@@ -28,7 +28,7 @@ module.exports = {
   "middleware": isStaging ? [require('compression')()] : [],
   "notify": false,
   "open": false,
-  "port": 3000,
+  "port": isStaging ? 3003 : 3000,
   "reloadThrottle": 300,
   "server": {
     "baseDir": "public"

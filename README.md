@@ -1,4 +1,4 @@
-# blaupause ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg?maxAge=2592000?style=flat-square)
+# blaupause ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg)
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/fspoettel/blaupause.svg)](https://greenkeeper.io/)
 
