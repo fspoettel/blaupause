@@ -34,7 +34,7 @@
     "cross-env": "^5.1.4",
     "cssnano": "^3.10.0",
     "cssnano-preset-default": "^4.0.0-rc.2",
-    "eslint": "^4.19.0",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.9.0",
     "hugo-bin": "^0.22.0",
