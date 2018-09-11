@@ -47,7 +47,7 @@
     "svg-sprite": "^1.4.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "workbox-cli": "3.0.0"
+    "workbox-cli": "3.5.0"
   },
   "scripts": {
     "build": "npm start build",
