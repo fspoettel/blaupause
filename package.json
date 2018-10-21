@@ -37,7 +37,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "hugo-bin": "^0.22.0",
+    "hugo-bin": "^0.34.0",
     "jest-cli": "^22.4.2",
     "nps": "^5.8.2",
     "postcss-cli": "^5.0.0",
