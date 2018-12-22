@@ -18,7 +18,7 @@
     "sanitize.css": "^6.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.42",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
     "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.42",
