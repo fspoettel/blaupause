@@ -32,7 +32,7 @@
     "compression": "^1.7.3",
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
-    "cssnano": "^4.1.8",
+    "cssnano": "^4.1.9",
     "cssnano-preset-default": "^4.0.6",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
