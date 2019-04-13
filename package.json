@@ -36,7 +36,7 @@
     "cssnano-preset-default": "^4.0.6",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.17.1",
     "hugo-bin": "^0.41.0",
     "jest-cli": "^23.6.0",
     "nps": "^5.9.3",
