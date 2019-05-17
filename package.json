@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "sanitize.css": "^8.0.0"
+    "sanitize.css": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
