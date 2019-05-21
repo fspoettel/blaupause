@@ -14,7 +14,7 @@
     "url": "https://github.com/fspoettel/blaupause.git"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
+    "@babel/polyfill": "^7.4.4",
     "sanitize.css": "^8.0.0"
   },
   "devDependencies": {
