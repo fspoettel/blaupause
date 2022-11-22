@@ -27,7 +27,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.27.10",
     "chokidar-cli": "^1.2.1",
     "compression": "^1.7.3",
     "concurrently": "^4.1.0",
